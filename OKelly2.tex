@@ -1506,5 +1506,142 @@ For a typical machine
     \dfrac{K^2}{4 \tau^2} = \dfrac{1}{\tau \tau_f}
     \label{}
 \end{equation*}
+hence
+\begin{equation}
+    B \bumpeq A \bumpeq \dfrac{K}{2 \tau}
+    \label{}
+\end{equation}
+Now
+\begin{equation*}
+    \dfrac{1}{\tau \tau_f} \bumpeq (A^2 + B^2) = (A + B)(A - B) \bumpeq \dfrac{K}{\tau} (A - B)
+\end{equation*}
+and
+\begin{equation}
+    (A - B) \bumpeq \dfrac{1}{K \tau_f}
+    \label{}
+\end{equation}
+Substituting (6.42) and (6.43) in (6.38) gives
+\begin{multline}
+    i_a (t) \bumpeq - \dfrac{\mathring V}{(R + \omega_r M_{as})} \bigg\{ 1 + \dfrac{\tau}{K^2 \tau_f}\bigg[1 - \dfrac{K \tau_f}{\tau}\bigg] e^{(- K / \tau)t} \\
+    - \bigg[1 - \dfrac{1}{K} \bigg]  e^{(-1 / K \tau_f)t} \bigg\}
+\end{multline}
+Let
+\begin{equation}
+    \tau' = \dfrac{\tau}{K} \quad \text{and} \quad \tau_f ' = K \tau_f
+    \label{}
+\end{equation}
+Substituting (6.45) in (6.44)
+\begin{equation}
+    i_a (t) \bumpeq - \dfrac{\mathring V}{(R + \omega_r M_{as})} \bigg\{ 1 + \bigg[ \dfrac{\tau '}{\tau_f '} -\dfrac{1}{K} \bigg] e^{-t/\tau '} - \bigg[1 - \dfrac{1}{K} \bigg] e^{- t / \tau_f '} \bigg\}
+    \label{}
+\end{equation}
+Now
+\begin{equation*}
+    \tau ' \ll \tau_f ' \quad \text{because} \quad \dfrac{\tau}{K} \ll K \tau_f
+\end{equation*}
+Neglecting the relatively small value in (6.46)
+\begin{equation}
+    i_a (t) \bumpeq - \dfrac{\mathring V}{(R + \omega_r M_{as})} \bigg\{ 1 + \dfrac{e^{-t/\tau'}}{K} -\bigg[ \dfrac{K-1}{K} \bigg] e^{-t/\tau_f '}\bigg\}
+    \label{}
+\end{equation}
+
+Figure 6.12 shows typical short-circuit current against time characteristics for three different values of $K$ and a machine with $\tau'=0.0132$ second and $\tau_f' = 0.226$ second.
+
+\subsection{Discussion} The example considered in the previous sections show how the short-circuit of a d.c.\ machine may be analysed. Simplifying assumptions, e.g., constant speed, are very necessary for analytical solutions to be readily obtained from the differential equations.
+
+In actual machines, the large armature current on short-circuit causes heave saturation in parts of the magnetic circuit and appreciable errors occur in the solution as constant machine inductances are assumed. Delayed commutation, due to interpole saturation, has the effect of brush-shift which may be represented by a series coil on the $d$-axis. Rapid changes of armature current and flux induce eddy currents in the magnetic circuit which limit initial flux changes of non-laminated
+iron and, consequently, the machine inductances for transient and steady-state conditions are of different value.
+
+\section{D.C.\ motor transients}
+The general voltage and torque equations may be used to analyse machine operation with transient load changes.
+
+In general, a change of load on a d.c.\ motor alters the speed. With a sudden change of load torque the mechanical inertia of the machine prevents instantaneous speed change, in a similar manner to inductance preventing sudden change on an electrical circuit. With a sudden change of inertia, e.g.\ by engaging a flywheel, there is a rapid change of speed which can be represented for purposes of analysis as a step change.
+
+\subsection{Mechanical time constant} Consider an unloaded d.c.\ machine at rest with a suddenly applied armature voltage. With suitable assumptions the build-up of speed is exponential and the machine has a \textit{mechanical time constant} which depends on the moment of inertia, the electrical parameters, and the field excitation.
+
+A separately-excited motor, Fig. 6.13(a), with constant field current $I_f$ has the following general equations,
+\begin{align}
+    v_a & = (R_a + L_a p)i_a + \omega_r M_{af} I_f \\
+    T_e & = (\text{pole-pairs})(i_a M_{af} I_f) \\
+    T_m + T_e & = J p \omega_m + D \omega_m  
+    \label{}
+\end{align}
+
+To obtain the required exponential expression for speed run-up, the armature inductance $L_a$ and the mechanical damping $D$ are assumed to be zero. The machine is unloaded, $T_m = 0$, and (6.48), (6.49) and (6.50) can be written,
+\begin{align}
+    v_a & = R_a i_a + \omega_m (\text{pole-pairs}) M_{af} I_f \\
+    T_e & = (\text{pole-pairs})M_{af} I_f i_a = J p \omega_m
+    \label{}
+\end{align}
+
+Eliminating $i_a$,
+\begin{equation}
+    v_a = \dfrac{R_a J p \omega_m}{(\text{pole-pairs}) M_{af} I_f} + (\text{pole-pairs}) \omega_m M_{af} I_f
+    \label{}
+\end{equation}
+and
+\begin{equation}
+    \omega_m = \dfrac{v_a (\text{pole-pairs}) M_{af} I_f}{R_a J p + {(\text{pole-pairs})}^2 M_{af}^2 I_f^2}
+    \label{}
+\end{equation}
+
+A constant armature voltage is suddenly applied at $t = 0$ to the machine initially at rest,
+\begin{align*}
+    t & < 0 & v_a & = 0 & \omega_m & = 0\\
+    t & \ge 0 & v_a & = V_a
+\end{align*}
+
+Transforming (6.54) by Laplace,
+\begin{align}
+    \overline{\omega_m} & = \dfrac{V_a}{\mathbf{s}} \bigg[ \dfrac{(\text{pole-pairs}) M_{af} I_f}{{(\text{pole-pairs})}^2 M_{af}^2 I_f^2 + R_a J \mathbf{s}} \bigg] \nonumber \\
+    & = \dfrac{V_a}{(\text{pole-pairs}) M_{af} I_f} \bigg[ \dfrac{1}{\mathbf{s}(1 + \tau_m \mathbf{s})}\bigg]
+    \label{}
+\end{align}
+where
+\begin{equation}
+    \tau_m = \dfrac{R_a J}{{(\text{pole-pairs})}^2 M_{af}^2 I_f^2}
+    \label{}
+\end{equation}
+Solving (6.55)
+
+\begin{equation}
+    \omega_m (t) = \dfrac{V_a}{(\text{pole-pairs}) M_{af} I_f} (1-e^{-t / \tau_m})
+    \label{}
+\end{equation}
+
+Now $\dfrac{V_a}{(\text{pole-pairs}) M_{af} I_f}$ is the maximum speed $\omega_{m(\max)}$
+
+\begin{equation}
+    \omega_m(t) = \omega_{m(\max)} (1 - e^{-t / \tau_m})
+    \label{}
+\end{equation}
+
+$t_m$ is called the \textit{mechanical time constant for run-up} of the machine.
+Now
+\begin{align}
+    \tau_m & = \dfrac{R_a J}{{(\text{pole-pairs})}^2 M_{af}^2 I_f^2} \nonumber \\
+    & = J \bigg[ \dfrac{V_a}{(\text{pole-pairs}) M_{af} I_f}\bigg] \bigg[\dfrac{R_a}{V_a (\textit{pole-pairs}) M_{af} I_f}\bigg] \nonumber \\
+    \tau_m & = \dfrac{J \omega_{m(\max)}}{\text{starting torque}}
+    \label{}
+\end{align}
+
+Hence, a simple expression is obtained for the mechanical time constant with mechanical damping and armature inductance neglected. Figure 6.13(b) illustrates the run-up speed and current characteristics.
+
+\subsection{Starting transient} The armature of a d.c.\ motor is energized through resistance on starting, see Section 6.2.7. Consider the starting transient of a shunt motor. To simplify the solution it will be assumed that,
+\begin{enumerate}[label= (\alph*)]
+    \item the field current has a steady value $I_f$ before the armature circuit is energized,
+    \item the armature self-inductance is small and may be neglected, and
+    \item the machine is unloaded, $T_m = 0$, and mechanical damping is ignored.
+\end{enumerate}
+
+For an armature circuit resistance $R_m$,, which includes starting resistance, the machine equations are,
+\begin{align}
+    V & = i_a R_m + \omega_r M_{af} I_f \\
+    T_e & = {(\text{pole-pairs})}(M_{af} I_f) = J p \omega_m
+    \label{}
+\end{align}
+\subsubsection{\textit{Number of resistor section}} A relationship may be determined for the required number of starter sections. Let there be $(n - 1)$ sections, $n$ contact studs and a total starter resistance $R_n$ including armature resistance $R_a$, see Fig. 6.14. For each stud position armature current limits of $I_{a(\max)}$ and $I_{a(\min)}$ are assumed.
+
+The following tabulated results are obtained using these limits in (6.60).
 
 \end{document}
