@@ -1696,10 +1696,421 @@ The values of $\tau_m$, given in (6.59), depends on the armature circuit resista
 \end{tabularx}
 
 Considering the times $t_1$, $t_2$, etc., defined previously
-     %\intertext{$0<t<t_1, R_n$ in circuit,}
 \begin{flalign}
-    \omega_m (t) & = \omega_{m(\max)}[1 - e^{-t / \tau_{m(n)}] \\
-    \omega_{m(\max)} & = 
+    \intertext{$0<t<t_1, R_n$ in circuit,}
+    \omega_m (t) & = \omega_{m(\max)}[1 - e^{-t / \tau_{m(n)}}] \nonumber \\
+    \intertext{$t_1$, $R_n$ in circuit} 
+    \omega_{m1} & = \omega_{m(\max)} [1 - e^{-t_1 / \tau_{m(n)}}] \nonumber \\
+    \intertext{$t_1$, $R_{n-1}$ in circuit,}
+    \omega_{m1} & = \omega_{m(\max)} [1 - e^{-(t_1 - t') / \tau_{m(n - 1)}}] \nonumber \\
+    \intertext{$t_1 < t < t_2$, $R_{n-1}$ in circuit,}
+    \omega_{m}(t) & = \omega_{m(\max)} [1 - e^{-(t - t') / \tau_{m(n - 1)}}] \nonumber \\
+    \intertext{$t_2$, $R_{n-2}$ in circuit,}
+    \omega_{m2} & = \omega_{m(\max)} [1 - e^{-(t_2 - t'') / \tau_{m(n - 2)}}]
 \end{flalign}
+The reason for reproducing further instant of time $t'$, $t''$ in (6.64) is seen in the run-up characteristic, Gig. 6.15. The speed curve consists of sections of different exponentials commencing at time 0, $t'$, $t''$, etc. The armature current at each resistance setting decays exponentially, see Section 6.4.1. Figure 6.15 is drawn for a machine with a four-section starter and a ratio of 2 for $I_{a(\max)}/I_{a(\min)}$.
+
+\subsection{Sudden torque change} Consider a two-pole shunt motor, initially unloaded, with a load torque suddenly applied at $t = 0$.
+With constant armature voltage $V_a$ and field current $I_f$ the general machine equations are,
+\begin{align}
+    V_a & = (R_a + L_a p)i_a + \omega_r M_{af} I_f \nonumber \\
+    T_e & = M_{af} i_f i_a \nonumber \\
+    T_m + T_e & = J p \omega_m \text{, neglecting damping.}
+    \label{eq:Eq6.65}
+\end{align}
+Armature inductance is included to demonstrate its effect on the solution, mechanical damping $D$ is zero, and for a two pole machine, $\omega_r = \omega_m$.
+
+Eliminating $T_e$ from (6.65),
+\begin{align}
+    V_a & = (R_a + L_a p)i_a + \omega_m M_{af} I_f \nonumber \\
+    T_m & = Jp\omega_m - M_{af} I_f i_a
+    \label{eq:Eq.6.66}
+\end{align}
+For $t < 0$, $\text{speed}=\omega_m$, $\text{torque} = 0$, and armature current $i_a = 0$\\
+For $t \ge 0$, $\text{speed}=\omega_m(t)$, $\text{torque} = T_m$, and armature current $i_a = i_a (t)$
+
+Transforming (6.66) to the $\textbf{s}$ domain and including initial conditions,
+\begin{equation}
+    \begin{aligned}
+        \dfrac{T_m}{\mathbf{s}} & = - M_{af} I_f \bar i_a + J\mathbf{s} \overline \omega_m - J \mathring \omega_m \\ %chktex 7
+        \dfrac{V_a}{\mathbf{s}} & = (R_a + L_a\mathbf{s})\bar i_a + \overline \omega_m M_{af} I_f %chktex 7
+    \end{aligned}
+    \label{eq:Eq.6.67}
+\end{equation}
+(\textit{Note:} $V_a$ is constant and transforms to $V_a/\mathbf{s}$)
+
+Eliminating $\bar i_a$ from (6.67) %chktex 7
+\begin{equation}
+    \overline \omega_m = \dfrac{T_m (R_a + L_a \mathbf{s}) + J \mathring \omega_m \mathbf{s}(R_a + L_a \mathbf{s}) + M_{af} I_f V_a}{\mathbf{s}(M_{af}^2 I_f^2 + R_a J \mathbf{s} + J L_a \mathbf{s}^2)}
+    \label{eq:Eq6.68}
+\end{equation}
+Substituting
+\begin{equation*}
+    \tau_m = \dfrac{R_a J}{M_{af}^2 I_f^2} \quad \text{and} \quad \tau_a = \dfrac{L_a}{R_a}
+    \label{}
+\end{equation*}
+\begin{equation}
+    \overline \omega_m = \dfrac{R_a T_m (1 + \tau_a \mathbf{s}) + J R_a \mathring \omega_m \mathbf{s}(1 + \tau_a \mathbf{s}) + M_{af} I_f V_a}{R_a J \mathbf{s}(17\tau_m + \mathbf{s} + \tau_a \mathbf{s}^2)}
+    \label{eq:Eq6.69}
+\end{equation}
+Now $\tau_m \gg \tau_a$ and the denominator may be factorized as
+\begin{equation*}
+    \dfrac{R_a J \mathbf{s}(1 + \tau_m \mathbf{s})(1 + \tau_a \mathbf{s})}{\tau_m},\text{approximately}
+    \label{}
+\end{equation*}
+\begin{equation}
+    \overline \omega_m \bumpeq \dfrac{\tau_m (T_m/J + \mathring \omega_m \mathbf{s})}{\mathbf{s}(1 + \tau_m \mathbf{s})} + \dfrac{\mathring \omega_m}{\mathbf{s}(1 + \tau_m \mathbf{s})(1 + \tau_a \mathbf{s})}
+    \label{eq:Eq6.70}
+\end{equation}
+Expressing (6.70) in partial fraction form,
+\begin{multline}
+    \overline \omega_m \bumpeq \dfrac{T_m}{J \mathbf{s}(\mathbf{s} + 1 / \tau_m)} + \dfrac{\mathring \omega_m}{(\mathbf{s} + 1 / \tau_m)} + \dfrac{\mathring \omega_m}{\mathbf{s}} \\
+    - \dfrac{\mathring \omega_m \tau_m}{(\tau_m - \tau_a)(\mathbf{s} + 1 / \tau_m)} + \dfrac{\mathring\omega_m \tau_a}{(\tau_m - \tau_a)(\mathbf{s} + 1 / \tau_a)}
+    \label{eq:Eq6.71}
+\end{multline}
+The inverse Laplace transform is
+\begin{equation}
+    \omega_m(t) \bumpeq \mathring \omega_m + \dfrac{T_m}{J} (1 - e^{-t/\tau_m}) - \dfrac{\mathring \omega_m \tau_a}{(\tau_m - \tau_a)}[e^{-t/\tau_m} - e^{-t / \tau_a}]
+    \label{}
+\end{equation}
+(\textit{Note:} $T_m$ is a negative quantity. By convention, see Section 1.5, a torque is considered to be positive when acting in the direction of rotation.)
+Tipically $\tau_m \gg \tau_a$ and simplifies to
+\begin{equation}
+    \omega_m(t) \bumpeq \mathring \omega_m + \dfrac{T_m}{J}(1 - e^{-t/\tau_m})
+    \label{eq:Eq6.73}
+\end{equation}
+\subsection{Discussion} The solution for a sudden torque change on a shunt machine is obtained without difficulty in the last section. Unfortunately, some problems of this type involving simultaneous changes in speed and current produce equations with products of variables and their derivatives which are non-linear differential equations. These equations are extremely difficult to solve and numerical or analogue methods of solutions are invariably necessary.
+
+To illustrate the difficulty consider a two-pole compound machine, Fog. 6.16, with a load torque $T_m$ suddenly applied at $t = 0$.
+\begin{equation}
+    \begin{aligned}
+        v & =(R_a + R_s +L_a p + L_s p)i_a + \omega_m M_{as} i_a + \omega_m M_{af} i_f M_{sf} p i_f \\
+        v_f & = (R_f + L_f p)i_f + M_{sf} p i_a \\
+        T_e & = M_{fa} i_f i_a + M_{as}i_a^2 \\
+        T_m + T_e & = J p \omega_m \text{, neglecting damping.}
+    \end{aligned}
+    \label{eq:Eq6.74}
+\end{equation}
+Eliminating $T_e$, combining the armature and series winding to give an impedance $(R + Lp)$, and assuming constant field and supply voltages, $V_f$ and $V$, respectively,
+\begin{equation}
+    \begin{aligned}
+        V & =(R + L p)i_a + \omega_m M_{as} i_a + \omega_m M_{af}i_f + M_{sf} p i_f \\
+        V_f & = (R_f +L_f P)i_f + M_{sf} p i_a \\
+        T_m & = - M_{fa} i_f i_a - M_{as} i_a^2 + J p \omega_m
+    \end{aligned}
+    \label{eq:Eq6.75}
+\end{equation}
+
+A sudden change of torque $T_m$ changes the current $i_f$, $i_a$ and the speed $\omega_m$. The terms $\omega_m M_{as} i_a$ and $M_{as}i_a^2$ cannot be transformed by Laplace into the $\textbf{s}$ domain.
+
+\section{Crossfield machines}
+The crossfield machine has a rotating commutator winding with brush-pairs on both quadrature and direct axes. To provide a low reluctance path for the cross-flux on the quadrature axis, the stator poles are usually arranged as Fig. 6.17 with two polar projections for each magnetic pole. This arrangement gives paths of similar reluctance for both direct and quadrature axis fluxes.
+
+Interpoles are usually fitted for good commutation.
+
+\subsection{Metadyne transformer} The metadyne transformer or constant current generator has no stator windings. The general equations for the machine, Fig. 6.18, are
+\begin{align}
+    \begin{bmatrix}
+        v_d \\ v_q
+    \end{bmatrix}
+    & = 
+    \begin{bmatrix}
+        (R_d + L_d p) & - \omega_r L_q \\
+        \omega_r L_d & (R_q + L_q p)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_d \\ i_q
+    \end{bmatrix} \\
+    T_e & = (\text{pole-pairs})(i_q \omega_r L_d i_d - i_d \omega_r L_q i_q) 
+    \label{eq:Eq6.77}
+\end{align}
+
+The machine is energized across one brush-pair, e.g., the $d$-axis, and a load is supplied from the orthogonal brush-pair on the $q$-axis.
+
+The physical arrangement, Fig. 6.17, gives equal self-inductances and resistances for each brush-pair.
+\begin{align*}
+    \text{Let } L_a & = L_d = L_q \\
+    \text{and, } R_a & = R_d = R_q 
+    \label{}
+\end{align*}
+
+Defining the supply voltage and currents as $v_s = v_d$ and $i_s = i_d$, and the load voltage and current as $v_L = v_q$ and $i_L = -i_q$, respectively, (6.76) and (6.77) may be written,
+\begin{align}
+    \begin{bmatrix}
+        v \\ v_L
+    \end{bmatrix}
+    & = 
+    \begin{bmatrix}
+        (R_a + L_a p) & \omega_r L_a \\
+        \omega_r L_a & (R_a + L_a p)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_s \\ i_L
+    \end{bmatrix} \\
+    T_e & = (\text{pole-pairs})(- i_L \omega_r L_a i_s - i_s \omega_r L_a i_L)\\
+    & = 0 \nonumber
+    \label{eq:Eq6.79}
+\end{align}
+
+The torque expression (6.79) indicates that no energy conversion takes place, and a motor is required to drive the machine.
+
+With a load of resistance $R_L$ and inductance $L_L$
+\begin{equation}
+    v_L = (R_L + L_l p)i_L
+    \label{eq_Eq6.80}
+\end{equation}
+
+\subsubsection{\textit{Steady-state solution}} Neglecting $p i$ terms in (6.78) and (6.80) gives the steady-state solution. Replacing instantaneous values by steady values,
+\begin{equation}
+    \begin{aligned}
+        V  & = R_a I_s + \omega_r L_ a I_L \\
+        V_L & = I_L R_L = \omega_r L_a I_s - R_a I_L
+    \end{aligned}
+    \label{eq:Eq6.81}
+\end{equation}
+
+In general the armature resistance $R_a$ is small,
+\begin{equation}
+    \begin{aligned}
+        V & \bumpeq \omega_r L_a I_L \\
+        V_ L & =I_L R_L \bumpeq \omega_r L_a I_s 
+    \end{aligned}
+    \label{eq_Eq6.82}
+\end{equation}
+
+At constant speed and supply voltage the load current remains approximately constant (within the output range of the machine), and is independent of the load resistance.
+
+The machine transforms constant voltage to constant current, hence the name \textit{metadyne transformer}.
+
+\subsubsection{\textit{Transient analysis}} Equations (6.78) may be used to solve transient problems, e.g., a sudden change of supply voltage.
+
+\subsection{Metadyne generator} The metadyne generator has a field winding on the $d$-axis and a short-circuited $q$-axis brush-pair, Fig. 6.19. The machine equations are
+\begin{align}
+    \begin{bmatrix}
+        v_f \\ v_d \\ 0
+    \end{bmatrix}
+    & =
+    \begin{bmatrix}
+        (R_f + L_f p) & M_{df} p & 0 \\
+         M_{df} p & (R_d + L_d p) & -\omega_r L_q \\
+        \omega_r M_{df} & \omega_r L_d & (R_q + L_q p) 
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_f \\ i_d \\ i_q
+    \end{bmatrix} \\
+    T_e & = (\text{pole-pairs})(i_q M_{df} i_f + i_q L_d i_d - i_d L_q i_q)
+    \label{eq:Eq6.84}
+\end{align}
+
+As before, taking $L_d = L_q = L_a$, $R_d = R_q = R_a$, and $M_{af} = M_{df}$ for steady-state operation,
+\begin{align}
+    \begin{bmatrix}
+        V_f \\ V_d \\ 0
+    \end{bmatrix}
+    & =
+    \begin{bmatrix}
+        R_f & 0 & 0 \\
+        0 & R_a & -\omega_r L_a \\
+        \omega_r M_{af} & \omega_r L_a & R_a 
+    \end{bmatrix}
+    \begin{bmatrix}
+        I_f \\ I_d \\ I_q
+    \end{bmatrix} \\
+    T_e & = (\text{pole-pairs})(I_q I_f M_{af})
+    \label{eq:Eq6.86}
+\end{align}
+
+Eliminating $I_q$ from (6.85),
+\begin{equation}
+    V_d = R_a I_d + \dfrac{\omega_r^2 L_a}{R_a}(M_{af} I_f + L_a I_d)
+    \label{eq:Eq6.87}
+\end{equation}
+
+Defining the output current from the $d$-axis brush-pair, $I_L = -I_d$ and the output voltage $V_L = V_d$,
+\begin{align}
+    V_L & = -R_a I_L + \dfrac{\omega_r^2 L_a}{R_a}(M_{af} I_f - L_a I_L) \\
+    T_e & = -(\text{pole-pairs})(I_L I_f M_{af})
+    \label{eq:Eq6.89}
+\end{align}
+
+\subsection{Compensated metadyne generator} The characteristics of the crossfield machine in Section 6.5.2 are not particularly useful. An additional stator winding called \textit{compensating winding} improves the characteristics. This winding is connected in series with the load current and has a similar action to the one used in d.c.\ machines. It produces an m.m.f.\ opposing the $d$-axis armature reaction.
+
+The primitive coil arrangement and connection diagram for a compensated machine are given in Fig. 6.20. Taking the self-inductance and resistance of the $d$-axis and $q$-axis rotor coils to be equal, the machine equations are
+\begin{align}
+    \begin{bmatrix}
+        v_f \\ v_d \\ v_q \\ v_c
+    \end{bmatrix}
+    & = 
+    \begin{bmatrix}
+        (R_f + L_f p) & M_{af} p & 0 & M_{cf} p \\
+        M_{af} p & (R_a + L_a p) & -\omega_r L_a & M_{cd} p \\
+        \omega_r M_{af} & \omega_r L_a & (R_a + L_a p) & \omega_r M_{cd} \\
+        M_{cf} p & M_{cd} p & 0 & (R_c + L_c p)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_f \\ i_d \\ i_q \\ i_c
+    \end{bmatrix} \\
+    T_e & = (\text{pole-pairs})(i_q M_{af} i_f + i_q L_a i_d + i_a M_{cd} i_c - i_d L_a i_q)
+    \label{eq:Eq6.91}
+\end{align}
+
+The machine coils are connected as Fig. 6.20(b), and $v_q = 0$. Defining $i = -i_d = i_c$ and $v = (v_d - v_c)$, (6.90) and (6.91) may be written
+\begin{multline}
+    \begin{bmatrix}
+        v_f \\ v \\ 0
+    \end{bmatrix}
+    =
+    \left[
+    \begin{matrix}
+        (R_f + L_f p) \\
+        (M_{af} - M_{cf} p) \\
+        \omega_r M_{af}
+    \end{matrix}
+    \right.\\
+    \left.
+    \begin{matrix}
+        (M_{cf} + M_{af}) p & 0 \\
+        [-(R_a + R_c + L_c p + L_a p) + 2 M_{cd}p] & -\omega_r L_a \\
+        \omega_r(M_{cd} - L_a) & (R_a + L_a p)
+    \end{matrix}
+    \right]
+    \begin{bmatrix}
+        i_f \\i \\i_q
+    \end{bmatrix}
+\end{multline}
+\begin{equation}
+    T_e = (\text{pole-pairs})(i_q M_{af} i_f + i_q M_{cd} i)
+    \label{eq:Eq6.93}
+\end{equation}
+Eliminating $i_q$ in (6.92),
+\begin{multline}
+    \begin{bmatrix}
+        v_f \\  v \vphantom{\bigg\{\dfrac{M^2}{R_a}\bigg\}} 
+    \end{bmatrix}
+    =
+    \left[
+        \begin{matrix}
+            (R_f + L_f p) \\ 
+            \bigg\{(M_{af} - M_{cf})p + \dfrac{\omega_r^2 L_a M_{af}}{R_a + L_a p}\bigg\}
+        \end{matrix}
+    \right . \\
+    \left .
+        \begin{matrix}
+            (M_{cf} - M_{af})p \\
+            \bigg\{\dfrac{-(R_a + R_c)}{-(L_a + L_c -2 M_{cd})p} + \dfrac{\omega_r^2 L_a (M_{cd} - L_a)}{R_a + L_a p}\bigg\}
+        \end{matrix}
+    \right]
+    \begin{bmatrix}
+        i_f \\ i \vphantom{\bigg\{\dfrac{M^2}{R_a}\bigg\}} 
+    \end{bmatrix}
+\end{multline}
+
+These equations, together with the torque equation, may be used to analyse a machine with any degree of compensation.
+
+\subsection{Fully compensated metadyne generator} Of particular interest is the 100 per cent compensated or \textit{full compensated} machine which the compensating winding m.m.f.\ and the $d$-axis armature m.m.f.\ are equal and opposite. This machine has a high ratio of output voltage and power to field (control) winding voltage and power. Employed in control schemes as an amplifying device it is often called a \textit{rotating amplifier} or \textit{amplidyne}.
+
+To simplify the analysis, leakage flux is neglected between the armature and compensating windings,
+\begin{flalign*}
+    \text{i.e.,} && L_a & = L_c = M_{cd}&& \\
+    \text{and} && M_{af} & = M_{cf}&&
+\end{flalign*}
+Substituting in (6.94)
+\begin{equation}
+    \begin{bmatrix}
+        v_f \\[1ex] v \vphantom{\dfrac{M^2}{R_a}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        (R_f + L_f p) & 0 \\[1ex]
+        \dfrac{\omega_r^2 L_a M_{af}}{(R_a + L_a p)} & -(R_a + R_c)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_f \\[1ex] i\vphantom{\dfrac{M^2}{R_a}}
+    \end{bmatrix}
+    \label{}
+\end{equation}
+
+\subsubsection{\textit{Steady-state solution}} With all $p$ terms equal to zero the voltage expression is
+\begin{equation}
+    V = -(R_a + R_c)I + \dfrac{(\omega_r^2 L_a M_{af}) I_f}{R_a}
+    \label{eq:Eq6.96}
+\end{equation}
+
+A large gain for$V/I_f$ is achieved, especially at high speed.
+
+\subsubsection{\textit{Transient operation}} Consider a machine operating with a constant load connected to its output terminals. Assuming an inductive load of ($R_L + L_L p$), the voltage $v$ is equal to $(R_L + L_L p)i$.
+
+Substituting in (6.95),
+\begin{equation}
+    \begin{bmatrix}
+        v_f \\ (R_L + L_L p)i
+    \end{bmatrix}
+    =
+    [Z(p)]
+    \begin{bmatrix}
+        i_f \\ i
+    \end{bmatrix}
+    \label{eq:Eq6.97}
+\end{equation}
+Defining $(R_a + R_c + R_L) + L_L = (R + Lp)$ and substituting in (6.97),
+\begin{equation}
+    \begin{bmatrix}
+        v_f \\[1ex] 0 \vphantom{\dfrac{M^2}{R_a}}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        (R_f + L_f p) & 0 \\[1ex]
+        \dfrac{\omega_r^2 L_a M_{af}}{(R_a + L_a p)} & -(R_a + Lp)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_f \\[1ex] i\vphantom{\dfrac{M^2}{R_a}}
+    \end{bmatrix}
+    \label{eq:Eq6.98}
+\end{equation}
+Eliminating $i_f$ from (6.98),
+\begin{equation}
+    i = \bigg[ \dfrac{\omega_r^2 L_a M_{af}}{(R_a + L_a p)(R + Lp)(R_f + L_f p)}\bigg] 
+    \label{eq:Eq6.99}
+\end{equation}
+
+The output current is expressed as a time-dependent function of control voltage $v_f$ for a machine operating with a constant load impedance.
+
+The expression $\dfrac{\omega_r^2 L_a M_{af}}{(R_a + L_a p)(R + L p)(R_f + L_f p)}$ is called \textit{transfer function} for the amplidyne as it relates output and input quantities during transient operation.
+
+Equation (6.99) is applicable to a machine with either zero initial conditions, or operating with steady-state values of current and voltage on which the transient values of $i$ and $v_f$ are superimposed.
+
+A step-voltage $V_f$ applied to the field winding at $t = 0$ gives a solution for $i(t)$ of the form,
+\begin{equation}
+    i(t) = A V_f(1 - B \; e^{-t/\tau_a} - C \; e^{-t7\tau_L} - D \; e^{-t/\tau_f})
+    \label{eq:Eq6.100}
+\end{equation}
+where $A$, $B$, $C$, $D$ are constants such that $B + C + D = 1$ and $A$ represent the gain.
+\begin{align*}
+    \tau_a & = R_a / L_a = \text{armature time constant} \\
+    \tau_L & = R / L = \text{armature and load time constant} \\
+    \tau_f & = R_f / L_f = \text{field time constant}
+\end{align*}
+
+\subsection{Machine practice} A fully compensated crossfield machine requires only a small control (field) current. Unfortunately, hysteresis in the magnetic circuit of the machine affects the incremental gain and causes a further lag or phase-shift between the input and output signals. This error may be reduced by a demagnetizing winding energized with a.c. The cyclic variation of flux in the magnetic circuit of the machine reduces the hysteresis effect. The demagnetizing winding
+consists of balanced coils on each polar projection which contribute zero net flux along the direct and quadrature axes. Figure 6.21 shows a typical machine with compensating, demagnetizing, interpole, and field windings, and the response of a machine with and without a demagnetizing winding is given in Fig. 6.22.
+
+Further features of crossfield machines used in control schemes are
+\begin{enumerate}[label= (\alph*)]
+    \item laminated structures to reduce iron losses and improve machine response and,
+    \item the inclusion of more than one control winding to facilitate the comparison of several input signals.
+\end{enumerate}
+
+\chapter{Three-phase winding transformations}
+The main purpose of this chapter is it show that stationary and rotating three-phase windings may be represented as an equivalent part of the $d$-$q$ axis `primitive machine' coil structure. With this achieved, $[L]$ and $[G]$ matrices may be formed in accordance with Section 5.5 to provide characteristic voltage and torque equations for three-phase a.c.\ machines and polyphase a.c.\ machines in general.
+
+In forming  a $d$-$q$ axis equivalent, called a winding transformation, the necessary condition is that the space distributed m.m.f.\ for the original three-phase (abc) winding and its transform shall be identical at all instants in time. To establish equivalence of m.m.f.s it is first assumed that the phase m.m.f.s of the three-phase winding are space fundamentals with crest values $F_a$, $F_b$, $F_c$ maintained at their respective phase axes. Resolving $F_a$, $F_b$ and $F_c$ along
+the $d$-$q$ axes and summing components provides the crest values, $F_d$ and $F_q$, of the two space fundamentals which in combination describe identically the resultant m.m.f.\ distribution for the three-phase winding.
+
+With m.m.f.\ equivalence established the $d$-$q$ axis m.m.f.s can be considered to originate from appropriately excited $d$-axis and $q$-axis coils, both coils being of equal turns. As the $d$-$q$ axis coil arrangement is a two-phase winding, the transformations to be established are between a stationary or rotating three-phase (abc) winding and a stationary two-phase (dq) winding.
+
+Transformation of the three-phase winding differs depending on the winding being stationary or moving, as in one case the resolution angles are time invariant and in the other case time dependent. The method adopted in forming both transformations is to first establish a transformation between a three-phase (abc) and two-phase ($\alpha \beta$) winding where the phase separation between the $\alpha \beta$ axes and abc axes is maintained constant irrespective of winding rotation. With
+the three-phase winding stationary, the $\alpha \beta$ and $dq$ axes are assumed coincident but with rotation a second transformation is performed between the rotating two-phase ($\alpha \beta$) and stationary ($dq$) windings.
+
+Previous discussion has been solely concerned with the equivalence of m.m.f.s. It must be recognized, however, that to write the characteristic torque and voltage equation in terms of $dq$ axis quantities, transformations are required for such quantities as voltage, current, inductance, etc. These transformations are developed in Sections 7.2 and 7.3 with a description, where possible, of their physical significance.
 
 \end{document}
