@@ -7,6 +7,7 @@
 \usepackage{tabto}
 \usepackage{tikz}
 \usepackage{mathptmx}
+\usepackage{tabularx}
 
 \areaset{11.5cm}{19.75cm}
 \setcounter{secnumdepth}{3}
@@ -1643,5 +1644,62 @@ For an armature circuit resistance $R_m$,, which includes starting resistance, t
 \subsubsection{\textit{Number of resistor section}} A relationship may be determined for the required number of starter sections. Let there be $(n - 1)$ sections, $n$ contact studs and a total starter resistance $R_n$ including armature resistance $R_a$, see Fig. 6.14. For each stud position armature current limits of $I_{a(\max)}$ and $I_{a(\min)}$ are assumed.
 
 The following tabulated results are obtained using these limits in (6.60).
+
+\begin{tabular}{llll}
+    \begin{tabular}{c}
+        Time \\ $t$ \\
+    \end{tabular} &
+    \begin{tabular}{c}
+        Contact \\ stud \\
+    \end{tabular} &
+    \begin{tabular}{c}
+        Speed \\ $\omega_r$ \\
+    \end{tabular} &
+        Supply Voltage $V$ \\
+    0 &  $n$ & 0 & $I_{a(\max)} R_n$ \\
+    $t_1$ & $n$ & $\omega_{m1}$ & $I_{a(\min)} R_n + \omega_{r1} M_{af} I_f$\\
+    $t_1$ & $(n - 1)$ & $\omega_{m1}$ & $I_{a(\max)} R_{n-1} + \omega_{r1} M_{af} I_f$\\
+    $t_2$ & $(n - 1)$ & $\omega_{m2}$ & $I_{a(\min)} R_{n-1} + \omega_{r2} M_{af} I_f$\\
+    $t_2$ & $(n - 2)$ & $\omega_{m2}$ & $I_{a(\max)} R_{n-2} + \omega_{r1} M_{af} I_f$\\
+    \vdots & \vdots & \vdots & \vdots \\
+    $t_{n-1}$ & 2 & $\omega_{m(n-1)}$ & $I_{a(\min)} R_2 + \omega_{r(n-1)} M_{af} I_f$\\
+    $t_{n-1}$ & 1 & $\omega_{m(n-1)}$ & $I_{a(\max)} R_a + \omega_{r(n-1)} M_{af} I_f$\\
+\end{tabular}
+
+Eliminating rotational voltage terms from pairs of equations of common angular speed,
+\begin{equation}
+    \dfrac{I_{a(\max)}}{I_{a(\min)}} = \dfrac{R_n}{R_{n-1}} = \dfrac{R_{n-1}}{R_{n-2}} = \cdots = \dfrac{R_2}{R_a}
+    \label{}
+\end{equation}
+
+Multiplying all resistance ratios,
+\begin{equation}
+    {\bigg[\dfrac{I_{a(\max)}}{I_{a(\min)}}\bigg]}^{n - 1} = \dfrac{R_n}{R_a}
+    \label{}
+\end{equation}
+
+Equations (6.62) and (6.63) enable the number of sections and section resistance values to be determined for prescribed limiting values of armature current.
+
+\subsubsection{\textit{Run-up speed characteristic}} The speed change is exponential for the assumptions listed in Section 6.4.1.
+From (6.58),
+\begin{equation*}
+    \omega_m = \omega_{m (\max)}(1 - e^{-t / \tau_m})
+\end{equation*}
+
+The maximum speed is independent of the armature resistance, as mechanical damping is neglected.
+
+The values of $\tau_m$, given in (6.59), depends on the armature circuit resistance which now includes starter resistance. \par \smallskip
+\begin{tabularx}{\textwidth}{l@{\enskip}ll}
+    Let & $\tau_{m(n)}$ & be the time constant with $R_n$ in circuit \\
+    & $\tau_{m(n-1)}$ & be the time constant with $R_{n-1}$ in circuit \\
+    & $\tau_{m}$ & be the time constant with $R_{a}$ in circuit. \\
+\end{tabularx}
+
+Considering the times $t_1$, $t_2$, etc., defined previously
+     %\intertext{$0<t<t_1, R_n$ in circuit,}
+\begin{flalign}
+    \omega_m (t) & = \omega_{m(\max)}[1 - e^{-t / \tau_{m(n)}] \\
+    \omega_{m(\max)} & = 
+\end{flalign}
 
 \end{document}
