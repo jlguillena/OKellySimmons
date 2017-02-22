@@ -2101,7 +2101,7 @@ Further features of crossfield machines used in control schemes are
 \end{enumerate}
 
 \chapter{Three-phase winding transformations}
-The main purpose of this chapter is it show that stationary and rotating three-phase windings may be represented as an equivalent part of the $d$-$q$ axis `primitive machine' coil structure. With this achieved, $[L]$ and $[G]$ matrices may be formed in accordance with Section 5.5 to provide characteristic voltage and torque equations for three-phase a.c.\ machines and polyphase a.c.\ machines in general.
+The main purpose of this chapter is to show that stationary and rotating three-phase windings may be represented as an equivalent part of the $d$-$q$ axis `primitive machine' coil structure. With this achieved, $[L]$ and $[G]$ matrices may be formed in accordance with Section 5.5 to provide characteristic voltage and torque equations for three-phase a.c.\ machines and polyphase a.c.\ machines in general.
 
 In forming  a $d$-$q$ axis equivalent, called a winding transformation, the necessary condition is that the space distributed m.m.f.\ for the original three-phase (abc) winding and its transform shall be identical at all instants in time. To establish equivalence of m.m.f.s it is first assumed that the phase m.m.f.s of the three-phase winding are space fundamentals with crest values $F_a$, $F_b$, $F_c$ maintained at their respective phase axes. Resolving $F_a$, $F_b$ and $F_c$ along
 the $d$-$q$ axes and summing components provides the crest values, $F_d$ and $F_q$, of the two space fundamentals which in combination describe identically the resultant m.m.f.\ distribution for the three-phase winding.
@@ -2113,4 +2113,40 @@ the three-phase winding stationary, the $\alpha \beta$ and $dq$ axes are assumed
 
 Previous discussion has been solely concerned with the equivalence of m.m.f.s. It must be recognized, however, that to write the characteristic torque and voltage equation in terms of $dq$ axis quantities, transformations are required for such quantities as voltage, current, inductance, etc. These transformations are developed in Sections 7.2 and 7.3 with a description, where possible, of their physical significance.
 
+\section{Transformation between three-phase {\mdseries(abc)} and two-phase \textrm{($\alpha \beta \gamma)$} windings}
+
+Referring to Fig. 7.1, a symmetrical, two pole, three-phase winding, supported by a cylindrical magnetic structure, is represented in the conventional manner as three concentrated coils each of $N_1$ turns and mutually displaced $120^{\circ}$. Orthogonal $\alpha \beta$ axes, fixed to the surface of the magnetic structure, are located in an arbitrary position with coincident axes for phases $a$ and $\alpha$.
+
+Resolving instantaneous phase m.m.f.s along the $\alpha \beta$ axes 
+\begin{align}
+    F_{\alpha} & = F_a + F_b \cos 120^{\circ} + F_c \cos (-120^{\circ}) \nonumber \\
+    & = F_a + \dfrac{1}{2} F_b + \dfrac{1}{2} F_c \\
+    F_{\beta} & = F_b \sin 120^{\circ} + F_c \sin (-120^{\circ}) \nonumber \\
+    & = \dfrac{\sqrt{3}}{2} F_b - \dfrac{\sqrt{3}}{2} F_c
+    \label{eq:Eq7.2}
+\end{align}
+(7.1) and (7.2) in matrix form 
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta} 
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & - \dfrac{1}{2} & -\dfrac{1}{2} \\[2ex]
+        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_a \\ F_b \\ F_c 
+    \end{bmatrix}
+    \label{}
+\end{equation}
+or
+\begin{equation}
+    [F_{\alpha \beta}] = [M][F_{abc}]
+    \label{}
+\end{equation}
+
+In its existing form (7.4) cannot be used directly to derive the inverse relationship, three-phase m.m.f.s from two-phase m.m.f.s, as the non-square form of $[M]$ precludes inversion. To make inversion possible, a square $3 \times 3$ matrix must be found to replaces $[M]$ without giving rise to an additional contribution to either $F_{\alpha}$ or $F_{\beta}$ as they are defined precisely by (7.3).
+
+The required modification derives from Fig. 7.2 where a unique set of instantaneous phase m.m.f.s, $F_a'$, $F_b'$, $F_c'$ are individually increased in magnitude by the same amount $F$ to provide algebraic resultants $F_a$, $F_b$ and $F_c$. Assuming $F$ to have an infinite range of values implies infinite sets for $F_a$, $F_b$, $F_c$.
 \end{document}
