@@ -8,6 +8,7 @@
 \usepackage{tikz}
 \usepackage{mathptmx}
 \usepackage{tabularx}
+\usepackage{mdwmath}
 
 \areaset{11.5cm}{19.75cm}
 \setcounter{secnumdepth}{3}
@@ -2138,15 +2139,263 @@ Resolving instantaneous phase m.m.f.s along the $\alpha \beta$ axes
     \begin{bmatrix}
         F_a \\ F_b \\ F_c 
     \end{bmatrix}
-    \label{}
+    \label{eq:Eq7.3}
 \end{equation}
 or
 \begin{equation}
     [F_{\alpha \beta}] = [M][F_{abc}]
-    \label{}
+    \label{eq:Eq7.4}
 \end{equation}
 
 In its existing form (7.4) cannot be used directly to derive the inverse relationship, three-phase m.m.f.s from two-phase m.m.f.s, as the non-square form of $[M]$ precludes inversion. To make inversion possible, a square $3 \times 3$ matrix must be found to replaces $[M]$ without giving rise to an additional contribution to either $F_{\alpha}$ or $F_{\beta}$ as they are defined precisely by (7.3).
 
 The required modification derives from Fig. 7.2 where a unique set of instantaneous phase m.m.f.s, $F_a'$, $F_b'$, $F_c'$ are individually increased in magnitude by the same amount $F$ to provide algebraic resultants $F_a$, $F_b$ and $F_c$. Assuming $F$ to have an infinite range of values implies infinite sets for $F_a$, $F_b$, $F_c$.
+
+From (7.4)
+\begin{equation}
+    \underset{\substack{\text{unique}\\ \text{set}}}
+    {\begin{bmatrix}
+        F_{\alpha}' \\ F_{\beta}'
+    \end{bmatrix}}
+    =
+    [M]
+    \underset{\substack{\text{unique} \\ \text{set}}}
+    {\begin{bmatrix}
+        F_a' \\ F_b' \\ F_c'
+    \end{bmatrix}}
+    \label{eq:Eq7.5}
+\end{equation}
+
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta}
+    \end{bmatrix}
+    =
+    [M]
+    \underset{\substack{\text{infinite} \\ \text{sets}}}
+    {\begin{bmatrix}
+        F_a \\ F_b \\ F_c
+    \end{bmatrix}}
+    \label{eq:Eq7.6}
+\end{equation}
+
+The question of $\displaystyle \begin{bmatrix} F_{\alpha} \\ F_{\beta} \end{bmatrix}$ being a unique set or infinite sets is established later.
+\begin{equation}
+    \begin{bmatrix}
+        F_a' \\F_b' \\ F_c'
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        F_a \\ F_b \\ F_c
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+        F \\ F \\ F
+    \end{bmatrix}
+    \label{eq:Eq7.7}
+\end{equation}
+substituting in (7.5)
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta}
+    \end{bmatrix}
+    =
+    [M]
+    \begin{bmatrix}
+        F_a \\ F_b \\ F_c 
+    \end{bmatrix}
+    -
+    [M]
+    \begin{bmatrix}
+        F \\ F \\ F
+    \end{bmatrix}
+    \label{eq:Eq7.8}
+\end{equation}
+$[M] \displaystyle \begin{bmatrix} F \\ F \\ F \end{bmatrix}$ is zero, as three equal m.m.f.s mutually displaced $120^{\circ}$ sum vectorially to zero. \\
+Comparing (7.6) and (7.8),
+\begin{equation}
+    \underset{\substack{\text{unique} \\ \text{set}}}
+    {\begin{bmatrix}
+        F_{\alpha} \\ F_{\beta}
+    \end{bmatrix}}
+    =
+    \underset{\substack{\text{unique} \\ \text{set}}}
+    {\begin{bmatrix}
+        F_{\alpha}' \\ F_{\beta}'
+    \end{bmatrix}}
+    = [M]
+    \underset{\substack{\text{infinite} \\ \text{set}}}
+    {\begin{bmatrix}
+        F_a \\ F_b \\ F_c
+    \end{bmatrix}}
+    -
+    \underbrace
+    {[M]
+    \begin{bmatrix}
+        F \\ F \\ F
+    \end{bmatrix}}_{0}
+    \label{eq:Eq7.9}
+\end{equation}
+Thus, for the described original conditions infinite sets of three-phase m.m.f.s transform to a unique of two-phase m.m.f.s.
+
+Re-arranging (7.9) and adding a third row of equal numerical constants $m$ to the matrix $[M]$
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta} \\ 0
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        [M] \vphantom
+        {\begin{matrix}
+                F \\ F
+            \end{matrix}} \\
+        \begin{matrix}
+            m & m & m
+        \end{matrix}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F \\ F \\ F
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        [M] \vphantom
+        {\begin{matrix}
+                F \\ F
+            \end{matrix}} \\
+        \begin{matrix}
+            m & m & m
+        \end{matrix}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_a \\ F_b \\ F_c
+    \end{bmatrix}
+    \label{eq:Eq7.10}
+\end{equation}
+
+In (7.10), $F$ which was originally arbitrary is now dependent on the particular set of values chosen for $F_a$, $F_b$ and $F_c$. For a unique set of $F_{\alpha}$, $F_{\beta}$ and $F$ the values of $F_a$, $F_b$ and $F_c$ are also unique and vice versa.
+
+From (7.10)
+\begin{equation}
+    F = \dfrac{1}{3}(F_a + F_b + F_c)
+    \label{eq:Eq7.11}
+\end{equation}
+where $(F_a + F_b + F_c)$ is the algebraic sum of instantaneous m.m.f.s.
+
+Writing in (7.10)
+\begin{equation*}
+    [A] = 
+    \begin{bmatrix}
+        [M] \\
+        \begin{matrix}
+            m & m & m
+        \end{matrix}
+    \end{bmatrix}
+\end{equation*}
+and
+\begin{equation*}
+    F_{\gamma} = 3 m F
+\end{equation*}
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+    \end{bmatrix}
+    = [A]
+    \begin{bmatrix}
+        F_a \\ F_b \\ F_c
+    \end{bmatrix}
+    \label{eq:Eq7.12}
+\end{equation}
+Finally
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_{\gamma} 
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+        m & m & m
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_a \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_b \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_c 
+    \end{bmatrix}
+    \label{eq:Eq7.13}
+\end{equation}
+Inverting
+\begin{equation}
+    \begin{bmatrix}
+        F_a \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_b \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_c \vphantom{\dfrac{1}{2}} \\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1  & 0 & \dfrac{1}{2m} \\[2ex]
+        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m} \\[2ex]
+        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
+        F_{\gamma} \vphantom{\dfrac{1}{2}} 
+    \end{bmatrix}
+    \label{eq:Eq7.14}
+\end{equation}
+(7.13) and (7.14) in shortened form
+\begin{align}
+    [F_{\alpha \beta \gamma}] & =  [A][F_{abc}]\\
+    [F_{abc}] & = [A^{-1}] [F_{\alpha \beta \gamma}]
+    \label{eq:Eq7.16}
+\end{align}
+Re-writing $[A]$ and $[A^{-1}]$ in the form shown with arbitrary constant $m = 1 \sqrt{2}$ converts the process of inversion to the simple one of transposition:
+\begin{align}
+    [A] & = \sqrt*{\Big(\dfrac{3}{2}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
+    \begin{bmatrix}
+        1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix}
+    =
+    \sqrt*{\Big(\dfrac{3}{2}\Big)}[B] \\
+    [A^{-1}] & = \sqrt*{\Big(\dfrac{2}{3}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
+    \begin{bmatrix}
+        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}\\
+    \end{bmatrix}
+    =
+    \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t] 
+    \label{eq:Eq3.18}
+\end{align}
+where
+\begin{equation}
+    [B^{-1}] = [B_t]
+    \label{eq:Eq7.19}
+\end{equation}
+thus
+\begin{align}
+    [F_{\alpha \beta \gamma}]  & = \sqrt*{\Big(\dfrac{3}{2}\Big)}  [B] [F_{abc}] \\
+    [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)} [F_{\alpha \beta \gamma}]
+    \label{eq:Eq7.21}
+\end{align}
+
+With the $\alpha$-axis located a fixed angle other than zero from the axis of phase $a$ the numerical coefficients for $[B]$ and $[B_t]$ would be different without invalidating (7.20) and (7.21).
+
+From (7.13) with $m = 1 / \sqrt*{2}$
+E\begin{equation}
+    F_{\gamma} = \dfrac{1}{\sqrt*{2}}(F_a + F_b + F_c)
+    \label{eq:Eq7.22}
+\end{equation}
+For balanced conditions
+\begin{equation*}
+    F_a + F_b + F_c = 0 \quad \text{and} \quad F_{\gamma} = 0
+\end{equation*}
+for unbalanced conditions
+\begin{equation*}
+    F_a + F_b + F_c \neq 0 \quad \text{and} \quad F_{\gamma} \neq 0
+\end{equation*}
 \end{document}
