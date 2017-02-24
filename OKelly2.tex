@@ -2380,7 +2380,7 @@ thus
 \begin{align}
     [F_{\alpha \beta \gamma}]  & = \sqrt*{\Big(\dfrac{3}{2}\Big)}  [B] [F_{abc}] \\
     [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)} [F_{\alpha \beta \gamma}]
-    \label{eq:Eq7.21}
+    \label{eq:Eq7.21}:
 \end{align}
 
 With the $\alpha$-axis located a fixed angle other than zero from the axis of phase $a$ the numerical coefficients for $[B]$ and $[B_t]$ would be different without invalidating (7.20) and (7.21).
@@ -2694,5 +2694,400 @@ Summarizing the derived relationships
     \end{aligned}
     \label{eq:Eq7.55}
 \end{equation}
+
+\section{Transformation between three-phase ($abc$) and two-phase ($d q \gamma$) windings}
+
+The three-phase $abc$ winding and its supporting cylindrical structure, Fig. 7.1, is now assumed to rotate clockwise with angular velocity $\omega_r$ elec rad/s. Taking space-stationary, orthogonal $dq$ axes as reference, the instantaneous location of the $\alpha \beta$ axes is defined by the angle $\theta_r$, see Fig. 7.4. At $t = 0$ sec, the $d$-, $\alpha$- and phase $a$-axes are coincident.
+
+Resolving $F_{\alpha}$ and $F_{\beta}$ along the $d$-$q$ axes and summing components,
+\begin{equation}
+    \begin{aligned}
+        F_d & = F_{d \beta} + F_{d \alpha} = F_{\beta} \sin \theta_r + F_{\alpha} \cos \theta_r\\
+        F_q & = F_{q \beta} + F_{q \alpha} = F_{\beta} \cos \theta_r - F_{\alpha} \sin \theta_r
+    \end{aligned}
+    \label{eq:Eq7.56}
+\end{equation}
+\begin{equation}
+    \begin{bmatrix}
+        F_d \\ F_q
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \cos \theta_r & \sin \theta_r \\
+        -\sin \theta_r & \cos \theta_r
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta}
+    \end{bmatrix}
+    \label{eq:Eq7.57}
+\end{equation}
+
+To obtain the direct transformation between  a rotating three-phase ($abc$) winding and a stationary ($dq\gamma$) winding it is necessary to modify (7.57) to permit its combination with (7.20). This is achieved by including $F_{\gamma}$ as shown, which satisfies as bebore zero contribution to the common space resultant of $F_{\alpha}$, $F_{\beta}$ and $F_d$, $F_q$
+\begin{equation}
+    \begin{bmatrix}
+        F_d \\ F_q \\ F_{\gamma}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \cos \theta_r & \sin \theta_r & 0 \\
+        -\sin \theta_r & \cos \theta_r & 0 \\
+        0 & 0 &1
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+    \end{bmatrix}
+    \label{eq:Eq7.58}
+\end{equation}
+Inverse relationship
+\begin{equation}
+    \begin{bmatrix}
+        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \cos \theta_r & -\sin \theta_r & 0 \\
+        \sin \theta_r & \cos \theta_r & 0 \\
+        0 & 0 &1
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_d \\ F_q \\ F_{\gamma}
+    \end{bmatrix}
+    \label{eq:Eq7.59}
+\end{equation}
+\begin{align}
+    [F_{d q \gamma}] & = [S] [F_{\alpha \beta \gamma}] \\
+    [F_{\alpha \beta \gamma}] & = [S_t] [F_{d q \gamma}] 
+    \label{eq:Eq7.61}
+\end{align}
+Combining (7.60) and (7.61) respectively with (7.20) and (7.21)
+\begin{align}
+    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [S] [B] [F_{abc}]\\ 
+    [F_{\alpha \beta \gamma}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [B_t] [S_t] [F_{d q \gamma}]
+    \label{eq:Eq7.63}
+\end{align}
+\begin{multline}
+    [C] = [S] [B] \\
+    =  \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:7.64}
+\end{multline}
+\begin{multline}
+    [C_t] = [S_t] [B_t] \\
+    =  \sqrt*{\Big( \dfrac{3}{2} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:Eq.7.65}
+\end{multline}
+\begin{align}
+    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] \\
+    [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma }]
+    \label{eq:Eq7.67}
+\end{align}
+
+Comparing (7.20) and (7.21) with (7.66) and (7.67) shows the m.m.f.\ transformations to be similar. The $\alpha \beta \gamma$ and $d q \gamma$ windings are considered to have equal turns per phase $N_2$. Maintaining as before $N_1/N_2 = \sqrt*{(2/3)}$, where $N_1$ is the turns per phase for the $abc$ winding, and assuming the three systems are power invariant the transformation between $abc$ and $d q \gamma$ quantities can be written directly from (7.55) with $[C]$ and $[C_t]$ replacing
+$[B]$ and $[B_t]$ respectively.
+It can now be shown that the $dq\gamma$ voltages can be expressed in terms of $dq\gamma$ flux-linkages. Consequently, by means of the $dq\gamma$ to $abc$ transformation of voltages, the $abc$ voltages are also related to $dq\gamma$ flux-linkages.
+
+Commencing with the general relationship
+\begin{align}
+    [v] & = p[\varPsi] \nonumber \\
+    [v_{abc}] & = p [\varPsi_{abc}]
+    \label{eq:Eq7.68}
+\end{align}
+As the phase fluxes, which have been shown to comprise self- and mutual fluxes, do not move relative to the winding the three-phase voltages have no rotational components and are self- and mutually induced.
+\begin{equation*}
+    [\varPsi_{abc}] = [C_t] [\varPsi_{dq\gamma}]
+\end{equation*}
+
+From (7.68)
+\begin{equation}
+    [\varPsi_{abc}] = p{[C_t] [\varPsi_{dq\gamma}]}
+    \label{eq:Eq7.69}
+\end{equation}
+Matrix $[C_t]$ is seen by (7.65) to be time dependent as $\theta_r$ is a function of time. The expansion of (7.69) involves differentiation of a product
+\begin{equation*}
+    [v_{abc}] = {p[C_t]}[\varPsi_{d q \gamma}] + [C_t]{p[\varPsi_{dq\gamma}]}
+\end{equation*}
+\begin{multline}
+    [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)} 
+    \left\{
+        \begin{bmatrix}
+            -\sin \theta_r & -\cos \theta_r & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+            -\sin (\theta_r - 120^{\circ}) & -\cos (\theta_r - 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+            -\sin (\theta_r + 120^{\circ}) & -\cos (\theta_r + 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}
+        \end{bmatrix}
+        \begin{bmatrix}
+            \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] 
+            \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+            \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+        \end{bmatrix}
+        \omega_r
+        \right.
+        \\
+        +
+        \left.
+        \begin{bmatrix}
+            \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r - 120^{\circ}) & -\sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r + 120^{\circ}) & -\sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \begin{bmatrix}
+            p \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] p \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex] p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+        \end{bmatrix}
+    \right\}
+    \label{}
+\end{multline}
+where $p_r^{\theta} = \omega_r$.
+
+Expanding and rearranging (7.70)
+\begin{equation*}
+    [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r - 120^{\circ}) & -\sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r + 120^{\circ}) & -\sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        p \varPsi_d - \omega_r \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
+        p \varPsi_q + \omega_r \varPsi_d\vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
+        p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+    \end{bmatrix}
+\end{equation*}
+\begin{equation}
+    [v_{abc}] = [C_t] 
+    \left\{ p
+        \begin{bmatrix}
+            \varPsi_d \\ \varPsi_q \\ \varPsi_{\gamma}
+        \end{bmatrix}
+        +
+        \omega_r
+        \begin{bmatrix}
+            - \varPsi_q \\ \varPsi_d \\ 0 
+        \end{bmatrix}
+    \right\} 
+    = [C_t]
+    \begin{bmatrix}
+        v_d \\ v_q \\v_{\gamma}
+    \end{bmatrix}
+    \label{eq:Eq7.71}
+\end{equation}
+
+It is seen from (7.71) the $d$-axis and $q$-axis coils are pseudo-stationary as they both possess, in addition to an induced voltage, a rotational voltage. In both cases, the rotational voltage results from a flux in space quadrature to the coil axis. The sign of the rotational voltage components for $v_d$ and $v_q$ accords with the method described in Section 5.5.
+\begin{align*}
+    G_{dq}^{rr} & = - M_{qq}^{rr} \sin (+ \pi/2) = -L_q \\
+    v_{d(\text{rot})} & = \omega_r G_{dq}^{rr} i_q = \omega_r L_q i_q\\
+    G_{qd}^{rr} & = - M_{d}^{rr} \sin (- \pi/2) = L_d \\
+    v_{q(\text{rot})} & = \omega_r G_{qd}^{rr} i_d = \omega_r L_d i_d\\
+\end{align*}
+
+The $\gamma$-axis coil has no rotational voltage as the axis of the coil is normal to the space-frame containing the $abc$ and $dq$ coils.
+
+The induced voltage components of (7.71) can also be written in terms of coil inductances,
+\begin{equation}
+    \varPsi_d = L_d i_d \qquad \varPsi_q = L_q i_q \qquad \varPsi_{\gamma} = L_{\gamma} i_{\gamma}
+    \label{eq:Eq7.72}
+\end{equation}
+
+With the stationary $dq\gamma$-axes the self-inductance coefficients $L_d$, $L_q$ and $L_{\gamma}$ are time invariant. Substituting (7.72) in (7.71),
+\begin{equation}
+    [v_{abc}] = [C_t]
+    \left\{ 
+        \begin{bmatrix}
+            L_d & 0 & 0 \\
+            0 & L_q & 0 \\
+            0 & 0 & L_{\gamma}
+        \end{bmatrix}
+        p + \omega_r 
+        \begin{bmatrix}
+            0 & -L_q & 0 \\
+            L_d & 0  & 0 \\
+            0 & 0 & 0
+        \end{bmatrix}
+    \right\}
+    \begin{bmatrix}
+        i_d \\ i_q \\ i_{\gamma}
+    \end{bmatrix}
+    \label{eq:Eq7.73}
+\end{equation}
+where
+\begin{equation}
+    \begin{aligned}
+        v_d & = L_d p i_d - \omega_r L_q i_q && = p \varPsi_d - \omega_r \varPsi_q \\
+        v_q & = L_q p i_q + \omega_r L_d i_d && = p \varPsi_q + \omega_r \varPsi_d \\
+        v_{\gamma} & = L_{\gamma} p i_{\gamma} && = p \varPsi_{\gamma}
+    \end{aligned}
+    \label{eq:Eq7.74}
+\end{equation}
+Summarizing the transformation relationship between the stationary two-phase ($d q \gamma$) and rotating three-phase ($abc$) systems,
+\begin{align*}
+    [C] & = 
+    \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix} \\
+    [C^{-1}] & = [C_t] =
+    \sqrt*{\Big( \dfrac{2}{3} \Big)} %%%Duda
+    \begin{bmatrix}
+        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+        \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+\end{align*}
+\begin{equation}
+\begin{aligned}\relax
+    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] & [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma}] \\
+    [i_{d q \gamma}] & = [C] [i_{abc}] & [i_{abc}] & =[C_t] [i_{d q \gamma}] \\
+    [\varPsi_{dq\gamma}] & = [C] [\varPsi_{abc}] & [\varPsi_{abc}] & = [C_t] [\varPsi_{d q \gamma}] \\
+    [v_{dq\gamma}] & = [C] [v_{abc}]             & [v_{abc}] & = [C_t] [v_{d q \gamma}] \\
+    [L_{dq\gamma}] & = [C] [L_{abc}] [C_t]       & [L_{abc}] & = [C_t] [L_{d q \gamma}] [C] \\
+    [Z_{dq\gamma}] & = [C] [Z_{abc}] [C_t]       & [Z_{abc}] & = [C_t] [Z_{d q \gamma}] [C] 
+\end{aligned}
+\end{equation}
+
+\section{The polyphase magnetic field}
+For a clear understanding of the operation of synchronous and asynchronous polyphase machines it is necessary to first study the magnetic properties of symmetrical polyphase windings.
+
+It can be shown that polyphase windings of all possible phase number can be appropriately excited to provide similar space fundamental m.m.f.\ distributions. Arbitrarily choosing the symmetrical three-phase winding, Fig. 7.1, consider the phases are supplied with balanced three-phase voltages and currents of supply frequency $F = \omega /(2\pi)$.
+
+Before proceeding with the analysis, it is necessary to make reference to the time sequence of phase currents and the physical arrangement of phases, as both influence the character of the resultant space distributed m.m.f. Considering time sequence first, Figs. 7.5(a) and 7.5(b) show two balanced systems of three-phase currents with different time sequence of phase currents. With increasing time the order in which the phase current maxima arise are $a \rightarrow b \rightarrow c$ for \textit{positive
+sequence}  and $a \rightarrow c \rightarrow b$ for \textit{negative sequence}.
+
+Assuming for positive and negative sequence current that the current of phase $a$ is a maximum at time $t = -K/\omega$.\\
+Positive sequence
+\begin{equation}
+    [i_{abc}] = I_m
+    \begin{bmatrix}
+        \cos (\omega t + K)\\
+        \cos (\omega t + K - 120^{\circ}) \\
+        \cos (\omega t + K + 120^{\circ}) \\
+    \end{bmatrix}
+    =
+    I_m[\overset{+}{D}]
+    \label{eq:Eq7.76}
+\end{equation}
+Negative sequence
+\begin{equation}
+    [i_{abc}] = I_m
+    \begin{bmatrix}
+        \cos (\omega t + K)\\
+        \cos (\omega t + K + 120^{\circ}) \\
+        \cos (\omega t + K - 120^{\circ}) \\
+    \end{bmatrix}
+    =
+    I_m[\overset{-}{D}]
+    \label{eq:Eq7.77}
+\end{equation}
+where $K$ is a constant time phase angle.
+
+For the general case
+\begin{equation}
+    [i_{abc}] = I_m[\overset{\pm}{D}]
+    \label{eq:Eq7.78}
+\end{equation}
+
+The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs. 7.6(a) and 7.6(b).
+Fig. 7.6(a)
+\begin{equation}
+    [\overset{+}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        1 & \cos 120^{\circ} & \cos (-120^{\circ}) \\
+        0 & \sin 120^{\circ} & \sin (-120^{\circ}) \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:Eq7.79}
+\end{equation}
+Fig 7.6(b)
+\begin{equation}
+    [\overset{-}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        1 & \cos (- 120^{\circ}) & \cos 120^{\circ} \\
+        0 & \sin (- 120^{\circ}) & \sin 120^{\circ} \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:Eq7.80}
+\end{equation}
+
+Considering positive clockwise rotation at constant angular velocity $\omega_r$ the corresponding matrix $[S]$, described in (7.58) with  $\theta_r = \omega_r t$ is,
+\begin{equation}
+    [S] = 
+    \begin{bmatrix}
+        \cos \omega_r t & \sin \omega_r t & 0 \\
+        - \sin \omega_r t  & \cos \omega_r t & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \label{eq:Eq7.81}
+\end{equation}
+Combining (7.79) and (7.80) with (7.81)
+
+For physical location of phases $\omega_r$,
+\begin{multline}
+    [\overset{+}{C}] = [S] [\overset{+}{B}] \\
+    = \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:Eq7.82}
+\end{multline}
+
+For physical location of phases $\omega_r$,  %%completar
+\begin{multline}
+    [\overset{-}{C}] = [S] [\overset{-}{B}] \\
+    = \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    \begin{bmatrix}
+        \cos \theta_r & \cos (\theta_r + 120^{\circ}) & \cos (\theta_r - 120^{\circ}) \\
+        - \sin \theta_r & - \sin (\theta_r + 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) \\
+        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+    \end{bmatrix}
+    \label{eq:Eq7.83}
+\end{multline}
+
+Consider the particular  case of physical phase layout $\omega_r$ and positive phase sequence currents. %%completar
+
+From (7.66) and  (7.76)
+\begin{align}
+    [F_{d q \gamma}] &=  \sqrt*{\Big( \dfrac{3}{2} \Big)} [\overset{+}{C}] [F_{abc}] \\
+    [F_{abc}] = I_M N_1 [\overset{+}{D}]
+    \label{eq:Eq7.85}
+\end{align}
+Thus
+\begin{equation}
+    [F_{d q \gamma}] =  \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m N_1 [\overset{+}{C}] [\overset{+}{D}]
+    \label{eq:Eq7.86}
+\end{equation}
+\begin{equation}
+    [F_{d q \gamma}] = \dfrac{3}{2} I_m N_1
+    \begin{bmatrix}
+        \cos \{(\omega_r -\omega)t - K\} \\
+        -\sin \{(\omega_r -\omega)t - K\} \\
+        0
+    \end{bmatrix}
+    \label{eq:Eq7.87}
+\end{equation}
+
+It is seen from (7.87) that $F_d$ and $F_q$ are phase separated by $90^{\circ}$ in space and time.
+
+In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig. 7.7.
+
+Contributions made by $F_d$ and $F_q$ at point \textbf{P}
+\begin{equation}
+    \begin{aligned}
+        F_d' & = F_d \cos \sigma = \dfrac{3}{2} I_m N_1 \cos \{(\omega_r - \omega)t - K\} \cos \sigma \\
+        F_q' & = F_q \cos (\sigma + 90^{\circ}) = \dfrac{3}{2} I_m N_1 \sin \{(\omega_r - \omega)t - K\} \sin \sigma
+    \end{aligned}
+    \label{eq:Eq7.88}
+\end{equation}
+
+The resultant at point \textbf{P}, being a function of time $t$ and displacement $\sigma$ is written $F(t,\sigma)$
 
 \end{document}
