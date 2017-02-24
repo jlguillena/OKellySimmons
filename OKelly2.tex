@@ -2398,4 +2398,301 @@ for unbalanced conditions
 \begin{equation*}
     F_a + F_b + F_c \neq 0 \quad \text{and} \quad F_{\gamma} \neq 0
 \end{equation*}
+
+\subsection{Current transformation} As previously stated, $F_{\alpha}$ and $F_{\beta}$ are considered to originate from an appropriately excited two-phase winding. It is assumed the $\alpha$-axis and$\beta$-axis coils are each of $N_2$ turns, and in addition, the coil producing $F_{\gamma}$ if of $N_2$ turns also. To satisfy the requirements that $F_{\gamma}$ shall make no contribution to the space resultant of $F_{\alpha}$ and $F_{\beta}$, the physical location of the
+$\gamma$-coil may be considered to be on $\gamma$-axis normal to the plane of the $\alpha \beta$ axes, see Fig. 7.3. In essence, a transformation is being from a two-dimensional $abc$ co-ordinate system to a three dimensional $\alpha \beta \gamma$ co-ordinate system.
+
+Defining currents $i_{\alpha}$, $i_{\beta}$, $i_{\gamma}$ associated respectively with $F_{\alpha}$, $F_{\beta}$, $F_{\gamma}$
+\begin{equation}
+    [F_{\alpha \beta \gamma}] = N_2 [i_{\alpha \beta \gamma}]
+    \label{eq:Eq7.23}
+\end{equation}
+
+Similarly, for the three currents and m.m.f.s associated with coils of $N_1$ turns
+\begin{equation}
+    [F_{abc}] = N_1 [i_{abc}]
+    \label{eq:Eq7.24}
+\end{equation}
+
+Substituting (7.23) and (7.24)  in (7.20)
+\begin{align}
+    N_2[i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} [B] [i_{abc}] N_1 \nonumber \\
+    [i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} \dfrac{N_1}{N_2} [B] [i_{abc}]
+    \label{eq:Eq7.25}
+\end{align}
+
+Complete freedom of choice exists for $N_1 / N_2$ since $N_2$ can assume any value provided appropriate adjustments are made to $i_{\alpha}$, $i_{\beta}$ and $i_{\gamma}$ to satisfy $F_{\alpha}$, $F_{\beta}$ and $F_{\gamma}$.
+
+To simplify subsequently derived transformations $N_1 / N_2$ is chosen as $\sqrt*{2/3}$.
+\begin{equation}
+    [i_{\alpha \beta \gamma}] = [B][i_{abc}]
+    \label{eq:Eq7.26}
+\end{equation}
+and
+\begin{equation}
+    [i_{abc}] = [B_t] [i_{\alpha \beta \gamma}]
+    \label{eq:Eq7.27}
+\end{equation}
+
+\subsection{Voltage transformations} The power relationship determined  for the primitive machine apply equally for the original machine. This condition is satisfied when the transformation relationships employed, define a primitive machine which is power invariant with the original machine. Two machines or networks are called power invariant when the sum of their individual instantaneous power are equal and the transformations describing two such systems are called power
+invariant transformations.
+
+With $abc$ to $\alpha \beta \gamma$ transformations of current established, the corresponding transformations of voltage are determined from power invariance,
+\begin{equation}
+    P = [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][i_{\alpha \beta \gamma}]
+    \label{eq:Eq7.28}
+\end{equation}
+
+From (7.26)
+\begin{equation*}
+    [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][B][i_{\alpha \beta \gamma}]
+    \label{}
+\end{equation*}
+thus
+\begin{equation}
+    [v_{\alpha \beta \gamma}] = [B] [v_{abc}]
+    \label{eq:Eq7.29}
+\end{equation}
+and
+\begin{equation}
+    [v_{abc}] = [B_t] [v_{\alpha \beta \gamma}]
+    \label{eq:Eq7.30}
+\end{equation}
+
+\subsection{Impedance and inductance transformations} Defining system impedances as $Z_{abc}$ and $[Z_{\alpha \beta \gamma}]$ respectively
+\begin{equation}
+    [v_{abc}] = [Z_{abc}] [i_{abc}]
+    \label{eq:Eq7.31}
+\end{equation}
+and
+\begin{equation}
+    [v_{\alpha \beta \gamma}] = [Z_{\alpha \beta \gamma}] [i_{\alpha \beta \gamma}]
+    \label{eq:Eq7.32}
+\end{equation}
+Substituting (7.27) and (7.30) in (7.31)
+\begin{align}
+    [B_t][v_{\alpha \beta \gamma}] & =[Z_{abc}] [B_t] [i_{\alpha \beta \gamma}] \nonumber \\
+    [v_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t]
+    \label{eq:Eq7.33}
+\end{align}
+comparing (7.33) with (7.32)
+\begin{equation}
+    [Z_{\alpha \beta \gamma}] = [B][Z_{abc}] [B_t]
+    \label{eq:7.34}
+\end{equation}
+and
+\begin{equation}
+    [Z_{abc}] = [B_t] [Z_{\alpha \beta \gamma}][B]
+    \label{eq:Eq7.35}
+\end{equation}
+
+The $abc$ coils are mutually coupled and the impedance matrix $[Z_{abc}]$, expressed in operational for, contains self- and mutual inductance coefficients.
+\begin{align}
+    [Z_{abc}]
+    & =
+    \begin{bmatrix}
+        (R_a + L_a p) & M_{ab} p & M_{ac} p \\
+        M_{ba} p & (R_b + L_b p) & M_{bc} p \\
+        M_{ca} p & M_{cb} p & (R_c + L_b p)
+    \end{bmatrix} \\
+    M_{ac} & = M_{ca}, \quad M_{ab} = M_{ba}, \quad M_{cb} = M_{bc} \nonumber \\
+    [Z_{abc}] & =
+    \begin{bmatrix}
+        R_a & 0 & 0 \\
+        0 & R_b & 0 \\
+        0 & 0 & R_c
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        L_a & M_{ab} & M_{ac} \\
+        M_{ab} & L_b & M_{cb} \\
+        M_{ac} & M_{cb} & L_c
+    \end{bmatrix}
+    p \\
+    [Z_{abc}] & = [R_{abc}] + [L_{abc}] p
+    \label{eq:Eq7.38}
+\end{align}
+
+Substituting (7.38) in (7.34)
+\begin{equation}
+    [Z_{\alpha \beta \gamma}] = [B][R_{abc}][B_t] + [B][L_{abc}][B_t]p
+    \label{eq:Eq7.39}
+\end{equation}
+but
+\begin{equation}
+    [Z_{\alpha \beta \gamma}] = [R_{\alpha \beta \gamma}] + [L_{\alpha \beta \gamma}]p
+    \label{eq:Eq7.40}
+\end{equation}
+thus
+\begin{equation}
+    [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t]
+    \label{eq:Eq7.41}
+\end{equation}
+and
+\begin{align}
+    [L_{abc}] & = [B_t][L_{\alpha \beta \gamma}][B] \\
+    [R_{\alpha \beta \gamma}] = [B][R_{abc}][B_t]
+    \label{eq:Eq7.43}
+\end{align}
+and
+\begin{equation}
+    [R_{abc}] = [B_t][R_{\alpha \beta \gamma}][B]
+    \label{eq:Eq7.44}
+\end{equation}
+
+Equations (7.41) through to (7.44) are general in that they transforms unsymmetrical windings.
+
+Consider the case of a symmetrical three-phase winding with equal values of magnetic permeance for each phase axis (uniform air-gap machine).
+\begin{equation}
+    \begin{aligned}
+        R_a & = R_b = R_c = R \\
+        L_a & = L_b = L_c = L \\
+        M_{ab} & = M_{cb} = M_{ac} = M
+    \end{aligned}
+\end{equation}
+\begin{equation}
+    [R_{abc}] = 
+    \begin{bmatrix}
+        R & 0 & 0 \\
+        0 & R & 0 \\
+        0 & 0 & R
+    \end{bmatrix}
+    = R[1]
+    \label{eq:Eq7.46}
+\end{equation}
+\begin{equation}
+    [L_{abc}] = 
+    \begin{bmatrix}
+        L & M & M \\
+        M & L & M \\
+        M & M & L
+    \end{bmatrix}
+    \label{eq:Eq7.47}
+\end{equation}
+
+Transforming (7.47) with (7.41)
+\begin{align}
+    [L_{\alpha \beta \gamma}] & = \dfrac{2}{3}
+    \begin{bmatrix}
+        1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix}
+    \begin{bmatrix}
+        L \vphantom{\dfrac{1}{\sqrt{2}}} & M & M \\[2ex]
+        M \vphantom{\dfrac{1}{\sqrt{2}}} & L & M \\[2ex]
+        M \vphantom{\dfrac{1}{\sqrt{2}}} & M & L
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix} \nonumber \\
+    [L_{\alpha \beta \gamma}] & =
+    \begin{bmatrix}
+        L - M & 0 & 0 \\
+        0 & L - M & 0 \\
+        0 & 0 & L + 2M 
+    \end{bmatrix}
+\end{align}
+
+Transforming a symmetrical three-phase $abc$ winding results in a diagonal $\alpha \beta \gamma$ inductance matrix with independent components, i.e., no mutual inductance terms.
+
+Transforming (7.46)
+\begin{equation*}
+    [R_{\alpha \beta \gamma}] = [B] [1] [B_t] \quad R = R[1]
+\end{equation*}
+thus
+\begin{equation}
+    [R_{\alpha \beta \gamma}] = [R_{abc}] = R[1]
+    \label{eq:Eq7.49}
+\end{equation}
+
+Thus, for a symmetrical $abc$ winding the $\alpha \beta \gamma$ and $abc$ coil resistances are equal.
+
+Finally, substituting (7.47) and (7.49) in (7.39)
+\begin{multline}
+    [Z_{\alpha \beta \gamma}] = 
+    \begin{bmatrix}
+        R & 0 & 0 \\
+        0 & R & 0 \\
+        0 & 0 & R
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        L - M & 0 & 0 \\
+        0 & L - M & 0 \\
+        0 & 0 & L + 2M
+    \end{bmatrix}
+    p \\
+    =
+    \begin{bmatrix}
+        R + (L - M) p & 0 & 0 \\
+        0 & R + (L - M) p & 0 \\
+        0 & 0 & R + (L + 2M)p 
+    \end{bmatrix}
+    \label{eq:Eq7.50}
+\end{multline}
+
+With sinusoidal currents $p = j \omega$
+\begin{align*}
+    Z_{\alpha} & = R + j \omega (L - M) \\
+    Z_{\beta} & = R + j \omega (L - M) \\
+    Z_{\gamma} & = R + j \omega (L + 2M)
+\end{align*}
+
+These expressions are only true for a machine with a uniform air-gap. A symmetrical three-phase winding with a non-uniform air-gap, i.e., saliency, is analysed later in Section 8.2.
+\subsection{Flux-linkage transformations} The general relationship may be written
+\begin{align}
+    [\varPsi] & = [L][i] \nonumber \\
+    [\varPsi_{\alpha \beta \gamma}] & = [L_{\alpha \beta \gamma}][i_{\alpha \beta \gamma}]
+    \intertext{and}
+    [\varPsi_{abc}] & = [L_{abc}][i_{abc}]
+    \label{eq:Eq7.51}
+\end{align}
+As the matrix $[L_{abc}]$ contains self- and mutual inductance coefficients the flux linking a phase coil will be the sum of a self-produced flux, and the two components of mutual flux from the other two phases. The $\alpha \beta \gamma$ coils are mutually at right angles and as there is no mutual flux-linkage, $[\varPsi_{abc}]$ is a matrix of self-produced flux linkages.
+
+Substituting (7.26) and (7.43) in (7.51)
+\begin{equation*}
+    [\varPsi_{\alpha \beta \gamma}] = [B][L_{abc}][i_{abc}]
+\end{equation*}
+comparing with (7.52)
+\begin{equation}
+    [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi{abc}]
+    \label{eq:Eq7.53}
+\end{equation}
+and inverting
+\begin{equation}
+    [\varPsi{abc}] = [B_t][\varPsi_{\alpha \beta \gamma}]
+    \label{eq:Eq7.54}
+\end{equation}
+
+Summarizing the derived relationships
+\begin{multline*}
+    [B] = \sqrt*{\dfrac{2}{3}} 
+    \begin{bmatrix}
+        1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix} \\
+    [B^{-1}] = [B_t] = 
+    \begin{bmatrix}
+        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix}
+    \label{}
+\end{multline*}
+\begin{equation}
+    \begin{aligned}
+        &[F_{\alpha \beta \gamma}] = \sqrt*{\Big( \dfrac{3}{2}\Big)} [B] [F_{abc}] && [F_{abc}] = \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t][F_{\alpha \beta \gamma}] \\
+        &[i_{\alpha \beta \gamma}] =[B][i_{abc}] && [i_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
+        & [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi_{abc}] && [\varPsi_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
+        &[v_{\alpha \beta \gamma}] = [B][v_{abc}] && [v_{abc}] = [B_t][v_{\alpha \beta\gamma}] \\
+        & [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t] && [L_{abc}] = [B_t][L_{\alpha \beta \gamma}][B] \\
+        & [Z_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t] && [Z_{abc}] = [B_t][Z_{\alpha \beta \gamma}][B]
+    \end{aligned}
+    \label{eq:Eq7.55}
+\end{equation}
+
 \end{document}
