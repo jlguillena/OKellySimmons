@@ -14,7 +14,7 @@
 \setcounter{secnumdepth}{3}
 
 \addtokomafont{disposition}{\rmfamily}
-\RedeclareSectionCommands[afterskip=-2ex]{subsection}
+\RedeclareSectionCommands[afterskip=-2ex,font=\fontsize{12}{12}\selectfont]{subsection}
 \renewcommand*{\subsubsectionformat}{\mdseries\upshape (\thesubsubsection)\autodot\enskip}
 \renewcommand*{\thesubsubsection}{\alph{subsubsection}}
 
@@ -26,11 +26,11 @@ The purpose of this chapter is to describe in mathematical terms the physical pr
 \section{Simplifying assumptions}
 The theory, which is known in current machine literature as the generalized theory of electrical machines, considers all practical machines to be idealized by the simplifying assumptions listed and described below:
 \begin{enumerate}[label= (\alph*)]
-	\item Magnetic saturation is neglected. Superposition of magnetic fields can be  used, and the self- and mutual inductances of all machine windings are independent of the magnitude of winding currents.
-	\item Air-gap m.m.f.s and fluxes are represented by the fundamental components of their spacial distributions which are symmetrical about the magnetic axis of the windings of origin.
-	\item Slotting effects are ignored. Distributed windings comprises finely spread conductors of negligible diameter.
-	\item Commutation is ideal. The width of brushes and commutator segments is negligible and current reversal is instantaneous during commutation.
-	\item Magnetic materials are free of eddy current and hysteresis losses.
+    \item Magnetic saturation is neglected. Superposition of magnetic fields can be  used, and the self- and mutual inductances of all machine windings are independent of the magnitude of winding currents.
+    \item Air-gap m.m.f.s and fluxes are represented by the fundamental components of their spacial distributions which are symmetrical about the magnetic axis of the windings of origin.
+    \item Slotting effects are ignored. Distributed windings comprises finely spread conductors of negligible diameter.
+    \item Commutation is ideal. The width of brushes and commutator segments is negligible and current reversal is instantaneous during commutation.
+    \item Magnetic materials are free of eddy current and hysteresis losses.
 \end{enumerate}
 \section{Concentrated and distributed winding inductances}
 It is shown in subsequent sections of this chapter that the performance of most conventional rotating electrical machines, following idealization, can be described by a set of linear equations comprising the voltage equations for windings, together with the equations for electromagnetic torque. The equations, known as the general machine equations, have coefficients comprising the self- and mutual inductances of machine windings. Thus, before proceeding with the performance analysis of rotating machines in general, expressions are required for the inductances of windings in common use with machines.
@@ -45,78 +45,78 @@ A $d$-axis and $q$-axis, in space quadrature, designate main axes of symmetry fo
 
 \begin{multline}
     B(\alpha)=\frac{4}{\pi}B_m(\cos \gamma \cos \alpha-\frac{1}{3}\cos 3\gamma \cos 3\alpha+\frac{1}{5}\cos 5\gamma \cos 5\alpha \cdots \\ + \frac{{(-1)}^{(n+1)}}{2n-1}\cos(2n-1)\gamma \cos(2n-1)\alpha+\cdots)
-	\label{eq:Ecu1}
+    \label{eq:Ecu1}
 \end{multline}
 \begin{multline}
-B{(\alpha)} = \frac{4}{\pi} B_m \displaystyle \sum_{n=1}^{n=\infty} \bigg( \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma \cos(2n-1)\alpha \bigg) \\ n=1,2,3,\ldots
+    B{(\alpha)} = \frac{4}{\pi} B_m \displaystyle \sum_{n=1}^{n=\infty} \bigg( \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma \cos(2n-1)\alpha \bigg) \\ n=1,2,3,\ldots
 \end{multline}
 The harmonic crest values
 \begin{equation}
-	B_{2n-1} = \frac{4}{\pi} B_m \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma
+    B_{2n-1} = \frac{4}{\pi} B_m \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma
 \end{equation}
 diminish rapidly with ascending order $n$, see Fig. 5.2. It is this fact which enables assumption (b), Section 5.51, to be made to a reasonable degree of accuracy in later work.
 
 Assuming the stator m.m.f.\ to be employed entirely in driving flux across an air-gap of length $g$ and radial width $(\pi-2 \gamma)$
 \begin{equation}
-	B_m = \mu_0 H = \frac{\mu_0}{g} N_s i_s 
+    B_m = \mu_0 H = \frac{\mu_0}{g} N_s i_s 
 \end{equation}
 Substituting (5.4) in (5.2)
 \begin{flalign}
     B{(\alpha)} & = \frac{4\mu_0}{\pi g} N_s i_s \displaystyle\sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n+1}}{2n-1}  \cos(2n-1)\gamma \cos(2n-1)\alpha \bigg) && \nonumber \\
-B{(\alpha)} & = i_s \displaystyle\sum_{n = 1}^{n = \infty}\bigg( \frac{{(-1)}^{n+1}}{2n-1}K_{2n-1} \cos(2n-1)\alpha \bigg) &&
+    B{(\alpha)} & = i_s \displaystyle\sum_{n = 1}^{n = \infty}\bigg( \frac{{(-1)}^{n+1}}{2n-1}K_{2n-1} \cos(2n-1)\alpha \bigg) &&
 \end{flalign}
 where the constant
 \begin{equation}
-	K_{2n-1} = \frac{4\mu_0N_s}{\pi g} \cos(2n-1) \gamma
+    K_{2n-1} = \frac{4\mu_0N_s}{\pi g} \cos(2n-1) \gamma
 \end{equation}
 
 Consider an element of rotor surface $rl\dif\alpha$, Fig. 5.1. The contribution made to the rotor coil flux-linkage
 \begin{equation}
-	\dif\varPsi_r = N_r l r B(\alpha) \dif\alpha
+    \dif\varPsi_r = N_r l r B(\alpha) \dif\alpha
 \end{equation}
 Total rotor coil flux-linkages
 \begin{flalign}
-	\varPsi_r & = N_r i_s l r \int_{\alpha=\theta_r-\beta}^{\alpha=\theta_r+\beta} \bigg( \displaystyle\sum_{n = 1}^{n = \infty} \frac{{(-1)}^{n + 1}}{2n - 1}K_{2n - 1}\cos(2n - 1)\alpha\bigg)\dif\alpha && \nonumber\\
+    \varPsi_r & = N_r i_s l r \int_{\alpha=\theta_r-\beta}^{\alpha=\theta_r+\beta} \bigg( \displaystyle\sum_{n = 1}^{n = \infty} \frac{{(-1)}^{n + 1}}{2n - 1}K_{2n - 1}\cos(2n - 1)\alpha\bigg)\dif\alpha && \nonumber\\
     \varPsi_r & = 2 N_r i_s l r \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n + 1}}{{(2n - 1)}^2}K_{2n - 1} \cos[(2n - 1)\theta_r] \sin[(2n - 1)\beta]\bigg) &&
 \end{flalign}
 
 Mutual inductance
 \begin{equation}
-	\begin{gathered}
-		M_{sr} = \frac{\varPsi_r}{i_s} \\
+    \begin{gathered}
+        M_{sr} = \frac{\varPsi_r}{i_s} \\
         M_{sr} = 2 N_r l r \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n + 1}}{{(2n - 1)}^2}K_{2n - 1} \cos[(2n - 1) \theta_r] \sin[(2n-1) \beta] \bigg)
-	\end{gathered}
+    \end{gathered}
 \end{equation}
 
 It is seen from (5.5) and (5.9) that a particular harmonic of mutual inductance is associated with a harmonic of flux density of the same order. A particular harmonic of mutual inductance can be eliminated from (5.9) using a rotor coil of angular pitch $2\beta$ determined from
 
 \begin{equation*}
-	(2n - 1)\beta = \pi
+    (2n - 1)\beta = \pi
 \end{equation*}
 whence
 \begin{equation}
-	2\beta=\frac{2\pi}{(2n-1)}
+    2\beta=\frac{2\pi}{(2n-1)}
 \end{equation}
 For third harmonic elimination $n = 2$ is written in (5.10) and the required coil span
 \begin{equation*}
-	2\beta = \frac{2\pi}{3} = 120^{\circ}
+    2\beta = \frac{2\pi}{3} = 120^{\circ}
 \end{equation*}
 Special cases of (5.9):
 \begin{enumerate}[label={(\alph*)}]
-	\item Full-pitch rotor coil $\beta = \pi/2$
-		\begin{equation}
-			M_{sr} = 2 N_r l r \bigg( K_1 \cos\theta_r + \frac{K_3}{3^2} \cos 3 \theta_r + \frac{K_5}{5^2} \cos 5 \theta_r + \cdots \bigg)
-		\end{equation}
-	\item
-		Fundamental flux density distribution only, $n=1$,
-		\begin{equation}
-			M_{sr}=2N_r l r K_1 \sin\beta\cos\theta_r = M_m \sin \beta \cos \theta_r
-		\end{equation}
-	\item
-		Fundamental flux density distribution only and full-pitch coil $\beta=\pi/2$
-		\begin{equation}
-			M_{sr} = 2 N_r l r K_1 \cos\theta_r = M_m \cos\theta_r
-		\end{equation}
+    \item Full-pitch rotor coil $\beta = \pi/2$
+        \begin{equation}
+            M_{sr} = 2 N_r l r \bigg( K_1 \cos\theta_r + \frac{K_3}{3^2} \cos 3 \theta_r + \frac{K_5}{5^2} \cos 5 \theta_r + \cdots \bigg)
+        \end{equation}
+    \item
+        Fundamental flux density distribution only, $n=1$,
+        \begin{equation}
+            M_{sr}=2N_r l r K_1 \sin\beta\cos\theta_r = M_m \sin \beta \cos \theta_r
+        \end{equation}
+    \item
+        Fundamental flux density distribution only and full-pitch coil $\beta=\pi/2$
+        \begin{equation}
+            M_{sr} = 2 N_r l r K_1 \cos\theta_r = M_m \cos\theta_r
+        \end{equation}
 \end{enumerate}
 
 \noindent
@@ -126,86 +126,86 @@ The very difficult task of writing an equation for the gap flux density distribu
 
 Consider the rotor coil to be full-pitch and its rectangular m.m.f.\ distribution to be described with sufficient accuracy by its space distributed fundamental $F$, of crest value $F_r$. Resolving $F_r$ along the $d$-axis and $q$-axis gives instantaneous crest values, $F_{rd}$ and $F_{rq}$ of two space stationary, sinusoidally distributed m.m.f.s $F_d$ and $F_q$ respectively. Acting on paths of different permeance, $F_d$ and $F_q$ produce space stationary, non-sinusoidal gap flux density distributions which are symmetrical about their respective axes of reference. These can be represented with sufficient accuracy by their fundamental components of spatial distribution $B_d$ and $B_q$ of crest value $B_{rd}$ and $B_{rq}$, see Fig. 5.3. Thus, the machine is considered ti possess two fictitious uniform air-gaps, one of length $g_d$ associated with the $d$-axis permeance and another of length $g_q$ associated with the $q$-axis permeance. As the permeance of the $d$-axis is greater than that of the $q$-axis, $g_q>g_d$. Resolving $F_r$ along the $d$-axis and $q$-axis respectively
 \begin{equation}
-	\begin{aligned}
-		F_{rd} & = F_r \cos \theta_r \\
-		F_{rq} & = F_r \cos\bigg( \theta_r+\frac{\pi}{2} \bigg)= -F_r \sin \theta_r
-	\end{aligned}
+    \begin{aligned}
+        F_{rd} & = F_r \cos \theta_r \\
+        F_{rq} & = F_r \cos\bigg( \theta_r+\frac{\pi}{2} \bigg)= -F_r \sin \theta_r
+    \end{aligned}
 \end{equation}
 With the $d$-axis as reference, the m.m.f.\ component acting at a displacement $\alpha$
 \begin{equation}
-	\begin{aligned}
-		F_{\alpha d} & = F_{r d} \cos \alpha = F_r  \cos \theta_r \cos \alpha \\
-		F_{\alpha q} & = F_{r q} \cos\bigg( \alpha + \frac{\pi}{2} \bigg)= F_r \sin \theta_r \sin \alpha 
-	\end{aligned}
+    \begin{aligned}
+        F_{\alpha d} & = F_{r d} \cos \alpha = F_r  \cos \theta_r \cos \alpha \\
+        F_{\alpha q} & = F_{r q} \cos\bigg( \alpha + \frac{\pi}{2} \bigg)= F_r \sin \theta_r \sin \alpha 
+    \end{aligned}
 \end{equation}
 Referring to Fig. 5.4:
 \begin{equation}
-	\begin{aligned}
-		\dif \varLambda_d & = \frac{\mu_0 r l \dif \alpha}{g_d}  \\
-		\dif \varLambda_q & = \frac{\mu_0 r l \dif \alpha}{g_q} 
-	\end{aligned}
+    \begin{aligned}
+        \dif \varLambda_d & = \frac{\mu_0 r l \dif \alpha}{g_d}  \\
+        \dif \varLambda_q & = \frac{\mu_0 r l \dif \alpha}{g_q} 
+    \end{aligned}
 \end{equation}
 Element of flux-linkage with the rotor coil
 \begin{equation}
-	\begin{aligned}
-		\dif \varPsi_r & = N_r (\dif \varLambda_d F_{\alpha d} + \dif \varLambda_q F_{\alpha q}) \\
-		& = N_r \mu_0 r l \dif \alpha \bigg(\frac{F_{\alpha d}}{g_d} + \frac{F_{\alpha q}}{g_q} \bigg) 
-	\end{aligned}
+    \begin{aligned}
+        \dif \varPsi_r & = N_r (\dif \varLambda_d F_{\alpha d} + \dif \varLambda_q F_{\alpha q}) \\
+        & = N_r \mu_0 r l \dif \alpha \bigg(\frac{F_{\alpha d}}{g_d} + \frac{F_{\alpha q}}{g_q} \bigg) 
+    \end{aligned}
 \end{equation}
 Permeance for full coil span
 \begin{equation}
-	\begin{aligned}
-		\varLambda_d & = \frac{\mu_0 r l \pi}{g_d}  \\
-		\varLambda_q & = \frac{\mu_0 r l \pi}{g_q} 
-	\end{aligned}
+    \begin{aligned}
+        \varLambda_d & = \frac{\mu_0 r l \pi}{g_d}  \\
+        \varLambda_q & = \frac{\mu_0 r l \pi}{g_q} 
+    \end{aligned}
 \end{equation}
 whence
 \begin{align}
-	\dif \varPsi_r & = N_r \frac{\dif \alpha}{\pi} (\varLambda_d F_{\alpha d} + \varLambda_q F_{\alpha q})
+    \dif \varPsi_r & = N_r \frac{\dif \alpha}{\pi} (\varLambda_d F_{\alpha d} + \varLambda_q F_{\alpha q})
 \end{align} 
 Substituting (5.15) in (5.19) and integrating for total rotor coil flux linkages
 \begin{align}
-	\varPsi_r & = \frac{F_r N_r}{\pi} \int_{\alpha = \theta_r  - \pi/2}^{\alpha = \theta_r  + \pi/2} (\varLambda_d \cos \theta_r \cos\alpha + \varLambda_q \sin \theta_r \sin \alpha) \dif \alpha && \\
-	& = \frac{2 F_r N_r}{\pi} (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) && \nonumber \\
-	\varPsi_r & = \frac{F_r N_r}{\pi} [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q)\cos 2 \theta_r ] &&
+    \varPsi_r & = \frac{F_r N_r}{\pi} \int_{\alpha = \theta_r  - \pi/2}^{\alpha = \theta_r  + \pi/2} (\varLambda_d \cos \theta_r \cos\alpha + \varLambda_q \sin \theta_r \sin \alpha) \dif \alpha && \\
+    & = \frac{2 F_r N_r}{\pi} (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) && \nonumber \\
+    \varPsi_r & = \frac{F_r N_r}{\pi} [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q)\cos 2 \theta_r ] &&
 \end{align}
 Referring to Fig. 5.3:
 
 \noindent
 The rectangular m.m.f.\ distribution is of maximum value
 \begin{equation*}
-	F_m=\frac{N_r i_r}{2}
+    F_m=\frac{N_r i_r}{2}
 \end{equation*}
 
 A Fourier series expansion for the rotor m.m.f.\ distribution can be written directly from (5.2) with $\gamma=0$ and $\alpha$ replaced with $(\alpha - \theta_r)$ as the coil is full-pitched and the m-m-f- distribution is symmetrical about the axis of the rotor coil
 \begin{equation*}
-	F(\alpha - \theta_r) = \frac{4}{\pi} F_m \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n+1}}{2n - 1} \cos(2n - 1)(\alpha - \theta_r) \bigg)
+    F(\alpha - \theta_r) = \frac{4}{\pi} F_m \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n+1}}{2n - 1} \cos(2n - 1)(\alpha - \theta_r) \bigg)
 \end{equation*}
 
 Assuming the rectangular m.m.f.\ distribution to be described with sufficient accuracy by the space fundamental
 \begin{equation}
-	F(\alpha - \theta_r) = \frac{4}{\pi} F_m \cos(\alpha - \theta_r)
+    F(\alpha - \theta_r) = \frac{4}{\pi} F_m \cos(\alpha - \theta_r)
 \end{equation}
 
 The crest value for the fundamental, obtained when $\alpha = \theta_r$
 \begin{equation}
-	F_r = \frac{4}{\pi}F_m = \frac{2}{\pi} N_r i_r
+    F_r = \frac{4}{\pi}F_m = \frac{2}{\pi} N_r i_r
 \end{equation}
 
 Combining (5.21) and (5.23)
 \begin{equation}
-	\varPsi_r  = \frac{2 N_r^2}{\pi^2} i_r[(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q)\cos 2 \theta_r ] 
+    \varPsi_r  = \frac{2 N_r^2}{\pi^2} i_r[(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q)\cos 2 \theta_r ] 
 \end{equation}
 
 Rotor coil self-inductance
 \begin{equation}
-	L_r = \frac{\varPsi_r}{i_r} = L_{r1} + L_{r2} \cos 2 \theta_r
+    L_r = \frac{\varPsi_r}{i_r} = L_{r1} + L_{r2} \cos 2 \theta_r
 \end{equation}
 where
 \begin{flalign}
-	&& L_{r1} & = \frac{2}{\pi^2} N_r^2 (\varLambda_d + \varLambda_q) \nonumber & \\
-	\text{and} \\
-	&& L_{r2} & = \frac{2}{\pi^2} N_r^2 (\varLambda_d - \varLambda_q) \nonumber
+    && L_{r1} & = \frac{2}{\pi^2} N_r^2 (\varLambda_d + \varLambda_q) \nonumber & \\
+    \text{and} \\
+    && L_{r2} & = \frac{2}{\pi^2} N_r^2 (\varLambda_d - \varLambda_q) \nonumber
 \end{flalign}
 
 As seen by (5.25) and Fig. 5.5, the self-inductance of a concentrated coil rotating within a salient-pole structure comprises a second harmonic term superimposed on a constant term.
@@ -231,109 +231,108 @@ Mutual inductance
 \end{equation}
 Expanding (5.30)
 \begin{equation}
-	M_{sr} = 4 Z l r \bigg( K_{1} \cos \theta_r -  \frac{K_{3}}{3^3} \cos 3 \theta_r + \frac{K_{5}}{5^3} \cos 5 \theta_r\bigg)
+    M_{sr} = 4 Z l r \bigg( K_{1} \cos \theta_r -  \frac{K_{3}}{3^3} \cos 3 \theta_r + \frac{K_{5}}{5^3} \cos 5 \theta_r\bigg)
 \end{equation}
 
 Comparing (5.11) and (5.31) shows, for identical flux density distributions, the amplitude of ascending order of mutual inductance harmonics decrease more rapidly for a distributed winding than for a concentrated winding. As for the concentrated winding, a harmonic of stator gap flux density is associated with a corresponding harmonic of mutual inductance. Whit the gap density distribution represented by a space fundamental
 \begin{equation}
-	M_{sr} = 4Z l r K_1 \cos \theta_r = M_m \cos \theta_r
+    M_{sr} = 4Z l r K_1 \cos \theta_r = M_m \cos \theta_r
 \end{equation}
 Referring to Fig. 5.6, the rotor windings is now considered to be connected three-phase at tapping a, b and c. To determine an expression for the mutual inductance of any of the three phases, (5.28) is employed with a change in the limits of integration and the magnetic axis of the phase taken as reference. Considering phase $\textrm{aa}'$ in Fig. 5.7, the changed limits of integration for (5.28) are $\beta = 2\pi / 3$ and $\beta = \pi / 3$. The total flux-linkage phase $\textrm{aa}'$
 \begin{multline*}
-	\mathbf{\varPsi_{aa'}} = 2 Z i_s l r \\
+    \mathbf{\varPsi_{aa'}} = 2 Z i_s l r \\
     \times \int_{\beta = \pi / 3}^{\beta = (2 \pi)/3} \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n+1}}{{(2n - 1)}^2}K_{2n-1} \cos(2n - 1) \theta_r \sin(2n - 1) \beta \bigg) \dif \beta \\
 \end{multline*}
 \begin{multline}
     \mathbf{M_{aa'}} = \frac{\mathbf{\varPsi_{aa'}}}{i_s} = 2 Z l r \displaystyle \sum_{n = 1}^{n = \infty}  \bigg \{\frac{{(-1)}^{n+1}}{{(2n -1)}^2} K_{2n - 1} \cos(2n - 1) \theta_r  \\
-	\times \bigg[ \cos(2n - 1) \frac{\pi}{3}  - \cos(2n -1) \frac{2\pi}{3} \bigg] \bigg \}
+    \times \bigg[ \cos(2n - 1) \frac{\pi}{3}  - \cos(2n -1) \frac{2\pi}{3} \bigg] \bigg \}
 \end{multline}
 Expanding (5.33)
 \begin{equation*}
-	\mathbf{M_{aa'}} = 2 Z l r \bigg( K_1 \cos \theta_r + 2 \frac{K_3}{3^3} \cos 3 \theta_r + \frac{K_5}{5^3} \cos 5 \theta_r + \cdots \bigg)
+    \mathbf{M_{aa'}} = 2 Z l r \bigg( K_1 \cos \theta_r + 2 \frac{K_3}{3^3} \cos 3 \theta_r + \frac{K_5}{5^3} \cos 5 \theta_r + \cdots \bigg)
 \end{equation*}
 with the axis of phase $\textrm{bb}'$ at $(\theta_r - 2\pi/3$)
-\begin{multline} %%Modificada
-	\boldsymbol{M_\mathbf{bb'}} = 2 Z l r \bigg[ K_1 \cos \bigg(\theta_r - \frac{2 \pi}{3} \bigg) + 2 \frac{K_3}{3^3} \cos 3 \bigg(\theta_r - \frac{2 \pi}{3} \bigg) \\
-	+ \frac{K_5}{5^3} \cos 5 \bigg( \theta_r - \frac{2 \pi}{3} \bigg ) + \cdots \bigg]
+\begin{multline} %TODO
+    \boldsymbol{M_\mathbf{bb'}} = 2 Z l r \bigg[ K_1 \cos \bigg(\theta_r - \frac{2 \pi}{3} \bigg) + 2 \frac{K_3}{3^3} \cos 3 \bigg(\theta_r - \frac{2 \pi}{3} \bigg) \\
+    + \frac{K_5}{5^3} \cos 5 \bigg( \theta_r - \frac{2 \pi}{3} \bigg ) + \cdots \bigg]
 \end{multline}
 with the magnetic axis of phase $\textrm{cc}'$ at $(\theta_r + 2 \pi / 3)$
 \begin{multline*}
-	\mathbf{M_{cc'}} = 2 Z l r \bigg[ K_1 \cos \bigg(\theta_r + \frac{2 \pi}{3} \bigg) + 2 \frac{K_3}{3^3} \cos 3 \bigg(\theta_r + \frac{2 \pi}{3} \bigg) \\
-	+ \frac{K_5}{5^3} \cos 5 \bigg( \theta_r + \frac{2 \pi}{3} \bigg ) + \cdots \bigg]
+    \mathbf{M_{cc'}} = 2 Z l r \bigg[ K_1 \cos \bigg(\theta_r + \frac{2 \pi}{3} \bigg) + 2 \frac{K_3}{3^3} \cos 3 \bigg(\theta_r + \frac{2 \pi}{3} \bigg) \\
+    + \frac{K_5}{5^3} \cos 5 \bigg( \theta_r + \frac{2 \pi}{3} \bigg ) + \cdots \bigg]
 \end{multline*}
 Assuming the stator gap flux density distribution to be described with sufficient accuracy by its space distributed fundamental and with $M_m$ defined by (5.32)
 \begin{align}
-	\boldsymbol M_{aa'} &= 2 Z l r K_1 \cos \theta_r = \frac{1}{2} \mathbf{M_{m}} \cos \theta_r \nonumber \\
-	\boldsymbol M_{bb'} &= 2 Z l r K_1 \cos \bigg(\theta_r - \frac{2 \pi}{3} \bigg ) = \frac{1}{2} \mathbf{M_{m}} \cos \bigg( \theta_r - \frac{2\pi}{3} \bigg) \\
-	\boldsymbol M_{cc'} &= 2 Z l r K_1 \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) = \frac{1}{2} \mathbf{M_{m}} \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) \nonumber
+    \boldsymbol M_{aa'} &= 2 Z l r K_1 \cos \theta_r = \frac{1}{2} \mathbf{M_{m}} \cos \theta_r \nonumber \\
+    \boldsymbol M_{bb'} &= 2 Z l r K_1 \cos \bigg(\theta_r - \frac{2 \pi}{3} \bigg ) = \frac{1}{2} \mathbf{M_{m}} \cos \bigg( \theta_r - \frac{2\pi}{3} \bigg) \\
+    \boldsymbol M_{cc'} &= 2 Z l r K_1 \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) = \frac{1}{2} \mathbf{M_{m}} \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) \nonumber
 \end{align}
 
 \noindent (b) \textit{Self-inductance}. The developed diagram, Fig. 5.8, shows the uniformly distributed rotor winding, supplied at tapping points $P$ and $P'$ with current $i_r$, producing a triangular m.m.f.\  distribution. Enclosed by the dotted path is a total current $Z \pi i_r$ and the triangular m.m.f.\ distribution is of maximum value
 \begin{equation}
-	F_m = \frac{Z \pi i_r}{2}
+    F_m = \frac{Z \pi i_r}{2}
 \end{equation}
 With the winding axis as reference $(\beta = 0)$, the m.m.f.\ distribution is described by the Fourier-series
 \begin{equation}
-	F(\beta) = \frac{8}{\pi^2} F_m \bigg(\cos \beta + \frac{1}{3^2} - \frac{1}{5^2} \cos 5 \beta + \cdots)
+    F(\beta) = \frac{8}{\pi^2} F_m \bigg(\cos \beta + \frac{1}{3^2} - \frac{1}{5^2} \cos 5 \beta + \cdots)
 \end{equation}
 Considering the triangular distribution to be represented with sufficient accuracy by the fundamental
 \begin{equation*}
-	F(\beta) = \frac{8}{\pi^2}F_m \cos \beta
+    F(\beta) = \frac{8}{\pi^2}F_m \cos \beta
 \end{equation*}
 The fundamental crest value
 \begin{equation}
-	F_r = \frac{8}{\pi^2}F_m = \frac{4}{\pi} Z i_r
+    F_r = \frac{8}{\pi^2}F_m = \frac{4}{\pi} Z i_r
 \end{equation}
 Since $F_r$ can now be resolved into $d$-axis and $q$-axis components, the method employed in Section 5.2.1 for finding the self-inductance of a concentrated winding, can be used to find the self-inductance of a distributed winding.
 
 \noindent Referring to Fig. 5.8: \\
 The Flux-linkage for the elementary coil of $Z \dif \beta$ turns and angular-pitch $2 \beta$ can be found using (5.20) with a change in the limits of integration
 \begin{equation} \label{eq:Ec39}
-	\begin{aligned}
-		\dif \varPsi_r & = \frac{Z \dif \beta}{\pi} \frac{4 Z}{\pi} \int_{\alpha = \theta_r  - \beta}^{\alpha = \theta_r  + \beta} (\varLambda_d \cos \theta_r \cos\alpha + \varLambda_q \sin \theta_r \sin \alpha) \dif \alpha\\
-		& = 8 \frac{Z^2}{\pi^2} \dif \beta i_r (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) \sin \beta
-	\end{aligned}
+    \begin{aligned}
+        \dif \varPsi_r & = \frac{Z \dif \beta}{\pi} \frac{4 Z}{\pi} \int_{\alpha = \theta_r  - \beta}^{\alpha = \theta_r  + \beta} (\varLambda_d \cos \theta_r \cos\alpha + \varLambda_q \sin \theta_r \sin \alpha) \dif \alpha\\
+        & = 8 \frac{Z^2}{\pi^2} \dif \beta i_r (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) \sin \beta
+    \end{aligned}
 \end{equation}
     %%
 Total flux-linkage with the rotor distributed winding
 \begin{equation}
-	\begin{aligned}
-		\varPsi_r & = \frac{8 Z^2}{\pi^2} i_r (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) \int_{\beta = 0}^{\beta = \pi} \sin \beta \dif \beta \\
-		\varPsi_r & = \frac{8 Z^2}{\pi^2} i_r [(\varLambda_d +\varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ]
-	\end{aligned}
+    \begin{aligned}
+        \varPsi_r & = \frac{8 Z^2}{\pi^2} i_r (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) \int_{\beta = 0}^{\beta = \pi} \sin \beta \dif \beta \\
+        \varPsi_r & = \frac{8 Z^2}{\pi^2} i_r [(\varLambda_d +\varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ]
+    \end{aligned}
 \end{equation}
 
 Self-inductance
 \begin{flalign}
-	L_r = \frac{\varPsi_r}{i_r} = L_{r1} + L_{r2} \cos 2 \theta_r
+    L_r = \frac{\varPsi_r}{i_r} = L_{r1} + L_{r2} \cos 2 \theta_r
 \end{flalign}
 where
 \begin{flalign}
-	&& L_{r 1} & = \frac{8}{\pi^2} Z^2 (\varLambda_d + \varLambda_q) && \nonumber \\
-	\text{and} \\
-	&& L_{r 2} & = \frac{8}{\pi^2} Z^2 (\varLambda_d - \varLambda_q) && \nonumber
+    && L_{r 1} & = \frac{8}{\pi^2} Z^2 (\varLambda_d + \varLambda_q) && \nonumber \\
+    \text{and} \\
+    && L_{r 2} & = \frac{8}{\pi^2} Z^2 (\varLambda_d - \varLambda_q) && \nonumber
 \end{flalign}
 Comparison of (5.24) and (5.40) shows for an assumption of sinusoidally distributed gap flux density, the self-inductance expressions for a distributed and concentrated winding are of similar form.
 
-   %%----------------------------------------------------------------------
 \subsection{Concentrated and distributed winding equivalence.} Summarizing the derived expression for the self- and mutual inductances of concentrated and distributed windings with a m.m.f.\ distribution assumed sinusoidal:
 
 concentrated full-pitch rotor winding;\\
 from (5.13) and (5.24) 
 \begin{align*}
-	M_{sr}  & =  2 N_r l r K_1 \cos \theta_r \\
-	L_r & = \frac{2}{\pi^2} N_r^2 [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ] 
+    M_{sr}  & =  2 N_r l r K_1 \cos \theta_r \\
+    L_r & = \frac{2}{\pi^2} N_r^2 [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ] 
 \end{align*}
 
 uniformly distributed rotor winding;\\
 from (5.32) and (5.40)
 \begin{align*}
-	M_{sr}  & =  4 Z l r K_1 \cos \theta_r \\
-	L_r & = \frac{8 Z^2}{\pi^2} N_r^2 [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ]
+    M_{sr}  & =  4 Z l r K_1 \cos \theta_r \\
+    L_r & = \frac{8 Z^2}{\pi^2} N_r^2 [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q) \cos 2 \theta_r ]
 \end{align*}
 Equating separately the expressions for self- and mutual inductance, establishes the result that a concentrated and distributed winding are magnetically equivalent when
 \begin{equation}
-	N_r = 2Z
+    N_r = 2Z
 \end{equation}
 With (5.43) established, distributed machine windings are represented as equivalent concentrated coils. The diagrammatic form of this representation is shown in Fig 5.9 the convention adopted for current and m.m.f.\ is that both pass through the coil in the same direction.
 
@@ -342,10 +341,10 @@ Figure 5.10 represents a doubly-excited, two pole, rotary transducer with concen
 
 While a two-pole transducer has been shown for ease of representation, the more general case of a transducer with several pole pairs can be considered by writing
 \begin{equation}
-	\begin{aligned}
-		\theta_r &= (\text{pole-pairs}) \theta_m \\
-		\omega _r & = (\text{pole-pairs}) \omega_m
-	\end{aligned}
+    \begin{aligned}
+        \theta_r &= (\text{pole-pairs}) \theta_m \\
+        \omega _r & = (\text{pole-pairs}) \omega_m
+    \end{aligned}
 \end{equation}
 where\\
 \hspace*{4em} $\omega_r$ and $\theta_r$ are measured in electrical radian, and\\
@@ -356,285 +355,285 @@ As the action of a multi-winding machine is the superimposed effect of winding p
 
 Stator flux-linkages
 \begin{flalign}
-	&&\varPsi_s & = L_s i_s + M_{sr} i_r
-	\intertext{\indent Rotor flux-linkages}
-	&&\varPsi_r &= L_r i_r + M_{sr} i_s
-	\intertext{\indent Instantaneous applied coil voltages}
-	&& v_s & = i_s R_s + p \varPsi_s \\
-	&& v_r & = i_r R_r + p \varPsi_r\\
-	\text{where } &&  p & = \frac{\dif}{\dif t} \nonumber \\
-	&& v_s & = i_s R_s + p ( L_s i_s + M_{sr} i_r )\\
-	&& v_r & = i_r R_r + p ( L_r i_r + M_{sr} i_s ) &
+    &&\varPsi_s & = L_s i_s + M_{sr} i_r
+    \intertext{\indent Rotor flux-linkages}
+    &&\varPsi_r &= L_r i_r + M_{sr} i_s
+    \intertext{\indent Instantaneous applied coil voltages}
+    && v_s & = i_s R_s + p \varPsi_s \\
+    && v_r & = i_r R_r + p \varPsi_r\\
+    \text{where } &&  p & = \frac{\dif}{\dif t} \nonumber \\
+    && v_s & = i_s R_s + p ( L_s i_s + M_{sr} i_r )\\
+    && v_r & = i_r R_r + p ( L_r i_r + M_{sr} i_s ) &
 \end{flalign}
 For generality it is assumed in (5.49) and (5.50) that $L_s$ and $L_r$ are functions of the angle $\theta_r$, hence time $t$. Expanding,
 \begin{align}
-	v_s = i_s R_s + L_s p i_s + i_s p L_s + M_{sr} p i_r + i_r p M_{sr} \\
-	v_r = i_r R_r + L_r p i_r + i_r p L_r + M_{sr} p i_s + i_s p M_{sr}
+    v_s = i_s R_s + L_s p i_s + i_s p L_s + M_{sr} p i_r + i_r p M_{sr} \\
+    v_r = i_r R_r + L_r p i_r + i_r p L_r + M_{sr} p i_s + i_s p M_{sr}
 \end{align}
 Considering induced terms which are time-derivatives of inductance and taking an example $I_r p L_r$
 \begin{flalign}
-	i_r p L_r & = i_r \frac{\dif L_r}{\dif \theta_r} \cdot \frac{\dif \theta_r}{\dif t} \nonumber \\
-	& = i_r \omega_r \frac{\dif L_r}{\dif \theta_r}
+    i_r p L_r & = i_r \frac{\dif L_r}{\dif \theta_r} \cdot \frac{\dif \theta_r}{\dif t} \nonumber \\
+    & = i_r \omega_r \frac{\dif L_r}{\dif \theta_r}
 \end{flalign}
 where
 \begin{equation*}
-	\omega_r  = p \theta_r
+    \omega_r  = p \theta_r
 \end{equation*}
 Rewriting (5.51) and. (5.52)
 \begin{align}
-	v_s = i_s R_s + L_s p i_s + M_{sr} p i_r + \omega_r i_s \frac{\dif L_s}{\dif \theta_r} + \omega_r i_r \frac{\dif M_{sr}}{\dif \theta_r} \\
-	v_r = i_r R_r + L_r p i_r + M_{sr} p i_s + \omega_r i_r \frac{\dif L_r}{\dif \theta_r} + \omega_r i_s \frac{\dif M_{sr}}{\dif \theta_r} 
+    v_s = i_s R_s + L_s p i_s + M_{sr} p i_r + \omega_r i_s \frac{\dif L_s}{\dif \theta_r} + \omega_r i_r \frac{\dif M_{sr}}{\dif \theta_r} \\
+    v_r = i_r R_r + L_r p i_r + M_{sr} p i_s + \omega_r i_r \frac{\dif L_r}{\dif \theta_r} + \omega_r i_s \frac{\dif M_{sr}}{\dif \theta_r} 
 \end{align}
 In matrix form
 \begin{equation}
-	\begin{bmatrix}
-		v_s \\ v_r
-	\end{bmatrix} 
-	= \Bigg\{
-		\begin{bmatrix}
-			R_s  & 0 \\ 0 & R_r 
-		\end{bmatrix}
-		+
-		\begin{bmatrix}
-			L_s  & M_{sr} \\ M_{sr} & L_r 
-		\end{bmatrix} 
-		p + \omega_r \frac{\dif}{\dif \theta_r} 
-		\begin{bmatrix}
-			L_s  & M_{sr} \\ M_{sr} & L_r 
-		\end{bmatrix}
-	\Bigg \}
-	\begin{bmatrix}
-		i_s \\ i_r 
-	\end{bmatrix}
+    \begin{bmatrix}
+        v_s \\ v_r
+    \end{bmatrix} 
+    = \Bigg\{
+        \begin{bmatrix}
+            R_s  & 0 \\ 0 & R_r 
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            L_s  & M_{sr} \\ M_{sr} & L_r 
+        \end{bmatrix} 
+        p + \omega_r \frac{\dif}{\dif \theta_r} 
+        \begin{bmatrix}
+            L_s  & M_{sr} \\ M_{sr} & L_r 
+        \end{bmatrix}
+    \Bigg \}
+    \begin{bmatrix}
+        i_s \\ i_r 
+    \end{bmatrix}
 \end{equation}
 Induced voltage terms in (5.56) are seen to be of two distinct types: Those which are functions of the time-derivative of current are \emph{mutual and self-induced voltages} while those which are functions of the angular derivative of inductance are \emph{rotational voltages}.
 
 Writing in (5.56)
 \begin{flalign} \label{eq:Ec57}
-	&&\begin{bmatrix}
-		R
-	\end{bmatrix} & =
-	\begin{bmatrix}
-		R_s & 0 \\ 0 & R_r
-	\end{bmatrix} \\
-	&&\begin{bmatrix}
-		L
-	\end{bmatrix} & =
-	\begin{bmatrix}
-		L_s & M_{sr} \\ M_{sr} & L_r
-	\end{bmatrix}\\
-	&&\begin{bmatrix}
-		G
-	\end{bmatrix} & =
-	\frac{\dif}{\dif \theta_r}
-	\begin{bmatrix}
-		L_s & M_{sr} \\ M_{sr} & L_r
-	\end{bmatrix} =
-	\frac{\dif 
-		\begin{bmatrix}
-			L
-		\end{bmatrix}
-	} {\dif \theta_r}
-	\intertext{with}
-	&&\begin{bmatrix}
-		v
-	\end{bmatrix} & =
-	\begin{bmatrix}
-		v_s\\ v_r
-	\end{bmatrix}  \quad \text{and} \quad
-	\begin{bmatrix}
-		i
-	\end{bmatrix} =
-	\begin{bmatrix}
-		i_s\\ i_r
-	\end{bmatrix} \nonumber \\
-	&&\begin{bmatrix}
-		v
-	\end{bmatrix} & = \Big\{
-		\begin{bmatrix}
-			R
-		\end{bmatrix} +
-		\begin{bmatrix}
-			L
-		\end{bmatrix} p + \omega_r
-		\begin{bmatrix}
-			G
-		\end{bmatrix}\Big\}
-		\begin{bmatrix}
-			i
-		\end{bmatrix} &
-	\end{flalign}
+    &&\begin{bmatrix}
+        R
+    \end{bmatrix} & =
+    \begin{bmatrix}
+        R_s & 0 \\ 0 & R_r
+    \end{bmatrix} \\
+    &&\begin{bmatrix}
+        L
+    \end{bmatrix} & =
+    \begin{bmatrix}
+        L_s & M_{sr} \\ M_{sr} & L_r
+    \end{bmatrix}\\
+    &&\begin{bmatrix}
+        G
+    \end{bmatrix} & =
+    \frac{\dif}{\dif \theta_r}
+    \begin{bmatrix}
+        L_s & M_{sr} \\ M_{sr} & L_r
+    \end{bmatrix} =
+    \frac{\dif 
+        \begin{bmatrix}
+            L
+        \end{bmatrix}
+    } {\dif \theta_r}
+    \intertext{with}
+    &&\begin{bmatrix}
+        v
+    \end{bmatrix} & =
+    \begin{bmatrix}
+        v_s\\ v_r
+    \end{bmatrix}  \quad \text{and} \quad
+    \begin{bmatrix}
+        i
+    \end{bmatrix} =
+    \begin{bmatrix}
+        i_s\\ i_r
+    \end{bmatrix} \nonumber \\
+    &&\begin{bmatrix}
+        v
+    \end{bmatrix} & = \Big\{
+        \begin{bmatrix}
+            R
+        \end{bmatrix} +
+        \begin{bmatrix}
+            L
+        \end{bmatrix} p + \omega_r
+        \begin{bmatrix}
+            G
+        \end{bmatrix}\Big\}
+        \begin{bmatrix}
+            i
+        \end{bmatrix} &
+    \end{flalign}
 
-	The physical significance of the rotational voltages can be more readily understood if the coeficients of the $[G]$ matrix are expressed in terms of permeance.
+    The physical significance of the rotational voltages can be more readily understood if the coeficients of the $[G]$ matrix are expressed in terms of permeance.
 
-	Commencing with
-	\begin{equation}
-		\begin{aligned}
-			M_{sr} & = N_s N_r \varLambda_{sr}\\
-			L_s & = N_s^2 \varLambda_s\\
-			L_r & = N_r^2 \varLambda_r
-		\end{aligned}
-	\end{equation}
-	where $\varLambda_{sr}$, $\varLambda_s$, $\varLambda_r$ are the gap permeances for mutual flux and stator and rotor self-flux.
+    Commencing with
+    \begin{equation}
+        \begin{aligned}
+            M_{sr} & = N_s N_r \varLambda_{sr}\\
+            L_s & = N_s^2 \varLambda_s\\
+            L_r & = N_r^2 \varLambda_r
+        \end{aligned}
+    \end{equation}
+    where $\varLambda_{sr}$, $\varLambda_s$, $\varLambda_r$ are the gap permeances for mutual flux and stator and rotor self-flux.
 
-	Writing the $[G]$ matrix in terms of (5.61)
-	\begin{equation}
-		\begin{bmatrix}
-			G
-		\end{bmatrix} = 
-		\begin{bmatrix}
-			N_s^2 \dfrac{\dif \varLambda_s}{\dif \theta_r} & N_s N_r \dfrac{\dif \varLambda_{sr}}{\dif \theta_r} \\[3ex]
-			N_s N_r \dfrac{\dif \varLambda_{sr}}{\dif \theta_r} & N_r^2 \dfrac{\dif \varLambda_r}{\dif \theta_r}  
-		\end{bmatrix}
-	\end{equation}
-	It is seen from (5.62), rotational voltage terms are the result of permeance variations during rotation. The stator coil of a cylindrical rotor machine sees constant gap permeance, i.e., $\dif \varLambda_s / \dif \theta_r = 0$, the rotor coil of a cylindrical stator machine sees a constant gap permeance and $\dif \varLambda_r / \dif \theta_r = 0$. For all stator and rotor configurations the effective area of the air-gap between the stator and rotor coils changes with rotation and $\varLambda_{sr}$ is a function of $\theta_r$.
+    Writing the $[G]$ matrix in terms of (5.61)
+    \begin{equation}
+        \begin{bmatrix}
+            G
+        \end{bmatrix} = 
+        \begin{bmatrix}
+            N_s^2 \dfrac{\dif \varLambda_s}{\dif \theta_r} & N_s N_r \dfrac{\dif \varLambda_{sr}}{\dif \theta_r} \\[3ex]
+            N_s N_r \dfrac{\dif \varLambda_{sr}}{\dif \theta_r} & N_r^2 \dfrac{\dif \varLambda_r}{\dif \theta_r}  
+        \end{bmatrix}
+    \end{equation}
+    It is seen from (5.62), rotational voltage terms are the result of permeance variations during rotation. The stator coil of a cylindrical rotor machine sees constant gap permeance, i.e., $\dif \varLambda_s / \dif \theta_r = 0$, the rotor coil of a cylindrical stator machine sees a constant gap permeance and $\dif \varLambda_r / \dif \theta_r = 0$. For all stator and rotor configurations the effective area of the air-gap between the stator and rotor coils changes with rotation and $\varLambda_{sr}$ is a function of $\theta_r$.
 
     Substituting the mutual and self-inductance values established in Section 5.2 in (5.58), (5.59) and (5.60) gives the stator and rotor voltage equations. 
-    
-    \subsubsection{\itshape{Case (a)}\/} Zero saliency --- cylindrical rotor and stator:
-	\begin{equation*}
-		\begin{aligned}
-			L_r & = \text{constant} \\
-			L_s & = \text{constant} \\
-			M_{sr} & = M_m \cos \theta_r  
-		\end{aligned}
-	\end{equation*}
-	\begin{multline}
-		\begin{bmatrix}
-			v_s \\ v_r
-		\end{bmatrix} = \Bigg\{
-			\begin{bmatrix}
-				R_s & 0 \\ 0 & R_r 
-			\end{bmatrix} +
-			\begin{bmatrix}
-				L_s & M_m \cos \theta_r \\
-				M_m \cos \theta_r & L_r
-			\end{bmatrix}p \\
-			+ \omega_r
-			\begin{bmatrix}
-				0 & - M_m \sin \theta_r \\
-				- M_m \sin \theta_r & 0
-			\end{bmatrix}
-		\Bigg\}
-		\begin{bmatrix}
-			i_s \\
-			i_r
-		\end{bmatrix}
-	\end{multline}
 
-	\noindent \textit{Case} (\textit{b}) One degree of saliency --- cylindrical rotor and a salient pole stator:	
-	\begin{equation*}
-		\begin{aligned}
-			L_r & = L_{r1} + L_{r2} \cos 2\theta \\
-			L_s & = \text{constant} \\
-			M_{sr} & = M_m \cos \theta_r  
-		\end{aligned}
-	\end{equation*}
-	\begin{multline}
-		\begin{bmatrix}
-			v_s \\ v_r
-		\end{bmatrix} = \Bigg\{
-			\begin{bmatrix}
-				R_s & 0 \\ 0 & R_r 
-			\end{bmatrix} +
-			\begin{bmatrix}
-				L_s & M_m \cos \theta_r \\
-				M_m \cos \theta_r & (L_{r1} + L_{r2} \cos 2 \theta)
-			\end{bmatrix}p \\
-			+ \omega_r
-			\begin{bmatrix}
-				0 & - M_m \sin \theta_r \\
-				- M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
-			\end{bmatrix}
-		\Bigg\}
-		\begin{bmatrix}
-			i_s \\
-			i_r
-		\end{bmatrix}
-	\end{multline}
+    \subsubsection{\itshape{Case (a)}\/} Zero saliency --- cylindrical rotor and stator:
+    \begin{equation*}
+        \begin{aligned}
+            L_r & = \text{constant} \\
+            L_s & = \text{constant} \\
+            M_{sr} & = M_m \cos \theta_r  
+        \end{aligned}
+    \end{equation*}
+    \begin{multline}
+        \begin{bmatrix}
+            v_s \\ v_r
+        \end{bmatrix} = \Bigg\{
+            \begin{bmatrix}
+                R_s & 0 \\ 0 & R_r 
+            \end{bmatrix} +
+            \begin{bmatrix}
+                L_s & M_m \cos \theta_r \\
+                M_m \cos \theta_r & L_r
+            \end{bmatrix}p \\
+            + \omega_r
+            \begin{bmatrix}
+                0 & - M_m \sin \theta_r \\
+                - M_m \sin \theta_r & 0
+            \end{bmatrix}
+        \Bigg\}
+        \begin{bmatrix}
+            i_s \\
+            i_r
+        \end{bmatrix}
+    \end{multline}
+
+    \noindent \textit{Case} (\textit{b}) One degree of saliency --- cylindrical rotor and a salient pole stator:	
+    \begin{equation*}
+        \begin{aligned}
+            L_r & = L_{r1} + L_{r2} \cos 2\theta \\
+            L_s & = \text{constant} \\
+            M_{sr} & = M_m \cos \theta_r  
+        \end{aligned}
+    \end{equation*}
+    \begin{multline}
+        \begin{bmatrix}
+            v_s \\ v_r
+        \end{bmatrix} = \Bigg\{
+            \begin{bmatrix}
+                R_s & 0 \\ 0 & R_r 
+            \end{bmatrix} +
+            \begin{bmatrix}
+                L_s & M_m \cos \theta_r \\
+                M_m \cos \theta_r & (L_{r1} + L_{r2} \cos 2 \theta)
+            \end{bmatrix}p \\
+            + \omega_r
+            \begin{bmatrix}
+                0 & - M_m \sin \theta_r \\
+                - M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
+            \end{bmatrix}
+        \Bigg\}
+        \begin{bmatrix}
+            i_s \\
+            i_r
+        \end{bmatrix}
+    \end{multline}
 
     The expression for a machine with salient-pole rotor and a cylindrical stator are obtained by interchanging $s$ and $r$ in (5.64).
-    
+
     \vspace{1em}
 
-	\noindent \textit{Case} (\textit{c}) Two degree of saliency.  The analysis of machines with stator and rotor saliency will not be considered as such machines are rarely encountered in practice.
+    \noindent \textit{Case} (\textit{c}) Two degree of saliency.  The analysis of machines with stator and rotor saliency will not be considered as such machines are rarely encountered in practice.
 
-	\subsection{Equivalent circuit} With the rotor of the doubly-excited transducer maintained stationary the coefficients of the $[G]$ matrix are zero, there are no rotational voltages and (5.60) reduces to the form normally written for the primary and secondary terminal voltages of an ideal two-winding transformer. It follows, to produce an equivalent circuit for the transducer, for which the current and voltage conditions can be determined for different modes of operation, it is only necessary to include rotational voltages in the equivalent circuit of the two-winding transformer. Rotational voltages are represented as voltage generators of zero internal impedance. The voltage generators are assigned instantaneous polarities according to the sign of the rotational voltage terms.
-	Figure 5.11 is the equivalent circuit for a doubly excited transducer with stator saliency, constructed in accordance with (5.64).
-	\subsection{Electromagnetic torque} Referring to (3.53), the energy stored within the air gap of a doubly-excited rotatory tranducer
-	\begin{equation*}
-		W_{fe} = \frac{1}{2} i_s^2 L_s + \frac{1}{2} i_r^2 L_r + i_s i_r M_{sr}
-	\end{equation*}
+    \subsection{Equivalent circuit} With the rotor of the doubly-excited transducer maintained stationary the coefficients of the $[G]$ matrix are zero, there are no rotational voltages and (5.60) reduces to the form normally written for the primary and secondary terminal voltages of an ideal two-winding transformer. It follows, to produce an equivalent circuit for the transducer, for which the current and voltage conditions can be determined for different modes of operation, it is only necessary to include rotational voltages in the equivalent circuit of the two-winding transformer. Rotational voltages are represented as voltage generators of zero internal impedance. The voltage generators are assigned instantaneous polarities according to the sign of the rotational voltage terms.
+    Figure 5.11 is the equivalent circuit for a doubly excited transducer with stator saliency, constructed in accordance with (5.64).
+    \subsection{Electromagnetic torque} Referring to (3.53), the energy stored within the air gap of a doubly-excited rotatory tranducer
+    \begin{equation*}
+        W_{fe} = \frac{1}{2} i_s^2 L_s + \frac{1}{2} i_r^2 L_r + i_s i_r M_{sr}
+    \end{equation*}
 
-	Electromagnetic torque
-	\begin{align}
-		T_e & = \frac{\dif W_{fe}}{\dif \theta_m} = (\text{pole-pairs}) \frac{\dif W_{fe}}{\dif \theta_r} \nonumber \\
-		& = (\text{pole-pairs})\Big( \frac{1}{2}i_s^2 \frac{\dif L_s}{\dif \theta_r} + \frac{1}{2}i_r^2 \frac{\dif L_r}{\dif \theta_r}  +i_s i_r \frac{\dif M_{sr}}{\dif \theta_r}  \Big)
-	\end{align}
+    Electromagnetic torque
+    \begin{align}
+        T_e & = \frac{\dif W_{fe}}{\dif \theta_m} = (\text{pole-pairs}) \frac{\dif W_{fe}}{\dif \theta_r} \nonumber \\
+        & = (\text{pole-pairs})\Big( \frac{1}{2}i_s^2 \frac{\dif L_s}{\dif \theta_r} + \frac{1}{2}i_r^2 \frac{\dif L_r}{\dif \theta_r}  +i_s i_r \frac{\dif M_{sr}}{\dif \theta_r}  \Big)
+    \end{align}
 
-	In matrix form
-	\begin{equation}
-		T_e = \frac{(\text{pole-pairs})}{2}
-		\begin{bmatrix}
-			i_s & i_r
-		\end{bmatrix}
-		\begin{bmatrix}
-			\dfrac{\dif L_s}{\dif \theta_r} & \dfrac{\dif M_{sr}}{\dif \theta_r} \\[3ex] 
-			\dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
-		\end{bmatrix}
-		\begin{bmatrix}
-			i_s \\ i_r
-		\end{bmatrix}
-	\end{equation}
-	or
-	\begin{equation}
+    In matrix form
+    \begin{equation}
+        T_e = \frac{(\text{pole-pairs})}{2}
+        \begin{bmatrix}
+            i_s & i_r
+        \end{bmatrix}
+        \begin{bmatrix}
+            \dfrac{\dif L_s}{\dif \theta_r} & \dfrac{\dif M_{sr}}{\dif \theta_r} \\[3ex] 
+            \dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
+        \end{bmatrix}
+        \begin{bmatrix}
+            i_s \\ i_r
+        \end{bmatrix}
+    \end{equation}
+    or
+    \begin{equation}
         T_e = \frac{(\text{pole-pair})}{2}{[i]}^T[G][i] %%Notación para transpuesta
-	\end{equation}
+    \end{equation}
 
-	Having constructed a transducer with a particular air-gap geometry and windings of specific numbers of turns, the $[G]$ matrix is fixed and a change in the cyclic variations of $T_e$ can only result from changes made to the stator or rotor currents or both. Thus, the characteristic torque equation for a two-winding transducer with stator saliency is formed by writing in (5.66) the actual expressions for the $G$ coefficients whilst leaving the currents quite general. In this way the characteristic torque equation can be used repeatedly to determine the torque characteristics for a variety of current conditions.
+    Having constructed a transducer with a particular air-gap geometry and windings of specific numbers of turns, the $[G]$ matrix is fixed and a change in the cyclic variations of $T_e$ can only result from changes made to the stator or rotor currents or both. Thus, the characteristic torque equation for a two-winding transducer with stator saliency is formed by writing in (5.66) the actual expressions for the $G$ coefficients whilst leaving the currents quite general. In this way the characteristic torque equation can be used repeatedly to determine the torque characteristics for a variety of current conditions.
 
-	Substituting the $[G]$ matrix of (5.64) in (5.66)
-	\begin{equation}
-		T_e = \frac{(\text{pole-pairs})}{2}
-		\begin{bmatrix}
-			i_s & i_r
-		\end{bmatrix}
-		\begin{bmatrix}
-			0 & -M_m\sin\theta_r \\ 
-			- M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
-		\end{bmatrix}
-		\begin{bmatrix}
-			i_s \\ i_r
-		\end{bmatrix}
-	\end{equation}
+    Substituting the $[G]$ matrix of (5.64) in (5.66)
+    \begin{equation}
+        T_e = \frac{(\text{pole-pairs})}{2}
+        \begin{bmatrix}
+            i_s & i_r
+        \end{bmatrix}
+        \begin{bmatrix}
+            0 & -M_m\sin\theta_r \\ 
+            - M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
+        \end{bmatrix}
+        \begin{bmatrix}
+            i_s \\ i_r
+        \end{bmatrix}
+    \end{equation}
 
-	Consider the particular case of the stator and rotor coils supplied with constant positive d.c.\ currents. The angular variations of the torque components and the total electromagnetic torque is shown in Fig. 5.12.
-	\TabPositions{2.5cm,4cm}
-	The following points of interest can be deduced from Fig. 5.12:
-	\begin{enumerate}[label={(\alph*)}]
-		\item\ $ 0 < \theta_r < \pi $ \tab\ $T_e - v e$ \tab\ torque opposes motion, generator action;\\
-			$-\pi < \theta_r < 0 $ \tab\ $T_e + v e$ \tab\ torque assist motion, motor action.
+    Consider the particular case of the stator and rotor coils supplied with constant positive d.c.\ currents. The angular variations of the torque components and the total electromagnetic torque is shown in Fig. 5.12.
+    \TabPositions{2.5cm,4cm}
+    The following points of interest can be deduced from Fig. 5.12:
+    \begin{enumerate}[label={(\alph*)}]
+        \item\ $ 0 < \theta_r < \pi $ \tab\ $T_e - v e$ \tab\ torque opposes motion, generator action;\\
+            $-\pi < \theta_r < 0 $ \tab\ $T_e + v e$ \tab\ torque assist motion, motor action.
 
-		\item Motor or generator action can be achieved throughout the cycle if the direction of flow of the stator or rotor current is reversed at instants in the cycle $\theta_r = 0$ and $\pi$.
+        \item Motor or generator action can be achieved throughout the cycle if the direction of flow of the stator or rotor current is reversed at instants in the cycle $\theta_r = 0$ and $\pi$.
 
-		\item A torque is produced with only one winding excited provided the non-excited magnetic member has saliency.
+        \item A torque is produced with only one winding excited provided the non-excited magnetic member has saliency.
 
-		\item For given values of stator and rotor currents the peak value of $T_e$ increases with saliency.
-	\end{enumerate}
+        \item For given values of stator and rotor currents the peak value of $T_e$ increases with saliency.
+    \end{enumerate}
 
-	An example of interest considered in chapter 3 is one in which the transducer operates as a singly-excited reluctance motor.
+    An example of interest considered in chapter 3 is one in which the transducer operates as a singly-excited reluctance motor.
 
-	Assuming stator saliency and rotor current
-	\begin{gather*} \label{eq:EqSect5.3}
-		i_r = I_{mr} \sin (\omega_r t + \alpha) \\[1ex]
-		\begin{aligned}
-			T_e & = -(\text{pole-pairs}) L_{r2} I_{mr}^2 \sin^2(\omega_r t + \alpha) \sin 2 \omega_r t \\[1ex]
-			T_e & = -(\text{pole-pairs}) \frac{L_{r2}}{2} I_{mr}^2 [1 - \cos 2 (\omega_{rt} t + \alpha)] \sin^2(\omega_r t + \alpha) \\[1ex]
-			\text{Mean torque} & = (\text{pole-pairs}) \frac{L_{r2} I_{mr}^2}{4 \pi} \int_{\omega_r t = 0}^{\omega_r t = 2 \pi} \bigg [ \frac{\sin (4 \omega_r t + 2 \alpha)}{2} \\[2ex]
-		& \hspace{13em}  -\sin 2 \omega_r t - \frac{\sin 2 \alpha}{2} \bigg ] \dif (\omega_r t) \\
+    Assuming stator saliency and rotor current
+    \begin{gather*} \label{eq:EqSect5.3}
+        i_r = I_{mr} \sin (\omega_r t + \alpha) \\[1ex]
+        \begin{aligned}
+            T_e & = -(\text{pole-pairs}) L_{r2} I_{mr}^2 \sin^2(\omega_r t + \alpha) \sin 2 \omega_r t \\[1ex]
+            T_e & = -(\text{pole-pairs}) \frac{L_{r2}}{2} I_{mr}^2 [1 - \cos 2 (\omega_{rt} t + \alpha)] \sin^2(\omega_r t + \alpha) \\[1ex]
+            \text{Mean torque} & = (\text{pole-pairs}) \frac{L_{r2} I_{mr}^2}{4 \pi} \int_{\omega_r t = 0}^{\omega_r t = 2 \pi} \bigg [ \frac{\sin (4 \omega_r t + 2 \alpha)}{2} \\[2ex]
+        & \hspace{13em}  -\sin 2 \omega_r t - \frac{\sin 2 \alpha}{2} \bigg ] \dif (\omega_r t) \\
         & = {(\text{pole-pairs})} \frac{L_{r2} I_{mr}^2}{8 \pi} {\bigg [ -\omega_r t \sin 2 \alpha \bigg ]}_{\omega_r t = 0}^{\omega_r t = 2 \pi} \\
-		& = - \frac{(\text{pole-pairs})}{4} L_{r2} i_{mr}^2 \sin 2 \alpha
-	\end{aligned}
+        & = - \frac{(\text{pole-pairs})}{4} L_{r2} i_{mr}^2 \sin 2 \alpha
+    \end{aligned}
 \end{gather*}
 
 Mean torque is positive and a maximum when $\alpha = -45^{\circ}$ a condition achieved with a rotor current lagging the angular displacement $\theta_r$ by a time phase of $45^{\circ}$. The reluctance motor is not self-starting and can only operate at synchronous speed.
@@ -665,140 +664,140 @@ As the previously discussed rotary transducer and the commutator machine each ha
 Commencing with the general stator and rotor voltage equations (5.54) and (5.55), all the rotational voltages in (5.54) may be deleted as
 \noindent
 \begin{enumerate}[itemindent=0cm, label ={(\alph*)}]
-	\item the stator conductors and the pseudo-stationary rotor coil flux are space-stationary, and
-	\item the stator self-inductance $L_s$ is a constant value for cylindrical rotor.
+    \item the stator conductors and the pseudo-stationary rotor coil flux are space-stationary, and
+    \item the stator self-inductance $L_s$ is a constant value for cylindrical rotor.
 \end{enumerate} 
 \begin{align}
-	v_s & = i_s R_s + L_s p i_s  M_{sr} p i_r \\
-	v_r & = i_r R_r + L_r p i_r + M_{sr} p i_s + \omega_r i_r \frac{\dif l_r}{\dif \theta_r} + \omega_r i _s \frac{\dif M_{sr}}{\dif \theta_r} &&
+    v_s & = i_s R_s + L_s p i_s  M_{sr} p i_r \\
+    v_r & = i_r R_r + L_r p i_r + M_{sr} p i_s + \omega_r i_r \frac{\dif l_r}{\dif \theta_r} + \omega_r i _s \frac{\dif M_{sr}}{\dif \theta_r} &&
 \end{align}
 The incremental energy supplied to the two windings in time $\dif t$
 \begin{equation}
-	\dif W_e = (v_s i_s + v_r i_r) \dif t
+    \dif W_e = (v_s i_s + v_r i_r) \dif t
 \end{equation}
 \begin{equation}
-	\dif W_e = \underbrace{(i_s^2 R_s + i_r^2 R_r)}_
-	{\substack{\text{incremental}\\ 
-	\text{energy loss in}\\ 
-	\text{winding} \\
-	\text{resistance} \\ 
-	\dif W_{le}}} + 
-	\underbrace{[L_s p (\tfrac{1}{2}i_r^2) + M_{sr}(i_s i_r)]}_
-	{\substack{\text{inceremental increase}\\
-		\text{in field storage snergy}\\
-		\dif W_{fe}}}
-	\dif t
-	+ \underbrace{\omega_r \Big( i_s i_r \frac{\dif M_{sr}}{\dif \theta_r} \Big)}_
-	{\substack{\text{incremental energy} \\
-		\text{for torque production} \\
-		\dif W_{em}}}
-	\dif t		
+    \dif W_e = \underbrace{(i_s^2 R_s + i_r^2 R_r)}_
+    {\substack{\text{incremental}\\ 
+    \text{energy loss in}\\ 
+    \text{winding} \\
+    \text{resistance} \\ 
+    \dif W_{le}}} + 
+    \underbrace{[L_s p (\tfrac{1}{2}i_r^2) + M_{sr}(i_s i_r)]}_
+    {\substack{\text{inceremental increase}\\
+    \text{in field storage snergy}\\
+    \dif W_{fe}}}
+    \dif t
+    + \underbrace{\omega_r \Big( i_s i_r \frac{\dif M_{sr}}{\dif \theta_r} \Big)}_
+    {\substack{\text{incremental energy} \\
+    \text{for torque production} \\
+    \dif W_{em}}}
+    \dif t		
 \end{equation}
 Electromagnetic torque
 \begin{align}
-	T_e & = \frac{(\text{pole-pairs})}{\omega_r} \frac{\dif W_{em}}{\dif t} \nonumber\\
-	& =  (\text{pole-pairs})\Big(i_s i_r \frac{\dif M_{sr}}{\dif \theta_r}  + i_r^2 \frac{\dif L_r}{\dif \theta_r} \Big) \nonumber \\
-	T_e & = (\text{pole-pairs})
-	\begin{bmatrix}
-		i_s & i_r
-	\end{bmatrix}
-	\begin{bmatrix}
-		0 & 0 \\[1ex]
-		\dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
-	\end{bmatrix}
-	\begin{bmatrix}
-		i_s \\ i_r
-	\end{bmatrix} \\
+    T_e & = \frac{(\text{pole-pairs})}{\omega_r} \frac{\dif W_{em}}{\dif t} \nonumber\\
+    & =  (\text{pole-pairs})\Big(i_s i_r \frac{\dif M_{sr}}{\dif \theta_r}  + i_r^2 \frac{\dif L_r}{\dif \theta_r} \Big) \nonumber \\
+    T_e & = (\text{pole-pairs})
+    \begin{bmatrix}
+        i_s & i_r
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & 0 \\[1ex]
+        \dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_s \\ i_r
+    \end{bmatrix} \\
     T_e &= (\text{pole-pairs}) {[i]}^T[G][i] &
 \end{align}
 
 Comparing (5.74) with (5.67) shows the general expression for electromagnetic torque differ by factor $\frac{1}{2}$-
 Thus, for a commutator machine with stator saliency
 \begin{align*}
-	[L] & = 
-	\begin{bmatrix}
-		L_s & M_{sr} \\
-		M_{sr} & L_r
-	\end{bmatrix} \\[2ex]
-	[G] & = 
-	\begin{bmatrix}
-		0 & 0 \\[1ex]
-		\dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
-	\end{bmatrix}
+    [L] & = 
+    \begin{bmatrix}
+        L_s & M_{sr} \\
+        M_{sr} & L_r
+    \end{bmatrix} \\[2ex]
+    [G] & = 
+    \begin{bmatrix}
+        0 & 0 \\[1ex]
+        \dfrac{\dif M_{sr}}{\dif \theta_r} & \dfrac{\dif L_{r}}{\dif \theta_r} 
+    \end{bmatrix}
 \end{align*}
 Voltage equations
 \begin{equation}
-	\begin{bmatrix}
-		v_s \\ v_r
-	\end{bmatrix} = \Bigg\{
-		\begin{bmatrix}
-			R_s & 0 \\ 0 & R_r 
-		\end{bmatrix} +
-		\begin{bmatrix}
-			L_s & M_{sr} \\
-			M_{rs} & L_{r}
-		\end{bmatrix}p \\
-		+ \omega_r \frac{\dif}{\dif \theta_r}
-		\begin{bmatrix}
-			0 & 0 \\
-			M_{sr} & L_{r}
-		\end{bmatrix}
-	\Bigg\}
-	\begin{bmatrix}
-		i_s \\
-		i_r
-	\end{bmatrix}
+    \begin{bmatrix}
+        v_s \\ v_r
+    \end{bmatrix} = \Bigg\{
+        \begin{bmatrix}
+            R_s & 0 \\ 0 & R_r 
+        \end{bmatrix} +
+        \begin{bmatrix}
+            L_s & M_{sr} \\
+            M_{rs} & L_{r}
+        \end{bmatrix}p \\
+        + \omega_r \frac{\dif}{\dif \theta_r}
+        \begin{bmatrix}
+            0 & 0 \\
+            M_{sr} & L_{r}
+        \end{bmatrix}
+    \Bigg\}
+    \begin{bmatrix}
+        i_s \\
+        i_r
+    \end{bmatrix}
 \end{equation}
 For a general brush displacement $\theta_r$ with respect to the $d$-axis
 \begin{align*}
-	L_s & = \text{constant} \\
-	L_r & = L_{r1} + L_{r2} \cos 2 \theta_r & \frac{\dif L_r}{\dif \theta_r} & = - 2 L_{r2} \sin 2 \theta_r \\
-	M_{sr} & = M_m \cos \theta_r &  \frac{M_{sr}}{\dif \theta_r} & = - M_m \sin \theta_r 
+    L_s & = \text{constant} \\
+    L_r & = L_{r1} + L_{r2} \cos 2 \theta_r & \frac{\dif L_r}{\dif \theta_r} & = - 2 L_{r2} \sin 2 \theta_r \\
+    M_{sr} & = M_m \cos \theta_r &  \frac{M_{sr}}{\dif \theta_r} & = - M_m \sin \theta_r 
 \end{align*}
 
 Substituting the $L$ y $G$ coefficients in (5.73) and (5.75)
 \begin{equation}
-	T_e = (\text{pole-pairs}) 
-	\begin{bmatrix}
-		i_s & i_r
-	\end{bmatrix}
-	\begin{bmatrix}
-		0 & 0 \\
-		- M_m \sin \theta_r & - 2 L_{r2} \sin 2 \theta_r
-	\end{bmatrix}
-	\begin{bmatrix}
-		i_s \\ i_r
-	\end{bmatrix}
+    T_e = (\text{pole-pairs}) 
+    \begin{bmatrix}
+        i_s & i_r
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & 0 \\
+        - M_m \sin \theta_r & - 2 L_{r2} \sin 2 \theta_r
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_s \\ i_r
+    \end{bmatrix}
 \end{equation}
 \begin{multline}
-	\begin{bmatrix}
-		v_s \\ v_r
-	\end{bmatrix} = 
-	\Bigg \{
-		\begin{bmatrix}
-			R_s & 0 \\ 0 & R_r
-		\end{bmatrix}
-		+
-		\begin{bmatrix}
-			L_s & M_m \cos \theta_r \\
-			M_m \cos \theta_r & L_r
-		\end{bmatrix}
-		p \\
-		+ \omega_r
-		\begin{bmatrix}
-			0 & 0 \\
-			-M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
-		\end{bmatrix}
-	\Bigg\}
-	\begin{bmatrix}
-		i_s \\ i_r
-	\end{bmatrix}
+    \begin{bmatrix}
+        v_s \\ v_r
+    \end{bmatrix} = 
+    \Bigg \{
+        \begin{bmatrix}
+            R_s & 0 \\ 0 & R_r
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            L_s & M_m \cos \theta_r \\
+            M_m \cos \theta_r & L_r
+        \end{bmatrix}
+        p \\
+        + \omega_r
+        \begin{bmatrix}
+            0 & 0 \\
+            -M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
+        \end{bmatrix}
+    \Bigg\}
+    \begin{bmatrix}
+        i_s \\ i_r
+    \end{bmatrix}
 \end{multline}
 With brushes on the $q$-axis, $\theta_r = -\pi/2$
 \begin{align*}
-	T_e & = (\text{pole-pairs}) i_s i_r M_m \\
-	v_s & = i_s R_s + L_s p i_s \\
-	v_r & = i_r R_r + L_r p i_r + \omega_r M_m i_s
+    T_e & = (\text{pole-pairs}) i_s i_r M_m \\
+    v_s & = i_s R_s + L_s p i_s \\
+    v_r & = i_r R_r + L_r p i_r + \omega_r M_m i_s
 \end{align*}
 For steady-state d.c.\ conditions $p = 0$, $v_s=V_f$ and $v_r = V_a$,
 
@@ -806,13 +805,13 @@ Motor action $i_s = I_f$, $i_r = I_a$
 
 Generator action $i_s = I_f$, $i_r = - I_a$
 \begin{align*}
-	T_e & = \pm (\text{pole-pairs}) I_f I_a M_m \\
-	V_f & = I_f R_f \\
-	V_a & = \pm I_a R_a + \omega_r M_m I_f
+    T_e & = \pm (\text{pole-pairs}) I_f I_a M_m \\
+    V_f & = I_f R_f \\
+    V_a & = \pm I_a R_a + \omega_r M_m I_f
 \end{align*}
 On no-load the terminal voltage, called the \emph{excitation voltage}, is given by
 \begin{equation*}
-	E = \omega_r M_m I_f
+    E = \omega_r M_m I_f
 \end{equation*}
 where $M_m$ is the value of mutual inductance between the stator coil and the pseudo-stationary rotor coil with the brush axis at $\theta_r = 0$.
 
@@ -829,18 +828,18 @@ The rules for constructing $[L]$ and $[G]$ matrices for the primitive machine ca
 
 From (5.77)
 \begin{equation*}
-	[L] =
-	\begin{bmatrix}
-		L_s & M_m \cos \theta_r \\
-		M_m \cos \theta_r & L_r
-	\end{bmatrix}
+    [L] =
+    \begin{bmatrix}
+        L_s & M_m \cos \theta_r \\
+        M_m \cos \theta_r & L_r
+    \end{bmatrix}
 \end{equation*}
 
 The mutual inductance coefficient
 \begin{align}
-	M_{sr} & = M_{rs} = M_m \cos \theta_r \\
-	\theta_r & = 0  \qquad M_{sr} = M_m \nonumber \\
-	\theta_r & = \pm \frac{\pi}{2} \qquad M_{sr} = 0 \nonumber
+    M_{sr} & = M_{rs} = M_m \cos \theta_r \\
+    \theta_r & = 0  \qquad M_{sr} = M_m \nonumber \\
+    \theta_r & = \pm \frac{\pi}{2} \qquad M_{sr} = 0 \nonumber
 \end{align}
 
 Therefore, mutual inductance coefficients are present when a pair of coils are situated on a common magnetic axis.
@@ -848,18 +847,18 @@ Therefore, mutual inductance coefficients are present when a pair of coils are s
 From (5.77)
 
 \begin{equation*}
-	[G] = 
-	\begin{bmatrix}
-		0 & 0 \\ 
-		-M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
-	\end{bmatrix}
+    [G] = 
+    \begin{bmatrix}
+        0 & 0 \\ 
+        -M_m \sin \theta_r & -2 L_{r2} \sin 2 \theta_r
+    \end{bmatrix}
 \end{equation*}
 
 For $\theta_r = 0$ and $\pm \pi / 2$, $\sin 2 \theta_r = 0$ and the only $G$ coefficient of concern is
 \begin{align}
-	G_{rs} & =  - M_m \sin \theta_r \\
-	\theta_r & = 0  \qquad G_{rs} = 0 \nonumber \\
-	\theta_r & = \pm \frac{\pi}{2} \qquad G_{rs} = \mp M_m \nonumber
+    G_{rs} & =  - M_m \sin \theta_r \\
+    \theta_r & = 0  \qquad G_{rs} = 0 \nonumber \\
+    \theta_r & = \pm \frac{\pi}{2} \qquad G_{rs} = \mp M_m \nonumber
 \end{align}
 
 A $G$ coefficient is present when a pair of coils are located in space quadrature and one of the coils is pseudo-stationary.
@@ -880,28 +879,28 @@ For the example considered, the axis of $_d^r$ is located $+\pi/2$ from the axis
 
 \noindent (a) \emph{The inductance coefficient matrix} $[L]$
 \begin{equation}
-	\begin{tikzpicture} [anchor = base, baseline =0pt]
-		\draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
-		\draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
-		\draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
-		\draw (1.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$M_{dd}^{rs}$} +(0,3) node{$L_d^s$}+(0,4) node{$_d^s$};
-		\draw (2.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$L_{d}^{r}$} +(0,3) node{$M_{dd}^{sr}$}+(0,4) node{$_d^r$};
-		\draw (3.5,-1.6) node{$M_{qq}^{rs}$} +(0,1) node{$L_q^s$} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_q^s$};
-		\draw (4.5,-1.6) node{$L_q^r$} +(0,1) node{$M_{qq}^{sr}$} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_q^r$};
-		\draw (-0.6,-0.1) node{$[L] =$};
-		\draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
-		\draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
-	\end{tikzpicture}
+    \begin{tikzpicture} [anchor = base, baseline =0pt]
+        \draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
+        \draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
+        \draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
+        \draw (1.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$M_{dd}^{rs}$} +(0,3) node{$L_d^s$}+(0,4) node{$_d^s$};
+        \draw (2.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$L_{d}^{r}$} +(0,3) node{$M_{dd}^{sr}$}+(0,4) node{$_d^r$};
+        \draw (3.5,-1.6) node{$M_{qq}^{rs}$} +(0,1) node{$L_q^s$} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_q^s$};
+        \draw (4.5,-1.6) node{$L_q^r$} +(0,1) node{$M_{qq}^{sr}$} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_q^r$};
+        \draw (-0.6,-0.1) node{$[L] =$};
+        \draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
+        \draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
+    \end{tikzpicture}
 \end{equation}
 
 The matrix contains mutual inductance coefficients forming equal pairs
 \begin{align*}
-	M_{dd}^{sr} & = M_{dd}^{rs} \\
-	M_{qq}^{sr} & = M_{qq}^{rs}
+    M_{dd}^{sr} & = M_{dd}^{rs} \\
+    M_{qq}^{sr} & = M_{qq}^{rs}
 \end{align*}
 For a salient-pole machine
 \begin{equation*}
-	L_d^s \neq L_q^s , \quad L_d^r \neq L_q^r \text{and} M_{dd}^{sr} \neq M_{qq}^{sr}
+    L_d^s \neq L_q^s , \quad L_d^r \neq L_q^r \text{and} M_{dd}^{sr} \neq M_{qq}^{sr}
 \end{equation*}
 as the $d$-axis and $q$-axis permeances are different. The corresponding inductances are equal for a machine with zero saliency.
 
@@ -910,109 +909,109 @@ as the $d$-axis and $q$-axis permeances are different. The corresponding inducta
 \noindent (b) \emph{The rotational coefficient matrix} $[G]$\\
 The $[G]$ matrix in general form
 \begin{equation}
-	\begin{tikzpicture} [anchor = base, baseline =0pt]
-		\draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
-		\draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
-		\draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
-		\draw (1.5,-1.6) node{$G_{qd}^{rs}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^s$};
-		\draw (2.5,-1.6) node{$G_{qd}^{rr}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^r$};
-		\draw (3.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$G_{dq}^{rs}$} +(0,3) node{0}+(0,4) node{$_q^s$};
-		\draw (4.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$G_{dq}^{rr}$} +(0,3) node{0}+(0,4) node{$_q^r$};
-		\draw (-0.6,-0.1) node{$[G] =$};
-		\draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
-		\draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
-	\end{tikzpicture}
+    \begin{tikzpicture} [anchor = base, baseline =0pt]
+        \draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
+        \draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
+        \draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
+        \draw (1.5,-1.6) node{$G_{qd}^{rs}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^s$};
+        \draw (2.5,-1.6) node{$G_{qd}^{rr}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^r$};
+        \draw (3.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$G_{dq}^{rs}$} +(0,3) node{0}+(0,4) node{$_q^s$};
+        \draw (4.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$G_{dq}^{rr}$} +(0,3) node{0}+(0,4) node{$_q^r$};
+        \draw (-0.6,-0.1) node{$[G] =$};
+        \draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
+        \draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
+    \end{tikzpicture}
 \end{equation}
 
 It is seen that $G$ coefficients are only obtained for pseudo-stationary rotor coils. Coils acting as flux sources may be stator or pseudo-stationary rotor coils.
 
 The significance of the $G$ coefficients is determined from
 \begin{equation*}
-	G_{rs} = -M_m \sin \theta_r
+    G_{rs} = -M_m \sin \theta_r
 \end{equation*}
 
 The value of $M_m$ is the coupling obtained when the axis of the seat of voltage coil is imagined to be aligned with the axis of the source of flux coil.
 
 Coefficients with stator coils as the source of flux
 \begin{align*}
-	G_{dq}^{rs} &= - M_{qq}^{rs} \sin \Big (+\frac{\pi}{2}\Big) = -M_{qq}^{rs}\\
-	G_{qd}^{rs} &= - M_{dd}^{rs} \sin \Big (-\frac{\pi}{2}\Big) = -M_{dd}^{rs}
+    G_{dq}^{rs} &= - M_{qq}^{rs} \sin \Big (+\frac{\pi}{2}\Big) = -M_{qq}^{rs}\\
+    G_{qd}^{rs} &= - M_{dd}^{rs} \sin \Big (-\frac{\pi}{2}\Big) = -M_{dd}^{rs}
 \end{align*}
 
 Coefficients involving two pseudo-stationary coils 
 \begin{align*}
-	G_{dq}^{rr} & =-M_{qq}^{rr} \sin \Big( +\frac{\pi}{2} \Big) = -M_{qq}^{rr}\\
-	G_{qd}^{rr} & =-M_{dd}^{rr} \sin \Big( -\frac{\pi}{2} \Big) = -M_{dd}^{rr}\\
-	M_{qq}^{rr} & = \sqrt{L_q^r L_q^r} = L_q^r \\
-	M_{dd}^{rr} & = \sqrt{L_d^r L_d^r} = L_d^r
+    G_{dq}^{rr} & =-M_{qq}^{rr} \sin \Big( +\frac{\pi}{2} \Big) = -M_{qq}^{rr}\\
+    G_{qd}^{rr} & =-M_{dd}^{rr} \sin \Big( -\frac{\pi}{2} \Big) = -M_{dd}^{rr}\\
+    M_{qq}^{rr} & = \sqrt{L_q^r L_q^r} = L_q^r \\
+    M_{dd}^{rr} & = \sqrt{L_d^r L_d^r} = L_d^r
 \end{align*}
 
 Substituting the above inductance coefficients in (5.81)
 \begin{equation}
-	\begin{tikzpicture} [anchor = base, baseline =0pt]
-		\draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
-		\draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
-		\draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
-		\draw (1.5,-1.6) node{$M_{dd}^{rs}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^s$};
-		\draw (2.5,-1.6) node{$L_{d}^{r}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^r$};
-		\draw (3.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$-M_{qq}^{rs}$} +(0,3) node{0}+(0,4) node{$_q^s$};
-		\draw (4.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$-L_{q}^{r}$} +(0,3) node{0}+(0,4) node{$_q^r$};
-		\draw (-0.6,-0.1) node{$[G] =$};
-		%\draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
-		%\draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
-	\end{tikzpicture}
+    \begin{tikzpicture} [anchor = base, baseline =0pt]
+        \draw (0,0)--(5,0) (0,1)--(5,1) (0,2)--(5,2) (1,3)--(5,3) (0,-1)--(5,-1) (0,-2)--(5,-2);
+        \draw (0,-2)--(0,2) (1,-2)--(1,3) (2,-2)--(2,3) (3,-2)--(3,3) (4,-2)--(4,3) (5,-2)--(5,3);
+        \draw (0.5,-1.6) node{$_q^r$} +(0,1) node{$_q^s$} +(0,2) node{$_d^r$} +(0,3) node{$_d^s$};
+        \draw (1.5,-1.6) node{$M_{dd}^{rs}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^s$};
+        \draw (2.5,-1.6) node{$L_{d}^{r}$} +(0,1) node{0} +(0,2) node{0} +(0,3) node{0}+(0,4) node{$_d^r$};
+        \draw (3.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$-M_{qq}^{rs}$} +(0,3) node{0}+(0,4) node{$_q^s$};
+        \draw (4.5,-1.6) node{0} +(0,1) node{0} +(0,2) node{$-L_{q}^{r}$} +(0,3) node{0}+(0,4) node{$_q^r$};
+        \draw (-0.6,-0.1) node{$[G] =$};
+        %\draw [align = center,->](-0.6, 2.3) node{Seat\\of voltage} (0.5,2.75)--(0.5, 2.25);
+        %\draw [align = center,->](6.3, 2.3) node{source of\\flux} (5.75,2.5)--(5.25,2.5);
+    \end{tikzpicture}
 \end{equation}
 
 Combining the results obtained in (5.80) and (5.82), substituting in the general voltage equation
 \begin{equation*}
-	[v] = \{[R] + [L]p+\omega_r[G]\}[i]
+    [v] = \{[R] + [L]p+\omega_r[G]\}[i]
 \end{equation*}
 gives the complete impedance matrix for a four-coil, primitive machine, Fig. 5.18.
 \begin{equation}
-	\begin{bmatrix}
-		v_d^s \\ v_d^r \\ v_q^s \\ v_q^r
-	\end{bmatrix}
-	=
-	\begin{bmatrix}
-		(R_d^s + L_d^s p) & M_{dd}^{rs}p & 0 & 0\\
-		M_{dd}^{rs}p & (R_d^r + L_d^r p) & -\omega_r M_{qq}^{rs} &-\omega_r L_q^r \\
-		0 & 0 & (R_q^s + L_q^s p) & M_{qq}^{rs} p \\
-		\omega_r M_{dd}^{rs} & \omega_r L_{d}^{r} & M_{qq}^{rs} p & (R_q^r + L_q^r p)
-	\end{bmatrix}
-	\begin{bmatrix}
-		i_d^s \\ i_d^r \\ i_q^s \\ i_q^r
-	\end{bmatrix}
+    \begin{bmatrix}
+        v_d^s \\ v_d^r \\ v_q^s \\ v_q^r
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        (R_d^s + L_d^s p) & M_{dd}^{rs}p & 0 & 0\\
+        M_{dd}^{rs}p & (R_d^r + L_d^r p) & -\omega_r M_{qq}^{rs} &-\omega_r L_q^r \\
+        0 & 0 & (R_q^s + L_q^s p) & M_{qq}^{rs} p \\
+        \omega_r M_{dd}^{rs} & \omega_r L_{d}^{r} & M_{qq}^{rs} p & (R_q^r + L_q^r p)
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_d^s \\ i_d^r \\ i_q^s \\ i_q^r
+    \end{bmatrix}
 \end{equation}
 \subsection{Torque and power}
 
 Substituting (5.82) in (5.74)
 \begin{equation}
-	T_e = (\text{pole-pairs})
-	\begin{bmatrix}
-		i_d^s & i_d^r &i_q^s & i_q^r
-	\end{bmatrix}
-	\begin{bmatrix}
-		0 & 0 & 0 & 0 \\
-		0 & 0 & -M_{qq}^{rs} & -L_q^r \\
-		0 & 0 & 0 & 0 \\
-		M_{dd}^{rs} & L_d^r & 0 & 0 
-	\end{bmatrix}
-	\begin{bmatrix}
-		i_d^s \\  i_d^r \\ i_q^s \\ i_q^r
-	\end{bmatrix}
+    T_e = (\text{pole-pairs})
+    \begin{bmatrix}
+        i_d^s & i_d^r &i_q^s & i_q^r
+    \end{bmatrix}
+    \begin{bmatrix}
+        0 & 0 & 0 & 0 \\
+        0 & 0 & -M_{qq}^{rs} & -L_q^r \\
+        0 & 0 & 0 & 0 \\
+        M_{dd}^{rs} & L_d^r & 0 & 0 
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_d^s \\  i_d^r \\ i_q^s \\ i_q^r
+    \end{bmatrix}
 \end{equation}
 Expanding and collecting terms
 \begin{equation}
-	T_e = (\text{pole-pairs}) [M_{dd}^{rs} i_d^s i_q^r - M_{qq}^{rs} i_q^s i_d^r + (L_d^r  - L_q^r)i_d^r i_q^r]
+    T_e = (\text{pole-pairs}) [M_{dd}^{rs} i_d^s i_q^r - M_{qq}^{rs} i_q^s i_d^r + (L_d^r  - L_q^r)i_d^r i_q^r]
 \end{equation}
 The torque component in $(L_d^r - L_q^r)$ is only present in salient-pole machines and is called saliency-torque. The remaining torque components, which define the electromagnetic torque for a uniform air-gap, are described as cylindrical torques. It will be noted that the cylindrical torque components comprise a positive motoring term and a negative generating term; the sum of all such terms determines the machine action, motor, or generator.
 
 The total internal electrical power developed by the machine
 \begin{equation}
-	P_e = \frac{\omega_r}{(\text{pole-pairs})} T_e
+    P_e = \frac{\omega_r}{(\text{pole-pairs})} T_e
 \end{equation}
 \begin{equation}
-	P_e = \omega_r [M_{dd}^{rs} i_d^s i_q^r - M_{qq}^{rs} i_q^s i_d^r + (L_d^r  - L_q^r)i_d^r i_q^r]
+    P_e = \omega_r [M_{dd}^{rs} i_d^s i_q^r - M_{qq}^{rs} i_q^s i_d^r + (L_d^r  - L_q^r)i_d^r i_q^r]
 \end{equation}
 
 An alternative method of deriving (5.85) is to consider the torque exerted of each pseudo-stationary coil by all coils at right-angles.
@@ -1023,9 +1022,9 @@ Machine voltage and torque equations my be written down by inspection when the i
 Consider a machine with one brush-pair on the quadrature-axis and two direct-axis stator coils as shown in Fig. 6.1. The voltage and electromagnetic torque equations are:
 
 \begin{equation}
-	\begin{bmatrix}
+    \begin{bmatrix}
         v_d^{s1}\\[2ex] v_d^{s2}\\[2ex] v_q^{r1}
-	\end{bmatrix} =
+    \end{bmatrix} =
     \begin{bmatrix}
         (R_d^{s1} + L_d^{s1}p) & M_{d}^{s1}{}_{d}^{s2} p & 0 \\[2ex]
         M{_d^{s2}{}_d^{s1}} & (R_d^{s2} + L_d^{s2}p) & 0 \\[2ex]
@@ -1034,7 +1033,7 @@ Consider a machine with one brush-pair on the quadrature-axis and two direct-axi
     \begin{bmatrix}
         i_d^{s1} \\[2ex] i_d^{s2} \\[2ex] i_q^{r1}
     \end{bmatrix}
-	\label{}
+    \label{}
 \end{equation}
 \begin{equation}
     T_e = (\text{pole-pairs})[i_q^{r1}(G_q^{r1}{}_d^{s1} i_d^{s1} + G_q^{r1}{}_d^{s2} i_d^{s2})]
@@ -1046,7 +1045,7 @@ The rotational inductance ($G$) coefficients mat be replaced by transformer indu
 \begin{equation}
     \begin{bmatrix}
         v_d^{s1}\\[2ex] v_d^{s2}\\[2ex] v_q^{r1}
-	\end{bmatrix} =
+    \end{bmatrix} =
     \begin{bmatrix}
         (R_d^{s1} + L_d^{s1}p) & M_{d}^{s1}{}_{d}^{s2} p & 0 \\[2ex]
         M{_d^{s2}{}_d^{s1}} & (R_d^{s2} + L_d^{s2}p) & 0 \\[2ex]
@@ -1083,11 +1082,11 @@ D.C.\ machines have one or more stator windings for the required load characteri
 \subsection{Field windings} The main stator or field windings are wound on salient poles. Coils may be connected:
 \begin{enumerate}[label = (\alph*)]
     \item in series with the rotor or armature winding, \\
-    i.e.\ \textit{a series field}
+        i.e.\ \textit{a series field}
     \item[or \stepcounter{enumi} (\alph{enumi})] energized from a separate d.c.\ supply, \\
-    i.e.\ a \textit{separately-excited field}
+        i.e.\ a \textit{separately-excited field}
     \item[or \stepcounter{enumi} (\alph{enumi})] across the armature brush-pair,\\
-    i.e.\ a \textit{shunt field.}
+        i.e.\ a \textit{shunt field.}
 \end{enumerate}
 A d.c.\ motor with a shunt winding is identical to a separately-excited machine as in both cases the winding is energized from the supply voltage.
 
@@ -1098,7 +1097,7 @@ A \textit{compound machine} has a series field together with a shunt or separate
 \begin{equation}
     \begin{bmatrix}
         v_d^{s2}\\[2ex] v_d^{s1}\\[2ex] v_q^{r1}
-	\end{bmatrix} =
+    \end{bmatrix} =
     \begin{bmatrix}
         (R_f + L_f p) & M_{fs} p & 0 \\[2ex]
         M_{sf} & (R_s + L_s p) & 0 \\[2ex]
@@ -1418,7 +1417,7 @@ The solution for the transient currents $i_a(t)$ and $i_f(t)$ may be obtained us
 \subsection{Solution for unloaded machine}
 With $\mathring I_a =0$, (6.28) and (6.24) reduce to
 \begin{equation}
-     \begin{bmatrix}
+    \begin{bmatrix}
         V_f/\textbf{s} + L_f \mathring I_f \\[2ex]
         M_{sf} \mathring I_f 
     \end{bmatrix}
@@ -1442,7 +1441,7 @@ Combining (6.29) and (6.30) and eliminating $i_f$,
 Writing $\tau$ for $L / (R + \omega_r M_{as})$ and $\tau_f$ for $L/R_f$ in (6.31),
 \begin{multline}
     \bar i_a = - \dfrac{\mathring V(1-\textbf{s}\tau_f)}{\textbf{s}(R + \omega_r M_{as}) \bigg\{1 + \textbf{s} \bigg[\tau + \tau_f - \dfrac{\omega_r M_{af} M_{sf}}{R_f (R + \omega_r M_{as})} \bigg]} \\ %chktex 7
-      + \textbf{s}^2 \bigg[\tau \tau_f - \dfrac{M_{sf}^2}{R_f(R + \omega_r M_{as})}\bigg]\bigg\}
+    + \textbf{s}^2 \bigg[\tau \tau_f - \dfrac{M_{sf}^2}{R_f(R + \omega_r M_{as})}\bigg]\bigg\}
     \label{}
 \end{multline}
 
@@ -1656,7 +1655,7 @@ The following tabulated results are obtained using these limits in (6.60).
     \begin{tabular}{c}
         Speed \\ $\omega_r$ \\
     \end{tabular} &
-        Supply Voltage $V$ \\
+    Supply Voltage $V$ \\
     0 &  $n$ & 0 & $I_{a(\max)} R_n$ \\
     $t_1$ & $n$ & $\omega_{m1}$ & $I_{a(\min)} R_n + \omega_{r1} M_{af} I_f$\\
     $t_1$ & $(n - 1)$ & $\omega_{m1}$ & $I_{a(\max)} R_{n-1} + \omega_{r1} M_{af} I_f$\\
@@ -1893,7 +1892,7 @@ The machine transforms constant voltage to constant current, hence the name \tex
     & =
     \begin{bmatrix}
         (R_f + L_f p) & M_{df} p & 0 \\
-         M_{df} p & (R_d + L_d p) & -\omega_r L_q \\
+        M_{df} p & (R_d + L_d p) & -\omega_r L_q \\
         \omega_r M_{df} & \omega_r L_d & (R_q + L_q p) 
     \end{bmatrix}
     \begin{bmatrix}
@@ -1962,18 +1961,18 @@ The machine coils are connected as Fig. 6.20(b), and $v_q = 0$. Defining $i = -i
     \end{bmatrix}
     =
     \left[
-    \begin{matrix}
-        (R_f + L_f p) \\
-        (M_{af} - M_{cf} p) \\
-        \omega_r M_{af}
-    \end{matrix}
-    \right.\\
-    \left.
-    \begin{matrix}
-        (M_{cf} + M_{af}) p & 0 \\
-        [-(R_a + R_c + L_c p + L_a p) + 2 M_{cd}p] & -\omega_r L_a \\
-        \omega_r(M_{cd} - L_a) & (R_a + L_a p)
-    \end{matrix}
+        \begin{matrix}
+            (R_f + L_f p) \\
+            (M_{af} - M_{cf} p) \\
+            \omega_r M_{af}
+        \end{matrix}
+        \right.\\
+        \left.
+        \begin{matrix}
+            (M_{cf} + M_{af}) p & 0 \\
+            [-(R_a + R_c + L_c p + L_a p) + 2 M_{cd}p] & -\omega_r L_a \\
+            \omega_r(M_{cd} - L_a) & (R_a + L_a p)
+        \end{matrix}
     \right]
     \begin{bmatrix}
         i_f \\i \\i_q
@@ -1994,8 +1993,8 @@ Eliminating $i_q$ in (6.92),
             (R_f + L_f p) \\ 
             \bigg\{(M_{af} - M_{cf})p + \dfrac{\omega_r^2 L_a M_{af}}{R_a + L_a p}\bigg\}
         \end{matrix}
-    \right . \\
-    \left .
+        \right . \\
+        \left .
         \begin{matrix}
             (M_{cf} - M_{af})p \\
             \bigg\{\dfrac{-(R_a + R_c)}{-(L_a + L_c -2 M_{cd})p} + \dfrac{\omega_r^2 L_a (M_{cd} - L_a)}{R_a + L_a p}\bigg\}
@@ -2231,863 +2230,1144 @@ Comparing (7.6) and (7.8),
     -
     \underbrace
     {[M]
-    \begin{bmatrix}
-        F \\ F \\ F
-    \end{bmatrix}}_{0}
-    \label{eq:Eq7.9}
-\end{equation}
-Thus, for the described original conditions infinite sets of three-phase m.m.f.s transform to a unique of two-phase m.m.f.s.
-
-Re-arranging (7.9) and adding a third row of equal numerical constants $m$ to the matrix $[M]$
-\begin{equation}
-    \begin{bmatrix}
-        F_{\alpha} \\ F_{\beta} \\ 0
-    \end{bmatrix}
-    +
-    \begin{bmatrix}
-        [M] \vphantom
-        {\begin{matrix}
-                F \\ F
-            \end{matrix}} \\
-        \begin{matrix}
-            m & m & m
-        \end{matrix}
-    \end{bmatrix}
-    \begin{bmatrix}
-        F \\ F \\ F
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        [M] \vphantom
-        {\begin{matrix}
-                F \\ F
-            \end{matrix}} \\
-        \begin{matrix}
-            m & m & m
-        \end{matrix}
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_a \\ F_b \\ F_c
-    \end{bmatrix}
-    \label{eq:Eq7.10}
-\end{equation}
-
-In (7.10), $F$ which was originally arbitrary is now dependent on the particular set of values chosen for $F_a$, $F_b$ and $F_c$. For a unique set of $F_{\alpha}$, $F_{\beta}$ and $F$ the values of $F_a$, $F_b$ and $F_c$ are also unique and vice versa.
-
-From (7.10)
-\begin{equation}
-    F = \dfrac{1}{3}(F_a + F_b + F_c)
-    \label{eq:Eq7.11}
-\end{equation}
-where $(F_a + F_b + F_c)$ is the algebraic sum of instantaneous m.m.f.s.
-
-Writing in (7.10)
-\begin{equation*}
-    [A] = 
-    \begin{bmatrix}
-        [M] \\
-        \begin{matrix}
-            m & m & m
-        \end{matrix}
-    \end{bmatrix}
-\end{equation*}
-and
-\begin{equation*}
-    F_{\gamma} = 3 m F
-\end{equation*}
-\begin{equation}
-    \begin{bmatrix}
-        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
-    \end{bmatrix}
-    = [A]
-    \begin{bmatrix}
-        F_a \\ F_b \\ F_c
-    \end{bmatrix}
-    \label{eq:Eq7.12}
-\end{equation}
-Finally
-\begin{equation}
-    \begin{bmatrix}
-        F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_{\gamma} 
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
-        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
-        m & m & m
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_a \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_b \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_c 
-    \end{bmatrix}
-    \label{eq:Eq7.13}
-\end{equation}
-Inverting
-\begin{equation}
-    \begin{bmatrix}
-        F_a \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_b \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_c \vphantom{\dfrac{1}{2}} \\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        1  & 0 & \dfrac{1}{2m} \\[2ex]
-        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m} \\[2ex]
-        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m}
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
-        F_{\gamma} \vphantom{\dfrac{1}{2}} 
-    \end{bmatrix}
-    \label{eq:Eq7.14}
-\end{equation}
-(7.13) and (7.14) in shortened form
-\begin{align}
-    [F_{\alpha \beta \gamma}] & =  [A][F_{abc}]\\
-    [F_{abc}] & = [A^{-1}] [F_{\alpha \beta \gamma}]
-    \label{eq:Eq7.16}
-\end{align}
-Re-writing $[A]$ and $[A^{-1}]$ in the form shown with arbitrary constant $m = 1 \sqrt{2}$ converts the process of inversion to the simple one of transposition:
-\begin{align}
-    [A] & = \sqrt*{\Big(\dfrac{3}{2}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
-    \begin{bmatrix}
-        1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
-        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
-        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
-    \end{bmatrix}
-    =
-    \sqrt*{\Big(\dfrac{3}{2}\Big)}[B] \\
-    [A^{-1}] & = \sqrt*{\Big(\dfrac{2}{3}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
-    \begin{bmatrix}
-        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}\\
-    \end{bmatrix}
-    =
-    \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t] 
-    \label{eq:Eq3.18}
-\end{align}
-where
-\begin{equation}
-    [B^{-1}] = [B_t]
-    \label{eq:Eq7.19}
-\end{equation}
-thus
-\begin{align}
-    [F_{\alpha \beta \gamma}]  & = \sqrt*{\Big(\dfrac{3}{2}\Big)}  [B] [F_{abc}] \\
-    [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)} [F_{\alpha \beta \gamma}]
-    \label{eq:Eq7.21}:
-\end{align}
-
-With the $\alpha$-axis located a fixed angle other than zero from the axis of phase $a$ the numerical coefficients for $[B]$ and $[B_t]$ would be different without invalidating (7.20) and (7.21).
-
-From (7.13) with $m = 1 / \sqrt*{2}$
-E\begin{equation}
-    F_{\gamma} = \dfrac{1}{\sqrt*{2}}(F_a + F_b + F_c)
-    \label{eq:Eq7.22}
-\end{equation}
-For balanced conditions
-\begin{equation*}
-    F_a + F_b + F_c = 0 \quad \text{and} \quad F_{\gamma} = 0
-\end{equation*}
-for unbalanced conditions
-\begin{equation*}
-    F_a + F_b + F_c \neq 0 \quad \text{and} \quad F_{\gamma} \neq 0
-\end{equation*}
-
-\subsection{Current transformation} As previously stated, $F_{\alpha}$ and $F_{\beta}$ are considered to originate from an appropriately excited two-phase winding. It is assumed the $\alpha$-axis and$\beta$-axis coils are each of $N_2$ turns, and in addition, the coil producing $F_{\gamma}$ if of $N_2$ turns also. To satisfy the requirements that $F_{\gamma}$ shall make no contribution to the space resultant of $F_{\alpha}$ and $F_{\beta}$, the physical location of the
-$\gamma$-coil may be considered to be on $\gamma$-axis normal to the plane of the $\alpha \beta$ axes, see Fig. 7.3. In essence, a transformation is being from a two-dimensional $abc$ co-ordinate system to a three dimensional $\alpha \beta \gamma$ co-ordinate system.
-
-Defining currents $i_{\alpha}$, $i_{\beta}$, $i_{\gamma}$ associated respectively with $F_{\alpha}$, $F_{\beta}$, $F_{\gamma}$
-\begin{equation}
-    [F_{\alpha \beta \gamma}] = N_2 [i_{\alpha \beta \gamma}]
-    \label{eq:Eq7.23}
-\end{equation}
-
-Similarly, for the three currents and m.m.f.s associated with coils of $N_1$ turns
-\begin{equation}
-    [F_{abc}] = N_1 [i_{abc}]
-    \label{eq:Eq7.24}
-\end{equation}
-
-Substituting (7.23) and (7.24)  in (7.20)
-\begin{align}
-    N_2[i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} [B] [i_{abc}] N_1 \nonumber \\
-    [i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} \dfrac{N_1}{N_2} [B] [i_{abc}]
-    \label{eq:Eq7.25}
-\end{align}
-
-Complete freedom of choice exists for $N_1 / N_2$ since $N_2$ can assume any value provided appropriate adjustments are made to $i_{\alpha}$, $i_{\beta}$ and $i_{\gamma}$ to satisfy $F_{\alpha}$, $F_{\beta}$ and $F_{\gamma}$.
-
-To simplify subsequently derived transformations $N_1 / N_2$ is chosen as $\sqrt*{2/3}$.
-\begin{equation}
-    [i_{\alpha \beta \gamma}] = [B][i_{abc}]
-    \label{eq:Eq7.26}
-\end{equation}
-and
-\begin{equation}
-    [i_{abc}] = [B_t] [i_{\alpha \beta \gamma}]
-    \label{eq:Eq7.27}
-\end{equation}
-
-\subsection{Voltage transformations} The power relationship determined  for the primitive machine apply equally for the original machine. This condition is satisfied when the transformation relationships employed, define a primitive machine which is power invariant with the original machine. Two machines or networks are called power invariant when the sum of their individual instantaneous power are equal and the transformations describing two such systems are called power
-invariant transformations.
-
-With $abc$ to $\alpha \beta \gamma$ transformations of current established, the corresponding transformations of voltage are determined from power invariance,
-\begin{equation}
-    P = [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][i_{\alpha \beta \gamma}]
-    \label{eq:Eq7.28}
-\end{equation}
-
-From (7.26)
-\begin{equation*}
-    [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][B][i_{\alpha \beta \gamma}]
-    \label{}
-\end{equation*}
-thus
-\begin{equation}
-    [v_{\alpha \beta \gamma}] = [B] [v_{abc}]
-    \label{eq:Eq7.29}
-\end{equation}
-and
-\begin{equation}
-    [v_{abc}] = [B_t] [v_{\alpha \beta \gamma}]
-    \label{eq:Eq7.30}
-\end{equation}
-
-\subsection{Impedance and inductance transformations} Defining system impedances as $Z_{abc}$ and $[Z_{\alpha \beta \gamma}]$ respectively
-\begin{equation}
-    [v_{abc}] = [Z_{abc}] [i_{abc}]
-    \label{eq:Eq7.31}
-\end{equation}
-and
-\begin{equation}
-    [v_{\alpha \beta \gamma}] = [Z_{\alpha \beta \gamma}] [i_{\alpha \beta \gamma}]
-    \label{eq:Eq7.32}
-\end{equation}
-Substituting (7.27) and (7.30) in (7.31)
-\begin{align}
-    [B_t][v_{\alpha \beta \gamma}] & =[Z_{abc}] [B_t] [i_{\alpha \beta \gamma}] \nonumber \\
-    [v_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t]
-    \label{eq:Eq7.33}
-\end{align}
-comparing (7.33) with (7.32)
-\begin{equation}
-    [Z_{\alpha \beta \gamma}] = [B][Z_{abc}] [B_t]
-    \label{eq:7.34}
-\end{equation}
-and
-\begin{equation}
-    [Z_{abc}] = [B_t] [Z_{\alpha \beta \gamma}][B]
-    \label{eq:Eq7.35}
-\end{equation}
-
-The $abc$ coils are mutually coupled and the impedance matrix $[Z_{abc}]$, expressed in operational for, contains self- and mutual inductance coefficients.
-\begin{align}
-    [Z_{abc}]
-    & =
-    \begin{bmatrix}
-        (R_a + L_a p) & M_{ab} p & M_{ac} p \\
-        M_{ba} p & (R_b + L_b p) & M_{bc} p \\
-        M_{ca} p & M_{cb} p & (R_c + L_b p)
-    \end{bmatrix} \\
-    M_{ac} & = M_{ca}, \quad M_{ab} = M_{ba}, \quad M_{cb} = M_{bc} \nonumber \\
-    [Z_{abc}] & =
-    \begin{bmatrix}
-        R_a & 0 & 0 \\
-        0 & R_b & 0 \\
-        0 & 0 & R_c
-    \end{bmatrix}
-    +
-    \begin{bmatrix}
-        L_a & M_{ab} & M_{ac} \\
-        M_{ab} & L_b & M_{cb} \\
-        M_{ac} & M_{cb} & L_c
-    \end{bmatrix}
-    p \\
-    [Z_{abc}] & = [R_{abc}] + [L_{abc}] p
-    \label{eq:Eq7.38}
-\end{align}
-
-Substituting (7.38) in (7.34)
-\begin{equation}
-    [Z_{\alpha \beta \gamma}] = [B][R_{abc}][B_t] + [B][L_{abc}][B_t]p
-    \label{eq:Eq7.39}
-\end{equation}
-but
-\begin{equation}
-    [Z_{\alpha \beta \gamma}] = [R_{\alpha \beta \gamma}] + [L_{\alpha \beta \gamma}]p
-    \label{eq:Eq7.40}
-\end{equation}
-thus
-\begin{equation}
-    [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t]
-    \label{eq:Eq7.41}
-\end{equation}
-and
-\begin{align}
-    [L_{abc}] & = [B_t][L_{\alpha \beta \gamma}][B] \\
-    [R_{\alpha \beta \gamma}] = [B][R_{abc}][B_t]
-    \label{eq:Eq7.43}
-\end{align}
-and
-\begin{equation}
-    [R_{abc}] = [B_t][R_{\alpha \beta \gamma}][B]
-    \label{eq:Eq7.44}
-\end{equation}
-
-Equations (7.41) through to (7.44) are general in that they transforms unsymmetrical windings.
-
-Consider the case of a symmetrical three-phase winding with equal values of magnetic permeance for each phase axis (uniform air-gap machine).
-\begin{equation}
-    \begin{aligned}
-        R_a & = R_b = R_c = R \\
-        L_a & = L_b = L_c = L \\
-        M_{ab} & = M_{cb} = M_{ac} = M
-    \end{aligned}
-\end{equation}
-\begin{equation}
-    [R_{abc}] = 
-    \begin{bmatrix}
-        R & 0 & 0 \\
-        0 & R & 0 \\
-        0 & 0 & R
-    \end{bmatrix}
-    = R[1]
-    \label{eq:Eq7.46}
-\end{equation}
-\begin{equation}
-    [L_{abc}] = 
-    \begin{bmatrix}
-        L & M & M \\
-        M & L & M \\
-        M & M & L
-    \end{bmatrix}
-    \label{eq:Eq7.47}
-\end{equation}
-
-Transforming (7.47) with (7.41)
-\begin{align}
-    [L_{\alpha \beta \gamma}] & = \dfrac{2}{3}
-    \begin{bmatrix}
-        1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
-        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
-        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
-    \end{bmatrix}
-    \begin{bmatrix}
-        L \vphantom{\dfrac{1}{\sqrt{2}}} & M & M \\[2ex]
-        M \vphantom{\dfrac{1}{\sqrt{2}}} & L & M \\[2ex]
-        M \vphantom{\dfrac{1}{\sqrt{2}}} & M & L
-    \end{bmatrix}
-    \begin{bmatrix}
-        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
-    \end{bmatrix} \nonumber \\
-    [L_{\alpha \beta \gamma}] & =
-    \begin{bmatrix}
-        L - M & 0 & 0 \\
-        0 & L - M & 0 \\
-        0 & 0 & L + 2M 
-    \end{bmatrix}
-\end{align}
-
-Transforming a symmetrical three-phase $abc$ winding results in a diagonal $\alpha \beta \gamma$ inductance matrix with independent components, i.e., no mutual inductance terms.
-
-Transforming (7.46)
-\begin{equation*}
-    [R_{\alpha \beta \gamma}] = [B] [1] [B_t] \quad R = R[1]
-\end{equation*}
-thus
-\begin{equation}
-    [R_{\alpha \beta \gamma}] = [R_{abc}] = R[1]
-    \label{eq:Eq7.49}
-\end{equation}
-
-Thus, for a symmetrical $abc$ winding the $\alpha \beta \gamma$ and $abc$ coil resistances are equal.
-
-Finally, substituting (7.47) and (7.49) in (7.39)
-\begin{multline}
-    [Z_{\alpha \beta \gamma}] = 
-    \begin{bmatrix}
-        R & 0 & 0 \\
-        0 & R & 0 \\
-        0 & 0 & R
-    \end{bmatrix}
-    +
-    \begin{bmatrix}
-        L - M & 0 & 0 \\
-        0 & L - M & 0 \\
-        0 & 0 & L + 2M
-    \end{bmatrix}
-    p \\
-    =
-    \begin{bmatrix}
-        R + (L - M) p & 0 & 0 \\
-        0 & R + (L - M) p & 0 \\
-        0 & 0 & R + (L + 2M)p 
-    \end{bmatrix}
-    \label{eq:Eq7.50}
-\end{multline}
-
-With sinusoidal currents $p = j \omega$
-\begin{align*}
-    Z_{\alpha} & = R + j \omega (L - M) \\
-    Z_{\beta} & = R + j \omega (L - M) \\
-    Z_{\gamma} & = R + j \omega (L + 2M)
-\end{align*}
-
-These expressions are only true for a machine with a uniform air-gap. A symmetrical three-phase winding with a non-uniform air-gap, i.e., saliency, is analysed later in Section 8.2.
-\subsection{Flux-linkage transformations} The general relationship may be written
-\begin{align}
-    [\varPsi] & = [L][i] \nonumber \\
-    [\varPsi_{\alpha \beta \gamma}] & = [L_{\alpha \beta \gamma}][i_{\alpha \beta \gamma}]
-    \intertext{and}
-    [\varPsi_{abc}] & = [L_{abc}][i_{abc}]
-    \label{eq:Eq7.51}
-\end{align}
-As the matrix $[L_{abc}]$ contains self- and mutual inductance coefficients the flux linking a phase coil will be the sum of a self-produced flux, and the two components of mutual flux from the other two phases. The $\alpha \beta \gamma$ coils are mutually at right angles and as there is no mutual flux-linkage, $[\varPsi_{abc}]$ is a matrix of self-produced flux linkages.
-
-Substituting (7.26) and (7.43) in (7.51)
-\begin{equation*}
-    [\varPsi_{\alpha \beta \gamma}] = [B][L_{abc}][i_{abc}]
-\end{equation*}
-comparing with (7.52)
-\begin{equation}
-    [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi{abc}]
-    \label{eq:Eq7.53}
-\end{equation}
-and inverting
-\begin{equation}
-    [\varPsi{abc}] = [B_t][\varPsi_{\alpha \beta \gamma}]
-    \label{eq:Eq7.54}
-\end{equation}
-
-Summarizing the derived relationships
-\begin{multline*}
-    [B] = \sqrt*{\dfrac{2}{3}} 
-    \begin{bmatrix}
-        1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
-        0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
-        \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
-    \end{bmatrix} \\
-    [B^{-1}] = [B_t] = 
-    \begin{bmatrix}
-        1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
-        - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
-    \end{bmatrix}
-    \label{}
-\end{multline*}
-\begin{equation}
-    \begin{aligned}
-        &[F_{\alpha \beta \gamma}] = \sqrt*{\Big( \dfrac{3}{2}\Big)} [B] [F_{abc}] && [F_{abc}] = \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t][F_{\alpha \beta \gamma}] \\
-        &[i_{\alpha \beta \gamma}] =[B][i_{abc}] && [i_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
-        & [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi_{abc}] && [\varPsi_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
-        &[v_{\alpha \beta \gamma}] = [B][v_{abc}] && [v_{abc}] = [B_t][v_{\alpha \beta\gamma}] \\
-        & [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t] && [L_{abc}] = [B_t][L_{\alpha \beta \gamma}][B] \\
-        & [Z_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t] && [Z_{abc}] = [B_t][Z_{\alpha \beta \gamma}][B]
-    \end{aligned}
-    \label{eq:Eq7.55}
-\end{equation}
-
-\section{Transformation between three-phase ($abc$) and two-phase ($d q \gamma$) windings}
-
-The three-phase $abc$ winding and its supporting cylindrical structure, Fig. 7.1, is now assumed to rotate clockwise with angular velocity $\omega_r$ elec rad/s. Taking space-stationary, orthogonal $dq$ axes as reference, the instantaneous location of the $\alpha \beta$ axes is defined by the angle $\theta_r$, see Fig. 7.4. At $t = 0$ sec, the $d$-, $\alpha$- and phase $a$-axes are coincident.
-
-Resolving $F_{\alpha}$ and $F_{\beta}$ along the $d$-$q$ axes and summing components,
-\begin{equation}
-    \begin{aligned}
-        F_d & = F_{d \beta} + F_{d \alpha} = F_{\beta} \sin \theta_r + F_{\alpha} \cos \theta_r\\
-        F_q & = F_{q \beta} + F_{q \alpha} = F_{\beta} \cos \theta_r - F_{\alpha} \sin \theta_r
-    \end{aligned}
-    \label{eq:Eq7.56}
-\end{equation}
-\begin{equation}
-    \begin{bmatrix}
-        F_d \\ F_q
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        \cos \theta_r & \sin \theta_r \\
-        -\sin \theta_r & \cos \theta_r
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_{\alpha} \\ F_{\beta}
-    \end{bmatrix}
-    \label{eq:Eq7.57}
-\end{equation}
-
-To obtain the direct transformation between  a rotating three-phase ($abc$) winding and a stationary ($dq\gamma$) winding it is necessary to modify (7.57) to permit its combination with (7.20). This is achieved by including $F_{\gamma}$ as shown, which satisfies as bebore zero contribution to the common space resultant of $F_{\alpha}$, $F_{\beta}$ and $F_d$, $F_q$
-\begin{equation}
-    \begin{bmatrix}
-        F_d \\ F_q \\ F_{\gamma}
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        \cos \theta_r & \sin \theta_r & 0 \\
-        -\sin \theta_r & \cos \theta_r & 0 \\
-        0 & 0 &1
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
-    \end{bmatrix}
-    \label{eq:Eq7.58}
-\end{equation}
-Inverse relationship
-\begin{equation}
-    \begin{bmatrix}
-        F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        \cos \theta_r & -\sin \theta_r & 0 \\
-        \sin \theta_r & \cos \theta_r & 0 \\
-        0 & 0 &1
-    \end{bmatrix}
-    \begin{bmatrix}
-        F_d \\ F_q \\ F_{\gamma}
-    \end{bmatrix}
-    \label{eq:Eq7.59}
-\end{equation}
-\begin{align}
-    [F_{d q \gamma}] & = [S] [F_{\alpha \beta \gamma}] \\
-    [F_{\alpha \beta \gamma}] & = [S_t] [F_{d q \gamma}] 
-    \label{eq:Eq7.61}
-\end{align}
-Combining (7.60) and (7.61) respectively with (7.20) and (7.21)
-\begin{align}
-    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [S] [B] [F_{abc}]\\ 
-    [F_{\alpha \beta \gamma}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [B_t] [S_t] [F_{d q \gamma}]
-    \label{eq:Eq7.63}
-\end{align}
-\begin{multline}
-    [C] = [S] [B] \\
-    =  \sqrt*{\Big( \dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
-        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:7.64}
-\end{multline}
-\begin{multline}
-    [C_t] = [S_t] [B_t] \\
-    =  \sqrt*{\Big( \dfrac{3}{2} \Big)}
-    \begin{bmatrix}
-        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:Eq.7.65}
-\end{multline}
-\begin{align}
-    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] \\
-    [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma }]
-    \label{eq:Eq7.67}
-\end{align}
-
-Comparing (7.20) and (7.21) with (7.66) and (7.67) shows the m.m.f.\ transformations to be similar. The $\alpha \beta \gamma$ and $d q \gamma$ windings are considered to have equal turns per phase $N_2$. Maintaining as before $N_1/N_2 = \sqrt*{(2/3)}$, where $N_1$ is the turns per phase for the $abc$ winding, and assuming the three systems are power invariant the transformation between $abc$ and $d q \gamma$ quantities can be written directly from (7.55) with $[C]$ and $[C_t]$ replacing
-$[B]$ and $[B_t]$ respectively.
-It can now be shown that the $dq\gamma$ voltages can be expressed in terms of $dq\gamma$ flux-linkages. Consequently, by means of the $dq\gamma$ to $abc$ transformation of voltages, the $abc$ voltages are also related to $dq\gamma$ flux-linkages.
-
-Commencing with the general relationship
-\begin{align}
-    [v] & = p[\varPsi] \nonumber \\
-    [v_{abc}] & = p [\varPsi_{abc}]
-    \label{eq:Eq7.68}
-\end{align}
-As the phase fluxes, which have been shown to comprise self- and mutual fluxes, do not move relative to the winding the three-phase voltages have no rotational components and are self- and mutually induced.
-\begin{equation*}
-    [\varPsi_{abc}] = [C_t] [\varPsi_{dq\gamma}]
-\end{equation*}
-
-From (7.68)
-\begin{equation}
-    [\varPsi_{abc}] = p{[C_t] [\varPsi_{dq\gamma}]}
-    \label{eq:Eq7.69}
-\end{equation}
-Matrix $[C_t]$ is seen by (7.65) to be time dependent as $\theta_r$ is a function of time. The expansion of (7.69) involves differentiation of a product
-\begin{equation*}
-    [v_{abc}] = {p[C_t]}[\varPsi_{d q \gamma}] + [C_t]{p[\varPsi_{dq\gamma}]}
-\end{equation*}
-\begin{multline}
-    [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)} 
-    \left\{
         \begin{bmatrix}
-            -\sin \theta_r & -\cos \theta_r & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
-            -\sin (\theta_r - 120^{\circ}) & -\cos (\theta_r - 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
-            -\sin (\theta_r + 120^{\circ}) & -\cos (\theta_r + 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}
-        \end{bmatrix}
+            F \\ F \\ F
+        \end{bmatrix}}_{0}
+        \label{eq:Eq7.9}
+    \end{equation}
+    Thus, for the described original conditions infinite sets of three-phase m.m.f.s transform to a unique of two-phase m.m.f.s.
+
+    Re-arranging (7.9) and adding a third row of equal numerical constants $m$ to the matrix $[M]$
+    \begin{equation}
         \begin{bmatrix}
-            \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] 
-            \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
-            \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+            F_{\alpha} \\ F_{\beta} \\ 0
         \end{bmatrix}
-        \omega_r
-        \right.
-        \\
         +
-        \left.
+        \begin{bmatrix}
+            [M] \vphantom
+            {\begin{matrix}
+                F \\ F
+            \end{matrix}} \\
+            \begin{matrix}
+                m & m & m
+            \end{matrix}
+        \end{bmatrix}
+        \begin{bmatrix}
+            F \\ F \\ F
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            [M] \vphantom
+            {\begin{matrix}
+                F \\ F
+            \end{matrix}} \\
+            \begin{matrix}
+                m & m & m
+            \end{matrix}
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_a \\ F_b \\ F_c
+        \end{bmatrix}
+        \label{eq:Eq7.10}
+    \end{equation}
+
+    In (7.10), $F$ which was originally arbitrary is now dependent on the particular set of values chosen for $F_a$, $F_b$ and $F_c$. For a unique set of $F_{\alpha}$, $F_{\beta}$ and $F$ the values of $F_a$, $F_b$ and $F_c$ are also unique and vice versa.
+
+    From (7.10)
+    \begin{equation}
+        F = \dfrac{1}{3}(F_a + F_b + F_c)
+        \label{eq:Eq7.11}
+    \end{equation}
+    where $(F_a + F_b + F_c)$ is the algebraic sum of instantaneous m.m.f.s.
+
+    Writing in (7.10)
+    \begin{equation*}
+        [A] = 
+        \begin{bmatrix}
+            [M] \\
+            \begin{matrix}
+                m & m & m
+            \end{matrix}
+        \end{bmatrix}
+    \end{equation*}
+    and
+    \begin{equation*}
+        F_{\gamma} = 3 m F
+    \end{equation*}
+    \begin{equation}
+        \begin{bmatrix}
+            F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+        \end{bmatrix}
+        = [A]
+        \begin{bmatrix}
+            F_a \\ F_b \\ F_c
+        \end{bmatrix}
+        \label{eq:Eq7.12}
+    \end{equation}
+    Finally
+    \begin{equation}
+        \begin{bmatrix}
+            F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_{\gamma} 
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+            0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+            m & m & m
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_a \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_b \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_c 
+        \end{bmatrix}
+        \label{eq:Eq7.13}
+    \end{equation}
+    Inverting
+    \begin{equation}
+        \begin{bmatrix}
+            F_a \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_b \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_c \vphantom{\dfrac{1}{2}} \\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            1  & 0 & \dfrac{1}{2m} \\[2ex]
+            - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m} \\[2ex]
+            - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{2m}
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_{\alpha} \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_{\beta} \vphantom{\dfrac{1}{2}} \\[2ex]
+            F_{\gamma} \vphantom{\dfrac{1}{2}} 
+        \end{bmatrix}
+        \label{eq:Eq7.14}
+    \end{equation}
+    (7.13) and (7.14) in shortened form
+    \begin{align}
+        [F_{\alpha \beta \gamma}] & =  [A][F_{abc}]\\
+        [F_{abc}] & = [A^{-1}] [F_{\alpha \beta \gamma}]
+        \label{eq:Eq7.16}
+    \end{align}
+    Re-writing $[A]$ and $[A^{-1}]$ in the form shown with arbitrary constant $m = 1 \sqrt{2}$ converts the process of inversion to the simple one of transposition:
+    \begin{align}
+        [A] & = \sqrt*{\Big(\dfrac{3}{2}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
+        \begin{bmatrix}
+            1  & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+            0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+            \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+        \end{bmatrix}
+        =
+        \sqrt*{\Big(\dfrac{3}{2}\Big)}[B] \\
+        [A^{-1}] & = \sqrt*{\Big(\dfrac{2}{3}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
+        \begin{bmatrix}
+            1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}\\
+        \end{bmatrix}
+        =
+        \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t] 
+        \label{eq:Eq3.18}
+    \end{align}
+    where
+    \begin{equation}
+        [B^{-1}] = [B_t]
+        \label{eq:Eq7.19}
+    \end{equation}
+    thus
+    \begin{align}
+        [F_{\alpha \beta \gamma}]  & = \sqrt*{\Big(\dfrac{3}{2}\Big)}  [B] [F_{abc}] \\
+        [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)} [F_{\alpha \beta \gamma}]
+        \label{eq:Eq7.21}:
+    \end{align}
+
+    With the $\alpha$-axis located a fixed angle other than zero from the axis of phase $a$ the numerical coefficients for $[B]$ and $[B_t]$ would be different without invalidating (7.20) and (7.21).
+
+    From (7.13) with $m = 1 / \sqrt*{2}$
+    E\begin{equation}
+        F_{\gamma} = \dfrac{1}{\sqrt*{2}}(F_a + F_b + F_c)
+        \label{eq:Eq7.22}
+    \end{equation}
+    For balanced conditions
+    \begin{equation*}
+        F_a + F_b + F_c = 0 \quad \text{and} \quad F_{\gamma} = 0
+    \end{equation*}
+    for unbalanced conditions
+    \begin{equation*}
+        F_a + F_b + F_c \neq 0 \quad \text{and} \quad F_{\gamma} \neq 0
+    \end{equation*}
+
+    \subsection{Current transformation} As previously stated, $F_{\alpha}$ and $F_{\beta}$ are considered to originate from an appropriately excited two-phase winding. It is assumed the $\alpha$-axis and$\beta$-axis coils are each of $N_2$ turns, and in addition, the coil producing $F_{\gamma}$ if of $N_2$ turns also. To satisfy the requirements that $F_{\gamma}$ shall make no contribution to the space resultant of $F_{\alpha}$ and $F_{\beta}$, the physical location of the
+    $\gamma$-coil may be considered to be on $\gamma$-axis normal to the plane of the $\alpha \beta$ axes, see Fig. 7.3. In essence, a transformation is being from a two-dimensional $abc$ co-ordinate system to a three dimensional $\alpha \beta \gamma$ co-ordinate system.
+
+    Defining currents $i_{\alpha}$, $i_{\beta}$, $i_{\gamma}$ associated respectively with $F_{\alpha}$, $F_{\beta}$, $F_{\gamma}$
+    \begin{equation}
+        [F_{\alpha \beta \gamma}] = N_2 [i_{\alpha \beta \gamma}]
+        \label{eq:Eq7.23}
+    \end{equation}
+
+    Similarly, for the three currents and m.m.f.s associated with coils of $N_1$ turns
+    \begin{equation}
+        [F_{abc}] = N_1 [i_{abc}]
+        \label{eq:Eq7.24}
+    \end{equation}
+
+    Substituting (7.23) and (7.24)  in (7.20)
+    \begin{align}
+        N_2[i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} [B] [i_{abc}] N_1 \nonumber \\
+        [i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} \dfrac{N_1}{N_2} [B] [i_{abc}]
+        \label{eq:Eq7.25}
+    \end{align}
+
+    Complete freedom of choice exists for $N_1 / N_2$ since $N_2$ can assume any value provided appropriate adjustments are made to $i_{\alpha}$, $i_{\beta}$ and $i_{\gamma}$ to satisfy $F_{\alpha}$, $F_{\beta}$ and $F_{\gamma}$.
+
+    To simplify subsequently derived transformations $N_1 / N_2$ is chosen as $\sqrt*{2/3}$.
+    \begin{equation}
+        [i_{\alpha \beta \gamma}] = [B][i_{abc}]
+        \label{eq:Eq7.26}
+    \end{equation}
+    and
+    \begin{equation}
+        [i_{abc}] = [B_t] [i_{\alpha \beta \gamma}]
+        \label{eq:Eq7.27}
+    \end{equation}
+
+    \subsection{Voltage transformations} The power relationship determined  for the primitive machine apply equally for the original machine. This condition is satisfied when the transformation relationships employed, define a primitive machine which is power invariant with the original machine. Two machines or networks are called power invariant when the sum of their individual instantaneous power are equal and the transformations describing two such systems are called power
+    invariant transformations.
+
+    With $abc$ to $\alpha \beta \gamma$ transformations of current established, the corresponding transformations of voltage are determined from power invariance,
+    \begin{equation}
+        P = [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][i_{\alpha \beta \gamma}]
+        \label{eq:Eq7.28}
+    \end{equation}
+
+    From (7.26)
+    \begin{equation*}
+        [v_{abc_{t}}][i_{abc}] = [v_{\alpha \beta \gamma_{t}}][B][i_{\alpha \beta \gamma}]
+        \label{}
+    \end{equation*}
+    thus
+    \begin{equation}
+        [v_{\alpha \beta \gamma}] = [B] [v_{abc}]
+        \label{eq:Eq7.29}
+    \end{equation}
+    and
+    \begin{equation}
+        [v_{abc}] = [B_t] [v_{\alpha \beta \gamma}]
+        \label{eq:Eq7.30}
+    \end{equation}
+
+    \subsection{Impedance and inductance transformations} Defining system impedances as $Z_{abc}$ and $[Z_{\alpha \beta \gamma}]$ respectively
+    \begin{equation}
+        [v_{abc}] = [Z_{abc}] [i_{abc}]
+        \label{eq:Eq7.31}
+    \end{equation}
+    and
+    \begin{equation}
+        [v_{\alpha \beta \gamma}] = [Z_{\alpha \beta \gamma}] [i_{\alpha \beta \gamma}]
+        \label{eq:Eq7.32}
+    \end{equation}
+    Substituting (7.27) and (7.30) in (7.31)
+    \begin{align}
+        [B_t][v_{\alpha \beta \gamma}] & =[Z_{abc}] [B_t] [i_{\alpha \beta \gamma}] \nonumber \\
+        [v_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t]
+        \label{eq:Eq7.33}
+    \end{align}
+    comparing (7.33) with (7.32)
+    \begin{equation}
+        [Z_{\alpha \beta \gamma}] = [B][Z_{abc}] [B_t]
+        \label{eq:7.34}
+    \end{equation}
+    and
+    \begin{equation}
+        [Z_{abc}] = [B_t] [Z_{\alpha \beta \gamma}][B]
+        \label{eq:Eq7.35}
+    \end{equation}
+
+    The $abc$ coils are mutually coupled and the impedance matrix $[Z_{abc}]$, expressed in operational for, contains self- and mutual inductance coefficients.
+    \begin{align}
+        [Z_{abc}]
+        & =
+        \begin{bmatrix}
+            (R_a + L_a p) & M_{ab} p & M_{ac} p \\
+            M_{ba} p & (R_b + L_b p) & M_{bc} p \\
+            M_{ca} p & M_{cb} p & (R_c + L_b p)
+        \end{bmatrix} \\
+        M_{ac} & = M_{ca}, \quad M_{ab} = M_{ba}, \quad M_{cb} = M_{bc} \nonumber \\
+        [Z_{abc}] & =
+        \begin{bmatrix}
+            R_a & 0 & 0 \\
+            0 & R_b & 0 \\
+            0 & 0 & R_c
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            L_a & M_{ab} & M_{ac} \\
+            M_{ab} & L_b & M_{cb} \\
+            M_{ac} & M_{cb} & L_c
+        \end{bmatrix}
+        p \\
+        [Z_{abc}] & = [R_{abc}] + [L_{abc}] p
+        \label{eq:Eq7.38}
+    \end{align}
+
+    Substituting (7.38) in (7.34)
+    \begin{equation}
+        [Z_{\alpha \beta \gamma}] = [B][R_{abc}][B_t] + [B][L_{abc}][B_t]p
+        \label{eq:Eq7.39}
+    \end{equation}
+    but
+    \begin{equation}
+        [Z_{\alpha \beta \gamma}] = [R_{\alpha \beta \gamma}] + [L_{\alpha \beta \gamma}]p
+        \label{eq:Eq7.40}
+    \end{equation}
+    thus
+    \begin{equation}
+        [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t]
+        \label{eq:Eq7.41}
+    \end{equation}
+    and
+    \begin{align}
+        [L_{abc}] & = [B_t][L_{\alpha \beta \gamma}][B] \\
+        [R_{\alpha \beta \gamma}] = [B][R_{abc}][B_t]
+        \label{eq:Eq7.43}
+    \end{align}
+    and
+    \begin{equation}
+        [R_{abc}] = [B_t][R_{\alpha \beta \gamma}][B]
+        \label{eq:Eq7.44}
+    \end{equation}
+
+    Equations (7.41) through to (7.44) are general in that they transforms unsymmetrical windings.
+
+    Consider the case of a symmetrical three-phase winding with equal values of magnetic permeance for each phase axis (uniform air-gap machine).
+    \begin{equation}
+        \begin{aligned}
+            R_a & = R_b = R_c = R \\
+            L_a & = L_b = L_c = L \\
+            M_{ab} & = M_{cb} = M_{ac} = M
+        \end{aligned}
+    \end{equation}
+    \begin{equation}
+        [R_{abc}] = 
+        \begin{bmatrix}
+            R & 0 & 0 \\
+            0 & R & 0 \\
+            0 & 0 & R
+        \end{bmatrix}
+        = R[1]
+        \label{eq:Eq7.46}
+    \end{equation}
+    \begin{equation}
+        [L_{abc}] = 
+        \begin{bmatrix}
+            L & M & M \\
+            M & L & M \\
+            M & M & L
+        \end{bmatrix}
+        \label{eq:Eq7.47}
+    \end{equation}
+
+    Transforming (7.47) with (7.41)
+    \begin{align}
+        [L_{\alpha \beta \gamma}] & = \dfrac{2}{3}
+        \begin{bmatrix}
+            1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+            0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+            \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+        \end{bmatrix}
+        \begin{bmatrix}
+            L \vphantom{\dfrac{1}{\sqrt{2}}} & M & M \\[2ex]
+            M \vphantom{\dfrac{1}{\sqrt{2}}} & L & M \\[2ex]
+            M \vphantom{\dfrac{1}{\sqrt{2}}} & M & L
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
+        \end{bmatrix} \nonumber \\
+        [L_{\alpha \beta \gamma}] & =
+        \begin{bmatrix}
+            L - M & 0 & 0 \\
+            0 & L - M & 0 \\
+            0 & 0 & L + 2M 
+        \end{bmatrix}
+    \end{align}
+
+    Transforming a symmetrical three-phase $abc$ winding results in a diagonal $\alpha \beta \gamma$ inductance matrix with independent components, i.e., no mutual inductance terms.
+
+    Transforming (7.46)
+    \begin{equation*}
+        [R_{\alpha \beta \gamma}] = [B] [1] [B_t] \quad R = R[1]
+    \end{equation*}
+    thus
+    \begin{equation}
+        [R_{\alpha \beta \gamma}] = [R_{abc}] = R[1]
+        \label{eq:Eq7.49}
+    \end{equation}
+
+    Thus, for a symmetrical $abc$ winding the $\alpha \beta \gamma$ and $abc$ coil resistances are equal.
+
+    Finally, substituting (7.47) and (7.49) in (7.39)
+    \begin{multline}
+        [Z_{\alpha \beta \gamma}] = 
+        \begin{bmatrix}
+            R & 0 & 0 \\
+            0 & R & 0 \\
+            0 & 0 & R
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            L - M & 0 & 0 \\
+            0 & L - M & 0 \\
+            0 & 0 & L + 2M
+        \end{bmatrix}
+        p \\
+        =
+        \begin{bmatrix}
+            R + (L - M) p & 0 & 0 \\
+            0 & R + (L - M) p & 0 \\
+            0 & 0 & R + (L + 2M)p 
+        \end{bmatrix}
+        \label{eq:Eq7.50}
+    \end{multline}
+
+    With sinusoidal currents $p = j \omega$
+    \begin{align*}
+        Z_{\alpha} & = R + j \omega (L - M) \\
+        Z_{\beta} & = R + j \omega (L - M) \\
+        Z_{\gamma} & = R + j \omega (L + 2M)
+    \end{align*}
+
+    These expressions are only true for a machine with a uniform air-gap. A symmetrical three-phase winding with a non-uniform air-gap, i.e., saliency, is analysed later in Section 8.2.
+    \subsection{Flux-linkage transformations} The general relationship may be written
+    \begin{align}
+        [\varPsi] & = [L][i] \nonumber \\
+        [\varPsi_{\alpha \beta \gamma}] & = [L_{\alpha \beta \gamma}][i_{\alpha \beta \gamma}]
+        \intertext{and}
+        [\varPsi_{abc}] & = [L_{abc}][i_{abc}]
+        \label{eq:Eq7.51}
+    \end{align}
+    As the matrix $[L_{abc}]$ contains self- and mutual inductance coefficients the flux linking a phase coil will be the sum of a self-produced flux, and the two components of mutual flux from the other two phases. The $\alpha \beta \gamma$ coils are mutually at right angles and as there is no mutual flux-linkage, $[\varPsi_{abc}]$ is a matrix of self-produced flux linkages.
+
+    Substituting (7.26) and (7.43) in (7.51)
+    \begin{equation*}
+        [\varPsi_{\alpha \beta \gamma}] = [B][L_{abc}][i_{abc}]
+    \end{equation*}
+    comparing with (7.52)
+    \begin{equation}
+        [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi{abc}]
+        \label{eq:Eq7.53}
+    \end{equation}
+    and inverting
+    \begin{equation}
+        [\varPsi{abc}] = [B_t][\varPsi_{\alpha \beta \gamma}]
+        \label{eq:Eq7.54}
+    \end{equation}
+
+    Summarizing the derived relationships
+    \begin{multline*}
+        [B] = \sqrt*{\dfrac{2}{3}} 
+        \begin{bmatrix}
+            1 & - \dfrac{1}{2} & - \dfrac{1}{2} \\[2ex]
+            0 & \dfrac{\sqrt{3}}{2} & - \dfrac{\sqrt{3}}{2} \\[2ex]
+            \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}
+        \end{bmatrix} \\
+        [B^{-1}] = [B_t] = 
+        \begin{bmatrix}
+            1 & 0 & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}} \\[2ex]
+            - \dfrac{1}{2} & - \dfrac{\sqrt{3}}{2} & \dfrac{1}{\sqrt{2}}
+        \end{bmatrix}
+        \label{}
+    \end{multline*}
+    \begin{equation}
+        \begin{aligned}
+            &[F_{\alpha \beta \gamma}] = \sqrt*{\Big( \dfrac{3}{2}\Big)} [B] [F_{abc}] && [F_{abc}] = \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t][F_{\alpha \beta \gamma}] \\
+            &[i_{\alpha \beta \gamma}] =[B][i_{abc}] && [i_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
+            & [\varPsi_{\alpha \beta \gamma}] = [B][\varPsi_{abc}] && [\varPsi_{abc}] = [B_t][i_{\alpha \beta \gamma}] \\
+            &[v_{\alpha \beta \gamma}] = [B][v_{abc}] && [v_{abc}] = [B_t][v_{\alpha \beta\gamma}] \\
+            & [L_{\alpha \beta \gamma}] = [B][L_{abc}][B_t] && [L_{abc}] = [B_t][L_{\alpha \beta \gamma}][B] \\
+            & [Z_{\alpha \beta \gamma}] = [B][Z_{abc}][B_t] && [Z_{abc}] = [B_t][Z_{\alpha \beta \gamma}][B]
+        \end{aligned}
+        \label{eq:Eq7.55}
+    \end{equation}
+
+    \section{Transformation between three-phase ($abc$) and two-phase ($d q \gamma$) windings}
+
+    The three-phase $abc$ winding and its supporting cylindrical structure, Fig. 7.1, is now assumed to rotate clockwise with angular velocity $\omega_r$ elec rad/s. Taking space-stationary, orthogonal $dq$ axes as reference, the instantaneous location of the $\alpha \beta$ axes is defined by the angle $\theta_r$, see Fig. 7.4. At $t = 0$ sec, the $d$-, $\alpha$- and phase $a$-axes are coincident.
+
+    Resolving $F_{\alpha}$ and $F_{\beta}$ along the $d$-$q$ axes and summing components,
+    \begin{equation}
+        \begin{aligned}
+            F_d & = F_{d \beta} + F_{d \alpha} = F_{\beta} \sin \theta_r + F_{\alpha} \cos \theta_r\\
+            F_q & = F_{q \beta} + F_{q \alpha} = F_{\beta} \cos \theta_r - F_{\alpha} \sin \theta_r
+        \end{aligned}
+        \label{eq:Eq7.56}
+    \end{equation}
+    \begin{equation}
+        \begin{bmatrix}
+            F_d \\ F_q
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \cos \theta_r & \sin \theta_r \\
+            -\sin \theta_r & \cos \theta_r
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_{\alpha} \\ F_{\beta}
+        \end{bmatrix}
+        \label{eq:Eq7.57}
+    \end{equation}
+
+    To obtain the direct transformation between  a rotating three-phase ($abc$) winding and a stationary ($dq\gamma$) winding it is necessary to modify (7.57) to permit its combination with (7.20). This is achieved by including $F_{\gamma}$ as shown, which satisfies as bebore zero contribution to the common space resultant of $F_{\alpha}$, $F_{\beta}$ and $F_d$, $F_q$
+    \begin{equation}
+        \begin{bmatrix}
+            F_d \\ F_q \\ F_{\gamma}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \cos \theta_r & \sin \theta_r & 0 \\
+            -\sin \theta_r & \cos \theta_r & 0 \\
+            0 & 0 &1
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+        \end{bmatrix}
+        \label{eq:Eq7.58}
+    \end{equation}
+    Inverse relationship
+    \begin{equation}
+        \begin{bmatrix}
+            F_{\alpha} \\ F_{\beta} \\ F_{\gamma}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \cos \theta_r & -\sin \theta_r & 0 \\
+            \sin \theta_r & \cos \theta_r & 0 \\
+            0 & 0 &1
+        \end{bmatrix}
+        \begin{bmatrix}
+            F_d \\ F_q \\ F_{\gamma}
+        \end{bmatrix}
+        \label{eq:Eq7.59}
+    \end{equation}
+    \begin{align}
+        [F_{d q \gamma}] & = [S] [F_{\alpha \beta \gamma}] \\
+        [F_{\alpha \beta \gamma}] & = [S_t] [F_{d q \gamma}] 
+        \label{eq:Eq7.61}
+    \end{align}
+    Combining (7.60) and (7.61) respectively with (7.20) and (7.21)
+    \begin{align}
+        [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [S] [B] [F_{abc}]\\ 
+        [F_{\alpha \beta \gamma}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [B_t] [S_t] [F_{d q \gamma}]
+        \label{eq:Eq7.63}
+    \end{align}
+    \begin{multline}
+        [C] = [S] [B] \\
+        =  \sqrt*{\Big( \dfrac{2}{3} \Big)}
+        \begin{bmatrix}
+            \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+            - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:7.64}
+    \end{multline}
+    \begin{multline}
+        [C_t] = [S_t] [B_t] \\
+        =  \sqrt*{\Big( \dfrac{3}{2} \Big)}
+        \begin{bmatrix}
+            \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:Eq.7.65}
+    \end{multline}
+    \begin{align}
+        [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] \\
+        [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma }]
+        \label{eq:Eq7.67}
+    \end{align}
+
+    Comparing (7.20) and (7.21) with (7.66) and (7.67) shows the m.m.f.\ transformations to be similar. The $\alpha \beta \gamma$ and $d q \gamma$ windings are considered to have equal turns per phase $N_2$. Maintaining as before $N_1/N_2 = \sqrt*{(2/3)}$, where $N_1$ is the turns per phase for the $abc$ winding, and assuming the three systems are power invariant the transformation between $abc$ and $d q \gamma$ quantities can be written directly from (7.55) with $[C]$ and $[C_t]$ replacing
+    $[B]$ and $[B_t]$ respectively.
+    It can now be shown that the $dq\gamma$ voltages can be expressed in terms of $dq\gamma$ flux-linkages. Consequently, by means of the $dq\gamma$ to $abc$ transformation of voltages, the $abc$ voltages are also related to $dq\gamma$ flux-linkages.
+
+    Commencing with the general relationship
+    \begin{align}
+        [v] & = p[\varPsi] \nonumber \\
+        [v_{abc}] & = p [\varPsi_{abc}]
+        \label{eq:Eq7.68}
+    \end{align}
+    As the phase fluxes, which have been shown to comprise self- and mutual fluxes, do not move relative to the winding the three-phase voltages have no rotational components and are self- and mutually induced.
+    \begin{equation*}
+        [\varPsi_{abc}] = [C_t] [\varPsi_{dq\gamma}]
+    \end{equation*}
+
+    From (7.68)
+    \begin{equation}
+        [\varPsi_{abc}] = p{[C_t] [\varPsi_{dq\gamma}]}
+        \label{eq:Eq7.69}
+    \end{equation}
+    Matrix $[C_t]$ is seen by (7.65) to be time dependent as $\theta_r$ is a function of time. The expansion of (7.69) involves differentiation of a product
+    \begin{equation*}
+        [v_{abc}] = {p[C_t]}[\varPsi_{d q \gamma}] + [C_t]{p[\varPsi_{dq\gamma}]}
+    \end{equation*}
+    \begin{multline}
+        [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)} 
+        \left\{
+            \begin{bmatrix}
+                -\sin \theta_r & -\cos \theta_r & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+                -\sin (\theta_r - 120^{\circ}) & -\cos (\theta_r - 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+                -\sin (\theta_r + 120^{\circ}) & -\cos (\theta_r + 120^{\circ}) & 0 \vphantom{\dfrac{1}{\sqrt*{2}}}
+            \end{bmatrix}
+            \begin{bmatrix}
+                \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] 
+                \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex]
+                \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+            \end{bmatrix}
+            \omega_r
+            \right.
+            \\
+            +
+            \left.
+            \begin{bmatrix}
+                \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+                \cos (\theta_r - 120^{\circ}) & -\sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+                \cos (\theta_r + 120^{\circ}) & -\sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
+            \end{bmatrix}
+            \begin{bmatrix}
+                p \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] p \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex] p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+            \end{bmatrix}
+        \right\}
+        \label{}
+    \end{multline}
+    where $p_r^{\theta} = \omega_r$.
+
+    Expanding and rearranging (7.70)
+    \begin{equation*}
+        [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)}
         \begin{bmatrix}
             \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
             \cos (\theta_r - 120^{\circ}) & -\sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
             \cos (\theta_r + 120^{\circ}) & -\sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
         \end{bmatrix}
         \begin{bmatrix}
-            p \varPsi_d \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex] p \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}}\\[2ex] p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
+            p \varPsi_d - \omega_r \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
+            p \varPsi_q + \omega_r \varPsi_d\vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
+            p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
         \end{bmatrix}
-    \right\}
-    \label{}
-\end{multline}
-where $p_r^{\theta} = \omega_r$.
-
-Expanding and rearranging (7.70)
-\begin{equation*}
-    [v_{abc}] = \sqrt*{\Big( \dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r - 120^{\circ}) & -\sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r + 120^{\circ}) & -\sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \begin{bmatrix}
-        p \varPsi_d - \omega_r \varPsi_q \vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
-        p \varPsi_q + \omega_r \varPsi_d\vphantom{\dfrac{1}{\sqrt*{2}}} \\[2ex]
-        p \varPsi_{\gamma} \vphantom{\dfrac{1}{\sqrt*{2}}}
-    \end{bmatrix}
-\end{equation*}
-\begin{equation}
-    [v_{abc}] = [C_t] 
-    \left\{ p
+    \end{equation*}
+    \begin{equation}
+        [v_{abc}] = [C_t] 
+        \left\{ p
+            \begin{bmatrix}
+                \varPsi_d \\ \varPsi_q \\ \varPsi_{\gamma}
+            \end{bmatrix}
+            +
+            \omega_r
+            \begin{bmatrix}
+                - \varPsi_q \\ \varPsi_d \\ 0 
+            \end{bmatrix}
+        \right\} 
+        = [C_t]
         \begin{bmatrix}
-            \varPsi_d \\ \varPsi_q \\ \varPsi_{\gamma}
+            v_d \\ v_q \\v_{\gamma}
         \end{bmatrix}
-        +
-        \omega_r
+        \label{eq:Eq7.71}
+    \end{equation}
+
+    It is seen from (7.71) the $d$-axis and $q$-axis coils are pseudo-stationary as they both possess, in addition to an induced voltage, a rotational voltage. In both cases, the rotational voltage results from a flux in space quadrature to the coil axis. The sign of the rotational voltage components for $v_d$ and $v_q$ accords with the method described in Section 5.5.
+    \begin{align*}
+        G_{dq}^{rr} & = - M_{qq}^{rr} \sin (+ \pi/2) = -L_q \\
+        v_{d(\text{rot})} & = \omega_r G_{dq}^{rr} i_q = \omega_r L_q i_q\\
+        G_{qd}^{rr} & = - M_{d}^{rr} \sin (- \pi/2) = L_d \\
+        v_{q(\text{rot})} & = \omega_r G_{qd}^{rr} i_d = \omega_r L_d i_d\\
+    \end{align*}
+
+    The $\gamma$-axis coil has no rotational voltage as the axis of the coil is normal to the space-frame containing the $abc$ and $dq$ coils.
+
+    The induced voltage components of (7.71) can also be written in terms of coil inductances,
+    \begin{equation}
+        \varPsi_d = L_d i_d \qquad \varPsi_q = L_q i_q \qquad \varPsi_{\gamma} = L_{\gamma} i_{\gamma}
+        \label{eq:Eq7.72}
+    \end{equation}
+
+    With the stationary $dq\gamma$-axes the self-inductance coefficients $L_d$, $L_q$ and $L_{\gamma}$ are time invariant. Substituting (7.72) in (7.71),
+    \begin{equation}
+        [v_{abc}] = [C_t]
+        \left\{ 
+            \begin{bmatrix}
+                L_d & 0 & 0 \\
+                0 & L_q & 0 \\
+                0 & 0 & L_{\gamma}
+            \end{bmatrix}
+            p + \omega_r 
+            \begin{bmatrix}
+                0 & -L_q & 0 \\
+                L_d & 0  & 0 \\
+                0 & 0 & 0
+            \end{bmatrix}
+        \right\}
         \begin{bmatrix}
-            - \varPsi_q \\ \varPsi_d \\ 0 
+            i_d \\ i_q \\ i_{\gamma}
         \end{bmatrix}
-    \right\} 
-    = [C_t]
-    \begin{bmatrix}
-        v_d \\ v_q \\v_{\gamma}
-    \end{bmatrix}
-    \label{eq:Eq7.71}
-\end{equation}
-
-It is seen from (7.71) the $d$-axis and $q$-axis coils are pseudo-stationary as they both possess, in addition to an induced voltage, a rotational voltage. In both cases, the rotational voltage results from a flux in space quadrature to the coil axis. The sign of the rotational voltage components for $v_d$ and $v_q$ accords with the method described in Section 5.5.
-\begin{align*}
-    G_{dq}^{rr} & = - M_{qq}^{rr} \sin (+ \pi/2) = -L_q \\
-    v_{d(\text{rot})} & = \omega_r G_{dq}^{rr} i_q = \omega_r L_q i_q\\
-    G_{qd}^{rr} & = - M_{d}^{rr} \sin (- \pi/2) = L_d \\
-    v_{q(\text{rot})} & = \omega_r G_{qd}^{rr} i_d = \omega_r L_d i_d\\
-\end{align*}
-
-The $\gamma$-axis coil has no rotational voltage as the axis of the coil is normal to the space-frame containing the $abc$ and $dq$ coils.
-
-The induced voltage components of (7.71) can also be written in terms of coil inductances,
-\begin{equation}
-    \varPsi_d = L_d i_d \qquad \varPsi_q = L_q i_q \qquad \varPsi_{\gamma} = L_{\gamma} i_{\gamma}
-    \label{eq:Eq7.72}
-\end{equation}
-
-With the stationary $dq\gamma$-axes the self-inductance coefficients $L_d$, $L_q$ and $L_{\gamma}$ are time invariant. Substituting (7.72) in (7.71),
-\begin{equation}
-    [v_{abc}] = [C_t]
-    \left\{ 
+        \label{eq:Eq7.73}
+    \end{equation}
+    where
+    \begin{equation}
+        \begin{aligned}
+            v_d & = L_d p i_d - \omega_r L_q i_q && = p \varPsi_d - \omega_r \varPsi_q \\
+            v_q & = L_q p i_q + \omega_r L_d i_d && = p \varPsi_q + \omega_r \varPsi_d \\
+            v_{\gamma} & = L_{\gamma} p i_{\gamma} && = p \varPsi_{\gamma}
+        \end{aligned}
+        \label{eq:Eq7.74}
+    \end{equation}
+    Summarizing the transformation relationship between the stationary two-phase ($d q \gamma$) and rotating three-phase ($abc$) systems,
+    \begin{align*}
+        [C] & = 
+        \sqrt*{\Big( \dfrac{2}{3} \Big)}
         \begin{bmatrix}
-            L_d & 0 & 0 \\
-            0 & L_q & 0 \\
-            0 & 0 & L_{\gamma}
-        \end{bmatrix}
-        p + \omega_r 
+            \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+            - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix} \\
+        [C^{-1}] & = [C_t] =
+        \sqrt*{\Big( \dfrac{2}{3} \Big)} %FIXME
         \begin{bmatrix}
-            0 & -L_q & 0 \\
-            L_d & 0  & 0 \\
-            0 & 0 & 0
+            \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
+            \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
         \end{bmatrix}
-    \right\}
-    \begin{bmatrix}
-        i_d \\ i_q \\ i_{\gamma}
-    \end{bmatrix}
-    \label{eq:Eq7.73}
-\end{equation}
-where
+    \end{align*}
+    \begin{equation}
+        \begin{aligned}\relax
+            [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] & [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma}] \\
+            [i_{d q \gamma}] & = [C] [i_{abc}] & [i_{abc}] & =[C_t] [i_{d q \gamma}] \\
+            [\varPsi_{dq\gamma}] & = [C] [\varPsi_{abc}] & [\varPsi_{abc}] & = [C_t] [\varPsi_{d q \gamma}] \\
+            [v_{dq\gamma}] & = [C] [v_{abc}]             & [v_{abc}] & = [C_t] [v_{d q \gamma}] \\
+            [L_{dq\gamma}] & = [C] [L_{abc}] [C_t]       & [L_{abc}] & = [C_t] [L_{d q \gamma}] [C] \\
+            [Z_{dq\gamma}] & = [C] [Z_{abc}] [C_t]       & [Z_{abc}] & = [C_t] [Z_{d q \gamma}] [C] 
+        \end{aligned}
+    \end{equation}
+
+    \section{The polyphase magnetic field}
+    For a clear understanding of the operation of synchronous and asynchronous polyphase machines it is necessary to first study the magnetic properties of symmetrical polyphase windings.
+
+    It can be shown that polyphase windings of all possible phase number can be appropriately excited to provide similar space fundamental m.m.f.\ distributions. Arbitrarily choosing the symmetrical three-phase winding, Fig. 7.1, consider the phases are supplied with balanced three-phase voltages and currents of supply frequency $F = \omega /(2\pi)$.
+
+    Before proceeding with the analysis, it is necessary to make reference to the time sequence of phase currents and the physical arrangement of phases, as both influence the character of the resultant space distributed m.m.f. Considering time sequence first, Figs. 7.5(a) and 7.5(b) show two balanced systems of three-phase currents with different time sequence of phase currents. With increasing time the order in which the phase current maxima arise are $a \rightarrow b \rightarrow c$ for \textit{positive
+    sequence}  and $a \rightarrow c \rightarrow b$ for \textit{negative sequence}.
+
+    Assuming for positive and negative sequence current that the current of phase $a$ is a maximum at time $t = -K/\omega$.\\
+    Positive sequence
+    \begin{equation}
+        [i_{abc}] = I_m
+        \begin{bmatrix}
+            \cos (\omega t + K)\\
+            \cos (\omega t + K - 120^{\circ}) \\
+            \cos (\omega t + K + 120^{\circ}) \\
+        \end{bmatrix}
+        =
+        I_m[\overset{+}{D}]
+        \label{eq:Eq7.76}
+    \end{equation}
+    Negative sequence
+    \begin{equation}
+        [i_{abc}] = I_m
+        \begin{bmatrix}
+            \cos (\omega t + K)\\
+            \cos (\omega t + K + 120^{\circ}) \\
+            \cos (\omega t + K - 120^{\circ}) \\
+        \end{bmatrix}
+        =
+        I_m[\overset{-}{D}]
+        \label{eq:Eq7.77}
+    \end{equation}
+    where $K$ is a constant time phase angle.
+
+    For the general case
+    \begin{equation}
+        [i_{abc}] = I_m[\overset{\pm}{D}]
+        \label{eq:Eq7.78}
+    \end{equation}
+
+    The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs. 7.6(a) and 7.6(b).
+    Fig. 7.6(a)
+    \begin{equation}
+        [\overset{+}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
+        \begin{bmatrix}
+            1 & \cos 120^{\circ} & \cos (-120^{\circ}) \\
+            0 & \sin 120^{\circ} & \sin (-120^{\circ}) \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:Eq7.79}
+    \end{equation}
+    Fig 7.6(b)
+    \begin{equation}
+        [\overset{-}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
+        \begin{bmatrix}
+            1 & \cos (- 120^{\circ}) & \cos 120^{\circ} \\
+            0 & \sin (- 120^{\circ}) & \sin 120^{\circ} \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:Eq7.80}
+    \end{equation}
+
+    Considering positive clockwise rotation at constant angular velocity $\omega_r$ the corresponding matrix $[S]$, described in (7.58) with  $\theta_r = \omega_r t$ is,
+    \begin{equation}
+        [S] = 
+        \begin{bmatrix}
+            \cos \omega_r t & \sin \omega_r t & 0 \\
+            - \sin \omega_r t  & \cos \omega_r t & 0 \\
+            0 & 0 & 1
+        \end{bmatrix}
+        \label{eq:Eq7.81}
+    \end{equation}
+    Combining (7.79) and (7.80) with (7.81)
+
+    For physical location of phases $\omega_r$,
+    \begin{multline}
+        [\overset{+}{C}] = [S] [\overset{+}{B}] \\
+        = \sqrt*{\Big( \dfrac{2}{3} \Big)}
+        \begin{bmatrix}
+            \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
+            - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:Eq7.82}
+    \end{multline}
+
+    For physical location of phases $\omega_r$,  %TODO
+    \begin{multline}
+        [\overset{-}{C}] = [S] [\overset{-}{B}] \\
+        = \sqrt*{\Big( \dfrac{2}{3} \Big)}
+        \begin{bmatrix}
+            \cos \theta_r & \cos (\theta_r + 120^{\circ}) & \cos (\theta_r - 120^{\circ}) \\
+            - \sin \theta_r & - \sin (\theta_r + 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) \\
+            \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
+        \end{bmatrix}
+        \label{eq:Eq7.83}
+    \end{multline}
+
+    Consider the particular  case of physical phase layout $\omega_r$ and positive phase sequence currents. %TODO
+
+    From (7.66) and  (7.76)
+    \begin{align}
+        [F_{d q \gamma}] &=  \sqrt*{\Big( \dfrac{3}{2} \Big)} [\overset{+}{C}] [F_{abc}] \\
+        [F_{abc}] = I_M N_1 [\overset{+}{D}]
+        \label{eq:Eq7.85}
+    \end{align}
+    Thus
+    \begin{equation}
+        [F_{d q \gamma}] =  \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m N_1 [\overset{+}{C}] [\overset{+}{D}]
+        \label{eq:Eq7.86}
+    \end{equation}
+    \begin{equation}
+        [F_{d q \gamma}] = \dfrac{3}{2} I_m N_1
+        \begin{bmatrix}
+            \cos \{(\omega_r -\omega)t - K\} \\
+            -\sin \{(\omega_r -\omega)t - K\} \\
+            0
+        \end{bmatrix}
+        \label{eq:Eq7.87}
+    \end{equation}
+
+    It is seen from (7.87) that $F_d$ and $F_q$ are phase separated by $90^{\circ}$ in space and time.
+
+    In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig. 7.7.
+
+    Contributions made by $F_d$ and $F_q$ at point \textbf{P}
+    \begin{equation}
+        \begin{aligned}
+            F_d' & = F_d \cos \sigma = \dfrac{3}{2} I_m N_1 \cos \{(\omega_r - \omega)t - K\} \cos \sigma \\
+            F_q' & = F_q \cos (\sigma + 90^{\circ}) = \dfrac{3}{2} I_m N_1 \sin \{(\omega_r - \omega)t - K\} \sin \sigma
+        \end{aligned}
+        \label{eq:Eq7.88}
+    \end{equation}
+
+    The resultant at point \textbf{P}, being a function of time $t$ and displacement $\sigma$ is written $F(t,\sigma)$
+    \begin{equation}
+        F(t,\sigma) = F_d'+F_q' = \dfrac{3}{2} I_m N_1 \cos \{ (\omega_r - \omega)t - K - \sigma\}
+        \label{eq_Eq7.89}
+    \end{equation}
+
+    To give physical meaning to $F(t:\sigma)$ let two sets of variables $(\sigma, t)$ and $(\sigma + \Delta\sigma, t + \Delta t)$ be considered to give m.m.f.s of equal value.
+    \begin{equation}
+        F(t,\sigma)= F(t + \Delta t, \sigma + \Delta \sigma)
+        \label{eq:Eq7.90}
+    \end{equation}
+
+    From (7.89)
+    \begin{gather}
+        (\omega_r - \omega)t - K -\sigma = (\omega_r -\omega)(t + \Delta t) - K - (\sigma +\Delta \sigma) \nonumber \\
+        (\omega_r - \omega) \Delta t = \Delta \sigma
+        \label{eq:Eq7.91}
+    \end{gather}
+
+    Equation (7.91) states in effect that a point on the graph of the function $F(t,\sigma)$ is displaced by $\Delta \sigma$ in time $\Delta t$ with angular velocity,
+    \begin{equation}
+        (\omega_r \omega) = \dfrac{\Delta \sigma}{\Delta t}
+        \label{eq:Eq7.92}
+    \end{equation}
+
+    As the same is true for all point on the graph of the function $F(t,\sigma)$ it represents a travelling wave of constant crest value $\frac{3}{2} I_m N_1$ moving with uniform angularvelocity $(\omega_r - \omega)$.
+
+    Three conditions of interest are illustrated in Fig. 7.8(a), (b) and (c),
+    \begin{flalign*}
+        \text{case }(a)\quad & \omega_r > \omega  && \dfrac{\Delta\sigma}{\Delta t} + ve, && \text{clockwise travel} && \text{Fig. 7.8(a)} \\
+        \text{case }(b) \quad & \omega_r < \omega && \dfrac{\Delta\sigma}{\Delta t} - ve, && \text{anticlockwise travel} && \text{Fig. 7.8(b)} \\
+        \text{case }(c) \quad &\omega_r = \omega && \dfrac{\Delta\sigma}{\Delta t} = 0, && \text{stationary wave} && \text{Fig. 7.8(c)}
+    \end{flalign*}
+
+    Finally, it is instructive to determine expressions for the instantaneous currents $i_d$ and $i_q$ for cases ($a$), ($b$) and ($c$).
+    \begin{equation*}
+        [i_{d q \gamma}] = \dfrac{[F_{d q \gamma}]}{N_2} \quad \text{and} \quad \dfrac{N_1}{N_2} = \sqrt*{\dfrac{2}{3}}
+    \end{equation*}
+combining with (7.87)
 \begin{equation}
-    \begin{aligned}
-        v_d & = L_d p i_d - \omega_r L_q i_q && = p \varPsi_d - \omega_r \varPsi_q \\
-        v_q & = L_q p i_q + \omega_r L_d i_d && = p \varPsi_q + \omega_r \varPsi_d \\
-        v_{\gamma} & = L_{\gamma} p i_{\gamma} && = p \varPsi_{\gamma}
-    \end{aligned}
-    \label{eq:Eq7.74}
-\end{equation}
-Summarizing the transformation relationship between the stationary two-phase ($d q \gamma$) and rotating three-phase ($abc$) systems,
-\begin{align*}
-    [C] & = 
-    \sqrt*{\Big( \dfrac{2}{3} \Big)}
+    [i_{d q \gamma}] = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m
     \begin{bmatrix}
-        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
-        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix} \\
-    [C^{-1}] & = [C_t] =
-    \sqrt*{\Big( \dfrac{2}{3} \Big)} %%%Duda
-    \begin{bmatrix}
-        \cos \theta_r & -\sin \theta_r & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r - 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) & \dfrac{1}{\sqrt*{2}} \\[2ex]
-        \cos (\theta_r + 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-\end{align*}
-\begin{equation}
-\begin{aligned}\relax
-    [F_{d q \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big)} [C] [F_{abc}] & [F_{abc}] & = \sqrt*{\Big( \dfrac{2}{3} \Big)} [C_t] [F_{d q \gamma}] \\
-    [i_{d q \gamma}] & = [C] [i_{abc}] & [i_{abc}] & =[C_t] [i_{d q \gamma}] \\
-    [\varPsi_{dq\gamma}] & = [C] [\varPsi_{abc}] & [\varPsi_{abc}] & = [C_t] [\varPsi_{d q \gamma}] \\
-    [v_{dq\gamma}] & = [C] [v_{abc}]             & [v_{abc}] & = [C_t] [v_{d q \gamma}] \\
-    [L_{dq\gamma}] & = [C] [L_{abc}] [C_t]       & [L_{abc}] & = [C_t] [L_{d q \gamma}] [C] \\
-    [Z_{dq\gamma}] & = [C] [Z_{abc}] [C_t]       & [Z_{abc}] & = [C_t] [Z_{d q \gamma}] [C] 
-\end{aligned}
-\end{equation}
-
-\section{The polyphase magnetic field}
-For a clear understanding of the operation of synchronous and asynchronous polyphase machines it is necessary to first study the magnetic properties of symmetrical polyphase windings.
-
-It can be shown that polyphase windings of all possible phase number can be appropriately excited to provide similar space fundamental m.m.f.\ distributions. Arbitrarily choosing the symmetrical three-phase winding, Fig. 7.1, consider the phases are supplied with balanced three-phase voltages and currents of supply frequency $F = \omega /(2\pi)$.
-
-Before proceeding with the analysis, it is necessary to make reference to the time sequence of phase currents and the physical arrangement of phases, as both influence the character of the resultant space distributed m.m.f. Considering time sequence first, Figs. 7.5(a) and 7.5(b) show two balanced systems of three-phase currents with different time sequence of phase currents. With increasing time the order in which the phase current maxima arise are $a \rightarrow b \rightarrow c$ for \textit{positive
-sequence}  and $a \rightarrow c \rightarrow b$ for \textit{negative sequence}.
-
-Assuming for positive and negative sequence current that the current of phase $a$ is a maximum at time $t = -K/\omega$.\\
-Positive sequence
-\begin{equation}
-    [i_{abc}] = I_m
-    \begin{bmatrix}
-        \cos (\omega t + K)\\
-        \cos (\omega t + K - 120^{\circ}) \\
-        \cos (\omega t + K + 120^{\circ}) \\
-    \end{bmatrix}
-    =
-    I_m[\overset{+}{D}]
-    \label{eq:Eq7.76}
-\end{equation}
-Negative sequence
-\begin{equation}
-    [i_{abc}] = I_m
-    \begin{bmatrix}
-        \cos (\omega t + K)\\
-        \cos (\omega t + K + 120^{\circ}) \\
-        \cos (\omega t + K - 120^{\circ}) \\
-    \end{bmatrix}
-    =
-    I_m[\overset{-}{D}]
-    \label{eq:Eq7.77}
-\end{equation}
-where $K$ is a constant time phase angle.
-
-For the general case
-\begin{equation}
-    [i_{abc}] = I_m[\overset{\pm}{D}]
-    \label{eq:Eq7.78}
-\end{equation}
-
-The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs. 7.6(a) and 7.6(b).
-Fig. 7.6(a)
-\begin{equation}
-    [\overset{+}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        1 & \cos 120^{\circ} & \cos (-120^{\circ}) \\
-        0 & \sin 120^{\circ} & \sin (-120^{\circ}) \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:Eq7.79}
-\end{equation}
-Fig 7.6(b)
-\begin{equation}
-    [\overset{-}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        1 & \cos (- 120^{\circ}) & \cos 120^{\circ} \\
-        0 & \sin (- 120^{\circ}) & \sin 120^{\circ} \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:Eq7.80}
-\end{equation}
-
-Considering positive clockwise rotation at constant angular velocity $\omega_r$ the corresponding matrix $[S]$, described in (7.58) with  $\theta_r = \omega_r t$ is,
-\begin{equation}
-    [S] = 
-    \begin{bmatrix}
-        \cos \omega_r t & \sin \omega_r t & 0 \\
-        - \sin \omega_r t  & \cos \omega_r t & 0 \\
-        0 & 0 & 1
-    \end{bmatrix}
-    \label{eq:Eq7.81}
-\end{equation}
-Combining (7.79) and (7.80) with (7.81)
-
-For physical location of phases $\omega_r$,
-\begin{multline}
-    [\overset{+}{C}] = [S] [\overset{+}{B}] \\
-    = \sqrt*{\Big( \dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
-        - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:Eq7.82}
-\end{multline}
-
-For physical location of phases $\omega_r$,  %%completar
-\begin{multline}
-    [\overset{-}{C}] = [S] [\overset{-}{B}] \\
-    = \sqrt*{\Big( \dfrac{2}{3} \Big)}
-    \begin{bmatrix}
-        \cos \theta_r & \cos (\theta_r + 120^{\circ}) & \cos (\theta_r - 120^{\circ}) \\
-        - \sin \theta_r & - \sin (\theta_r + 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) \\
-        \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
-    \end{bmatrix}
-    \label{eq:Eq7.83}
-\end{multline}
-
-Consider the particular  case of physical phase layout $\omega_r$ and positive phase sequence currents. %%completar
-
-From (7.66) and  (7.76)
-\begin{align}
-    [F_{d q \gamma}] &=  \sqrt*{\Big( \dfrac{3}{2} \Big)} [\overset{+}{C}] [F_{abc}] \\
-    [F_{abc}] = I_M N_1 [\overset{+}{D}]
-    \label{eq:Eq7.85}
-\end{align}
-Thus
-\begin{equation}
-    [F_{d q \gamma}] =  \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m N_1 [\overset{+}{C}] [\overset{+}{D}]
-    \label{eq:Eq7.86}
-\end{equation}
-\begin{equation}
-    [F_{d q \gamma}] = \dfrac{3}{2} I_m N_1
-    \begin{bmatrix}
-        \cos \{(\omega_r -\omega)t - K\} \\
-        -\sin \{(\omega_r -\omega)t - K\} \\
+        \cos \{(\omega_r - \omega)t -K\} \\
+        -\sin \{(\omega_r - \omega)t -K\} \\
         0
     \end{bmatrix}
-    \label{eq:Eq7.87}
+    \label{eq:Eq7.93}
 \end{equation}
+case ($a$) $\omega_r > \omega$, $(\omega_r - \omega) = \omega$
+\begin{equation*}
+    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t - K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t - K)
+\end{equation*}
 
-It is seen from (7.87) that $F_d$ and $F_q$ are phase separated by $90^{\circ}$ in space and time.
+$i_q$ leads $i_d$ by $90^{\circ}$; see Fig. 7.9(a) \\
+case ($b$) $\omega_r < \omega$, $(\omega_r - \omega) = -\omega'$
+\begin{equation*}
+    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t + K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t + K)
+\end{equation*}
 
-In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig. 7.7.
+$i_d$ leads $i_q$ by $90^{\circ}$; see Fig. 7.9(b) \\
+case ($c$) $\omega_r = \omega$, $\omega' = 0$
+\begin{equation*}
+    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos K \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin K
+\end{equation*}
+$K$ is a constant angle, $i_d$ and $i_q$ are steady direct currents.
 
-Contributions made by $F_d$ and $F_q$ at point \textbf{P}
+From (7.87)
+\begin{equation*}
+    F_d = \dfrac{3}{2} I_m N_1 \cos K \qquad i_q = \dfrac{3}{2} I_m N_1 \sin K
+\end{equation*}
+
+The crest value of the sinusoidally distributed resultant m.m.f.
+\begin{align*}
+    F_r & = F_d + jF_q\\
+    & = \dfrac{3}{2} I_m N_1 (\cos K + j \sin K) = \dfrac{3}{2} I_m N_1 e^{jK}
+\end{align*}
+
+The resultant m.m.f.\ distribution is stationary with a constant crest value $frac{3}{2}$ times the maximum value of a phase m.m.f.
+\chapter{Three-phase synchronous machine}
+
+A three-phase synchronous machine employs two main windings, a field winding supplied with direct current and a three-phase winding excited with impressed or derived alternating currents depending on the machine mode of action being motoring or generating. It is assumed that both winding m.m.f.s are space-fundamentals. With respect to the winding of origin, the field m.m.f.\ is stationary and the resultant three-phase m.m.f.\ moves as a travelling wave, see Section 4.2.3.
+
+A constant phase displacement of m.m.f.s is achieved in practice using two alternative forms of machine construction. With the three-phase winding stationary the field winding rotates at $\omega_r = \omega$ electrical rad/s in synchronism with the travelling wave of stator m.m.f. Alternatively, with the field winding stationary the three-phase winding rotates at $\omega_r = \omega$ electrical rad/s in contradirection to its travelling wave of m.m.f. With either form of
+construction the speed of mechanical rotation is a unique value $n_s = \omega / (2 \pi \text{pole-pairs})$ r.p.s.\ called the synchronous speed, from which the name of this type of machine is derived.
+
+A three-phase stator construction is employed for all but the smallest synchronous machines as the three-phase winding can be linked with rigid connections to external circuits and comparatively light-duty slip rings supply the field current. 
+
+For steady-state synchronous motor or generator action, the phase separation $\theta$ between the stator and rotor m.m.f.s is a function of the mechanical or electrical loading. If the load is gradually increased so as not to cause mechanical oscillation of the rotor, $\theta$ and the electromagnetic torque $T_e$ increase in value until $T_e$, becomes a maximum called the \textit{pull-out torque}. Any attempt to increase the load further, breaks the magnetic locking of the stator and rotor
+fields and synchronous operation is lost. Following loss of synchronism, the three-phase winding is usually disconnected from external circuits by circuit-breaker operation to prevent the flow of excessive three-phase currents.
+
+As synchronous operation is only possible at synchronous speed $n_s$, synchronous motors are not self-starting and auxiliary methods have to be employed. The most common method is the use of closed windings, called damper or amortisseur windings, which are housed in slots at the surface of the field pole structure. Initially, with the field supply open and the three-phase winding appropriately excited, the damper winding acts as the cage of an induction motor and the machine runs up to near synchronous speed. Energizing the field winding pulls the rotor into step at synchronous speed and load can then be applied.
+
+Damper windings are also fitted to suppress mechanical oscillations of the rotor about synchronous speed, called \textit{hunting}, induced by sudden changes in the electrical or mechanical loading. Immediately following a sudden change in load the m.m.f.\ displacement angle $\theta$ is maintained momentarily at the predisturbance value. The mechanical and electromagnetic torques, $T_m$ and $T_e$, are unequal and the difference torque decelerates or accelerates the rotor depending on whether
+there has been an increase or decrease of load. With time the m.m.f.\ displacement angle changes to that required for zero accelerating torque, $T_m$ and $T_e$ balanced, but due to rotor inertia overshooting occurs with consequent hunting. During the disturbance the damper winding moves relative to the air-gap flux, voltages are induced by flux-cutting and current circulates. By Lenz's Law the interaction of the damper winding and main fluxes produce damping torques which oppose rotor hunting.
+
+In this chapter a study is made of the transient and steady-state performance of synchronous machines. Consider a two-pole three­phase machine embodying the idealizing assumptions of Section 5.1. In essential form the machine, Fig. 8.1, comprises a salient-pole stator with a field winding $f$ and a cylindrical three-phase rotor with phases $abc$ represented as three concentrated coils. A choice of clockwise rotating phases and a stator field winding has been made to accord with the convention employed for d.c.\ commutator machines.
+
+The stator is provided with two orthogonal axes of symmetry, a $d$-axis coincident with the pole axis and a $q$-axis situated midway between poles. Subsequent analysis will assume the presence of a damper winding, the winding to be represented equivalently as two closed stator coils $s$ and $t$ located respectively on the $d$-axis and $q$-axis.
+
+\section{Introduction to machine analysis }
+In this chapter, previously determined analytical results are employed to derive the transient and steady-state performance of the synchronous machine illustrated in Fig. 8.1. 
+
+The synchronous machine is represented as an equivalent $d$-$q$ axis primitive machine comprising a stationary array of stator coils and pseudo-stationary rotor coils of known self-and mutual inductance. To determine the primitive machine inductances., expressions derived initially for the self- and mutual inductances of the synchronous machine windings are subsequently transformed to $d q \gamma$-axis quantities using the $abc$ to $d q \gamma$ axis transformations of Section 7.2. Matrices
+$[L]$ and $[G]$,  formed by the method described in Section 5.5.1, are employed to provide characteristic voltage and torque equations for the primitive machine and therefore the synchronous machine. From these equations the performance of the synchronous machine is derived. 
+
+\section{Idealized machine inductances}
+Sections 8.2.1 and 8.2.2 are concerned with the derivation of expressions for the self- and mutual inductances of the synchronous machine and primitive machine windings. The derivation assumes the machines to be idealized according to the simplifying assumptions of Section 5.1.
+
+\subsection{Synchronous machine inductances}
+Each winding of Fig. 8.1 is considered to produce a self flux comprising separate components of leakage and main gap flux linking all turns, i.e., no partial flux-linkage. The two flux components result from the action of a coil m.m.f.\ on two parallel paths of different permeance.
+
+\subsubsection{\textit{Stator self- and mutual inductance}} The rotor being cylindrical, the m.m.f.s of stator windings $f$, $s$ and $t$ act on magnetic paths of constant permeance for all values of $\theta_r$. The self-inductances $L_f$, $L_s$ and $L_t$ and the mutual inductance $M_{fs}$ are all of constant value.
+
+\subsubsection{\textit{Rotor self-inductances}} Referring to Fig. 8.2, the instantaneous phase m.m.f.\ $F_a$ is resolved into $d$-axis and $q$-axis components.
 \begin{equation}
     \begin{aligned}
-        F_d' & = F_d \cos \sigma = \dfrac{3}{2} I_m N_1 \cos \{(\omega_r - \omega)t - K\} \cos \sigma \\
-        F_q' & = F_q \cos (\sigma + 90^{\circ}) = \dfrac{3}{2} I_m N_1 \sin \{(\omega_r - \omega)t - K\} \sin \sigma
+        F_{d\textup{a}} & = F_{\textup{a}} \cos \theta_r = N_1 i_a \cos \theta_r \\
+        F_{qa} & = - F_a \sin \theta_r = - N_1 i_a \sin \theta_r
     \end{aligned}
-    \label{eq:Eq7.88}
+    \label{eq:Eq8.1}
+\end{equation}
+$F_{da}$ and $F_{qa}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
+
+Phase $a$, $d$-$q$ axis flux-linkages
+\begin{equation}
+    \begin{aligned}
+        \varPsi_{da} & = N_1 \Lambda_d F_{da} = {(N_1)}^2 \Lambda_d i_a \cos \theta_r \\
+\varPsi_{qa} & = N_1 \Lambda_q F_{qa} = - {(N_1)}^2 \Lambda_q i_a \sin \theta_r 
+    \end{aligned}
+    \label{eq:Eq8.2}
 \end{equation}
 
-The resultant at point \textbf{P}, being a function of time $t$ and displacement $\sigma$ is written $F(t,\sigma)$
+The gap flux-linkage for phase $a$
+\begin{equation}
+    \varPsi_{qa} = \varPsi_{da} \cos \theta_r - \varPsi_{qa} \sin \theta_r
+    \label{eq:Eq8.3}
+\end{equation}
+
+From (8.2) and (8.3)
+\begin{align}
+    \varPsi_{qa} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
+    & = {(N_1)}^2 i_a \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
+    \label{eq:Eq8.4}
+\end{align}
+
+The leakage flux of a rotor phase is little affected by the rotor position. Assuming a constant leakage permeance $\Lambda_l$,
+
+phase $a$, leakage flux-linkage
+\begin{equation}
+    \varPsi_{la} = N_1 \Lambda_l F_{a} = {(N_1)}^2 \Lambda_l i_a 
+    \label{eq:Eq8.5}
+\end{equation}
+
+Total flux-linkage
+\begin{equation}
+    \varPsi_a = \varPsi_{la} + \varPsi_{ga}
+    \label{eq:Eq8.6}
+\end{equation}
+
+From (8.4) and (8.5)
+\begin{equation}
+    \varPsi_a = {(N_1)}^2 i_a \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
+    \label{eq:Eq8.7}
+\end{equation}
+
+Defining inductances
+\begin{equation}
+    \begin{aligned}
+        L_l & ={(N_1)}^2 \Lambda_l \\
+        L_1 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) \\
+        L_2 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \\
+    \end{aligned}
+    \label{eq:Eq8.8}
+\end{equation}
+Self-inductance of phase $a$
+\begin{equation}
+    \mathcal{L}_{aa} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2\theta_r
+    \label{eq:Eq8.9}
+\end{equation}
+where $\mathcal{L}$ denoted a self- or mutual inductance which depends on the angle $\theta_r$.
+
+Similarly, the self-inductances of phases $b$ and $c$ are
+\begin{equation}
+    \mathcal{L}_{bb} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2(\theta_r - 120^{\circ})
+    \label{eq:Eq8.10}
+\end{equation}
+\begin{equation}
+    \mathcal{L}_{cc} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2(\theta_r + 120^{\circ})
+    \label{eq:Eq8.11}
+\end{equation}
+
+\subsubsection{\textit{Rotor mutual inductance}} The mutual inductance between any pair of rotor coils is determined from the mutual flux-linkage obtained with one coil excited and the other open-circuit.
+
+Consider phase coils $a$ and $b$ with coil $a$ excited and coil $b$ open-circuit.
+
+Resolving $\varPsi_{da}$ and $\varPsi_{qa}$, from (8.3), along the axis of phase $b$ and summing components to give total flux-linkage with phase $b$,
+\begin{align}
+    \varPsi_{ba} & = \varPsi_{qa} \cos (\theta_r + 90^{\circ} -120^{\circ}) +\varPsi_{da} \cos(\theta_r - 120^{circ}) \nonumber \\
+    \varPsi_{ba} & = -\varPsi_{qa} \sin (\theta_r - 120^{\circ}) + \varPsi_{da} \cos(\theta_r -120^{\circ}) 
+    \label{eq:Eq8.12}
+\end{align}
+
+Substituting (8.2) in (8.12)
+\begin{align}
+    \varPsi_{ba} & = {(N_1)}^2 i_a[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
+    \varPsi_{ba} & = {(N_1)}^2 i_a \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
+    \label{eq:Eq8.13}
+\end{align}
+
+Ignoring the small amount of leakage flux which does not cross the air-gap and substituting (8.8) in (8.13), the expression for mutual inductance between phases $a$ and $b$ is
+\begin{equation}
+    \mathcal{L}_{ba} = \mathcal{L}_{ab} = \dfrac{\varPsi_{ba}}{i_a} = \dfrac{-L_1}{2} + l_2 \cos 2(\theta_r - 60^{\circ})
+    \label{eq:Eq8.14}
+\end{equation}
+
+Expressions for $\mathcal{L}_{cb}$ and $\mathcal{L}_{ac}$ can be written directly by noting in (8.14) that $(\theta_r - 60^{\circ})$ is the angle measured from the $d$-axis to a line bisecting the angle between the axes of phase $a$ and $b$.
+
+Thus, for phases $c$ and $b$ the angle us $(\theta_r - 180^{\circ})$ and for phases $c$ and $a$, $(\theta_r + 60^{\circ})$.
+\begin{align}
+    \mathcal{L}_{cb} & = \mathcal{L}_{bc} = \dfrac{\varPsi_{cb}}{i_b} = \dfrac{-L_1}{2} \cos 2\theta_r \\
+    \mathcal{L}_{ac} & = \mathcal{L}_{ca} = \dfrac{\varPsi_{ac}}{i_c} = \dfrac{-L_1}{2} \cos 2(\theta_r + 60^{\circ}) 
+    \label{eq:Eq8.16}
+\end{align}
+
+\subsubsection{\textit{Stator-rotor mutual inductances}} These expressions can be written directly by inspection of Fig. 8.1,
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_{af} & = \mathcal{L}_{fa} = M_{rf} \cos \theta_r \\
+        \mathcal{L}_{bf} & = \mathcal{L}_{fb} = M_{rf} \cos (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{cf} & = \mathcal{L}_{fc} = M_{rf} \cos (\theta_r + 120^{\circ}) \\
+    \end{aligned}
+    \label{eq:Eq8.17}
+\end{equation}
+
+$M_{rf}$ is the maximum value of mutual inductance between a rotor phase and the field winding $f$,
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_{as} & = \mathcal{L}_{sa} = M_{rs} \cos \theta_r \\
+        \mathcal{L}_{bs} & = \mathcal{L}_{sb} = M_{rs} \cos (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{cs} & = \mathcal{L}_{sc} = M_{rs} \cos (\theta_r + 120^{\circ}) \\
+    \end{aligned}
+    \label{eq:Eq8.18}
+\end{equation}
+
+$M_{rs}$ is the maximum value of mutual inductance between a rotor phase and closed winding $s$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{L}_{at} & = \mathcal{L}_{ta} = M_{rt} \cos (\theta_r + 90^{\circ}) = -M_{rt} \sin \theta_r \\
+        \mathcal{L}_{bt} & = \mathcal{L}_{tb} = M_{rt} \cos (\theta_r + 90^{\circ} - 120^{\circ}) =  -M_{rt} \sin (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{ct} & = \mathcal{L}_{tc} = M_{rt} \cos (\theta_r + 90^{\circ} + 120^{\circ}) =  -M_{rt} \sin (\theta_r + 120^{\circ}) \\
+    \end{aligned}
+    \label{eq_Eq8.19}
+\end{equation}
+
+$M_{rt}$ is the maximum value of mutual inductance between a rotor phase and close winding $t$.
+
+\subsection{Primitive machine inductances} Writing in matrix form flux-linkage equations for the coils shown in Fig. 8.1
+\begin{equation}
+    \begin{bmatrix}
+        \varPsi_{a} \\[1ex] \varPsi_{b} \\[1ex] \varPsi_{c} \\[1ex] \varPsi_{f} \\[1ex] \varPsi_{s} \\[1ex] \varPsi_{t}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+
+        \mathcal{L}_{aa} & \mathcal{L}_{ab} & \mathcal{L}_{ac} & \mathcal{L}_{af} & \mathcal{L}_{as} & \mathcal{L}_{at} \\[1ex]  
+        \mathcal{L}_{ba} & \mathcal{L}_{bb} & \mathcal{L}_{bc} & \mathcal{L}_{bf} & \mathcal{L}_{bs} & \mathcal{L}_{bt} \\[1ex]
+        \mathcal{L}_{ca} & \mathcal{L}_{cb} & \mathcal{L}_{cc} & \mathcal{L}_{cf} & \mathcal{L}_{cs} & \mathcal{L}_{ct} \\[1ex]  
+        \mathcal{L}_{fa} & \mathcal{L}_{fb} & \mathcal{L}_{fc} & \mathcal{L}_{ff} & \mathcal{L}_{fs} & 0 \\[1ex]  
+        \mathcal{L}_{sa} & \mathcal{L}_{sb} & \mathcal{L}_{sc} & \mathcal{L}_{sf} & \mathcal{L}_{ss} & 0 \\[1ex]  
+        \mathcal{L}_{ta} & \mathcal{L}_{tb} & \mathcal{L}_{tc} & 0 & 0 & \mathcal{L}_{tt} 
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_{a} \\[1ex] i_{b} \\[1ex] i_{c} \\[1ex] i_{f} \\[1ex] i_{s} \\[1ex] i_{t}
+    \end{bmatrix}
+    \label{eq:Eq8.20}
+\end{equation} %TODO diagonal de la matriz
+
+Alternatively (8.20) may be written,
+\begin{equation}
+    [\varPsi_{abc}]
+    \label{}
+\end{equation}
 
 \end{document}
