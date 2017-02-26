@@ -2,6 +2,7 @@
 % vim: set number:
 \documentclass[a4paper,numbers=noenddot,12pt]{scrbook}
 \usepackage{amsmath,amsfonts,amssymb}
+\usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{commath}
 \usepackage{tabto}
@@ -3200,35 +3201,35 @@ Each winding of Fig. 8.1 is considered to produce a self flux comprising separat
 
 \subsubsection{\textit{Stator self- and mutual inductance}} The rotor being cylindrical, the m.m.f.s of stator windings $f$, $s$ and $t$ act on magnetic paths of constant permeance for all values of $\theta_r$. The self-inductances $L_f$, $L_s$ and $L_t$ and the mutual inductance $M_{fs}$ are all of constant value.
 
-\subsubsection{\textit{Rotor self-inductances}} Referring to Fig. 8.2, the instantaneous phase m.m.f.\ $F_a$ is resolved into $d$-axis and $q$-axis components.
+\subsubsection{\textit{Rotor self-inductances}} Referring to Fig. 8.2, the instantaneous phase m.m.f.\ $F_{\textup{a}}$ is resolved into $d$-axis and $q$-axis components.
 \begin{equation}
     \begin{aligned}
-        F_{d\textup{a}} & = F_{\textup{a}} \cos \theta_r = N_1 i_a \cos \theta_r \\
-        F_{qa} & = - F_a \sin \theta_r = - N_1 i_a \sin \theta_r
+        F_{d\textup{a}} & = F_{\textup{a}} \cos \theta_r = N_1 i_{\textup{a}} \cos \theta_r \\
+        F_{q\textup{a}} & = - F_{\textup{a}} \sin \theta_r = - N_1 i_{\textup{a}} \sin \theta_r
     \end{aligned}
     \label{eq:Eq8.1}
 \end{equation}
-$F_{da}$ and $F_{qa}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
+$F_{d\textup{a}}$ and $F_{q\textup{a}}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
 
 Phase $a$, $d$-$q$ axis flux-linkages
 \begin{equation}
     \begin{aligned}
-        \varPsi_{da} & = N_1 \Lambda_d F_{da} = {(N_1)}^2 \Lambda_d i_a \cos \theta_r \\
-\varPsi_{qa} & = N_1 \Lambda_q F_{qa} = - {(N_1)}^2 \Lambda_q i_a \sin \theta_r 
+        \varPsi_{d\textup{a}} & = N_1 \Lambda_d F_{d\textup{a}} = {(N_1)}^2 \Lambda_d i_{\textup{a}} \cos \theta_r \\
+\varPsi_{q\textup{a}} & = N_1 \Lambda_q F_{q\textup{a}} = - {(N_1)}^2 \Lambda_q i_{\textup{a}} \sin \theta_r 
     \end{aligned}
     \label{eq:Eq8.2}
 \end{equation}
 
 The gap flux-linkage for phase $a$
 \begin{equation}
-    \varPsi_{qa} = \varPsi_{da} \cos \theta_r - \varPsi_{qa} \sin \theta_r
+    \varPsi_{q\textup{a}} = \varPsi_{d\textup{a}} \cos \theta_r - \varPsi_{q\textup{a}} \sin \theta_r
     \label{eq:Eq8.3}
 \end{equation}
 
 From (8.2) and (8.3)
 \begin{align}
-    \varPsi_{qa} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
-    & = {(N_1)}^2 i_a \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
+    \varPsi_{q\textup{a}} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
+    & = {(N_1)}^2 i_{\textup{a}} \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
     \label{eq:Eq8.4}
 \end{align}
 
@@ -3236,19 +3237,19 @@ The leakage flux of a rotor phase is little affected by the rotor position. Assu
 
 phase $a$, leakage flux-linkage
 \begin{equation}
-    \varPsi_{la} = N_1 \Lambda_l F_{a} = {(N_1)}^2 \Lambda_l i_a 
+    \varPsi_{l\textup{a}} = N_1 \Lambda_l F_{\textup{a}} = {(N_1)}^2 \Lambda_l i_{\textup{a}} 
     \label{eq:Eq8.5}
 \end{equation}
 
 Total flux-linkage
 \begin{equation}
-    \varPsi_a = \varPsi_{la} + \varPsi_{ga}
+    \varPsi_{\textup{a}} = \varPsi_{l\textup{a}} + \varPsi_{g\textup{a}}
     \label{eq:Eq8.6}
 \end{equation}
 
 From (8.4) and (8.5)
 \begin{equation}
-    \varPsi_a = {(N_1)}^2 i_a \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
+    \varPsi_{\textup{a}} = {(N_1)}^2 i_{\textup{a}} \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
     \label{eq:Eq8.7}
 \end{equation}
 
@@ -3263,18 +3264,18 @@ Defining inductances
 \end{equation}
 Self-inductance of phase $a$
 \begin{equation}
-    \mathcal{L}_{aa} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2\theta_r
+    \mathcal{L}_{\textup{aa}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2\theta_r
     \label{eq:Eq8.9}
 \end{equation}
 where $\mathcal{L}$ denoted a self- or mutual inductance which depends on the angle $\theta_r$.
 
 Similarly, the self-inductances of phases $b$ and $c$ are
 \begin{equation}
-    \mathcal{L}_{bb} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2(\theta_r - 120^{\circ})
+    \mathcal{L}_{\textup{bb}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r - 120^{\circ})
     \label{eq:Eq8.10}
 \end{equation}
 \begin{equation}
-    \mathcal{L}_{cc} = \dfrac{\varPsi_a}{i_a} = L_l +L_1 +L_2 \cos 2(\theta_r + 120^{\circ})
+    \mathcal{L}_{\textup{cc}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r + 120^{\circ})
     \label{eq:Eq8.11}
 \end{equation}
 
@@ -3282,41 +3283,41 @@ Similarly, the self-inductances of phases $b$ and $c$ are
 
 Consider phase coils $a$ and $b$ with coil $a$ excited and coil $b$ open-circuit.
 
-Resolving $\varPsi_{da}$ and $\varPsi_{qa}$, from (8.3), along the axis of phase $b$ and summing components to give total flux-linkage with phase $b$,
+Resolving $\varPsi_{d\textup{a}}$ and $\varPsi_{q\textup{a}}$, from (8.3), along the axis of phase $b$ and summing components to give total flux-linkage with phase $b$,
 \begin{align}
-    \varPsi_{ba} & = \varPsi_{qa} \cos (\theta_r + 90^{\circ} -120^{\circ}) +\varPsi_{da} \cos(\theta_r - 120^{circ}) \nonumber \\
-    \varPsi_{ba} & = -\varPsi_{qa} \sin (\theta_r - 120^{\circ}) + \varPsi_{da} \cos(\theta_r -120^{\circ}) 
+    \varPsi_{\textup{ba}} & = \varPsi_{q\textup{a}} \cos (\theta_r + 90^{\circ} -120^{\circ}) +\varPsi_{d\textup{a}} \cos(\theta_r - 120^{circ}) \nonumber \\
+    \varPsi_{\textup{ba}} & = -\varPsi_{q\textup{a}} \sin (\theta_r - 120^{\circ}) + \varPsi_{d\textup{a}} \cos(\theta_r -120^{\circ}) 
     \label{eq:Eq8.12}
 \end{align}
 
 Substituting (8.2) in (8.12)
 \begin{align}
-    \varPsi_{ba} & = {(N_1)}^2 i_a[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
-    \varPsi_{ba} & = {(N_1)}^2 i_a \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
+    \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}}[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
+    \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}} \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
     \label{eq:Eq8.13}
 \end{align}
 
 Ignoring the small amount of leakage flux which does not cross the air-gap and substituting (8.8) in (8.13), the expression for mutual inductance between phases $a$ and $b$ is
 \begin{equation}
-    \mathcal{L}_{ba} = \mathcal{L}_{ab} = \dfrac{\varPsi_{ba}}{i_a} = \dfrac{-L_1}{2} + l_2 \cos 2(\theta_r - 60^{\circ})
+    \mathcal{L}_{\textup{ba}} = \mathcal{L}_{\textup{ab}} = \dfrac{\varPsi_{\textup{ba}}}{i_{\textup{a}}} = \dfrac{-L_1}{2} + L_2 \cos 2(\theta_r - 60^{\circ})
     \label{eq:Eq8.14}
 \end{equation}
 
-Expressions for $\mathcal{L}_{cb}$ and $\mathcal{L}_{ac}$ can be written directly by noting in (8.14) that $(\theta_r - 60^{\circ})$ is the angle measured from the $d$-axis to a line bisecting the angle between the axes of phase $a$ and $b$.
+Expressions for $\mathcal{L}_{\textup{cb}}$ and $\mathcal{L}_{\textup{ac}}$ can be written directly by noting in (8.14) that $(\theta_r - 60^{\circ})$ is the angle measured from the $d$-axis to a line bisecting the angle between the axes of phase $a$ and $b$.
 
 Thus, for phases $c$ and $b$ the angle us $(\theta_r - 180^{\circ})$ and for phases $c$ and $a$, $(\theta_r + 60^{\circ})$.
 \begin{align}
-    \mathcal{L}_{cb} & = \mathcal{L}_{bc} = \dfrac{\varPsi_{cb}}{i_b} = \dfrac{-L_1}{2} \cos 2\theta_r \\
-    \mathcal{L}_{ac} & = \mathcal{L}_{ca} = \dfrac{\varPsi_{ac}}{i_c} = \dfrac{-L_1}{2} \cos 2(\theta_r + 60^{\circ}) 
+    \mathcal{L}_{\textup{cb}} & = \mathcal{L}_{\textup{bc}} = \dfrac{\varPsi_{\textup{cb}}}{i_{\textup{b}}} = \dfrac{-L_1}{2} \cos 2\theta_r \\
+    \mathcal{L}_{\textup{ac}} & = \mathcal{L}_{\textup{ca}} = \dfrac{\varPsi_{\textup{ac}}}{i_{\textup{c}}} = \dfrac{-L_1}{2} \cos 2(\theta_r + 60^{\circ}) 
     \label{eq:Eq8.16}
 \end{align}
 
 \subsubsection{\textit{Stator-rotor mutual inductances}} These expressions can be written directly by inspection of Fig. 8.1,
 \begin{equation}
     \begin{aligned}
-        \mathcal{L}_{af} & = \mathcal{L}_{fa} = M_{rf} \cos \theta_r \\
-        \mathcal{L}_{bf} & = \mathcal{L}_{fb} = M_{rf} \cos (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{cf} & = \mathcal{L}_{fc} = M_{rf} \cos (\theta_r + 120^{\circ}) \\
+        \mathcal{L}_{\textup{a}f} & = \mathcal{L}_{f\textup{a}} = M_{rf} \cos \theta_r \\
+        \mathcal{L}_{\textup{b}f} & = \mathcal{L}_{f\textup{b}} = M_{rf} \cos (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{\textup{c}f} & = \mathcal{L}_{f\textup{c}} = M_{rf} \cos (\theta_r + 120^{\circ}) \\
     \end{aligned}
     \label{eq:Eq8.17}
 \end{equation}
@@ -3324,9 +3325,9 @@ Thus, for phases $c$ and $b$ the angle us $(\theta_r - 180^{\circ})$ and for pha
 $M_{rf}$ is the maximum value of mutual inductance between a rotor phase and the field winding $f$,
 \begin{equation}
     \begin{aligned}
-        \mathcal{L}_{as} & = \mathcal{L}_{sa} = M_{rs} \cos \theta_r \\
-        \mathcal{L}_{bs} & = \mathcal{L}_{sb} = M_{rs} \cos (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{cs} & = \mathcal{L}_{sc} = M_{rs} \cos (\theta_r + 120^{\circ}) \\
+        \mathcal{L}_{\textup{a}s} & = \mathcal{L}_{s\textup{a}} = M_{rs} \cos \theta_r \\
+        \mathcal{L}_{\textup{b}s} & = \mathcal{L}_{s\textup{b}} = M_{rs} \cos (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{\textup{c}s} & = \mathcal{L}_{s\textup{c}} = M_{rs} \cos (\theta_r + 120^{\circ}) \\
     \end{aligned}
     \label{eq:Eq8.18}
 \end{equation}
@@ -3334,9 +3335,9 @@ $M_{rf}$ is the maximum value of mutual inductance between a rotor phase and the
 $M_{rs}$ is the maximum value of mutual inductance between a rotor phase and closed winding $s$
 \begin{equation}
     \begin{aligned}
-        \mathcal{L}_{at} & = \mathcal{L}_{ta} = M_{rt} \cos (\theta_r + 90^{\circ}) = -M_{rt} \sin \theta_r \\
-        \mathcal{L}_{bt} & = \mathcal{L}_{tb} = M_{rt} \cos (\theta_r + 90^{\circ} - 120^{\circ}) =  -M_{rt} \sin (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{ct} & = \mathcal{L}_{tc} = M_{rt} \cos (\theta_r + 90^{\circ} + 120^{\circ}) =  -M_{rt} \sin (\theta_r + 120^{\circ}) \\
+        \mathcal{L}_{\textup{a}t} & = \mathcal{L}_{t\textup{a}} = M_{rt} \cos (\theta_r + 90^{\circ}) = -M_{rt} \sin \theta_r \\
+        \mathcal{L}_{\textup{b}t} & = \mathcal{L}_{t\textup{b}} = M_{rt} \cos (\theta_r + 90^{\circ} - 120^{\circ}) =  -M_{rt} \sin (\theta_r - 120^{\circ}) \\
+        \mathcal{L}_{\textup{c}t} & = \mathcal{L}_{t\textup{c}} = M_{rt} \cos (\theta_r + 90^{\circ} + 120^{\circ}) =  -M_{rt} \sin (\theta_r + 120^{\circ}) \\
     \end{aligned}
     \label{eq_Eq8.19}
 \end{equation}
@@ -3346,28 +3347,89 @@ $M_{rt}$ is the maximum value of mutual inductance between a rotor phase and clo
 \subsection{Primitive machine inductances} Writing in matrix form flux-linkage equations for the coils shown in Fig. 8.1
 \begin{equation}
     \begin{bmatrix}
-        \varPsi_{a} \\[1ex] \varPsi_{b} \\[1ex] \varPsi_{c} \\[1ex] \varPsi_{f} \\[1ex] \varPsi_{s} \\[1ex] \varPsi_{t}
+        \varPsi_{\textup{a}} \\[1ex] \varPsi_{\textup{b}} \\[1ex] \varPsi_{\textup{c}} \\[1ex] \varPsi_{f} \\[1ex] \varPsi_{s} \\[1ex] \varPsi_{t}
     \end{bmatrix}
     =
     \begin{bmatrix}
 
-        \mathcal{L}_{aa} & \mathcal{L}_{ab} & \mathcal{L}_{ac} & \mathcal{L}_{af} & \mathcal{L}_{as} & \mathcal{L}_{at} \\[1ex]  
-        \mathcal{L}_{ba} & \mathcal{L}_{bb} & \mathcal{L}_{bc} & \mathcal{L}_{bf} & \mathcal{L}_{bs} & \mathcal{L}_{bt} \\[1ex]
-        \mathcal{L}_{ca} & \mathcal{L}_{cb} & \mathcal{L}_{cc} & \mathcal{L}_{cf} & \mathcal{L}_{cs} & \mathcal{L}_{ct} \\[1ex]  
-        \mathcal{L}_{fa} & \mathcal{L}_{fb} & \mathcal{L}_{fc} & \mathcal{L}_{ff} & \mathcal{L}_{fs} & 0 \\[1ex]  
-        \mathcal{L}_{sa} & \mathcal{L}_{sb} & \mathcal{L}_{sc} & \mathcal{L}_{sf} & \mathcal{L}_{ss} & 0 \\[1ex]  
-        \mathcal{L}_{ta} & \mathcal{L}_{tb} & \mathcal{L}_{tc} & 0 & 0 & \mathcal{L}_{tt} 
+        \mathcal{L}_{\textup{aa}} & \mathcal{L}_{\textup{ab}} & \mathcal{L}_{\textup{ac}} & \mathcal{L}_{\textup{a}f} & \mathcal{L}_{\textup{a}s} & \mathcal{L}_{\textup{a}t} \\[1ex]  
+        \mathcal{L}_{\textup{ba}} & \mathcal{L}_{\textup{bb}} & \mathcal{L}_{\textup{bc}} & \mathcal{L}_{\textup{b}f} & \mathcal{L}_{\textup{b}s} & \mathcal{L}_{\textup{b}t} \\[1ex]
+        \mathcal{L}_{\textup{ca}} & \mathcal{L}_{\textup{cb}} & \mathcal{L}_{\textup{cc}} & \mathcal{L}_{\textup{c}f} & \mathcal{L}_{\textup{c}s} & \mathcal{L}_{\textup{c}t} \\[1ex]  
+        \mathcal{L}_{f\textup{a}} & \mathcal{L}_{f\textup{b}} & \mathcal{L}_{f\textup{c}} & \mathcal{L}_{ff} & \mathcal{L}_{fs} & 0 \\[1ex]  
+        \mathcal{L}_{s\textup{a}} & \mathcal{L}_{s\textup{b}} & \mathcal{L}_{s\textup{c}} & \mathcal{L}_{sf} & \mathcal{L}_{ss} & 0 \\[1ex]  
+        \mathcal{L}_{t\textup{a}} & \mathcal{L}_{t\textup{b}} & \mathcal{L}_{t\textup{c}} & 0 & 0 & \mathcal{L}_{tt} 
     \end{bmatrix}
     \begin{bmatrix}
-        i_{a} \\[1ex] i_{b} \\[1ex] i_{c} \\[1ex] i_{f} \\[1ex] i_{s} \\[1ex] i_{t}
+        i_{\textup{a}} \\[1ex] i_{\textup{b}} \\[1ex] i_{\textup{c}} \\[1ex] i_{f} \\[1ex] i_{s} \\[1ex] i_{t}
     \end{bmatrix}
     \label{eq:Eq8.20}
 \end{equation} %TODO diagonal de la matriz
 
 Alternatively (8.20) may be written,
 \begin{equation}
-    [\varPsi_{abc}]
-    \label{}
+    [\varPsi_{\textup{abc}fst}] = [\mathcal{L}_{\textup{abc}fst}] [i_{\textup{abc}fst}]
+    \label{eq:Eq8.21}
 \end{equation}
+%3168,3372s/\(_{\w\{-}\)\(abc\|ab\|ac\|ba\|bc\|ca\|cb\|[abc]\)\(\w\{-}}\)/\1\\textup{\2}\3/g
 
+Substituting $[\mathcal{L}_{\textup{abc}fst}]$ the expressions derived in Section 8.2.1 for the synchronous machine inductances,\\ \vfill \pagebreak[4]
+\begin{multline}
+    [\mathcal{L}_{\textup{abc}fst}] = \\ 
+    \begin{bmatrix}
+        \begin{bmatrix*}[l]
+            \begin{pmatrix}
+                L_l + L_1 \\ + L_2 \cos 2\theta_r 
+            \end{pmatrix}
+            & 
+            \begin{pmatrix}
+                -0.5 L_1 \\ + L_2 \cos 2(\theta_r - 60^{\circ})
+            \end{pmatrix}
+            & 
+            \begin{pmatrix}
+                -0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ})
+            \end{pmatrix}
+            \\
+            \begin{pmatrix}
+                - 0.5 L_1 \\ + L_2 \cos 2(\theta_r -60^{\circ}) 
+            \end{pmatrix}
+            &
+            \begin{pmatrix}
+                L_l + L_1 \\ + L_2 \cos 2(\theta_r - 120^{\circ})
+            \end{pmatrix}
+            &
+            \begin{pmatrix}
+                -0.5 L_1 \\ + L_2 \cos 2\theta_r
+            \end{pmatrix}
+            \\
+            \begin{pmatrix}
+                - 0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ}) 
+            \end{pmatrix}
+            &
+            \begin{pmatrix}
+                -0.5 L_1 \\ + L_2 \cos 2 \theta_r
+            \end{pmatrix}
+            &
+            \begin{pmatrix}
+                L_l + L_1 \\ + L_2 \cos 2(\theta_r  + 120^{\circ})
+            \end{pmatrix}
+        \end{bmatrix*} &
+        \begin{bmatrix}
+            M_{rf} \cos \theta_r & M_{rs} \cos \theta_r & - M_{rt} \sin \theta_r \\
+            M_{rf} \cos (\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r - 120^{\circ}) & - M_{rt} \sin (\theta_r - 120^{\circ}) \\ 
+            M_{rf} \cos(\theta_r + 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) & - M_{rt} \cos(\theta_r + 120^{\circ}) \\
+        \end{bmatrix}\\
+        \begin{bmatrix}
+            M_{rf} \cos\theta_r & M_{rf} \cos(\theta_r - 120^{\circ}) & M_{rf} \cos(\theta_r + 120^{\circ}) \\
+            M_{rs} \cos\theta_r & M_{rs} \cos(\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) \\
+            - M_{rt} \sin \theta_r & - M_{rt} \sin (\theta_r - 120^{\circ}) & - M_{rt} \sin(\theta_r + 120^{\circ})
+        \end{bmatrix} &
+        \begin{bmatrix}
+            L_f & M_{fs} & 0 \\
+            M_{fs} & L_s & 0 \\
+            0 & 0 & L_t
+        \end{bmatrix}
+    \end{bmatrix}
+    \label{eq:Eq8.22}
+\end{multline}
+Thus
 \end{document}
