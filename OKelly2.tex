@@ -22,11 +22,193 @@
 \RedeclareSectionCommands[afterskip=-2ex]{subsubsection}
 
 \begin{document}
+\chapter{Electro-mechanical energy conversion}
+Energy is the capacity to do work. In a mechanical system mass may have two types of energy:
+\begin{enumerate}[label={(\alph*)}]
+    \item potential energy due to its position, and/or
+    \item kinetic energy due to its motion.
+\end{enumerate}
+
+Similarly, there are two types of energy associated with electrical charges:
+\begin{enumerate}[label={(\alph*)}]
+    \item A static charge produces an electrostatic field which has electrostatic energy de to its potential or voltage.
+    \item A moving charge produces an electromagnetic field which has electromagnetic energy due to the motion of the charge.
+\end{enumerate}
+
+\section{Electro-mechanical transducers}
+An electro-mechanical transducer is a device for converting electrical energy into mechanical energy or the reverse, i.e., mechanical energy into electrical energy.
+
+The essential link in this chain is the energy of the electric and magnetic fields, Fig. 3.1. When a mechanical member is allowed to move under the action of a force produced by electrical means, then mechanical work is given out. The energy to do this work is obtained from the electrical and magnetic fields. If no energy is given to the field from an electrical source, motion continues until either
+\begin{enumerate}[label={(\alph*)}]
+    \item the mechanical force becomes zero and motion ceases, or
+    \item the moving member reaches the limit of its permitted travel.
+\end{enumerate}
+
+With a continuously operating device such as a rotating machine, the field energy absorbed in doing work is replaced by energy from the electrical source.
+
+A similar process occurs for energy conversion from the mechanical state to the electrical state. In this instance an essential requirement is that a magnetic or electric field must exist before an induced voltage can generate electrical power. For this reason a transducer may not be reversible if the field collapses when attempting to take electrical power from the device.
+
+\subsection{Conservation of energy} An energy balance equation can be written for a transducer in which the input energy is equated to the sum of the following components: dissipation by losses, field storage, and useful output.
+
+With an electro-mechanical energy transducer
+
+\begin{equation}
+    \Bigg[
+        \parbox{8ex}{\centering Electrical energy input}
+    \Bigg]
+    =
+    \Bigg[
+        \parbox{9ex}{\centering Energy to electrical losses}
+    \Bigg]
+    +
+    \Bigg[
+        \parbox{15ex}{\centering Energy to field storage in the electrical system}
+    \Bigg]
+    +
+    \Bigg[
+        \parbox{11ex}{\centering Electrical to mechanical energy}
+    \Bigg]
+    \label{eq:Eq3.1}
+\end{equation}
+
+In symbolic form, with appropriate suffices,
+\begin{equation}
+    W_e = W_{le} + F_{fe} +W_{em}
+    \label{eq:Eq3.2}
+\end{equation}
+All the mechanical energy does not appear as useful output energy. A fraction is dissipated in mechanical losses $W_{lm}$ and some energy $W_{sm}$ may be stored in the mechanical system as potential or kinetic energy.
+
+The net mechanical output energy $W_m$ is given by
+\begin{equation}
+    W_m = W_{em} - W_{lm} -W_{sm}
+    \label{eq:Eq3.3}
+\end{equation}
+
+Substituting in (3.2)
+\begin{equation}
+    W_e = (W_{le} + W_{lm}) + (W_{fe} + W_{sm}) + W_m
+    \label{eq:Eq.3-4}
+\end{equation}
+
+Deriving an expression for a mechanical to electrical transducer in a similar manner:
+\begin{equation}
+    W_m = (W_{le} + W_{lm}) + (W_{fe} + W_{sm}) + W_e 
+    \label{eq:Eq3.5}
+\end{equation}
+
+With energy flowing into ports taken as positive, a general equation can be written as
+\begin{equation}
+    W_e + W_m = (W_{le}+ W_{lm}) + (W_{fe} + W_{sm})
+    \label{eq_Eq3.6}
+\end{equation}
+
+The conditions described by (3.4) and (3.5) are satisfied.\\ Electrical to mechanical energy conversion,
+\begin{equation*}
+    W_e \text{\ is }+ve,\qquad W_m \text{\ is } -ve
+\end{equation*}
+Mechanical to electrical energy conversion,
+\begin{equation*}
+     W_m \text{\ is }+ve,\qquad W_e \text{\ is } -ve
+\end{equation*}
+
+\subsection{Types of transducers} Possible methods for producing force by electrical means are summarized below:
+\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+    \item Mechanical forces due to the interaction of magnetic fields. A typical example being a current-carrying conductor in a magnetic field.
+    \item The forces exerted on ferro-magnetic material to move it in the direction of increasing field strength. Typical examples are a compass needle in the earth's field and an armature-attracted type relay.
+    \item The electric field analogy of (a).
+    \item The electric field analogy of (b).
+    \item Magnetostriction, or the deformation of a ferromagnetic material in a magnetic field.
+    \item The electrical field analogy of (e).\ i.e., the piezoelectric effect.
+\end{enumerate}
+
+The power available from methods (c) to (f) is relatively small compared with methods (a) and (b). Consequently, the majority of applications use the first two methods. Typical examples are relays, solenoids, and, of course, rotating electrical machines. 
+
+The main magnetic fields in practical devices and machines are invariably produced by electrically energized coil systems to make a versatile and economic arrangement. 
+
+With a single energized coil a transducer is called a singly-excited system. Doubly-excited systems have two coils which are usually arranged with one on the stationary member and one on the moving member. Systems with more than two coils may be employed but practical transducers can often be reduced to singly-or doubly­excited systems. 
+
+\section{Singly-excited system} 
+The attracted-armature type relay, Fig. 3.2, is probably the commonest example of a singly-excited system. Another possible arrangement, Fig. 3.3, has an action similar to a compass needle in a magnetic field. The ferromagnetic rotor tries to position itself to give minimum reluctance for the magnetic flux, i.e., torque is exerted to move it in the direction of increasing field strength. The torque depends on the shape of the rotor. With a cylindrical rotor there is no torque as the reluctance
+is unchanged by,angular position. With diametrically opposite projections on a round rotor, the reluctance is now dependent on the rotor angle. The rotor is said to have 
+\textit{saliency}.
+
+For the analysis of a singly-excited system a `dumb-bell' shape rotor, with an exaggerated saliency effect, as shown in Fig. 3.3, is considered. 
+
+The following assumptions are made:
+\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+    \item Non-linear flux/current relationships for the magnetic circuit formed by the stator and rotor iron.
+    \item No leakage flux, i.e., the flux produced by the coil links with all the turns, and follows the main magnetic path.
+    \item A rigid coil for which no deformation occurs due to electromagnetic forces. Without this assumption, the coil inductance changes with current and mechanical strain energy is stored in the coil.
+    \item Hysteresis and eddy current losses are neglected.
+    \item The magnetic field predominates and electric field phenomena, are neglected. 
+\end{enumerate}
+
+With a coil resistance $R \Omega$, the instantaneous voltage equation for the coil is
+\begin{equation}
+    v = Ri + \dfrac{\dif \varPsi}{\dif t}
+    \label{eq:Eq3.7}
+\end{equation}
+
+Multiplying (3.7) by $i$
+\begin{equation}
+    vi = Ri^2 + i \dfrac{\dif \varPsi}{\dif t}
+    \label{eq:Eq3.8}
+\end{equation}
+
+Integrating with respect to time $t$ from $t = 0$ to $t = t$, and assuming the current and flux-linkage to be initially zero
+\begin{equation}
+    \int_0^t vi \dif t = \int_0^t Ri^2 \dif t + \int_0^{\varPsi} i \dif \varPsi
+    \label{eq:Eq3.9}
+\end{equation}
+and
+\begin{equation}
+     \left[
+        \parbox{8ex}{\centering Total \\ electrical \\ input \\ energy}
+    \right]
+    =
+    \left[
+        \parbox{8ex}{\centering Energy \\ to \\ electrical \\ losses}
+    \right]
+    +
+    \left[
+        \parbox{8ex}{\centering Useful \\ electrical \\ energy \\ input}
+    \right]
+    \label{eq:Eq3.10}
+\end{equation}
+The
+\begin{equation}
+    \left[
+        \parbox{8ex}{\centering Useful \\ electrical \\ energy \\ input}
+    \right]
+    =
+    \int_0^{\varPsi} i \dif \varPsi
+    \label{eq:Eq3.11}
+\end{equation}
+Now the energy balance equation (3.2) is
+\begin{equation*}
+    W_e = E_{le} + W_{fe} + W_{em}
+\end{equation*}
+
+Referring to (3.9), (3.10), and (3.11)
+\begin{align*}
+    W_e & = \text{Total electrical input energy}\\
+    W_{le} & = \text{Energy to electrical losses}
+\end{align*}
+and
+\begin{equation}
+    \int_0^{\varPsi} i \dif \varPsi = W_{fe} + W_{em}
+    \label{eq:Eq3.12}
+\end{equation}
+
+\subsection{Static energization} For any position of the rotor of the singly-excited system, Fig 3.3, a characteristic of flux of flux-linkage against current can be drawn. Figure 3.4 shows the characteristic for two rotor position.
+
+
+
 \chapter{Elements of generalized theory}
 The purpose of this chapter is to describe in mathematical terms the physical principles governing the action of most conventional rotating electrical machines and by so doing, develop a basic theory from which the performance of all such machines can be determined. 
 \section{Simplifying assumptions}
 The theory, which is known in current machine literature as the generalized theory of electrical machines, considers all practical machines to be idealized by the simplifying assumptions listed and described below:
-\begin{enumerate}[label= (\alph*)]
+\begin{enumerate}[label={(\alph*)}]
     \item Magnetic saturation is neglected. Superposition of magnetic fields can be  used, and the self- and mutual inductances of all machine windings are independent of the magnitude of winding currents.
     \item Air-gap m.m.f.s and fluxes are represented by the fundamental components of their spacial distributions which are symmetrical about the magnetic axis of the windings of origin.
     \item Slotting effects are ignored. Distributed windings comprises finely spread conductors of negligible diameter.
@@ -1081,7 +1263,7 @@ For example, a coil designated $f$ has resistance $r_f$, self-inductance $L_f$, 
 D.C.\ machines have one or more stator windings for the required load characteristic. Additional stator windings are included to give satisfactory commutation.
 
 \subsection{Field windings} The main stator or field windings are wound on salient poles. Coils may be connected:
-\begin{enumerate}[label = (\alph*)]
+\begin{enumerate}[label ={(\alph*)}]
     \item in series with the rotor or armature winding, \\
         i.e.\ \textit{a series field}
     \item[or \stepcounter{enumi} (\alph{enumi})] energized from a separate d.c.\ supply, \\
@@ -1193,7 +1375,7 @@ flux/excitation m.m.f.\ characteristic.
 begins to saturate, the output voltage does not increases as rapidly as previously, see Fig. 6.7. A point is reached at which the voltage characteristic cuts the field resistance line and this corresponds to the open-circuit voltage of the machine.
 
 Two necessary conditions for self-excitation are,
-\begin{enumerate}[label= (\alph*)]
+\begin{enumerate}[label={(\alph*)}]
     \item the residual flux is in the \textit{correct sense}, i.e., field current due to rotational voltage reinforces the residual flux of the stator poles; and
     \item the slope of the field resistance line is sufficiently low to intersect the voltage characteristic at a reasonable value above the knee of the curve.
 \end{enumerate}
@@ -1630,7 +1812,7 @@ Now
 Hence, a simple expression is obtained for the mechanical time constant with mechanical damping and armature inductance neglected. Figure 6.13(b) illustrates the run-up speed and current characteristics.
 
 \subsection{Starting transient} The armature of a d.c.\ motor is energized through resistance on starting, see Section 6.2.7. Consider the starting transient of a shunt motor. To simplify the solution it will be assumed that,
-\begin{enumerate}[label= (\alph*)]
+\begin{enumerate}[label={(\alph*)}]
     \item the field current has a steady value $I_f$ before the armature circuit is energized,
     \item the armature self-inductance is small and may be neglected, and
     \item the machine is unloaded, $T_m = 0$, and mechanical damping is ignored.
@@ -2096,7 +2278,7 @@ where $A$, $B$, $C$, $D$ are constants such that $B + C + D = 1$ and $A$ represe
 consists of balanced coils on each polar projection which contribute zero net flux along the direct and quadrature axes. Figure 6.21 shows a typical machine with compensating, demagnetizing, interpole, and field windings, and the response of a machine with and without a demagnetizing winding is given in Fig. 6.22.
 
 Further features of crossfield machines used in control schemes are
-\begin{enumerate}[label= (\alph*)]
+\begin{enumerate}[label={(\alph*)}]
     \item laminated structures to reduce iron losses and improve machine response and,
     \item the inclusion of more than one control winding to facilitate the comparison of several input signals.
 \end{enumerate}
@@ -3435,8 +3617,8 @@ Thus
 \begin{equation}
     [\varPsi{\textup{abc}fst}] = 
     \begin{bmatrix}
-        [ \varPsi{\textup{abc}}] \\
-        [\varPsi{fst}]
+        [\varPsi_{\textup{abc}}] \\
+        [\varPsi_{fst}]
     \end{bmatrix}
     =
     \begin{bmatrix}
@@ -3444,11 +3626,11 @@ Thus
         [L_x] & [L_z]
     \end{bmatrix}
     \begin{bmatrix}
-        [i_{\textup{abc}] \\
+        [i_{\textup{abc}}] \\
         [i_{fst}]
     \end{bmatrix}
     \label{eq:Eq8.23}
 \end{equation}
 
-Transform from $abc$ to $$<++>
+Transform from $abc$ to $dq\gamma$
 \end{document}
