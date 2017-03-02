@@ -30,7 +30,7 @@ Energy is the capacity to do work. In a mechanical system mass may have two type
 \end{enumerate}
 
 Similarly, there are two types of energy associated with electrical charges:
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}[label={(\alph*)},leftmargin=*]
     \item A static charge produces an electrostatic field which has electrostatic energy de to its potential or voltage.
     \item A moving charge produces an electromagnetic field which has electromagnetic energy due to the motion of the charge.
 \end{enumerate}
@@ -200,8 +200,191 @@ and
     \label{eq:Eq3.12}
 \end{equation}
 
-\subsection{Static energization} For any position of the rotor of the singly-excited system, Fig 3.3, a characteristic of flux of flux-linkage against current can be drawn. Figure 3.4 shows the characteristic for two rotor position.
+\subsection{Static energization} For any position of the rotor of the singly-excited system, Fig 3.3, a characteristic of flux of flux-linkage against current can be drawn. Figure 3.4 shows the characteristic for two rotor positions.
+\begin{enumerate}[label={Position \Alph*:},leftmargin=3cm]
+    \item with the rotor inclined at an angle to the stator pole axis.
+    \item with the rotor aligned with the stator pole axis.
+\end{enumerate}
 
+Flux does not increase uniformly due to saturation of the iron. The air-gap reduces the flux density and also makes the relationships more linear.
+
+In position A\ the rotor asymmetry produces torque in the direction shown in Fig. 3.3. On reaching position B, there is no magnetic field distortion and the torque on the rotor is zero.
+
+With no movement there is no mechanical output and all the useful electrical energy input is converted into field energy; i.e.,
+\begin{equation}
+    \text{useful electrical energy} = \int_0^{\varPsi} i \dif \varPsi = W_{fe}
+    \label{eq:Eq3.13}
+\end{equation}
+
+Referring to Fig. 3.4, the total magnetic field energy $W_{fe}$ corresponding to a current increase from zero to $i$ is represented by the area of this integral.
+\begin{enumerate}[label={Position \Alph*:},leftmargin=3cm]
+    \item The field energy is area OALO.\@
+    \item The field energy is area OCDO.\@
+\end{enumerate}
+
+The \textit{co-energy} of the field is defined as the area under the flux-linkage/current characteristic and is denoted by $W_{fe}'$.
+\begin{equation}
+    \text{Co-energy} W_{fe} = \int_0^i \varPsi \dif i
+    \label{eq:Eq3.14}
+\end{equation}
+
+\begin{enumerate}[label={Position \Alph*:},leftmargin=3cm]
+    \item The field co-energy is area OEAO.\@
+    \item The field co-energy is area OECO.\@
+\end{enumerate}
+
+\subsection{Dynamic energization} Before considering the general transient operation of the device, it is useful to consider two types of controlled movement. The rotor moves either \textit{very slowly} or \textit{instantaneously} from position A to position B. 
+\subsubsection{\textit{Slow movement}} If the rotor is constrained to move very slowly the current $i$ is sensibly constant as $\dif \varPsi / \dif t$ is small. The flux­linkages may be assumed to increase from $\varPsi_1$ to $\varPsi_2$ at an assumed constant current $i_2$.
+
+The useful electrical input is 
+\begin{equation}
+    \int_{\varPsi_1}^{\varPsi_2} i_2 \dif \varPsi = i_2  \int_{\varPsi_1}^{\varPsi_2} \dif \varPsi =  i_2 (varPsi_1 -\varPsi_2)
+    \label{eq:Eq3.15}
+\end{equation}
+Figure 3.5 shows how the field energy changes. The mechanical work is the difference between the energy input and the change in field energy, and equals the area OACHO.\@
+
+The average electromagnetic torque during movement is given by 
+\begin{equation}
+    T_e \text{\ (average)} = \dfrac{\text{mechanical work}}{\text{angular movement}} = \dfrac{\text{area OACHO}}{\text{angular movement}}
+    \label{eq:Eq3.16}
+\end{equation}
+
+Consider a small change of angle $\delta \theta$ during the movement. The incremental mechanical work is represented by area OGKO In Fig. 3.5.
+\begin{equation}
+    T_e \text{\ (average)}=\dfrac{\delta\text{(mechanical work)}}{\delta \theta} = \dfrac{\text{area OGKO }}{\delta\theta}
+    \label{eq:Eq3.17}
+\end{equation}
+
+The instantaneous torque at any angle $\theta$ is given by
+\begin{equation}
+    T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\text{area OGKO}}{\delta \theta}\right)
+    \label{eq:Eq3.18}
+\end{equation}
+
+Now area OGKO=the change of co-energy during the movement $\delta \theta$
+\begin{equation}
+    T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} {\left(\dfrac{\delta W_{fe}'}{\delta \theta}\right)}_{\text{constant current}}
+    \label{eq:Eq3.19}
+\end{equation}
+
+$W_{fe}'$ is a function of angle $\theta$ and current $i$. In (3.19) the rate of change of $W_{fe}'$ with respect to $\theta$ occurs with $i$ constant. The differential with respect to one variable (with other variable considered as constants) is denoted by the partial derivative $\partial / \partial \theta$.
+\begin{equation}
+    T_e = \Big[ \dfrac{\partial W_{fe}'}{\partial \theta}\Big]
+    \label{eq:Eq3.20}
+\end{equation}
+
+\subsubsection{\textit{Instantaneous movement} }Assume the rotor moves instantaneously from position A to position B. The flux-linkages cannot change as an infinite voltage would be induced. Realistically, if the rotor movement is not instantaneous but very fast, a small change of flux induces a high voltage in the winding. This voltage causes the current to change so as to oppose the flux change. In practice, the resulting flux change is very small and may be neglected. The principle of
+assuming no flux change is known as the \textit{theorem of constant flux-linkages}. It is frequently used to analyse a sudden change of one or more coil currents, or the sudden relative movement of two coils, in magnetically coupled circuits (see Section 1.4). 
+
+The current in the coil falls from $i_2$ to $i_1$ at constant flux-linkage, see Fig. 3.6(b). With the rotor then held at position B, the current and flux-linkage increase gradually to final steady values, $i_2$ and $\varPsi_2$, see Fig. 3.6(c). During this time, the field storage energy is increased by an amount equal to the electrical input.
+
+No energy is taken from the supply during the rotor movement as $\int i \dif \varPsi = 0$. Mechanical energy is obtained from the change in field energy as shown in Fig. 3.6(b).
+
+Considering torque as in the previous section 
+\begin{equation}
+     T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\delta \text{(mechanical work)}}{\delta \theta}\right) = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\text{are OMNO}}{\delta \theta}\right)
+    \label{eq:Eq3.21}
+\end{equation}
+
+Now area OMNO\ is the change of field energy during the movement $\delta \theta$ and $T_E$ may be written 
+\begin{equation}
+    T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} - {\left( \dfrac{\delta W_{fe}}{\delta \theta}\right)}_{\text{constant flux-linkage}}
+    \label{eq:Ee3.22}
+\end{equation}
+a negative sign is included in this expression as the field energy decreases with movement, see Fig. 3.6(c). 
+\begin{equation}
+    T_e = - {\left[ \dfrac{\partial W_{fe}}{\partial \theta}\right]}_{\text{constant flux-linkage}}
+    \label{eq_Eq3.23}
+\end{equation}
+
+A partial derivative is necessary as one variable (flux-linkage) is considered constant. 
+\subsubsection{\textit{Transient movement}} In general, both the current and the flux­linkages have time to change during the movement. A typical diagram with overshooting on reaching position B, due to rotor kinetic energy, is shown in Fig. 3.7. The energy converted to mechanical work lies between the values obtained by moving the rotor instantaneously and very slowly. 
+For a small movement PQ of the rotor, see Fig. 3.7, the energy to mechanical work is represented by area OPQO.\@ With controlled movement at P the energy to mechanical work is given by
+\begin{enumerate}[label={}]
+    \item area OPRO for movement at constant $\varPsi$, and
+    \item area OPSO for movement at constant $i$.
+\end{enumerate}
+
+The torque expressions for the three cases are as follows: 
+(a) actual movement: 
+\begin{equation}
+    T_e = \dfrac{\dif W_{fe}'}{\dif \theta} = -\dfrac{\dif W_{fe}}{\dif \theta} = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPQO}}{\delta \theta}\right)
+        \label{eq:Eq3.24}
+\end{equation}
+(b) controlled movement at constant current:
+\begin{multline}
+    T_e = {\left[ \dfrac{\partial W_{fe}'}{\partial \theta}\right]}_{\text{constant current}} \\
+    = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPSO}}{\delta \theta}\right) = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPQO} + \text{area PQSP}}{\delta \theta}\right)
+    \label{eq:Eq3.25}
+\end{multline}
+(c) controlled movement at constant flux-linkage:
+\begin{multline}
+    T_e = -{\left[ \dfrac{\partial W_{fe}}{\partial \theta}\right]} \\
+    = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPRO}}{\delta \theta}\right) = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPQO} - \text{area PQRP}}{\delta \theta}\right)
+    \label{eq:Eq3.26}
+\end{multline}
+In the limit as $\delta \theta \to 0$ the areas PQSP and PQRP vanish and the torque expressions converge to a common value
+\begin{align}
+    T_e & = \dfrac{\dif W_{fe}'}{\dif \theta} = - \dfrac{\dif W_{fe}}{\dif \theta} \nonumber \\
+    & = {\left[\dfrac{\partial W_{fe}'}{\partial \theta} \right]}_{\substack{\text{constant}\\\text{current}}} = - {\left[ \dfrac{\partial W_{fe}}{\partial \theta}\right]}_{\substack{\text{constant}\\\text{flux-linkage}}}
+    \label{eq:Eq3.27}
+\end{align}
+Equation (3.27) enables torque to be calculated at any angle $\theta$ from a knowledge of the change of field co-energy or energy under controlled movement at constant$ i$ or $\varPsi$.
+
+These results may be obtained by a simple mathematical treatment. The field energy and co-energy are functions of flux-linkage $\varPsi$ and current $i$,
+\begin{flalign}
+    &\text{e.g.,} \qquad \qquad \qquad \text{field co-energy} = W_{fe}'(\varPsi,i) &&
+    \label{eq:Eq3.28}
+\end{flalign}
+If there is a relationship between $\varPsi$, $i$, and  $\theta$ which can be expressed mathematically, the field energy and co-energy may be expressed explicitly as functions of$(i, \theta)$ or $(\varPsi, \theta)$,
+\begin{flalign}
+    &\text{e.g.,} \qquad \qquad \qquad \text{field co-energy}  = W_{fe}'(i,\theta)&&
+    \label{eq:Eq3.29}
+\end{flalign}
+
+Differentiating (3.29) with respect to $\theta$ gives the expression for torque 
+\begin{align}
+    T_e  &= \dfrac{\dif W_{fe}' (i, \theta)}{\dif \theta} \nonumber \\
+    & = \dfrac{\partial W_{fe}'(i, \theta)}{\partial \theta} \cdot \dfrac{\dif \theta}{\dif \theta} + \dfrac{\partial W_{fe}'(i,\theta)}{\partial i} \cdot \dfrac{\dif i}{\dif\theta}
+    \label{eq:Eq3.30}
+\end{align}
+
+With current $i$ held constant
+\begin{equation*}
+    \dfrac{\dif i}{\dif \theta} = 0
+\end{equation*}
+and
+\begin{equation}
+    T_e = {\left[ \dfrac{\partial W_{fe}'(i,\theta)}{\partial \theta}\right]}_{\text{constant current}}
+    \label{eq:Eq3.31}
+\end{equation}
+(\textit{Note:} Function $W_{fe}'(i,\theta)$ has to be expressed in terms of $i$ and $\theta$ and not flux-linakege $\varPsi$)
+
+In a similar manner, the expression for torque may be found with the flux-linkage held constant;
+\begin{flalign}
+    &\text{i.e.,} \qquad \qquad T_e = - {\left[ \dfrac{\partial W_{fe}(\varPsi,\theta)}{\partial \theta}\right]}_{\text{constant flux-linkage}} &&
+    \label{eq:Eq3.32}
+\end{flalign}
+\textsc{example} 3.1 A rotating singly-excited transducer, Fig. 3.3, has a non-linear relationship between the flux-linkage $\varPsi$, current $i$, and position $\theta$, which may be expressed as
+\begin{equation*}
+    i = (A_0 - A_1 \cos 2\theta)\varPsi^{1\cdot6}
+\end{equation*}
+
+Derive the torque expression for any angle $\theta$.\\
+\textit{Solution}\@ The torque may be found from either the field energy or the co-energy.
+\begin{align*}
+    W_{fe} & = \int_0^{\varPsi} i \dif \varPsi \\
+    & = \int_0^{\varPsi} \varPsi^{1 \cdot 6} (A_0 - A_1 \cos 2 \theta) \dif \varPsi
+\end{align*}
+
+This expression is the stored energy for any angle $\theta$ which is considered constant during integration
+\begin{align}
+    W_{fe} & = (A_0 - A_1 \cos 2\theta) \int_0^{\varPsi} \varPsi^{1 \cdot 6} \dif \varPsi \nonumber \\
+    & = (A_0 - A_1 \cos 2\theta) {\left[ \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6}\left]}_0^{\varPsi} \nonumber \\
+    W_{fe} & = (A_0 - A_1 \cos 2\theta) \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \text{joules} \\
+    \text{Torque } T_e & = -\left[ \right] 
+    \label{eq:Eq3.33}
+\end{align}
 
 
 \chapter{Elements of generalized theory}
@@ -824,7 +1007,7 @@ Mean torque is positive and a maximum when $\alpha = -45^{\circ}$ a condition ac
 \section{Commutator machines}
 An important group of a.c.\ and d.c.\ machines are those employing commutator windings. The simple two-pole commutator machine with stator saliency, Fig. 5.13.\ will serve as a model for determining the performance characteristics of commutator machines. For the purpose of making the subsequent analysis quite general, the two windings are assumed to be supplied with time-varying voltages and currents: the uniformly distributed commutator winding being connected to its supply by a brush-pair held stationary on an axis at $\theta_r$ to the $d$-axis.
 
-As previously described, Section4.2, commutator action effectively divides the commutator winding along the brush axis to form two uniform current sheets of opposite polarity. From the magnetic considerations the commutator windings behaves as a stationary concentrated coil of $N_r$ turns carrying current $i_r$. For total equivalence the stationary concentrated coil generates the same rotational voltage as the commutator winding. It follows, such a coil is fictitious and as it is to be used to represent commutator  windings it is given the identifying name of \emph{pseudo-stationary coil}.
+As previously described, Section 4.2, commutator action effectively divides the commutator winding along the brush axis to form two uniform current sheets of opposite polarity. From the magnetic considerations the commutator windings behaves as a stationary concentrated coil of $N_r$ turns carrying current $i_r$. For total equivalence the stationary concentrated coil generates the same rotational voltage as the commutator winding. It follows, such a coil is fictitious and as it is to be used to represent commutator  windings it is given the identifying name of \emph{pseudo-stationary coil}.
 
 The two-pole commutator machine, Fig. 5.13, can now be represented in diagrammatic form as two stationary concentrated coils. The two coils are considered to produce the sinusoidally distributed air-gap m.m.f.s, space phase separated $\theta_r$, and in time phase with their respective currents.
 
@@ -2551,7 +2734,7 @@ Comparing (7.6) and (7.8),
         \end{bmatrix}
         =
         \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t] 
-        \label{eq:Eq3.18}
+        \label{eq:Eq7.18}
     \end{align}
     where
     \begin{equation}
