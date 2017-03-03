@@ -10,6 +10,7 @@
 \usepackage{mathptmx}
 \usepackage{tabularx}
 \usepackage{mdwmath}
+\usepackage{bigints}
 
 \areaset{11.5cm}{19.75cm}
 \setcounter{secnumdepth}{3}
@@ -532,10 +533,391 @@ The instantaneous voltage equations for the coils are
 Substituting for $\varPsi_1$ and $\varPsi_2$ in (3.47)
 \begin{equation}
     \begin{aligned}
-        
+        v_1 & = R_1 i_1 + \dfrac{\dif (L_1 i_1)}{\dif t} + \dfrac{\dif(M i_2)}{\dif t} \\
+        v_2 & = R_2 i_2 + \dfrac{\dif (L_2 i_2)}{\dif t} + \dfrac{\dif(M i_1)}{\dif t} 
     \end{aligned}
-    \label{<++>}
-\end{equation}<++>
+    \label{eq:Eq3.48}
+\end{equation}
+
+Now the inductances are independent of current but depend on position $\theta$, which is a function of time. Similarly, currents are time-dependent and are not functions of inductance. Hence
+\begin{equation*}
+    \dfrac{\dif (L_1 i_1)}{\dif t} = L_1 \dfrac{\dif i_1}{\dif t t} + i_1 \dfrac{\dif L_1}{\dif t},\quad \text{etc.}
+\end{equation*}
+Expanding (3.48)
+\begin{equation}
+    \begin{aligned}
+        v_1 & = R_1 i_1 + L_1 \dfrac{\dif i_1}{\dif t} + i_1 \dfrac{\dif L_1}{\dif t} + M \dfrac{\dif i_2}{\dif t} + i_2 \dfrac{\dif M}{\dif t} \\
+        v_2 & = R_2 i_2 + L_2 \dfrac{\dif i_2}{\dif t} + i_2 \dfrac{\dif L_2}{\dif t} + M \dfrac{\dif i_1}{\dif t} + i_1 \dfrac{\dif M}{\dif t}
+    \end{aligned}
+    \label{eq:Eq3.49}
+\end{equation}
+Multiplying these expressions by $i_1$ and $i_2$ respectively, gives the power equations for the coils
+\begin{equation}
+    \begin{aligned}
+        v_1 i_1 & = R_1 i_1^2 + L_1 i_1 \dfrac{\dif i_1}{\dif t} + i_1^2 \dfrac{\dif L_1}{\dif t} + i_1 M \dfrac{\dif i_2}{\dif t} + i_1 i_2 \dfrac{\dif M}{\dif t} \\
+        v_2 i_2 & = R_2 i_2^2 + L_2 i_2 \dfrac{\dif i_2}{\dif t} + i_2^2 \dfrac{\dif L_2}{\dif t} + i_2 M \dfrac{\dif i_1}{\dif t} + i_1 i_2 \dfrac{\dif M}{\dif t}
+    \end{aligned}
+    \label{eq:Eq3.50}
+\end{equation}
+Integrating (3.50) with respect yo time and adding gives the energy balance equation (3.2),
+\begin{multline}
+    \int (v_1 i_1 + v_2 i_2) \dif t = \int (R_1 i_1^2 + R_2 i_2^2) \dif t \\
+     + \int
+     \begin{pmatrix}
+     L_1 i_1 \dif i_1 + L_2 i_2 \dif i_2 + i_1 M \dif i_2 + 2 i_1 i_2 \dif M\\
+     \qquad + i_1^2 \dif L_1 + i_2^2 \dif L_2 + i_2 M \dif i_1
+     \end{pmatrix}
+     \label{eq:Eq3.51}
+\end{multline}
+
+\begin{flalign*}
+    &\left[ \parbox{15ex}{\centering Useful electrical\\energy input} \right]
+    = \int (v_1 i_1 + v_2 i_2) \dif t - \int (R_1 i_2^2 + R_2 i_2^2) \dif t &
+\end{flalign*}
+and
+\begin{multline}
+    \left[ \parbox{11ex}{\centering Energy to\\field storage\\in the\\electrical\\system}\right] 
+    + \left[ \parbox{12ex}{\centering Electrical to\\mechanical\\energy} \right]  \\ 
+    = \int
+    \begin{pmatrix}
+        L_1 i_1 \dif i_1 + L_2 i_2 \dif i_2 + i_1 M \dif i_2 + 2 i_1 i_2 \dif M \\
+        \qquad + i_1^2 \dif L_1 + i_2^2 \dif L_2 + i_2 M \dif i_1
+    \end{pmatrix}
+    \label{eq:Eq3.52}
+\end{multline}
+
+
+\subsection{Stored energy in the field} The instantaneous value of energy stored in the magnetic field depends on the inductance and current values at the instant considered. This energy may be found by considering the transducer to be stationary and the coil systems to be energized from zero current to the required instantaneous values current. There is no mechanical output and $W_{em}$ is zero. The inductance values are constant and terms in $\dif L_1$, $\dif L_2$,and $\dif M$ vanish. From (3.52)
+\begin{equation*}
+    \int_0^t \dif W_{fe} = \int_0^{i_1} L_1 i_1 \dif i_1 + \int_0^{i_2} L_2 i_2 \dif i_2 + int_0^{i_1 i_2} (i_1 M \dif i_2 + i_2 M \dif i_1)
+\end{equation*}
+or
+\begin{equation}
+    [\text{total } W_{fe}] = \dfrac{1}{2} l_1 i_1^2 + \dfrac{1}{2}L_2 i_2^2 + M i_1 i_2
+    \label{eq:Eq3.53}
+\end{equation}
+
+\subsection{Electromagnetic torque} Equation (3.53) holds for any transducer position. If the transducer rotate, the rate of change of field energy with respect to time is given by differentiating (3.53).
+\begin{multline*}
+    \dfrac{\dif W_{fe}}{\dif t} = 
+    \dfrac{1}{2} L_1 \dfrac{\dif (i_1^2)}{\dif t} + 
+    \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif t} +
+    \dfrac{1}{2} L_2 \dfrac{\dif (i_2^2)}{\dif t} +
+    \dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif t} + \\
+    i_1 i_2 \dfrac{\dif M}{\dif t} +
+    i_1 M \dfrac{\dif i_2}{\dif t} +
+    i_2 M \dfrac{\dif i_1}{\dif t} 
+\end{multline*}
+\begin{multline}
+    \dfrac{\dif W_{fe}}{\dif t} = 
+    L_1 i_1 \dfrac{\dif (i_1^)}{\dif t} + 
+    \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif t} +
+    L_2 i_2 \dfrac{\dif (i_2)}{\dif t} +
+    \dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif t} \\
+    + i_1 i_2 \dfrac{\dif M}{\dif t} +
+    i_1 M \dfrac{\dif i_2}{\dif t} +
+    i_2 M \dfrac{\dif i_1}{\dif t}
+    \label{eq:Eq3.54}
+\end{multline}
+Integrating this expression with respect to time
+\begin{equation}
+    \int \dif W_{fe} = W_{fe} = \bigints
+    \begin{pmatrix}
+        L_1 i_1 \dif i_1 + \dfrac{1}{2} i_1^2 \dif L_1 + L_2 i_2 \dif i_2 + \dfrac{1}{2} i_2^2 \dif L_2 \\
+        \qquad + i_1 i_2 \dif M + i_1 M \dif i_2 + i_2 M \dif i_1
+    \end{pmatrix}
+    \label{eq:Eq3.55}
+\end{equation}
+
+This expression is now general for a transducer with movement in which $L_1$, $L_2$, $M$, $i_1$ and $i_2$ are all varying with time.
+
+Comparing (3.55) with (3.52) it is seen that
+\begin{equation}
+    W_{em} = \left[\parbox{12ex}{Electrical to\\mechanical\\energy} \right] = \bigintsss{\left( \dfrac{1}{2} i_1^2 \dif L_1 + \dfrac{1}{2} i_2^2 \dif L_2 + i_1 i_2 \dif M \right)}
+    \label{eq:Eq3.56}
+\end{equation}
+
+Differentiating this expression with respect to $\theta$
+\begin{equation*}
+    \dfrac{\dif W_{em}}{\dif \theta} = \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif \theta} + \dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif \theta} + \dfrac{1}{2} i_1 i_2 \dfrac{\dif M}{\dif \theta}
+\end{equation*}
+as only $L_1$, $L_2$ and $M$ are dependent on $\theta$. Now electromagnetic torque
+\begin{gather}
+    T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} \dfrac{\delta W_{em}}{\delta \theta} = \dfrac{\dif W_{em}}{\dif \theta} \nonumber \\
+    T_e = \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif \theta} +\dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif \theta} + i_1 i_2 \dfrac{\dif M}{\dif \theta}
+    \label{eq:Eq3.57}
+\end{gather}
+
+With \textit{steady values of currents} maintained in the two coils of the doubly-excited system (3.54) reduces to
+\begin{equation*}
+    \dfrac{\dif W_{fe}}{\dif t} = \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif t} + \dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif t} + i_1 i_2 \dfrac{\dif M}{\dif t}
+\end{equation*}
+Integrating with respect to time $t$
+\begin{equation}
+    W_{fe} = \int \Big[ \dfrac{1}{2} i_1^2 \dif L_1 + \dfrac{1}{2} i_2^2 \dif L_2 + i_1 i_2 \dif M \Big]
+    \label{eq:Eq3.58}
+\end{equation}
+which is equal to the energy converted to mechanical work $W_{em}$ in (3.56).
+
+The useful energy input is divided equally between the field storage and the energy to mechanical work.
+
+\chapter{Basic electrical machines}
+All electrical machines have many common properties and features. The basic common factors in rotating electrical machines are developed and described in the following sections. 
+
+\section{Fundamental machine features} 
+Section 3.1.2 mentions the different methods of producing mechanical force, or torque, in electro-mechanical transducers. The two concepts used in rotating machines are: 
+\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+    \item the attempt to co-align two magnetic fields, and
+    \item the attempt to align a magnetic material in a magnetic field or move it into a stronger magnetic field.
+\end{enumerate}
+
+\subsection{Physical concepts of torque production} Consider a magnet in a magnetic field, as shown in Fig. 4.1. It is readily demonstrated that a torque is exerted on the magnet in an attempt to align the lines of action of the magnetic fields. With the fields aligned, Fig. 4.1 (a), there is no torque. Complete misalignment of the magnetic fields as in Fig. 4.1 (b) also produces no torque. This position is one of unstable equilibrium, however, and a small displacement of the magnet produces torque increasing the displacement further. Maximum torque occurs when the individual fields are orthogonal.
+
+An initially unmagnetized ferromagnetic material placed in a magnetic field may experience torque. Consider a member of `dumb-bell' shape as shown in Fig. 4.2. Torque is exerted on the member unless the resultant magnetic field is symmetrical as in Figs. 4.2(a) and 4.2(c). This torque is commonly called a \textit{reluctance torque} as the ferromagnetic material tries to reach a position giving minimum reluctance to the flux path.
+
+\subsection{Equivalent coil systems} The magnetic fields in the previous section may be produced by coil systems energized with currents.
+
+The interacting magnetic fields of Fig. 4.1 are produced by the doubly-excited system shown in Fig. 4.3(a). A singly-excited system,  Fig. 4.3(b), produces an identical field to Fig. 4.2. \\[12pt]
+\noindent \textit{Doubly-excited system Fig. 4.3(a)} The individual magnetic fields depend on the coil currents. If the magnetic field strengths are assumed to increase in a linear manner with current, the resultant torque $T_e$, may be expressed as the product of the currents and a function of position,
+\begin{equation}
+    T_e \propto (i_1 i_2) \times (\text{function of } \theta)
+    \label{eq:Eq4.1}
+\end{equation}
+
+\noindent \textit{Singly-excited system, Fig. 4.3(b)} The field strength is proportional to $i_1$ and the poles induced on the ferromagnetic material depend on the field strength, if linearity is assumed. The resultant torque is the product of the field strength, the induced pole strength and a function of position. 
+\begin{equation}
+    T_e \propto (i_1^2) \times (\text{function of} \theta)
+    \label{eq:Eq4.2}
+\end{equation}
+Combining the dumb-bell shaped ferromagnetic material with a doubly-excited system, gives the general arrangement for a doubly­excited system including reluctance torque, Fig. 4.4.
+
+Including suitable coefficients $K_1$ and $K_2$ both functions of $\theta$, in (4.1) and (4.2) the resultant torque is given by
+\begin{equation}
+    T_e = i_1 i_2 K_1(\theta) + i_1^2 K_2 (\theta)
+    \label{eq:Eq4.3}
+\end{equation}
+$T_e$ is the torque on the rotor. The winding and the ferromagnetic core are assumed to be mechanically rigid in themselves and as a unit. How the torque is shared between the winding and the core depends on the flux distribution and not on the relative values of the co-alignment and reluctance torques. In practice, nearly all the torque is exerted on the core. 
+Comparing (4.3) with the torque expression (3.57) derived previously, viz,
+\begin{equation*}
+    T_e = i_1 i_2 \dfrac{\dif M}{\dif \theta} + \dfrac{1}{2} i_1^2 \dfrac{\dif L_1}{\dif \theta} + \dfrac{1}{2} i_2^2 \dfrac{\dif L_2}{\dif \theta}
+\end{equation*}
+The expressions are identical if 
+\begin{equation*}
+    K_1 (\theta) = \dfrac{\dif M}{\dif \theta}, \qquad K_2(\theta) = \dfrac{1}{2} \dfrac{\dif L_1}{\dif \theta}
+\end{equation*}
+and $\dif L_2 / \dif \theta = 0$ as there is no saliency on the stator. Hence the physical concept agrees with the analytical treatment.
+
+Saliency is included only on one member as very few machines have saliency on both members.
+
+\subsection{Motoring and generating action} To emphasize the torque concepts common to rotating machines, the preceding section considers only currents in the windings. When the rotor moves under the torque action, mechanical work is given out. Relative movement induces voltage in each winding and electrical power is required to drive currents into the windings against the induced voltage. Energy conversion occurs.
+
+With a machine supplied with mechanical power, the reverse process, electrical power generation, may occur. The principle of torque production applies for the reverse process as the generated current produces a magnetic field which interacts with the main magnetic field. The resultant torque opposes the mechanical driving torque and energy conversion is present.
+
+All rotating machines do not have reversible power flow. Some types of machine will only motor as the magnetic field collapses if generation into a passive load is attempted. 
+
+The device, Fig. 4.4, includes the two methods of producing torque, one or both of which are present in all electromagnetic transducers. When rotation occurs with this simple device, the field misalignment decreases to zero and hence the torque becomes zero. A practical rotating machine requires a finite mean torque per revolution. Suitable methods are discussed later, following the sections dealing with windings and connections, as these provide the required facility, i.e., \textit{misalignment maintained with rotation.}
+
+\subsection{Basic rotating machine} The essential requirements for a practical rotating electrical machine, based on Fig. 4.4, are shown in Fig. 4.5. 
+\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+    \item Stationary member (stator core and windings).
+    \item Rotating member (rotor core and winding).
+    \item Air-gap to allow relative motion. 
+    \item Rotor winding connections (via brushes if externally supplied). 
+\end{enumerate}
+
+Solid or laminated ferromagnetic materials are used for the stator and rotor cores to reduce the reluctance of the flux paths. Pulsating fluxes require laminated materials to reduce eddy current losses.
+
+Most rotating machines have windings on the rotating and stationary members. Some small machines have only one exciting winding as one member is permanently magnetized. Reluctance machines have only one winding as they are singly-excited.
+
+\section{Windings}
+In order to treat machine windings in a general manner, and emphasize common features, their properties are discussed in terms of basic physical and electrical arrangements. As in Section 4.1.2, an energized coil produces a magnetic field and magnetic poles are shown located at the points where flux leaves or enters the coil.
+
+A detailed treatment of winding m.m.f.s and associated flux densities follows in Section 4.2.4. 
+
+\subsection{Basic properties}
+
+\subsubsection{\textit{Poles and pole-pitch}} The instantaneous picture of a rotating machine may be represented by magnetic poles as in Fig. 4.6(a). This diagram shows a four-pole machine. Equal numbers of pole­pairs on the rotor and stator are necessary to produce torque. With unequal pole-pairs the resultant torque is zero. Fig. 4.6(b).
+
+Machines may have any number of pole-pairs. Poles are equally spaced around the machine periphery at a pole-pitch apart.
+
+For convenience and clarity a two-pole machine is often shown but the results can be extended to any number of pole-pairs.
+
+Two pole-pitches span $2\pi$ electrical radians or 360 electrical degrees regardless of the number of pole-pairs.
+
+\subsubsection{\textit{Physical arrangement}} Windings on the rotating or stationary members may be arranged,
+\begin{enumerate}[label={(\alph*)},leftmargin=*]
+    \item around pole-pieces (i.e., salient-pole type); or 
+    \item distributed in slots along the core periphery. 
+\end{enumerate}
+The instantaneous magnetic field patterns for both arrangements are shown in Fig. 4.7. Magnetic poles are produced at regular intervals, a pole-pitch apart.
+
+\subsubsection{\textit{Electrical connections}} Connections to the rotating winding of a machine are from stationary brushes making surface contact with
+\begin{enumerate}[label={(\alph*)},leftmargin=*]
+    \item slip rings, or 
+    \item a commutator.
+\end{enumerate}
+
+The electrical connections with slip rings are to fixed points on the rotor winding regardless of the winding position in space.
+
+With a commutator the electrical connections are to points on the winding occupying a fixed position in space.
+
+Rigid connections are made to stationary windings in all cases.
+
+\subsubsection{\textit{Flux pattern}} The flux pattern of a winding may be moving or stationary with respect to the winding, depending on the type of winding and the method of excitation employed. 
+
+A winding energized by direct current or single-phase alternating current has a stationary magnetic flux pattern with respect to the winding.
+
+A polyphase winding energized by balanced polyphase currents produces a magnetic field which appears to travel with respect to the winding.
+
+A rotating commutator winding excited by current supplied via its brushes produces a space-stationary flux distribution. Therefore, a relative speed difference exists between the stationary flux and the moving winding.
+
+Figure 4.8 illustrates the commutator action.
+
+\subsection{Commutator winding} A two-pole \textit{ring} type winding, Fig. 4.9, illustrates the action of a commutator winding. Current enters the winding through brushes making surface contact with the commutator. Current and magnetic flux patterns are established. Rotation or the winding does not change these patterns which remain stationary relative to the brushes if practical effects are neglected, e.g., width of commutator segment. The ring winding is only suitable for very low voltage,
+heavy current machines as it is difficult to wind and uneconomic to manufacture.
+
+The commutator winding arrangement in general use is the \textit{drum} type winding with coils spanning approximately a pole-pitch. Coils may be either \textit{lap-wound} or \textit{wave-wound}. The lap winding has the same number of parallel current paths as there are poles, whilst wave windings have only two parallel paths. Figure 4.10 shows a simple two-pole lap winding. The flux and current patterns are similar to the ring winding, see Figs. 4.10(b) and (c). The winding diagram, Fig.
+4.10(a), is referred to as a \textit{developed diagram}, as the conductors are shown in a horizontal line instead of lying in a circle on the rotor surface.
+
+It is seen that a coil for a lap winding spans a pole-pitch. As with the ring winding, the coils form a continuous closed winding. The brush-pair is now physically at right-angles to the flux line of action but schematically the brushes are always shown along the axis or the equivalent coil, as in Fig. 4.10(c). 
+
+The developed diagram for a simple four-pole wave winding is shown in Fig. 4.11. With this winding an odd number of slots is necessary so that the winding progresses and forms a continuous closed winding. The coil-pitch is not exactly a pole-pitch and, as with the lap winding, the brushes are physically displaced from the flux axis. As there are only two parallel paths through this winding, only two brushes are' necessary. In practice, however, machines with four poles are often fitted wit two
+brush-pairs to reduce brush current. The use of more than a pair of brushes reduces the effective commutator length and for this reason machines or four poles or more require a design compromise between brush current and adequate effective commutator length. 
+
+\subsubsection{\textit{Torque and induced rotational voltage}} Consider a two-pole commutator winding with a brush-pair arranged at right-angles to a magnetic field, as in Fig. 4.12. Current entering the commutator winding through the brushes produces a magnetic field directed along the brush-pair. The two fields interact and torque is exerted on the rotor, as described in Section 4.1.2. 
+
+If the commutator winding is allowed to rotate under this torque, there is physical movement of the winding and core. The commutator action, however, maintains the rotor current pattern stationary in space regardless of rotor movement. The interacting flux pattern produced by currents in the stator and rotor windings is held in a misaligned state and continuous torque is exerted on the rotor. This torque is independent of the rotor movement and angular velocity and depends only on the current in the commutator winding.
+
+Voltages are induced in the coils of the rotating commutator winding due to the changing flux-linkage with the stator magnetic field. At any instant the voltage across a brush-pair is the sum of the induced voltages in al the turns in series between the brushes, and is proportional to the rotor speed, the stator field, and the number of commutator turns. With an unchanging stator field and a steady angular velocity a d.c.\ voltage is generated across the brush-pair.
+
+Energy conversion occurs with current flowing in the commutator winding. With rotation the torque exerted on the rotor results in mechanical output power. Current flows into the rotor winding against the generated voltage and is a condition of electrical power input. If the mechanical and electrical quantities remain steady the magnetic field energy and the mechanical kinetic energy are constant and the electrical input balances the mechanical output, neglecting losses. This corresponds to motor action.
+
+When current flows out of the rotor winding under the action of the generated voltage there is electrical power output and the machine is generating. 
+
+If the brush axis is not at right-angles to the stator pole axis (or direct axis) the interaction between the rotor and stator fields is decreased and the torque is reduced. The induced voltage across the brush-pair also decreases and the mechanical and electrical powers remain balanced.
+
+With the brush axis along the direct axis there is no resultant induced voltage across the brush-pair and zero torque.
+
+\subsubsection{\textit{Pseudo-stationary coil}} It is seen in Section 4.3.2 that the current and flux patterns for a commutator winding are identical to those obtained with a stationary coil along the brush axis. If the commutator winding is rotating in a magnetic field with a flux component at right-angles to the brush-pair a rotational voltage is induced in the winding. Therefore, to represent a rotating commutator winding completely the stationary coil has to include an induced voltage
+effect due to the rotation of its conductors. It is called a \textit{pseudo-stationary coil} and has all the properties of a static coil with the additional feature of a rotational voltage. This representation is important in machine analysis and will be considered further in chapter 5.
+
+\subsection{Polyphase distributed windings} Practical polyphase circuits use three phases for engineering and economic expediency. In this treatment only three-phase windings will be considered although the principles are general and apply to any number of phases.
+
+A three-phase winding consists of three phase coils with their axes physically separated by $2\pi/3$ electrical radians or 2/3 of a pole-pitch. Figure 4.13 shows a typical winding with two conductors per phase. For convenience, winding diagrams are developed as in Fig. 4.14. Current and flux patterns are established when the winding is energized by balanced three-phase currents. If different intervals in time are considered the resultant flux pattern appears to move along the
+winding, see Fig. 4.14 and Section 4.2.4. This travelling wave of flux (usually called a \textit{rotating magnetic field}) moves two pole­pitches in the time taken for the phase currents to alternate one complete cycle. An analytical treatment shows 
+\begin{enumerate}
+    \item the resultant flux distribution is sinusoidal if an individual phase winding has a sinusoidal flux distribution and a linear flux current relationship, and
+    \item the flux pattern travels along the winding at a constant speed called the \textit{synchronous speed}
+\end{enumerate}
+
+Additional harmonic travelling waves of flux are present with a non­sinusoidal flux distribution. The harmonic flux components move along the winding, some in a reverse direction, at sub-synchronous speeds. 
+
+A polyphase winding on the machine stator has stationary electrical connections to the phases. With a rotating polyphase winding the phases are energized from stationary brushes through slip rings on the rotor.
+
+\subsubsection{\textit{Equivalent coil representation}} The fundamental field produced by a polyphase winding can be produced by an equivalent number of magnetic poles rotating at synchronous speed. Consider a two­pole polyphase winding, Fig. 4.15. A similar magnetic field is produced by an equivalent coil energized by d.c.\ and rotating at synchronous speed, Fig. 4.15(b). Alternatively, a similar rotating field is established by a stationary commutator winding energized by
+d.c.\ through brushes rotating at synchronous speed. This concept, shown in Fig. 4.15(c) is extremely useful as a physical picture of the equivalence of a commutator winding with rotating brushes and a polyphase winding. The transformation of a polyphase winding to a pseudo-stationary coil system is an important part of generalized machine analysis. 
+
+\subsection{M.M.F.\ and flux density diagrams} Consider a machine with a uniform air-gap containing a single turn spanning $180^{\circ}$ as shown in Fig. 4.16(a). The m.m.f.\ $F$ acting round a closed path containing current $i_c$ is given by
+\begin{equation}
+    F = i_c = \oint H \cdot \dif l
+    \label{eq:Eq4.4}
+\end{equation}
+where $H$ is the magnetizing force at any point.
+
+It will be assumed that:
+\begin{enumerate}
+    \item the relative permeability of the ferromagnetic members is large and the magnetizing force is totally employed in driving flux across the air-gaps,
+    \item the air-gap flux is radial and field distortion in the vicinity of the conductor is ignored.
+    \item the conductor diameter is negligibly small, and
+    \item the gap length is small with respect to the rotor diameter and the flux density is constant along a radius.
+\end{enumerate}
+The coil flux crosses the air-gap twice. The flux leaving the rotor surface sees an air-gap reluctance equal to that for the air-gap crossed by the flux entering the coil. Hence, from (4.4), the m.m.f.\ $F_g$ required for each gap is half the total coil m.m.f.\ $F$.
+\begin{align*}
+    F_g & = \dfrac{F}{2} = \dfrac{i_c}{2} = H_g g \\
+    \intertext{and}
+    H_g & = \dfrac{i_c}{2g}
+\end{align*}
+where $g$ is the gap length
+\begin{equation}
+    \text{gap flux density } B_g = \mu_0 H_g = \mu_0 \dfrac{i_c}{2g}
+    \label{eq:Eq4.5}
+\end{equation}
+and is constant for a uniform air-gap. 
+
+The m.m.f.\ and flux density diagrams are shown in Fig. 4.16(b). The convention adopted is positive m.m.f.\ for flux leaving the rotor surface. 
+
+\subsection{\textit{Saliency}} Consider projecting pole-pieces on the outer member, see Fig. 4.17. The air-gap reluctances in the path of the flux leaving and entering the rotor are equal if the pole-pieces are identical to each other. Hence the gap m.m.f.s are equal see Fig. 4.17(b).
+
+The non-uniform idealized flux density at a point is obtained from (4.5), including the appropriate gap dimension for $g$. 
+
+The m.m.f.\ and flux density diagrams may be extended to complete windings with any number of pole-pairs. Actual machines have symmetrical windings and pole-pieces, and the assumptions apply without appreciable errors, ignoring slotting effects. Short-pitched coils, spanning less than $180^{\circ}$ do not provide any difficulty. The current pattern for a symmetrical winding with short-pitched coils remains identical over every pole-pitch, and the winding may be considered as a group of full-pitched coils.
+Two examples are now given for typical machine arrangements.
+
+\subsubsection{\textit{D.C.\ machine on load}} Figure 4.18 shows developed diagrams for a machine with a salient-pole stator winding and a distributed rotor winding. This corresponds to a d.c.\ machine on load. In practice the flux pattern is distorted, non-radial, and results in the fairly smooth flux density curve shown in Fig. 4.18(c). 
+
+\subsubsection{\textit{Distributed polyphase winding}} Figure 4.19 shows a double­layer, three-phase distributed winding with nine slots per pole-pitch and short-chorded by one slot. The winding is energized by balanced currents and developed diagrams are shown in Fig. 4.19(a) for an instant when the current in phase A is a maximum. 
+
+With an increasing number of conductors per phase, the steps of m.m.f.\ become less pronounced and result in a relatively smooth m.m.f.\ waveshape as shown in Fig. 4.19(b). Such a winding is called \textit{uniformly distributed}.
+
+Two cases are shown:
+\begin{enumerate}
+    \item current in phase A a maximum.
+    \item zero current in phase B.
+\end{enumerate}
+
+\subsection{Summary of winding properties} The two physical arrangements of windings are:
+
+\begin{enumerate}
+    \item concentrated around pole-pieces, i.e., salient poles; and, 
+    \item distributed in slots. 
+\end{enumerate}
+
+The behaviour of the windings in a magnetic sense may be divided into three groups:
+\begin{enumerate}
+    \item a flux pattern which is stationary relative to the winding, e.g., a salient-pole winding.
+    \item a flux pattern which is stationary relative to brushes but not to the winding itself, i.e., a commutator winding. 
+    \item a flux pattern which moves with respect to the winding, i.e., a polyphase winding. 
+\end{enumerate}
+The cage winding mentioned in Table 4.1 consists of conductors with a shorting ring at each end. A magnetic field moving relative to this winding induces voltages in the conductors and alternating currents circulate. The currents in adjacent conductors have a phase shift between them and the complete winding establishes a flux pattern which rotates at an angular speed dependent on the frequency of the induced voltages.
+
+This winding is in common use for induction motor rotors and is considered further in Section 4.3. 
+
+\section{Types of rotating machine}
+Torque is exerted on a machine rotor when offset magnetic poles are present (or induced) on the stator and rotor surfaces. The simple arrangement of Fig. 4.4 is inadequate for most practical rotating machines as the torque oscillates with rotation and produces zero net torque. An exception is the single-phase reluctance motor.
+
+Commutator or distributed polyphase windings enable the simple device to be modified so that constant misalignment of the two fields is retained with rotation. Continuous useful torque is exerted on the rotor.
+
+Most of the possible winding combinations are used in practice. The three common arrangements are:
+\begin{enumerate}
+    \item commutator winding with a salient-pole stator, e.g., a d.c.\ machine, 
+    \item a polyphase distributed stator winding with a concentrated coil rotor, i.e., a synchronous machine,
+    \item a polyphase distributed stator winding with a rotor having a distributed polyphase or a squirrel-cage winding, i.e., an induction motor. 
+\end{enumerate}
+
+\subsection{Commutator machines}
+\subsubsection{\textit{D.C.\ machine}} The commutator machine, Fig. 4.12 in Section 4.2.2, is the basic form of a d.c.\ machine. The fundamental relationships, if the magnetic circuits are assumed linear, are as follows:
+\begin{equation*}
+    \text{torque} \propto \text{(rotor current) (stator current), i.e., } \propto i_1 1_2
+\end{equation*}
+induced rotor voltage 
+\begin{equation*}
+    \propto \text{(rotor angular velocity) (stator current)} \propto \omega_r i_i 
+\end{equation*}
+
+The machine motors if electrical power is supplied to the rotor circuit and mechanical power is taken from the shaft. Sufficient rotor current flows to produce an electromagnetic torque equal to the mechanical load torque, neglecting losses. The supply voltage equals the rotor induced voltage, neglecting the resistance drop, which governs the running speed. 
+
+If mechanical power is supplied to the shaft, the rotor speed increases until an equal electrical power is generated by the rotor current, neglecting losses. This power may flow into a passive load or regenerate into the rotor supply source. 
+
+\subsubsection{\textit{Single-phase a.c.\ commutator motor}} The principle of torque production applies to the machine shown in Fig. 4.12 with both stator and rotor windings energized with single-phase a.c. Inductance of the windings modifies the machine behaviour however and additional windings, brush-shift, etc.\ are often necessary for satisfactory performance. 
+
+\subsubsection{\textit{Cross-field machine}} A d.c.\ machine with an additional brush­pair on the direct-axis is called a cross-field machine. Different winding combinations now enable this machine to act as a power amplifier, constant current device, etc. 
+
+
+
+
+
+ 
+
 
 \chapter{Elements of generalized theory}
 The purpose of this chapter is to describe in mathematical terms the physical principles governing the action of most conventional rotating electrical machines and by so doing, develop a basic theory from which the performance of all such machines can be determined. 
@@ -563,6 +945,7 @@ A $d$-axis and $q$-axis, in space quadrature, designate main axes of symmetry fo
     B(\alpha)=\frac{4}{\pi}B_m(\cos \gamma \cos \alpha-\frac{1}{3}\cos 3\gamma \cos 3\alpha+\frac{1}{5}\cos 5\gamma \cos 5\alpha \cdots \\ + \frac{{(-1)}^{(n+1)}}{2n-1}\cos(2n-1)\gamma \cos(2n-1)\alpha+\cdots)
     \label{eq:Ecu1}
 \end{multline}
+
 \begin{multline}
     B{(\alpha)} = \frac{4}{\pi} B_m \displaystyle \sum_{n=1}^{n=\infty} \bigg( \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma \cos(2n-1)\alpha \bigg) \\ n=1,2,3,\ldots
 \end{multline}
