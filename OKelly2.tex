@@ -358,34 +358,184 @@ and
     T_e = {\left[ \dfrac{\partial W_{fe}'(i,\theta)}{\partial \theta}\right]}_{\text{constant current}}
     \label{eq:Eq3.31}
 \end{equation}
-(\textit{Note:} Function $W_{fe}'(i,\theta)$ has to be expressed in terms of $i$ and $\theta$ and not flux-linakege $\varPsi$)
+(\textit{Note:} Function $W_{fe}'(i,\theta)$ has to be expressed in terms of $i$ and $\theta$ and not flux-linkage $\varPsi$)
 
 In a similar manner, the expression for torque may be found with the flux-linkage held constant;
 \begin{flalign}
     &\text{i.e.,} \qquad \qquad T_e = - {\left[ \dfrac{\partial W_{fe}(\varPsi,\theta)}{\partial \theta}\right]}_{\text{constant flux-linkage}} &&
     \label{eq:Eq3.32}
 \end{flalign}
-\textsc{example} 3.1 A rotating singly-excited transducer, Fig. 3.3, has a non-linear relationship between the flux-linkage $\varPsi$, current $i$, and position $\theta$, which may be expressed as
+
+\noindent\textsc{example} 3.1 A rotating singly-excited transducer, Fig. 3.3, has a non-linear relationship between the flux-linkage $\varPsi$, current $i$, and position $\theta$, which may be expressed as
 \begin{equation*}
-    i = (A_0 - A_1 \cos 2\theta)\varPsi^{1\cdot6}
+    i = (\textup{A}_0 - \textup{A}_1 \cos 2\theta)\varPsi^{1\cdot6}
 \end{equation*}
 
-Derive the torque expression for any angle $\theta$.\\
+Derive the torque expression for any angle $\theta$.
+
 \textit{Solution}\@ The torque may be found from either the field energy or the co-energy.
 \begin{align*}
     W_{fe} & = \int_0^{\varPsi} i \dif \varPsi \\
-    & = \int_0^{\varPsi} \varPsi^{1 \cdot 6} (A_0 - A_1 \cos 2 \theta) \dif \varPsi
+    & = \int_0^{\varPsi} \varPsi^{1 \cdot 6} (\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \dif \varPsi
 \end{align*}
 
 This expression is the stored energy for any angle $\theta$ which is considered constant during integration
 \begin{align}
-    W_{fe} & = (A_0 - A_1 \cos 2\theta) \int_0^{\varPsi} \varPsi^{1 \cdot 6} \dif \varPsi \nonumber \\
-    & = (A_0 - A_1 \cos 2\theta) {\left[ \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6}\left]}_0^{\varPsi} \nonumber \\
-    W_{fe} & = (A_0 - A_1 \cos 2\theta) \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \text{joules} \\
-    \text{Torque } T_e & = -\left[ \right] 
-    \label{eq:Eq3.33}
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \int_0^{\varPsi} \varPsi^{1 \cdot 6} \dif \varPsi \nonumber \\
+    & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) {\left[ \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6}\right]}_0^{\varPsi} \nonumber \\
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \,\text{joules} \\
+    \text{Torque } T_e & = -{\left[\dfrac{\partial W_{fe}(\varPsi, \theta)}{\partial \theta} \right]}_{\varPsi \ \text{constant}} \nonumber \\
+    & = - \dfrac{\partial}{\partial \theta} {\left[(\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \cdot \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \right]}_{\varPsi \ \text{constant}} \nonumber \\
+    T_e & = - \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} (2 \textup{A}_1 \sin 2 \theta)\enspace N - m
+    \label{eq:Eq3.34}
+\end{align}
+An identical solution is obtained using the co-energy expression.
+\begin{align}
+    W_{fe}' & = \int_0^{i} \varPsi \dif i \nonumber \\
+    & = \int_{0}^{i} \dfrac{i^{1 / 1 \cdot 6}}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \dif i \nonumber \\
+    & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \int_0^i i^{1/1 \cdot 6} \dif i \nonumber \\
+    W_{fe}' & =\dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \left[\dfrac{1 \cdot 6}{2 \dot 6} i^{2 \cdot 6/1 \cdot 6} \right] \, \text{joules} \\
+    \text{Torque } T_e & = -{\left[\dfrac{\partial W_{fe}'}{\partial \theta}(i,\theta) \right]}_{i \ \text{constant}} \nonumber \\
+    & = - \dfrac{\partial}{\partial \theta} {\left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 / 1 \cdot 6}} \dfrac{1 \cdot 6}{2 \cdot 6} \ i^{2 \cdot 6 / 1 \cdot 6} \right]}_{i \ \text{constant}} \nonumber \\
+    & =\dfrac{1 \cdot 6}{2 \cdot 6} \ i^{2 \cdot 6 / 1 \cdot 6} \left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 / 1 \cdot 6}} \dfrac{(-2 \textup{A}_1 \sin 2 \theta)}{1 \cdot 6} \right] \nonumber \\
+    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)(i^{2 \cdot 6 / 1 \cdot 6})}{2 \cdot 6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 /1 \cdot 6}}\enspace N - m
+    \label{eq:Eq3.36}
 \end{align}
 
+Substituting for ${(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 / 1 \cdot 6}$ in (3.36) gives the same expression as (3.34) for $T_e$,
+\begin{align*}
+    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2 \cdot 6 / 1 \cdot 6}}{2 \cdot 6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 cdot 6 / 1 \cdot 6}} \\
+    & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2 \cdot 6 / 1 \cdot 6}}{2 \cdot 6} {\left( \dfrac{\varPsi^{1 \cdot 6}}{i} \right)}^{2 \cdot 6 / 1 \cdot 6} \\
+    T_e & = \dfrac{-2 \textup{A}_1 \sin 2 \theta \varPsi^{2 \cdot 6}}{2 \cdot 6} \enspace N - m 
+\end{align*}
+
+Both the field energy and co-energy may be expressed solely as functions of $\varPsi$ and $i$ by substituting for the term $(\textup{A}_0 - \textup{A}_1 \cos 2\theta)$. Equation (3.33):
+\begin{align}
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2 \theta)\dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \nonumber \\
+    & = \dfrac{i}{\varPsi^{1 \cdot 6}} \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \nonumber \\
+    W_{fe} & = \dfrac{i \varPsi}{2 \cdot 6} \  \text{joules}
+    \label{eq:Eq3-37}
+\end{align}
+Equation (3.35):
+\begin{align}
+    W_{fe}' & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 /1 \cdot 6}}\left( \dfrac{1 \cdot 6}{2 \cdot 6} i^{2 \cdot 6 / 1 \cdot 6} \right) \nonumber \\
+    & = \dfrac{\varPsi}{i} \left( \dfrac{1 \cdot 6}{2 \cdot 6} i^{2 \cdot 6 / 1 \cdot 6}\right) \nonumber\\
+    W_{fe}' & = \dfrac{1 \cdot 6 \varPsi i}{2 \cdot 6}
+    \label{eq:Eq3.38}
+\end{align}
+
+As expected, the stored energy and co-energy together equal $\varPsi i$.
+\subsection{Linear system} With a linear flux/current relationship for the singly-excited system
+\begin{equation}
+    \varPsi = Li
+    \label{eq:Eq3.39}
+\end{equation}
+where $L$ is the inductance which is a function of $\theta$ but is independent of current.
+
+The field energy for any angle $\theta$ (or inductance value $L$) is given by:
+\begin{align*}
+    W_{fe} & = \int_0^{\varPsi} i \dif \varPsi \\
+    & = \int_0^{\varPsi} \dfrac{\varPsi}{L} \dif \varPsi \\
+    W_{fe} & = \dfrac{1}{2} \dfrac{\varPsi^2}{L}
+\end{align*}
+
+Alternative forms for field energy using (3.39) are
+\begin{equation}
+    W_{fe} = \dfrac{1}{2} \varPsi i = \dfrac{1}{2}Li^2
+    \label{eq:Eq3.40}
+\end{equation}
+
+The field co-energy
+\begin{align*}
+    W_{fe}' & = \int_0^{i} \varPsi \dif i \\
+    & = \int_0^i Li \dif i \\
+    W_{fe}' & = \dfrac{1}{2} li^2
+\end{align*}
+
+Hence the field energy and co-energy are equal in a linear system.
+
+Summarizing:
+\begin{equation}
+    W_{fe} = W_{fe}' = ∂frac{1}{2} L i^2 = \dfrac{1}{2} \varPsi i = \dfrac{1}{2} \dfrac{\varPsi^2}{L}
+    \label{eq:Eq3.41}
+\end{equation}
+Electromagnetic torque
+\begin{align*}
+    T_e & = {\left[ \dfrac{\partial W_{fe}'}{\partial \theta}(i,\theta)\right]}_{i \  \text{constant}}\\
+    & = {\left[ \dfrac{\partial '}{\partial \theta}\left(\dfrac{1}{2} L i^2 \right)\right]}_{i \  \text{constant}} \\
+    T_e & = \dfrac{1}{2} i^2 \dfrac{\partial L}{\partial \theta}
+\end{align*}
+As $L$ is not a function of $i$ the partial derivative is unnecessary
+\begin{equation}
+    T_e = \dfrac{1}{2} i^2 \dfrac{\partial L}{\partial \theta}
+    \label{eq:Eq3.42}
+\end{equation}
+
+\noindent \textsc{example} 3.1 A rotating transducer, Fig. 3.3, has a linear relationship between flux-linkage and current. The inductance varies as $(L_{r1} + L_{r2} \cos 2 \theta)$.\\
+(a) Derive the general torque expression.\\
+(b) Calculate the average torque if the rotor has a constant angular velocity $\omega$ rad/s;\\
+i.e., \hspace{10pt} $\theta = \omega t$, and the current varies as $I_m \cos (\omega t + \delta)$
+
+\noindent\textit{Solution} \\ 
+(a) Torque
+\begin{align}
+    T_e & = \dfrac{1}{2} i^2 \dfrac{\dif L}{\dif \theta} \nonumber \\
+    & = \dfrac{1}{2} i^2 \dfrac{\dif}{\dif \theta} (l_{r1} + L_{r2} \cos 2 \theta) \nonumber \\
+    T_e & = - i^2(L_{r2} \sin2\theta)
+    \label{eq:Eq3.43}
+\end{align}
+
+With a steady current the torque oscillates sinusoidally. The net torque is zero over one revolution.\\
+(b) With sinusoidally-varying current,
+\begin{align*}
+    T_e & = -i^2 (L_{r2} \sin 2 \theta) \\
+    & = -{[I_m \cos (\omega t + \delta)]}^2 L_{r2} \sin 2 \theta
+\end{align*}
+The average torque over a cycle
+\begin{equation}
+    T_e\ (\text{average}) = \dfrac{1}{2 \pi} \int_0^{2 \pi} - {[I_m \cos (\omega t + \delta)]}^2 L_{r2} \sin 2\theta \dif \theta
+    \label{eq:Eq3.44}
+\end{equation}
+as $\theta = \omega t$ the expression may be written
+\begin{align}
+    & = -\dfrac{I_m^2 L_{r2}}{2 \pi} \int_0^{2 \pi} \cos^2(\theta + \delta) \sin 2 \theta \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{2 \pi} \int_0^{2 \pi} \left[\dfrac{1 + \cos 2 (\theta + \delta)}{2} \right] \sin 2 \theta \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \left\{\sin 2 \theta +  \left[\dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \sin 2 \theta \right\} \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \int_0^{2 \pi} \left[ -\sin 2 \theta - \dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} {\left[ \dfrac{\cos  \theta}{2} + \dfrac{\cos 2 (2 \theta +\delta)}{8} + \dfrac{\theta \sin 2 \delta}{2} \right]}_0^{2 \pi} \nonumber \\
+    & =\dfrac{I_m^2 L_{r2}}{4 \pi} \dfrac{2 \pi}{2} \sin 2 \delta \nonumber \\
+    T_e\ (\text{average}) & = 0 \cdot 25 I_m^2 L_{r2}\sin 2 \delta \enspace N - m
+\end{align}
+
+With an alternating current applied to the device a useful torque is developed when the angular velocity is equal to the angular frequency of the supply current. Single-phase reluctance motors use this principle, which is considered further in chapter 4.
+
+\section{Doubly-excited system} 
+In a doubly-excited system each winding has self flux-linkage and there is mutual flux-linkage between the coils. Unless the effects of these flux-linkages are independent of each other, an analytical treatment is extremely difficult. It is assumed, therefore, that the coil systems are linear, flux is proportional to current and superposition applies. Other necessary assumptions are given in Section 3.2 as for the singly-excited system. 
+Figure 3.8 defines the voltages, currents, etc., for a typical transducer. The flux-linkage equations for the two windings are
+\begin{equation}
+    \begin{aligned}
+        \varPsi_1 & = L_1 i_i + M i_2 \\
+        \varPsi_2 & = L_2 i_2 + M i_1
+    \end{aligned}
+    \label{eq:Eq3.46}
+\end{equation}
+
+The instantaneous voltage equations for the coils are
+\begin{equation}
+    \begin{aligned}
+        v_1 & = R_1 i_1 + \dfrac{\dif \varPsi_1}{\dif t} \\
+        v_2 & = R_2 i_2 + \dfrac{\dif \varPsi_2}{\dif t}
+    \end{aligned}
+    \label{eq:Eq3.47}
+\end{equation}
+
+Substituting for $\varPsi_1$ and $\varPsi_2$ in (3.47)
+\begin{equation}
+    \begin{aligned}
+        
+    \end{aligned}
+    \label{<++>}
+\end{equation}<++>
 
 \chapter{Elements of generalized theory}
 The purpose of this chapter is to describe in mathematical terms the physical principles governing the action of most conventional rotating electrical machines and by so doing, develop a basic theory from which the performance of all such machines can be determined. 
