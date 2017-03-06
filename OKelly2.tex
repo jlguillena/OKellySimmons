@@ -25,7 +25,7 @@
 
 \RedeclareSectionCommands[afterskip=-2ex]{subsubsection}
 
-\setenumerate{label={(\alph*)},leftmargin=*}
+\setenumerate{label={(\alph*)},leftmargin=*,itemsep=0pt}
 
 \begin{document}
 \chapter{Electro-mechanical energy conversion}
@@ -280,7 +280,7 @@ Now area OGKO=the change of co-energy during the movement $\delta \theta$
 
 $W_{fe}'$ is a function of angle $\theta$ and current $i$. In (3.19) the rate of change of $W_{fe}'$ with respect to $\theta$ occurs with $i$ constant. The differential with respect to one variable (with other variable considered as constants) is denoted by the partial derivative $\partial / \partial \theta$.
 \begin{equation}
-    T_e = \Big[ \dfrac{\partial W_{fe}'}{\partial \theta}\Big]
+    T_e = {\Big[ \dfrac{\partial W_{fe}'}{\partial \theta}\Big]}_{\text{constant current}}
     \label{eq:Eq3.20}
 \end{equation}
 
@@ -485,7 +485,7 @@ As $L$ is not a function of $i$ the partial derivative is unnecessary
     \label{eq:Eq3.42}
 \end{equation}
 
-\noindent \textsc{example} 3.1 A rotating transducer, Fig.\ 3.3, has a linear relationship between flux-linkage and current. The inductance varies as $(L_{r1} + L_{r2} \cos 2 \theta)$.\\
+\noindent \textsc{example} 3.2 A rotating transducer, Fig.\ 3.3, has a linear relationship between flux-linkage and current. The inductance varies as $(L_{r1} + L_{r2} \cos 2 \theta)$.\\
 (a) Derive the general torque expression.\\
 (b) Calculate the average torque if the rotor has a constant angular velocity $\omega$ rad/s;\\
 i.e., \hspace{10pt} $\theta = \omega t$, and the current varies as $I_m \cos (\omega t + \delta)$
@@ -514,8 +514,8 @@ as $\theta = \omega t$ the expression may be written
 \begin{align}
     & = -\dfrac{I_m^2 L_{r2}}{2 \pi} \int_0^{2 \pi} \cos^2(\theta + \delta) \sin 2 \theta \dif \theta \nonumber \\
     & = -\dfrac{I_m^2 L_{r2}}{2 \pi} \int_0^{2 \pi} \left[\dfrac{1 + \cos 2 (\theta + \delta)}{2} \right] \sin 2 \theta \dif \theta \nonumber \\
-    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \left\{\sin 2 \theta +  \left[\dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \sin 2 \theta \right\} \dif \theta \nonumber \\
-    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \int_0^{2 \pi} \left[ -\sin 2 \theta - \dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \left\{\sin 2 \theta +  \left[\dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \right\} \dif \theta \nonumber \\
+    & = -\dfrac{I_m^2 L_{r2}}{4 \pi} \int_0^{2 \pi} \left[ -\sin 2 \theta - \dfrac{\sin 2 (2 \theta + \delta) - \sin 2 \delta}{2} \right] \dif \theta \nonumber \\
     & = -\dfrac{I_m^2 L_{r2}}{4 \pi} {\left[ \dfrac{\cos  \theta}{2} + \dfrac{\cos 2 (2 \theta +\delta)}{8} + \dfrac{\theta \sin 2 \delta}{2} \right]}_0^{2 \pi} \nonumber \\
     & =\dfrac{I_m^2 L_{r2}}{4 \pi} \dfrac{2 \pi}{2} \sin 2 \delta \nonumber \\
     T_e\ (\text{average}) & = 0 \cdot 25 I_m^2 L_{r2}\sin 2 \delta \enspace N - m
@@ -607,7 +607,7 @@ The instantaneous value of energy stored in the magnetic field depends on the in
 \end{equation*}
 or
 \begin{equation}
-    [\text{total } W_{fe}] = \dfrac{1}{2} l_1 i_1^2 + \dfrac{1}{2}L_2 i_2^2 + M i_1 i_2
+    [\text{total } W_{fe}] = \dfrac{1}{2} L_1 i_1^2 + \dfrac{1}{2}L_2 i_2^2 + M i_1 i_2
     \label{eq:Eq3.53}
 \end{equation}
 
