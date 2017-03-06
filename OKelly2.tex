@@ -1,18 +1,21 @@
 % vim: set spell spelllang=en_gb:
 % vim: set number:
 \documentclass[a4paper,numbers=noenddot,12pt]{scrbook}
+\usepackage{lmodern}
+\usepackage{mathptmx}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{commath}
 \usepackage{tabto}
 \usepackage{tikz}
-\usepackage{mathptmx}
 \usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{mdwmath}
 \usepackage{bigints}
+\usepackage[per-mode=symbol]{siunitx}
 
-\areaset{11.5cm}{19.75cm}
+\areaset{12cm}{19.75cm}
 \setcounter{secnumdepth}{3}
 
 \addtokomafont{disposition}{\rmfamily}
@@ -22,16 +25,18 @@
 
 \RedeclareSectionCommands[afterskip=-2ex]{subsubsection}
 
+\setenumerate{label={(\alph*)},leftmargin=*}
+
 \begin{document}
 \chapter{Electro-mechanical energy conversion}
 Energy is the capacity to do work. In a mechanical system mass may have two types of energy:
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}
     \item potential energy due to its position, and/or
     \item kinetic energy due to its motion.
 \end{enumerate}
 
 Similarly, there are two types of energy associated with electrical charges:
-\begin{enumerate}[label={(\alph*)},leftmargin=*]
+\begin{enumerate}
     \item A static charge produces an electrostatic field which has electrostatic energy de to its potential or voltage.
     \item A moving charge produces an electromagnetic field which has electromagnetic energy due to the motion of the charge.
 \end{enumerate}
@@ -39,8 +44,8 @@ Similarly, there are two types of energy associated with electrical charges:
 \section{Electro-mechanical transducers}
 An electro-mechanical transducer is a device for converting electrical energy into mechanical energy or the reverse, i.e., mechanical energy into electrical energy.
 
-The essential link in this chain is the energy of the electric and magnetic fields, Fig. 3.1. When a mechanical member is allowed to move under the action of a force produced by electrical means, then mechanical work is given out. The energy to do this work is obtained from the electrical and magnetic fields. If no energy is given to the field from an electrical source, motion continues until either
-\begin{enumerate}[label={(\alph*)}]
+The essential link in this chain is the energy of the electric and magnetic fields, Fig.\ 3.1. When a mechanical member is allowed to move under the action of a force produced by electrical means, then mechanical work is given out. The energy to do this work is obtained from the electrical and magnetic fields. If no energy is given to the field from an electrical source, motion continues until either
+\begin{enumerate}
     \item the mechanical force becomes zero and motion ceases, or
     \item the moving member reaches the limit of its permitted travel.
 \end{enumerate}
@@ -49,7 +54,8 @@ With a continuously operating device such as a rotating machine, the field energ
 
 A similar process occurs for energy conversion from the mechanical state to the electrical state. In this instance an essential requirement is that a magnetic or electric field must exist before an induced voltage can generate electrical power. For this reason a transducer may not be reversible if the field collapses when attempting to take electrical power from the device.
 
-\subsection{Conservation of energy} An energy balance equation can be written for a transducer in which the input energy is equated to the sum of the following components: dissipation by losses, field storage, and useful output.
+\subsection{Conservation of energy}
+An energy balance equation can be written for a transducer in which the input energy is equated to the sum of the following components: dissipation by losses, field storage, and useful output.
 
 With an electro-mechanical energy transducer
 
@@ -109,11 +115,12 @@ The conditions described by (3.4) and (3.5) are satisfied.\\ Electrical to mecha
 \end{equation*}
 Mechanical to electrical energy conversion,
 \begin{equation*}
-     W_m \text{\ is }+ve,\qquad W_e \text{\ is } -ve
+    W_m \text{\ is }+ve,\qquad W_e \text{\ is } -ve
 \end{equation*}
 
-\subsection{Types of transducers} Possible methods for producing force by electrical means are summarized below:
-\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+\subsection{Types of transducers}
+Possible methods for producing force by electrical means are summarized below:
+\begin{enumerate}
     \item Mechanical forces due to the interaction of magnetic fields. A typical example being a current-carrying conductor in a magnetic field.
     \item The forces exerted on ferro-magnetic material to move it in the direction of increasing field strength. Typical examples are a compass needle in the earth's field and an armature-attracted type relay.
     \item The electric field analogy of (a).
@@ -129,14 +136,14 @@ The main magnetic fields in practical devices and machines are invariably produc
 With a single energized coil a transducer is called a singly-excited system. Doubly-excited systems have two coils which are usually arranged with one on the stationary member and one on the moving member. Systems with more than two coils may be employed but practical transducers can often be reduced to singly-or doubly­excited systems. 
 
 \section{Singly-excited system} 
-The attracted-armature type relay, Fig. 3.2, is probably the commonest example of a singly-excited system. Another possible arrangement, Fig. 3.3, has an action similar to a compass needle in a magnetic field. The ferromagnetic rotor tries to position itself to give minimum reluctance for the magnetic flux, i.e., torque is exerted to move it in the direction of increasing field strength. The torque depends on the shape of the rotor. With a cylindrical rotor there is no torque as the reluctance
+The attracted-armature type relay, Fig.\ 3.2, is probably the commonest example of a singly-excited system. Another possible arrangement, Fig.\ 3.3, has an action similar to a compass needle in a magnetic field. The ferromagnetic rotor tries to position itself to give minimum reluctance for the magnetic flux, i.e., torque is exerted to move it in the direction of increasing field strength. The torque depends on the shape of the rotor. With a cylindrical rotor there is no torque as the reluctance
 is unchanged by,angular position. With diametrically opposite projections on a round rotor, the reluctance is now dependent on the rotor angle. The rotor is said to have 
 \textit{saliency}.
 
-For the analysis of a singly-excited system a `dumb-bell' shape rotor, with an exaggerated saliency effect, as shown in Fig. 3.3, is considered. 
+For the analysis of a singly-excited system a `dumb-bell' shape rotor, with an exaggerated saliency effect, as shown in Fig.\ 3.3, is considered. 
 
 The following assumptions are made:
-\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+\begin{enumerate}
     \item Non-linear flux/current relationships for the magnetic circuit formed by the stator and rotor iron.
     \item No leakage flux, i.e., the flux produced by the coil links with all the turns, and follows the main magnetic path.
     \item A rigid coil for which no deformation occurs due to electromagnetic forces. Without this assumption, the coil inductance changes with current and mechanical strain energy is stored in the coil.
@@ -163,7 +170,7 @@ Integrating with respect to time $t$ from $t = 0$ to $t = t$, and assuming the c
 \end{equation}
 and
 \begin{equation}
-     \left[
+    \left[
         \parbox{8ex}{\centering Total \\ electrical \\ input \\ energy}
     \right]
     =
@@ -201,7 +208,8 @@ and
     \label{eq:Eq3.12}
 \end{equation}
 
-\subsection{Static energization} For any position of the rotor of the singly-excited system, Fig 3.3, a characteristic of flux of flux-linkage against current can be drawn. Figure 3.4 shows the characteristic for two rotor positions.
+\subsection{Static energization}
+For any position of the rotor of the singly-excited system, Fig 3.3, a characteristic of flux of flux-linkage against current can be drawn. Figure 3.4 shows the characteristic for two rotor positions.
 \begin{enumerate}[label={Position \Alph*:},leftmargin=3cm]
     \item with the rotor inclined at an angle to the stator pole axis.
     \item with the rotor aligned with the stator pole axis.
@@ -209,7 +217,7 @@ and
 
 Flux does not increase uniformly due to saturation of the iron. The air-gap reduces the flux density and also makes the relationships more linear.
 
-In position A\ the rotor asymmetry produces torque in the direction shown in Fig. 3.3. On reaching position B, there is no magnetic field distortion and the torque on the rotor is zero.
+In position A\ the rotor asymmetry produces torque in the direction shown in Fig.\ 3.3. On reaching position B, there is no magnetic field distortion and the torque on the rotor is zero.
 
 With no movement there is no mechanical output and all the useful electrical energy input is converted into field energy; i.e.,
 \begin{equation}
@@ -217,7 +225,7 @@ With no movement there is no mechanical output and all the useful electrical ene
     \label{eq:Eq3.13}
 \end{equation}
 
-Referring to Fig. 3.4, the total magnetic field energy $W_{fe}$ corresponding to a current increase from zero to $i$ is represented by the area of this integral.
+Referring to Fig.\ 3.4, the total magnetic field energy $W_{fe}$ corresponding to a current increase from zero to $i$ is represented by the area of this integral.
 \begin{enumerate}[label={Position \Alph*:},leftmargin=3cm]
     \item The field energy is area OALO.\@
     \item The field energy is area OCDO.\@
@@ -234,8 +242,10 @@ The \textit{co-energy} of the field is defined as the area under the flux-linkag
     \item The field co-energy is area OECO.\@
 \end{enumerate}
 
-\subsection{Dynamic energization} Before considering the general transient operation of the device, it is useful to consider two types of controlled movement. The rotor moves either \textit{very slowly} or \textit{instantaneously} from position A to position B. 
-\subsubsection{\textit{Slow movement}} If the rotor is constrained to move very slowly the current $i$ is sensibly constant as $\dif \varPsi / \dif t$ is small. The flux­linkages may be assumed to increase from $\varPsi_1$ to $\varPsi_2$ at an assumed constant current $i_2$.
+\subsection{Dynamic energization}
+Before considering the general transient operation of the device, it is useful to consider two types of controlled movement. The rotor moves either \textit{very slowly} or \textit{instantaneously} from position A to position B. 
+\subsubsection{\textit{Slow movement}}
+If the rotor is constrained to move very slowly the current $i$ is sensibly constant as $\dif \varPsi / \dif t$ is small. The flux­linkages may be assumed to increase from $\varPsi_1$ to $\varPsi_2$ at an assumed constant current $i_2$.
 
 The useful electrical input is 
 \begin{equation}
@@ -250,7 +260,7 @@ The average electromagnetic torque during movement is given by
     \label{eq:Eq3.16}
 \end{equation}
 
-Consider a small change of angle $\delta \theta$ during the movement. The incremental mechanical work is represented by area OGKO In Fig. 3.5.
+Consider a small change of angle $\delta \theta$ during the movement. The incremental mechanical work is represented by area OGKO In Fig.\ 3.5.
 \begin{equation}
     T_e \text{\ (average)}=\dfrac{\delta\text{(mechanical work)}}{\delta \theta} = \dfrac{\text{area OGKO }}{\delta\theta}
     \label{eq:Eq3.17}
@@ -274,16 +284,17 @@ $W_{fe}'$ is a function of angle $\theta$ and current $i$. In (3.19) the rate of
     \label{eq:Eq3.20}
 \end{equation}
 
-\subsubsection{\textit{Instantaneous movement} }Assume the rotor moves instantaneously from position A to position B. The flux-linkages cannot change as an infinite voltage would be induced. Realistically, if the rotor movement is not instantaneous but very fast, a small change of flux induces a high voltage in the winding. This voltage causes the current to change so as to oppose the flux change. In practice, the resulting flux change is very small and may be neglected. The principle of
+\subsubsection{\textit{Instantaneous movement}}
+Assume the rotor moves instantaneously from position A to position B. The flux-linkages cannot change as an infinite voltage would be induced. Realistically, if the rotor movement is not instantaneous but very fast, a small change of flux induces a high voltage in the winding. This voltage causes the current to change so as to oppose the flux change. In practice, the resulting flux change is very small and may be neglected. The principle of
 assuming no flux change is known as the \textit{theorem of constant flux-linkages}. It is frequently used to analyse a sudden change of one or more coil currents, or the sudden relative movement of two coils, in magnetically coupled circuits (see Section 1.4). 
 
-The current in the coil falls from $i_2$ to $i_1$ at constant flux-linkage, see Fig. 3.6(b). With the rotor then held at position B, the current and flux-linkage increase gradually to final steady values, $i_2$ and $\varPsi_2$, see Fig. 3.6(c). During this time, the field storage energy is increased by an amount equal to the electrical input.
+The current in the coil falls from $i_2$ to $i_1$ at constant flux-linkage, see Fig.\ 3.6(b). With the rotor then held at position B, the current and flux-linkage increase gradually to final steady values, $i_2$ and $\varPsi_2$, see Fig.\ 3.6(c). During this time, the field storage energy is increased by an amount equal to the electrical input.
 
-No energy is taken from the supply during the rotor movement as $\int i \dif \varPsi = 0$. Mechanical energy is obtained from the change in field energy as shown in Fig. 3.6(b).
+No energy is taken from the supply during the rotor movement as $\int i \dif \varPsi = 0$. Mechanical energy is obtained from the change in field energy as shown in Fig.\ 3.6(b).
 
 Considering torque as in the previous section 
 \begin{equation}
-     T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\delta \text{(mechanical work)}}{\delta \theta}\right) = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\text{are OMNO}}{\delta \theta}\right)
+    T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\delta \text{(mechanical work)}}{\delta \theta}\right) = \underset{\delta \theta \to 0}{\mathcal{L} t} \left(\dfrac{\text{are OMNO}}{\delta \theta}\right)
     \label{eq:Eq3.21}
 \end{equation}
 
@@ -292,15 +303,16 @@ Now area OMNO\ is the change of field energy during the movement $\delta \theta$
     T_e = \underset{\delta \theta \to 0}{\mathcal{L} t} - {\left( \dfrac{\delta W_{fe}}{\delta \theta}\right)}_{\text{constant flux-linkage}}
     \label{eq:Ee3.22}
 \end{equation}
-a negative sign is included in this expression as the field energy decreases with movement, see Fig. 3.6(c). 
+a negative sign is included in this expression as the field energy decreases with movement, see Fig.\ 3.6(c). 
 \begin{equation}
     T_e = - {\left[ \dfrac{\partial W_{fe}}{\partial \theta}\right]}_{\text{constant flux-linkage}}
     \label{eq_Eq3.23}
 \end{equation}
 
 A partial derivative is necessary as one variable (flux-linkage) is considered constant. 
-\subsubsection{\textit{Transient movement}} In general, both the current and the flux­linkages have time to change during the movement. A typical diagram with overshooting on reaching position B, due to rotor kinetic energy, is shown in Fig. 3.7. The energy converted to mechanical work lies between the values obtained by moving the rotor instantaneously and very slowly. 
-For a small movement PQ of the rotor, see Fig. 3.7, the energy to mechanical work is represented by area OPQO.\@ With controlled movement at P the energy to mechanical work is given by
+\subsubsection{\textit{Transient movement}}
+In general, both the current and the flux­linkages have time to change during the movement. A typical diagram with overshooting on reaching position B, due to rotor kinetic energy, is shown in Fig.\ 3.7. The energy converted to mechanical work lies between the values obtained by moving the rotor instantaneously and very slowly. 
+For a small movement PQ of the rotor, see Fig.\ 3.7, the energy to mechanical work is represented by area OPQO.\@ With controlled movement at P the energy to mechanical work is given by
 \begin{enumerate}[label={}]
     \item area OPRO for movement at constant $\varPsi$, and
     \item area OPSO for movement at constant $i$.
@@ -310,7 +322,7 @@ The torque expressions for the three cases are as follows:
 (a) actual movement: 
 \begin{equation}
     T_e = \dfrac{\dif W_{fe}'}{\dif \theta} = -\dfrac{\dif W_{fe}}{\dif \theta} = \underset{\delta \theta \to 0}{\mathcal{L} t}\left( \dfrac{\text{area OPQO}}{\delta \theta}\right)
-        \label{eq:Eq3.24}
+    \label{eq:Eq3.24}
 \end{equation}
 (b) controlled movement at constant current:
 \begin{multline}
@@ -367,7 +379,7 @@ In a similar manner, the expression for torque may be found with the flux-linkag
     \label{eq:Eq3.32}
 \end{flalign}
 
-\noindent\textsc{example} 3.1 A rotating singly-excited transducer, Fig. 3.3, has a non-linear relationship between the flux-linkage $\varPsi$, current $i$, and position $\theta$, which may be expressed as
+\noindent\textsc{example} 3.1 A rotating singly-excited transducer, Fig.\ 3.3, has a non-linear relationship between the flux-linkage $\varPsi$, current $i$, and position $\theta$, which may be expressed as
 \begin{equation*}
     i = (\textup{A}_0 - \textup{A}_1 \cos 2\theta)\varPsi^{1\cdot6}
 \end{equation*}
@@ -377,56 +389,57 @@ Derive the torque expression for any angle $\theta$.
 \textit{Solution}\@ The torque may be found from either the field energy or the co-energy.
 \begin{align*}
     W_{fe} & = \int_0^{\varPsi} i \dif \varPsi \\
-    & = \int_0^{\varPsi} \varPsi^{1 \cdot 6} (\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \dif \varPsi
+    & = \int_0^{\varPsi} \varPsi^{1.6} (\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \dif \varPsi
 \end{align*}
 
 This expression is the stored energy for any angle $\theta$ which is considered constant during integration
 \begin{align}
-    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \int_0^{\varPsi} \varPsi^{1 \cdot 6} \dif \varPsi \nonumber \\
-    & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) {\left[ \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6}\right]}_0^{\varPsi} \nonumber \\
-    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \,\text{joules} \\
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \int_0^{\varPsi} \varPsi^{1.6} \dif \varPsi \nonumber \\
+    & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) {\left[ \dfrac{\varPsi^{2.6}}{2.6}\right]}_0^{\varPsi} \nonumber \\
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2\theta) \dfrac{\varPsi^{2.6}}{2.6} \,\text{joules} \\
     \text{Torque } T_e & = -{\left[\dfrac{\partial W_{fe}(\varPsi, \theta)}{\partial \theta} \right]}_{\varPsi \ \text{constant}} \nonumber \\
-    & = - \dfrac{\partial}{\partial \theta} {\left[(\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \cdot \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \right]}_{\varPsi \ \text{constant}} \nonumber \\
-    T_e & = - \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} (2 \textup{A}_1 \sin 2 \theta)\enspace N - m
+    & = - \dfrac{\partial}{\partial \theta} {\left[(\textup{A}_0 - \textup{A}_1 \cos 2 \theta) \cdot \dfrac{\varPsi^{2.6}}{2.6} \right]}_{\varPsi \ \text{constant}} \nonumber \\
+    T_e & = - \dfrac{\varPsi^{2.6}}{2.6} (2 \textup{A}_1 \sin 2 \theta)\enspace N - m
     \label{eq:Eq3.34}
 \end{align}
 An identical solution is obtained using the co-energy expression.
 \begin{align}
     W_{fe}' & = \int_0^{i} \varPsi \dif i \nonumber \\
-    & = \int_{0}^{i} \dfrac{i^{1 / 1 \cdot 6}}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \dif i \nonumber \\
-    & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \int_0^i i^{1/1 \cdot 6} \dif i \nonumber \\
-    W_{fe}' & =\dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1 \cdot 6}} \left[\dfrac{1 \cdot 6}{2 \dot 6} i^{2 \cdot 6/1 \cdot 6} \right] \, \text{joules} \\
+    & = \int_{0}^{i} \dfrac{i^{1 / 1.6}}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1.6}} \dif i \nonumber \\
+    & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1.6}} \int_0^i i^{1/1.6} \dif i \nonumber \\
+    W_{fe}' & =\dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2\theta)}^{1/1.6}} \left[\dfrac{1.6}{2 \dot 6} i^{2.6/1.6} \right] \, \text{joules} \\
     \text{Torque } T_e & = -{\left[\dfrac{\partial W_{fe}'}{\partial \theta}(i,\theta) \right]}_{i \ \text{constant}} \nonumber \\
-    & = - \dfrac{\partial}{\partial \theta} {\left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 / 1 \cdot 6}} \dfrac{1 \cdot 6}{2 \cdot 6} \ i^{2 \cdot 6 / 1 \cdot 6} \right]}_{i \ \text{constant}} \nonumber \\
-    & =\dfrac{1 \cdot 6}{2 \cdot 6} \ i^{2 \cdot 6 / 1 \cdot 6} \left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 / 1 \cdot 6}} \dfrac{(-2 \textup{A}_1 \sin 2 \theta)}{1 \cdot 6} \right] \nonumber \\
-    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)(i^{2 \cdot 6 / 1 \cdot 6})}{2 \cdot 6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 /1 \cdot 6}}\enspace N - m
+    & = - \dfrac{\partial}{\partial \theta} {\left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 / 1.6}} \dfrac{1.6}{2.6} \ i^{2.6 / 1.6} \right]}_{i \ \text{constant}} \nonumber \\
+    & =\dfrac{1.6}{2.6} \ i^{2.6 / 1.6} \left[ \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2.6 / 1.6}} \dfrac{(-2 \textup{A}_1 \sin 2 \theta)}{1.6} \right] \nonumber \\
+    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)(i^{2.6 / 1.6})}{2.6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2.6 /1.6}}\enspace N - m
     \label{eq:Eq3.36}
 \end{align}
 
-Substituting for ${(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 \cdot 6 / 1 \cdot 6}$ in (3.36) gives the same expression as (3.34) for $T_e$,
+Substituting for ${(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2.6 / 1.6}$ in (3.36) gives the same expression as (3.34) for $T_e$,
 \begin{align*}
-    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2 \cdot 6 / 1 \cdot 6}}{2 \cdot 6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 cdot 6 / 1 \cdot 6}} \\
-    & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2 \cdot 6 / 1 \cdot 6}}{2 \cdot 6} {\left( \dfrac{\varPsi^{1 \cdot 6}}{i} \right)}^{2 \cdot 6 / 1 \cdot 6} \\
-    T_e & = \dfrac{-2 \textup{A}_1 \sin 2 \theta \varPsi^{2 \cdot 6}}{2 \cdot 6} \enspace N - m 
+    T_e & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2.6 / 1.6}}{2.6 {(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{2 cdot 6 / 1.6}} \\
+    & = \dfrac{-(2 \textup{A}_1 \sin 2 \theta)i^{2.6 / 1.6}}{2.6} {\left( \dfrac{\varPsi^{1.6}}{i} \right)}^{2.6 / 1.6} \\
+    T_e & = \dfrac{-2 \textup{A}_1 \sin 2 \theta \varPsi^{2.6}}{2.6} \enspace N - m 
 \end{align*}
 
 Both the field energy and co-energy may be expressed solely as functions of $\varPsi$ and $i$ by substituting for the term $(\textup{A}_0 - \textup{A}_1 \cos 2\theta)$. Equation (3.33):
 \begin{align}
-    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2 \theta)\dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \nonumber \\
-    & = \dfrac{i}{\varPsi^{1 \cdot 6}} \dfrac{\varPsi^{2 \cdot 6}}{2 \cdot 6} \nonumber \\
-    W_{fe} & = \dfrac{i \varPsi}{2 \cdot 6} \  \text{joules}
+    W_{fe} & = (\textup{A}_0 - \textup{A}_1 \cos 2 \theta)\dfrac{\varPsi^{2.6}}{2.6} \nonumber \\
+    & = \dfrac{i}{\varPsi^{1.6}} \dfrac{\varPsi^{2.6}}{2.6} \nonumber \\
+    W_{fe} & = \dfrac{i \varPsi}{2.6} \  \text{joules}
     \label{eq:Eq3-37}
 \end{align}
 Equation (3.35):
 \begin{align}
-    W_{fe}' & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 /1 \cdot 6}}\left( \dfrac{1 \cdot 6}{2 \cdot 6} i^{2 \cdot 6 / 1 \cdot 6} \right) \nonumber \\
-    & = \dfrac{\varPsi}{i} \left( \dfrac{1 \cdot 6}{2 \cdot 6} i^{2 \cdot 6 / 1 \cdot 6}\right) \nonumber\\
-    W_{fe}' & = \dfrac{1 \cdot 6 \varPsi i}{2 \cdot 6}
+    W_{fe}' & = \dfrac{1}{{(\textup{A}_0 - \textup{A}_1 \cos 2 \theta)}^{1 /1.6}}\left( \dfrac{1.6}{2.6} i^{2.6 / 1.6} \right) \nonumber \\
+    & = \dfrac{\varPsi}{i} \left( \dfrac{1.6}{2.6} i^{2.6 / 1.6}\right) \nonumber\\
+    W_{fe}' & = \dfrac{1.6 \varPsi i}{2.6}
     \label{eq:Eq3.38}
 \end{align}
 
 As expected, the stored energy and co-energy together equal $\varPsi i$.
-\subsection{Linear system} With a linear flux/current relationship for the singly-excited system
+\subsection{Linear system}
+With a linear flux/current relationship for the singly-excited system
 \begin{equation}
     \varPsi = Li
     \label{eq:Eq3.39}
@@ -472,7 +485,7 @@ As $L$ is not a function of $i$ the partial derivative is unnecessary
     \label{eq:Eq3.42}
 \end{equation}
 
-\noindent \textsc{example} 3.1 A rotating transducer, Fig. 3.3, has a linear relationship between flux-linkage and current. The inductance varies as $(L_{r1} + L_{r2} \cos 2 \theta)$.\\
+\noindent \textsc{example} 3.1 A rotating transducer, Fig.\ 3.3, has a linear relationship between flux-linkage and current. The inductance varies as $(L_{r1} + L_{r2} \cos 2 \theta)$.\\
 (a) Derive the general torque expression.\\
 (b) Calculate the average torque if the rotor has a constant angular velocity $\omega$ rad/s;\\
 i.e., \hspace{10pt} $\theta = \omega t$, and the current varies as $I_m \cos (\omega t + \delta)$
@@ -562,12 +575,12 @@ Multiplying these expressions by $i_1$ and $i_2$ respectively, gives the power e
 Integrating (3.50) with respect yo time and adding gives the energy balance equation (3.2),
 \begin{multline}
     \int (v_1 i_1 + v_2 i_2) \dif t = \int (R_1 i_1^2 + R_2 i_2^2) \dif t \\
-     + \int
-     \begin{pmatrix}
-     L_1 i_1 \dif i_1 + L_2 i_2 \dif i_2 + i_1 M \dif i_2 + 2 i_1 i_2 \dif M\\
-     \qquad + i_1^2 \dif L_1 + i_2^2 \dif L_2 + i_2 M \dif i_1
-     \end{pmatrix}
-     \label{eq:Eq3.51}
+    + \int
+    \begin{pmatrix}
+        L_1 i_1 \dif i_1 + L_2 i_2 \dif i_2 + i_1 M \dif i_2 + 2 i_1 i_2 \dif M\\
+        \qquad + i_1^2 \dif L_1 + i_2^2 \dif L_2 + i_2 M \dif i_1
+    \end{pmatrix}
+    \label{eq:Eq3.51}
 \end{multline}
 
 \begin{flalign*}
@@ -587,7 +600,8 @@ and
 \end{multline}
 
 
-\subsection{Stored energy in the field} The instantaneous value of energy stored in the magnetic field depends on the inductance and current values at the instant considered. This energy may be found by considering the transducer to be stationary and the coil systems to be energized from zero current to the required instantaneous values current. There is no mechanical output and $W_{em}$ is zero. The inductance values are constant and terms in $\dif L_1$, $\dif L_2$,and $\dif M$ vanish. From (3.52)
+\subsection{Stored energy in the field}
+The instantaneous value of energy stored in the magnetic field depends on the inductance and current values at the instant considered. This energy may be found by considering the transducer to be stationary and the coil systems to be energized from zero current to the required instantaneous values current. There is no mechanical output and $W_{em}$ is zero. The inductance values are constant and terms in $\dif L_1$, $\dif L_2$,and $\dif M$ vanish. From (3.52)
 \begin{equation*}
     \int_0^t \dif W_{fe} = \int_0^{i_1} L_1 i_1 \dif i_1 + \int_0^{i_2} L_2 i_2 \dif i_2 + int_0^{i_1 i_2} (i_1 M \dif i_2 + i_2 M \dif i_1)
 \end{equation*}
@@ -597,7 +611,8 @@ or
     \label{eq:Eq3.53}
 \end{equation}
 
-\subsection{Electromagnetic torque} Equation (3.53) holds for any transducer position. If the transducer rotate, the rate of change of field energy with respect to time is given by differentiating (3.53).
+\subsection{Electromagnetic torque}
+Equation (3.53) holds for any transducer position. If the transducer rotate, the rate of change of field energy with respect to time is given by differentiating (3.53).
 \begin{multline*}
     \dfrac{\dif W_{fe}}{\dif t} = 
     \dfrac{1}{2} L_1 \dfrac{\dif (i_1^2)}{\dif t} + 
@@ -621,7 +636,7 @@ or
 \end{multline}
 Integrating this expression with respect to time
 \begin{equation}
-    \int \dif W_{fe} = W_{fe} = \bigints
+    \int \dif W_{fe} = W_{fe} = \bigintss
     \begin{pmatrix}
         L_1 i_1 \dif i_1 + \dfrac{1}{2} i_1^2 \dif L_1 + L_2 i_2 \dif i_2 + \dfrac{1}{2} i_2^2 \dif L_2 \\
         \qquad + i_1 i_2 \dif M + i_1 M \dif i_2 + i_2 M \dif i_1
@@ -666,30 +681,32 @@ All electrical machines have many common properties and features. The basic comm
 
 \section{Fundamental machine features} 
 Section 3.1.2 mentions the different methods of producing mechanical force, or torque, in electro-mechanical transducers. The two concepts used in rotating machines are: 
-\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+\begin{enumerate}
     \item the attempt to co-align two magnetic fields, and
     \item the attempt to align a magnetic material in a magnetic field or move it into a stronger magnetic field.
 \end{enumerate}
 
-\subsection{Physical concepts of torque production} Consider a magnet in a magnetic field, as shown in Fig. 4.1. It is readily demonstrated that a torque is exerted on the magnet in an attempt to align the lines of action of the magnetic fields. With the fields aligned, Fig. 4.1 (a), there is no torque. Complete misalignment of the magnetic fields as in Fig. 4.1 (b) also produces no torque. This position is one of unstable equilibrium, however, and a small displacement of the magnet produces torque increasing the displacement further. Maximum torque occurs when the individual fields are orthogonal.
+\subsection{Physical concepts of torque production}
+Consider a magnet in a magnetic field, as shown in Fig.\ 4.1. It is readily demonstrated that a torque is exerted on the magnet in an attempt to align the lines of action of the magnetic fields. With the fields aligned, Fig.\ 4.1 (a), there is no torque. Complete misalignment of the magnetic fields as in Fig.\ 4.1 (b) also produces no torque. This position is one of unstable equilibrium, however, and a small displacement of the magnet produces torque increasing the displacement further. Maximum torque occurs when the individual fields are orthogonal.
 
-An initially unmagnetized ferromagnetic material placed in a magnetic field may experience torque. Consider a member of `dumb-bell' shape as shown in Fig. 4.2. Torque is exerted on the member unless the resultant magnetic field is symmetrical as in Figs. 4.2(a) and 4.2(c). This torque is commonly called a \textit{reluctance torque} as the ferromagnetic material tries to reach a position giving minimum reluctance to the flux path.
+An initially unmagnetized ferromagnetic material placed in a magnetic field may experience torque. Consider a member of `dumb-bell' shape as shown in Fig.\ 4.2. Torque is exerted on the member unless the resultant magnetic field is symmetrical as in Figs. 4.2(a) and 4.2(c). This torque is commonly called a \textit{reluctance torque} as the ferromagnetic material tries to reach a position giving minimum reluctance to the flux path.
 
-\subsection{Equivalent coil systems} The magnetic fields in the previous section may be produced by coil systems energized with currents.
+\subsection{Equivalent coil systems}
+The magnetic fields in the previous section may be produced by coil systems energized with currents.
 
-The interacting magnetic fields of Fig. 4.1 are produced by the doubly-excited system shown in Fig. 4.3(a). A singly-excited system,  Fig. 4.3(b), produces an identical field to Fig. 4.2. \\[12pt]
-\noindent \textit{Doubly-excited system Fig. 4.3(a)} The individual magnetic fields depend on the coil currents. If the magnetic field strengths are assumed to increase in a linear manner with current, the resultant torque $T_e$, may be expressed as the product of the currents and a function of position,
+The interacting magnetic fields of Fig.\ 4.1 are produced by the doubly-excited system shown in Fig.\ 4.3(a). A singly-excited system,  Fig.\ 4.3(b), produces an identical field to Fig.\ 4.2. \\[12pt]
+\noindent \textit{Doubly-excited system Fig.\ 4.3(a)} The individual magnetic fields depend on the coil currents. If the magnetic field strengths are assumed to increase in a linear manner with current, the resultant torque $T_e$, may be expressed as the product of the currents and a function of position,
 \begin{equation}
     T_e \propto (i_1 i_2) \times (\text{function of } \theta)
     \label{eq:Eq4.1}
 \end{equation}
 
-\noindent \textit{Singly-excited system, Fig. 4.3(b)} The field strength is proportional to $i_1$ and the poles induced on the ferromagnetic material depend on the field strength, if linearity is assumed. The resultant torque is the product of the field strength, the induced pole strength and a function of position. 
+\noindent \textit{Singly-excited system, Fig.\ 4.3(b)} The field strength is proportional to $i_1$ and the poles induced on the ferromagnetic material depend on the field strength, if linearity is assumed. The resultant torque is the product of the field strength, the induced pole strength and a function of position. 
 \begin{equation}
-    T_e \propto (i_1^2) \times (\text{function of} \theta)
+    T_e \propto (i_1^2) \times (\text{function of } \theta)
     \label{eq:Eq4.2}
 \end{equation}
-Combining the dumb-bell shaped ferromagnetic material with a doubly-excited system, gives the general arrangement for a doubly­excited system including reluctance torque, Fig. 4.4.
+Combining the dumb-bell shaped ferromagnetic material with a doubly-excited system, gives the general arrangement for a doubly­excited system including reluctance torque, Fig.\ 4.4.
 
 Including suitable coefficients $K_1$ and $K_2$ both functions of $\theta$, in (4.1) and (4.2) the resultant torque is given by
 \begin{equation}
@@ -709,16 +726,18 @@ and $\dif L_2 / \dif \theta = 0$ as there is no saliency on the stator. Hence th
 
 Saliency is included only on one member as very few machines have saliency on both members.
 
-\subsection{Motoring and generating action} To emphasize the torque concepts common to rotating machines, the preceding section considers only currents in the windings. When the rotor moves under the torque action, mechanical work is given out. Relative movement induces voltage in each winding and electrical power is required to drive currents into the windings against the induced voltage. Energy conversion occurs.
+\subsection{Motoring and generating action}
+To emphasize the torque concepts common to rotating machines, the preceding section considers only currents in the windings. When the rotor moves under the torque action, mechanical work is given out. Relative movement induces voltage in each winding and electrical power is required to drive currents into the windings against the induced voltage. Energy conversion occurs.
 
 With a machine supplied with mechanical power, the reverse process, electrical power generation, may occur. The principle of torque production applies for the reverse process as the generated current produces a magnetic field which interacts with the main magnetic field. The resultant torque opposes the mechanical driving torque and energy conversion is present.
 
 All rotating machines do not have reversible power flow. Some types of machine will only motor as the magnetic field collapses if generation into a passive load is attempted. 
 
-The device, Fig. 4.4, includes the two methods of producing torque, one or both of which are present in all electromagnetic transducers. When rotation occurs with this simple device, the field misalignment decreases to zero and hence the torque becomes zero. A practical rotating machine requires a finite mean torque per revolution. Suitable methods are discussed later, following the sections dealing with windings and connections, as these provide the required facility, i.e., \textit{misalignment maintained with rotation.}
+The device, Fig.\ 4.4, includes the two methods of producing torque, one or both of which are present in all electromagnetic transducers. When rotation occurs with this simple device, the field misalignment decreases to zero and hence the torque becomes zero. A practical rotating machine requires a finite mean torque per revolution. Suitable methods are discussed later, following the sections dealing with windings and connections, as these provide the required facility, i.e., \textit{misalignment maintained with rotation.}
 
-\subsection{Basic rotating machine} The essential requirements for a practical rotating electrical machine, based on Fig. 4.4, are shown in Fig. 4.5. 
-\begin{enumerate}[label={(\alph*)}, leftmargin=*]
+\subsection{Basic rotating machine}
+The essential requirements for a practical rotating electrical machine, based on Fig.\ 4.4, are shown in Fig.\ 4.5. 
+\begin{enumerate}
     \item Stationary member (stator core and windings).
     \item Rotating member (rotor core and winding).
     \item Air-gap to allow relative motion. 
@@ -736,7 +755,8 @@ A detailed treatment of winding m.m.f.s and associated flux densities follows in
 
 \subsection{Basic properties}
 
-\subsubsection{\textit{Poles and pole-pitch}} The instantaneous picture of a rotating machine may be represented by magnetic poles as in Fig. 4.6(a). This diagram shows a four-pole machine. Equal numbers of pole­pairs on the rotor and stator are necessary to produce torque. With unequal pole-pairs the resultant torque is zero. Fig. 4.6(b).
+\subsubsection{\textit{Poles and pole-pitch}}
+The instantaneous picture of a rotating machine may be represented by magnetic poles as in Fig.\ 4.6(a). This diagram shows a four-pole machine. Equal numbers of pole­pairs on the rotor and stator are necessary to produce torque. With unequal pole-pairs the resultant torque is zero. Fig.\ 4.6(b).
 
 Machines may have any number of pole-pairs. Poles are equally spaced around the machine periphery at a pole-pitch apart.
 
@@ -744,15 +764,17 @@ For convenience and clarity a two-pole machine is often shown but the results ca
 
 Two pole-pitches span $2\pi$ electrical radians or 360 electrical degrees regardless of the number of pole-pairs.
 
-\subsubsection{\textit{Physical arrangement}} Windings on the rotating or stationary members may be arranged,
-\begin{enumerate}[label={(\alph*)},leftmargin=*]
+\subsubsection{\textit{Physical arrangement}}
+Windings on the rotating or stationary members may be arranged,
+\begin{enumerate}
     \item around pole-pieces (i.e., salient-pole type); or 
     \item distributed in slots along the core periphery. 
 \end{enumerate}
-The instantaneous magnetic field patterns for both arrangements are shown in Fig. 4.7. Magnetic poles are produced at regular intervals, a pole-pitch apart.
+The instantaneous magnetic field patterns for both arrangements are shown in Fig.\ 4.7. Magnetic poles are produced at regular intervals, a pole-pitch apart.
 
-\subsubsection{\textit{Electrical connections}} Connections to the rotating winding of a machine are from stationary brushes making surface contact with
-\begin{enumerate}[label={(\alph*)},leftmargin=*]
+\subsubsection{\textit{Electrical connections}}
+Connections to the rotating winding of a machine are from stationary brushes making surface contact with
+\begin{enumerate}
     \item slip rings, or 
     \item a commutator.
 \end{enumerate}
@@ -763,7 +785,8 @@ With a commutator the electrical connections are to points on the winding occupy
 
 Rigid connections are made to stationary windings in all cases.
 
-\subsubsection{\textit{Flux pattern}} The flux pattern of a winding may be moving or stationary with respect to the winding, depending on the type of winding and the method of excitation employed. 
+\subsubsection{\textit{Flux pattern}}
+The flux pattern of a winding may be moving or stationary with respect to the winding, depending on the type of winding and the method of excitation employed. 
 
 A winding energized by direct current or single-phase alternating current has a stationary magnetic flux pattern with respect to the winding.
 
@@ -773,18 +796,20 @@ A rotating commutator winding excited by current supplied via its brushes produc
 
 Figure 4.8 illustrates the commutator action.
 
-\subsection{Commutator winding} A two-pole \textit{ring} type winding, Fig. 4.9, illustrates the action of a commutator winding. Current enters the winding through brushes making surface contact with the commutator. Current and magnetic flux patterns are established. Rotation or the winding does not change these patterns which remain stationary relative to the brushes if practical effects are neglected, e.g., width of commutator segment. The ring winding is only suitable for very low voltage,
+\subsection{Commutator winding}
+A two-pole \textit{ring} type winding, Fig.\ 4.9, illustrates the action of a commutator winding. Current enters the winding through brushes making surface contact with the commutator. Current and magnetic flux patterns are established. Rotation or the winding does not change these patterns which remain stationary relative to the brushes if practical effects are neglected, e.g., width of commutator segment. The ring winding is only suitable for very low voltage,
 heavy current machines as it is difficult to wind and uneconomic to manufacture.
 
 The commutator winding arrangement in general use is the \textit{drum} type winding with coils spanning approximately a pole-pitch. Coils may be either \textit{lap-wound} or \textit{wave-wound}. The lap winding has the same number of parallel current paths as there are poles, whilst wave windings have only two parallel paths. Figure 4.10 shows a simple two-pole lap winding. The flux and current patterns are similar to the ring winding, see Figs. 4.10(b) and (c). The winding diagram, Fig.
 4.10(a), is referred to as a \textit{developed diagram}, as the conductors are shown in a horizontal line instead of lying in a circle on the rotor surface.
 
-It is seen that a coil for a lap winding spans a pole-pitch. As with the ring winding, the coils form a continuous closed winding. The brush-pair is now physically at right-angles to the flux line of action but schematically the brushes are always shown along the axis or the equivalent coil, as in Fig. 4.10(c). 
+It is seen that a coil for a lap winding spans a pole-pitch. As with the ring winding, the coils form a continuous closed winding. The brush-pair is now physically at right-angles to the flux line of action but schematically the brushes are always shown along the axis or the equivalent coil, as in Fig.\ 4.10(c). 
 
-The developed diagram for a simple four-pole wave winding is shown in Fig. 4.11. With this winding an odd number of slots is necessary so that the winding progresses and forms a continuous closed winding. The coil-pitch is not exactly a pole-pitch and, as with the lap winding, the brushes are physically displaced from the flux axis. As there are only two parallel paths through this winding, only two brushes are' necessary. In practice, however, machines with four poles are often fitted wit two
+The developed diagram for a simple four-pole wave winding is shown in Fig.\ 4.11. With this winding an odd number of slots is necessary so that the winding progresses and forms a continuous closed winding. The coil-pitch is not exactly a pole-pitch and, as with the lap winding, the brushes are physically displaced from the flux axis. As there are only two parallel paths through this winding, only two brushes are' necessary. In practice, however, machines with four poles are often fitted wit two
 brush-pairs to reduce brush current. The use of more than a pair of brushes reduces the effective commutator length and for this reason machines or four poles or more require a design compromise between brush current and adequate effective commutator length. 
 
-\subsubsection{\textit{Torque and induced rotational voltage}} Consider a two-pole commutator winding with a brush-pair arranged at right-angles to a magnetic field, as in Fig. 4.12. Current entering the commutator winding through the brushes produces a magnetic field directed along the brush-pair. The two fields interact and torque is exerted on the rotor, as described in Section 4.1.2. 
+\subsubsection{\textit{Torque and induced rotational voltage}}
+Consider a two-pole commutator winding with a brush-pair arranged at right-angles to a magnetic field, as in Fig.\ 4.12. Current entering the commutator winding through the brushes produces a magnetic field directed along the brush-pair. The two fields interact and torque is exerted on the rotor, as described in Section 4.1.2. 
 
 If the commutator winding is allowed to rotate under this torque, there is physical movement of the winding and core. The commutator action, however, maintains the rotor current pattern stationary in space regardless of rotor movement. The interacting flux pattern produced by currents in the stator and rotor windings is held in a misaligned state and continuous torque is exerted on the rotor. This torque is independent of the rotor movement and angular velocity and depends only on the current in the commutator winding.
 
@@ -798,13 +823,15 @@ If the brush axis is not at right-angles to the stator pole axis (or direct axis
 
 With the brush axis along the direct axis there is no resultant induced voltage across the brush-pair and zero torque.
 
-\subsubsection{\textit{Pseudo-stationary coil}} It is seen in Section 4.3.2 that the current and flux patterns for a commutator winding are identical to those obtained with a stationary coil along the brush axis. If the commutator winding is rotating in a magnetic field with a flux component at right-angles to the brush-pair a rotational voltage is induced in the winding. Therefore, to represent a rotating commutator winding completely the stationary coil has to include an induced voltage
+\subsubsection{\textit{Pseudo-stationary coil}}
+It is seen in Section 4.3.2 that the current and flux patterns for a commutator winding are identical to those obtained with a stationary coil along the brush axis. If the commutator winding is rotating in a magnetic field with a flux component at right-angles to the brush-pair a rotational voltage is induced in the winding. Therefore, to represent a rotating commutator winding completely the stationary coil has to include an induced voltage
 effect due to the rotation of its conductors. It is called a \textit{pseudo-stationary coil} and has all the properties of a static coil with the additional feature of a rotational voltage. This representation is important in machine analysis and will be considered further in chapter 5.
 
-\subsection{Polyphase distributed windings} Practical polyphase circuits use three phases for engineering and economic expediency. In this treatment only three-phase windings will be considered although the principles are general and apply to any number of phases.
+\subsection{Polyphase distributed windings}
+Practical polyphase circuits use three phases for engineering and economic expediency. In this treatment only three-phase windings will be considered although the principles are general and apply to any number of phases.
 
-A three-phase winding consists of three phase coils with their axes physically separated by $2\pi/3$ electrical radians or 2/3 of a pole-pitch. Figure 4.13 shows a typical winding with two conductors per phase. For convenience, winding diagrams are developed as in Fig. 4.14. Current and flux patterns are established when the winding is energized by balanced three-phase currents. If different intervals in time are considered the resultant flux pattern appears to move along the
-winding, see Fig. 4.14 and Section 4.2.4. This travelling wave of flux (usually called a \textit{rotating magnetic field}) moves two pole­pitches in the time taken for the phase currents to alternate one complete cycle. An analytical treatment shows 
+A three-phase winding consists of three phase coils with their axes physically separated by $2\pi/3$ electrical radians or 2/3 of a pole-pitch. Figure 4.13 shows a typical winding with two conductors per phase. For convenience, winding diagrams are developed as in Fig.\ 4.14. Current and flux patterns are established when the winding is energized by balanced three-phase currents. If different intervals in time are considered the resultant flux pattern appears to move along the
+winding, see Fig.\ 4.14 and Section 4.2.4. This travelling wave of flux (usually called a \textit{rotating magnetic field}) moves two pole­pitches in the time taken for the phase currents to alternate one complete cycle. An analytical treatment shows 
 \begin{enumerate}
     \item the resultant flux distribution is sinusoidal if an individual phase winding has a sinusoidal flux distribution and a linear flux current relationship, and
     \item the flux pattern travels along the winding at a constant speed called the \textit{synchronous speed}
@@ -814,10 +841,12 @@ Additional harmonic travelling waves of flux are present with a non­sinusoidal 
 
 A polyphase winding on the machine stator has stationary electrical connections to the phases. With a rotating polyphase winding the phases are energized from stationary brushes through slip rings on the rotor.
 
-\subsubsection{\textit{Equivalent coil representation}} The fundamental field produced by a polyphase winding can be produced by an equivalent number of magnetic poles rotating at synchronous speed. Consider a two­pole polyphase winding, Fig. 4.15. A similar magnetic field is produced by an equivalent coil energized by d.c.\ and rotating at synchronous speed, Fig. 4.15(b). Alternatively, a similar rotating field is established by a stationary commutator winding energized by
-d.c.\ through brushes rotating at synchronous speed. This concept, shown in Fig. 4.15(c) is extremely useful as a physical picture of the equivalence of a commutator winding with rotating brushes and a polyphase winding. The transformation of a polyphase winding to a pseudo-stationary coil system is an important part of generalized machine analysis. 
+\subsubsection{\textit{Equivalent coil representation}}
+The fundamental field produced by a polyphase winding can be produced by an equivalent number of magnetic poles rotating at synchronous speed. Consider a two­pole polyphase winding, Fig.\ 4.15. A similar magnetic field is produced by an equivalent coil energized by d.c.\ and rotating at synchronous speed, Fig.\ 4.15(b). Alternatively, a similar rotating field is established by a stationary commutator winding energized by
+d.c.\ through brushes rotating at synchronous speed. This concept, shown in Fig.\ 4.15(c) is extremely useful as a physical picture of the equivalence of a commutator winding with rotating brushes and a polyphase winding. The transformation of a polyphase winding to a pseudo-stationary coil system is an important part of generalized machine analysis. 
 
-\subsection{M.M.F.\ and flux density diagrams} Consider a machine with a uniform air-gap containing a single turn spanning $180^{\circ}$ as shown in Fig. 4.16(a). The m.m.f.\ $F$ acting round a closed path containing current $i_c$ is given by
+\subsection{M.M.F.\ and flux density diagrams}
+Consider a machine with a uniform air-gap containing a single turn spanning $180^{\circ}$ as shown in Fig.\ 4.16(a). The m.m.f.\ $F$ acting round a closed path containing current $i_c$ is given by
 \begin{equation}
     F = i_c = \oint H \cdot \dif l
     \label{eq:Eq4.4}
@@ -844,20 +873,23 @@ where $g$ is the gap length
 \end{equation}
 and is constant for a uniform air-gap. 
 
-The m.m.f.\ and flux density diagrams are shown in Fig. 4.16(b). The convention adopted is positive m.m.f.\ for flux leaving the rotor surface. 
+The m.m.f.\ and flux density diagrams are shown in Fig.\ 4.16(b). The convention adopted is positive m.m.f.\ for flux leaving the rotor surface. 
 
-\subsection{\textit{Saliency}} Consider projecting pole-pieces on the outer member, see Fig. 4.17. The air-gap reluctances in the path of the flux leaving and entering the rotor are equal if the pole-pieces are identical to each other. Hence the gap m.m.f.s are equal see Fig. 4.17(b).
+\subsubsection{\textit{Saliency}}
+Consider projecting pole-pieces on the outer member, see Fig.\ 4.17. The air-gap reluctances in the path of the flux leaving and entering the rotor are equal if the pole-pieces are identical to each other. Hence the gap m.m.f.s are equal see Fig.\ 4.17(b).
 
 The non-uniform idealized flux density at a point is obtained from (4.5), including the appropriate gap dimension for $g$. 
 
 The m.m.f.\ and flux density diagrams may be extended to complete windings with any number of pole-pairs. Actual machines have symmetrical windings and pole-pieces, and the assumptions apply without appreciable errors, ignoring slotting effects. Short-pitched coils, spanning less than $180^{\circ}$ do not provide any difficulty. The current pattern for a symmetrical winding with short-pitched coils remains identical over every pole-pitch, and the winding may be considered as a group of full-pitched coils.
 Two examples are now given for typical machine arrangements.
 
-\subsubsection{\textit{D.C.\ machine on load}} Figure 4.18 shows developed diagrams for a machine with a salient-pole stator winding and a distributed rotor winding. This corresponds to a d.c.\ machine on load. In practice the flux pattern is distorted, non-radial, and results in the fairly smooth flux density curve shown in Fig. 4.18(c). 
+\subsubsection{\textit{D.C.\ machine on load}}
+Figure 4.18 shows developed diagrams for a machine with a salient-pole stator winding and a distributed rotor winding. This corresponds to a d.c.\ machine on load. In practice the flux pattern is distorted, non-radial, and results in the fairly smooth flux density curve shown in Fig.\ 4.18(c). 
 
-\subsubsection{\textit{Distributed polyphase winding}} Figure 4.19 shows a double­layer, three-phase distributed winding with nine slots per pole-pitch and short-chorded by one slot. The winding is energized by balanced currents and developed diagrams are shown in Fig. 4.19(a) for an instant when the current in phase A is a maximum. 
+\subsubsection{\textit{Distributed polyphase winding}}
+Figure 4.19 shows a double­layer, three-phase distributed winding with nine slots per pole-pitch and short-chorded by one slot. The winding is energized by balanced currents and developed diagrams are shown in Fig.\ 4.19(a) for an instant when the current in phase A is a maximum. 
 
-With an increasing number of conductors per phase, the steps of m.m.f.\ become less pronounced and result in a relatively smooth m.m.f.\ waveshape as shown in Fig. 4.19(b). Such a winding is called \textit{uniformly distributed}.
+With an increasing number of conductors per phase, the steps of m.m.f.\ become less pronounced and result in a relatively smooth m.m.f.\ waveshape as shown in Fig.\ 4.19(b). Such a winding is called \textit{uniformly distributed}.
 
 Two cases are shown:
 \begin{enumerate}
@@ -865,7 +897,8 @@ Two cases are shown:
     \item zero current in phase B.
 \end{enumerate}
 
-\subsection{Summary of winding properties} The two physical arrangements of windings are:
+\subsection{Summary of winding properties}
+The two physical arrangements of windings are:
 
 \begin{enumerate}
     \item concentrated around pole-pieces, i.e., salient poles; and, 
@@ -878,12 +911,24 @@ The behaviour of the windings in a magnetic sense may be divided into three grou
     \item a flux pattern which is stationary relative to brushes but not to the winding itself, i.e., a commutator winding. 
     \item a flux pattern which moves with respect to the winding, i.e., a polyphase winding. 
 \end{enumerate}
-The cage winding mentioned in Table 4.1 consists of conductors with a shorting ring at each end. A magnetic field moving relative to this winding induces voltages in the conductors and alternating currents circulate. The currents in adjacent conductors have a phase shift between them and the complete winding establishes a flux pattern which rotates at an angular speed dependent on the frequency of the induced voltages.
+The cage winding mentioned in Table~\ref{tab:Table4.1}\ consists of conductors with a shorting ring at each end. A magnetic field moving relative to this winding induces voltages in the conductors and alternating currents circulate. The currents in adjacent conductors have a phase shift between them and the complete winding establishes a flux pattern which rotates at an angular speed dependent on the frequency of the induced voltages.
 
-This winding is in common use for induction motor rotors and is considered further in Section 4.3. 
+This winding is in common use for induction motor rotors and is considered further in Section 4.3.
+\begin{table}
+    \caption{Summary of winding properties}
+    \centering
+    \begin{tabular}{p{4cm} p{7cm}}
+        \toprule
+        \parbox{4cm}{\centering \textit{Flux pattern}} & \parbox{7cm}{\centering \textit{Winding}} \\ \toprule
+        STATIONARY relative to WINDING & \parbox[t]{7cm}{CONCENTRATED COIL\\Salient pole, d.c.\ energized\\Distributed, d.c.\ energized}\\ \midrule
+        STATIONARY relative to BRUSHES & COMMUTATOR continuous closed \\ \midrule
+        ROTATING relative to WINDING & \parbox[t]{7cm}{DISTRIBUTED POLYPHASE;\ CAGE \\\indent Squirrel-cage\\Damper winding}\\ \midrule
+        PULSATING relative to WINDING & DISTRIBUTED, energized with single-phase a.c. \\ \bottomrule
+    \end{tabular}\label{tab:Table4.1}
+\end{table}
 
 \section{Types of rotating machine}
-Torque is exerted on a machine rotor when offset magnetic poles are present (or induced) on the stator and rotor surfaces. The simple arrangement of Fig. 4.4 is inadequate for most practical rotating machines as the torque oscillates with rotation and produces zero net torque. An exception is the single-phase reluctance motor.
+Torque is exerted on a machine rotor when offset magnetic poles are present (or induced) on the stator and rotor surfaces. The simple arrangement of Fig.\ 4.4 is inadequate for most practical rotating machines as the torque oscillates with rotation and produces zero net torque. An exception is the single-phase reluctance motor.
 
 Commutator or distributed polyphase windings enable the simple device to be modified so that constant misalignment of the two fields is retained with rotation. Continuous useful torque is exerted on the rotor.
 
@@ -895,7 +940,8 @@ Most of the possible winding combinations are used in practice. The three common
 \end{enumerate}
 
 \subsection{Commutator machines}
-\subsubsection{\textit{D.C.\ machine}} The commutator machine, Fig. 4.12 in Section 4.2.2, is the basic form of a d.c.\ machine. The fundamental relationships, if the magnetic circuits are assumed linear, are as follows:
+\subsubsection{\textit{D.C.\ machine}}
+The commutator machine, Fig.\ 4.12 in Section 4.2.2, is the basic form of a d.c.\ machine. The fundamental relationships, if the magnetic circuits are assumed linear, are as follows:
 \begin{equation*}
     \text{torque} \propto \text{(rotor current) (stator current), i.e., } \propto i_1 1_2
 \end{equation*}
@@ -908,22 +954,135 @@ The machine motors if electrical power is supplied to the rotor circuit and mech
 
 If mechanical power is supplied to the shaft, the rotor speed increases until an equal electrical power is generated by the rotor current, neglecting losses. This power may flow into a passive load or regenerate into the rotor supply source. 
 
-\subsubsection{\textit{Single-phase a.c.\ commutator motor}} The principle of torque production applies to the machine shown in Fig. 4.12 with both stator and rotor windings energized with single-phase a.c. Inductance of the windings modifies the machine behaviour however and additional windings, brush-shift, etc.\ are often necessary for satisfactory performance. 
+\subsubsection{\textit{Single-phase a.c.\ commutator motor}}
+The principle of torque production applies to the machine shown in Fig.\ 4.12 with both stator and rotor windings energized with single-phase a.c. Inductance of the windings modifies the machine behaviour however and additional windings, brush-shift, etc.\ are often necessary for satisfactory performance. 
 
-\subsubsection{\textit{Cross-field machine}} A d.c.\ machine with an additional brush­pair on the direct-axis is called a cross-field machine. Different winding combinations now enable this machine to act as a power amplifier, constant current device, etc. 
+\subsubsection{\textit{Cross-field machine}}
+A d.c.\ machine with an additional brush­pair on the direct-axis is called a cross-field machine. Different winding combinations now enable this machine to act as a power amplifier, constant current device, etc.
 
+\subsection{Synchronous-speed machines}
+\subsubsection{\textit{Synchronous machine}}
+Consider a two pole machine with a three-phase distributed winding on the stator and a concentrated coil winding on the rotor. The stator winding is energized by balanced three-phase currents of angular frequency $\omega$ which establish a magnetic field rotating at $\omega$ rad/s in an anticlockwise direction. The rotor winding, in this machine arrangement called the field winding, is energized by d.c. Figure 4.20 shows a machine schematic. The rotor
+movement is anticlockwise and with an angular velocity of $\omega$ rad/s the rotor and stator magnetic fields rotate together at a common speed, viz.\ synchronous speed. The two fields interact and, in general are misaligned. Torque is exerted on the rotor field to try and align it with the stator field. This torque is transmitted by the rotor field to the rotor itself, which consequently develops mechanical power as it is running at synchronous speed.
 
+On no-load with steady running conditions and neglecting losses, the rotor and stator individual fields are aligned and there is no output power. An applied mechanical load torque decelerates the rotor until the magnetic field misalignment produces sufficient electromagnetic torque to balance the applied mechanical torque.
 
+The device is called a synchronous machine as the rotor and stator magnetic fields have to be \textit{synchronized}, i.e., rotate at the same speed, before useful torque is present. With different angular velocities of the magnetic fields, the torque pulsates with time and its mean value is zero. At synchronism, energy conversion is possible in both directions (when the three-phase winding is connected to an appropriate supply), i.e., electrical power may be generated
+from, or converted into, mechanical power.
 
+With reference to basic torque concepts discussed in Section 4.1.1, it is seen that the polyphase winding enables a rotating machine to have a steady flux pattern established which includes misalignment of the component fluxes and is capable, therefore, of exerting torque. The practical requirement for a rotating machine mentioned in Section 4.1.3, i.e., misalignment maintained with rotation, is provided by the polyphase winding.
 
- 
+The induced voltage in the three-phase winding depends on the rotor speed and the magnetic field strength. The speed depends on the supply frequency. Consequently, for a fixed supply frequency the induced voltage in the stator winding is proportional to the magnetic field strength.
 
+The machine on no-load requires zero inphase or wattful component of stator current as no power is required, neglecting losses. If the supply voltage and the stator induced voltage are not equal, a reactive current circulates.
+
+The twofold effects of this current are:
+\begin{enumerate}
+    \item a change in the resultant magnetic field, called the \textit{armature} reaction effect;
+    \item an inductive voltage drop in the inherent leakage reactance of the winding. 
+\end{enumerate}
+
+On load the power factor of the stator current is controlled by the relative values of the supply voltage and the open-circuit stator induced voltage. With a constant supply voltage the field winding excitation controls the machine power factor.
+
+The machine will operate as a generator when connected to a passive electrical load. The induced or generated stator voltage supplies load current; no synchronism is required. Often a machine operating in this mode is called an \textit{alternator}.
+
+The field winding may be either distributed in slots (round-rotor machine) or concentrated on pole-pieces (salient-pole machine). The former has a nearly uniform air-gap but with salient-poles the reluctance varies considerably with angle, producing a relatively strong reluctance torque in addition to the cylindrical co-alignment torque.
+
+In machine analysis it is often convenient to interchange the rotor and stator windings as shown in Fig.\ 4.21. Representing the poly­phase winding by an equivalent coil representation, Fig.\ 4.22, gives a commutator machine with brushes inclined to the stator pole axis. An accurate representation is possible by brush-pairs along the direct and quadrature axes, Fig.\ 4.23. A detailed treatment is given in later chapters.  
+
+\subsubsection{\textit{Reluctance motor}}
+A salient-pole synchronous machine with the field winding omitted is called a reluctance motor as it relies on reluctance torque only. Polyphase reluctance motors are rarely used. Single-phase reluctance motors rely on the contra-rotating fields produced by a single-phase winding and are suitable for electric clocks, etc.
+
+\subsection{Asynchronous machines}
+\subsubsection{\textit{Induction machine}}
+Consider a two-pole machine with a three­phase short-circuited rotor winding and a three-phase distributed stator winding energized from a supply of angular frequency $\omega$ rad/s. The stator magnetic field rotates at $\omega$ rad/s. With the rotor running below synchronous speed at $\omega_r$ electrical rad/s, the stator rotating field cuts the rotor surface at $(\omega - \omega_r)$ rad/s or $\omega s$ rad/s, where $s$ defined as the ratio
+$(\omega - \omega_r)/\omega$ is called the \textit{fractional slip}. Relative motion of the rotor surface and the stator magnetic field induces rotational voltages of angular frequency $s \omega$ in the rotor phases. These voltages drive currents round the closed rotor circuits.
+
+With a symmetrical rotor winding the rotor phase voltages and currents are balanced and of angular frequency $s \omega$. The rotor currents flowing in a three-phase winding produce a rotating field of angular velocity $s \omega$ rad/s relative to the rotor surface and moving in the same direction as the rotor. This is shown in Fig.\ 4.24. Consequently, the rotor magnetic field rotates at $\omega$ rad/s relative to the stator, i.e., at the same speed as the stator magnetic field regardless of
+rotor speed. The frequency of the rotor voltages and currents, $s$ times supply frequency, is referred to as \textit{slip frequency}.
+
+Interaction of the rotor and stator magnetic fields produces electromagnetic torque on the rotor which is in the direction of rotor movement i.e., a motoring action. The torque depends on the angle of misalignment between the component fields. Figures 4.25(a) to (c) show that the stator and rotor individual magnetic fields are: 
+\begin{enumerate}
+    \item inclined at right-angles with a purely resistive rotor circuit, i.e., maximum torque for given field strengths; 
+    \item in direct opposition with a purely inductive rotor circuit, i.e., zero torque. 
+\end{enumerate}
+
+In general, the angle of inclination is equal to $(\pi/2 + \varphi)$ where $\cos \varphi$ is the power factor of the rotor circuit.
+
+Machines with a polyphase winding on the rotor are called wound­rotor induction motors. Squirrel-cage motors have a rotor-cage winding. The mode of action is identical for both constructions.
+
+Motoring action occurs at speeds below synchronous speed. The torque action is zero at synchronous speed as there is no rotor induced voltage or current. Above synchronous speed the rotor induced voltage circulates slip-frequency currents. The fractional slip $s$ is now negative and the current polarity is reversed producing an electromagnetic torque opposing the driving mechanical torque. The machine regenerates into the three-phase supply connected to the stator winding. With no energization of the stator there is no rotating field to induce voltage in the rotor winding and generating action is impossible.
+
+\subsection{Other machines}
+One or more of the electro-mechanical actions described for the machines in the preceding sections arc embodied in all rotating electrical machines.
+
+\begingroup
+\fontsize{10pt}{12pt}\selectfont
+\begin{center}
+    P R O B L E M S
+\end{center}
+
+\begin{enumerate}[label={\thechapter.\arabic*},leftmargin=*]
+    \item Describe the two basic techniques of torque production used in all rotating electrical machines. Indicate positions of maximum torque and show how a commutator winding enables continuous torque to be developed.
+
+        A six-pole, 36-slot, three-phase stator is energized by balanced alternating currents. Draw the m.m.f.\ diagram over two pole-pitches at the instant of zero current in one phase.
+
+        Describe how the m.m.f.\ pattern varies with time.
+    \item Show that both two-and three-phase systems of balanced m.m.f.s, applied to their appropriate a.c.\ windings produce a rotating magnetic field. 
+    \item Describe the two physical concepts of torque production in a rotating electrical machine. Show, with the aid of diagrams, the winding arrangements of the following machines. State their essential features and briefly indicate how continuous torque is exerted in each case. 
+        \begin{enumerate}
+            \item Commutator machine 
+            \item Synchronous machine
+            \item Reluctance motor.
+        \end{enumerate}
+    \item Describe the principles of torque production in a d.c.\ machine in which the salient-pole stator winding and the commutator winding are both energized with steady current. 
+
+        How will the torque vary with angular displacement of the brush­pair with respect to the stator coil axis?
+    \item A uniform air-gap machine has a four-pole, 24-slot three-phase two­layer winding on the stator energized by balanced alternating currents. The winding is short-chorded by one slot.
+        \begin{enumerate}
+            \item Draw the m.m.f.\ and flux density diagrams over two pole-pitches at the instant of maximum current in one phase.
+            \item Estimate the maximum flux linking one turn when the phase current is 10 A r.m.s.\\
+                Effective length of stator \SI{10}{\meter}\\
+                Effective stator bore diameter \SI{3}{\meter}\\
+                Air-gap \SI{1}{\centi\meter}\\
+                10 conductors/slot, and all phase conductors in series.\\
+                The effect of slotting may be neglected.
+        \end{enumerate}
+        [Ans. $0\cdot45$ Wb]
+    \item A d.c.\ machine has a lap-connected, four-pole, commutator winding with 400 conductors. Plot the m.m.f.\ diagram for a total armature current of 100 A.
+        Calculate the magnetizing ($d$-axis) and cross-magnetizing ($q$-axis) ampere-turns with the rotor brushes inclined at,
+        \begin{enumerate}
+            \item 10 electrical degrees, and
+            \item 10 mechanical degrees to the neutral axis ($q$-axis)
+        \end{enumerate}
+        [Ans. (a) 1111, 139. (b) 972, 278]
+    \item A four-pole, d.c.\ machine has 1200 turns on each pole winding, and the effective spread of a pole is 72 mechanical degrees. The commutator winding is wave-connected and has 768 conductors.
+        Sketch the m.m.f.\ diagram over two pole-pitches for
+        \begin{enumerate}
+            \item a field current of \SI{2.4}{\ampere},
+            \item a rotor current of \SI{30}{\ampere}, and
+            \item a combination of (a) and (b)
+        \end{enumerate}
+        Assume a uniform distributed winding for the rotor m.m.f.\\
+        A current of \SI{2.4}{\ampere} in the field winding produces a maximum flux density of \SI{0.5}{\weber\per\square\meter} in the machine air-gap. The relative permeance of the air-gap is symmetrical about a pole-piece and has the following values,\\
+        \begin{tabular}{l m{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}l}
+            angle (mechanical degrees)& 0  & 9  & 18  & 27   & 35  & 45 & (pole centre-line) \\
+            relative permeance        &0.1 & 0.1& 0.8 & 0.95 & 1   & 1  & \\
+        \end{tabular}
+
+        Sketch the flux density diagram for case (c), assuming radial flux and no saturation, and the rotor brushes
+        \begin{enumerate}[resume]
+            \item on the $q$-axis, or neutral axis, and
+            \item at an angle of 18 mechanical degrees to the $q$-axis
+        \end{enumerate} 
+\end{enumerate}
+\endgroup
 
 \chapter{Elements of generalized theory}
 The purpose of this chapter is to describe in mathematical terms the physical principles governing the action of most conventional rotating electrical machines and by so doing, develop a basic theory from which the performance of all such machines can be determined. 
 \section{Simplifying assumptions}
 The theory, which is known in current machine literature as the generalized theory of electrical machines, considers all practical machines to be idealized by the simplifying assumptions listed and described below:
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}
     \item Magnetic saturation is neglected. Superposition of magnetic fields can be  used, and the self- and mutual inductances of all machine windings are independent of the magnitude of winding currents.
     \item Air-gap m.m.f.s and fluxes are represented by the fundamental components of their spacial distributions which are symmetrical about the magnetic axis of the windings of origin.
     \item Slotting effects are ignored. Distributed windings comprises finely spread conductors of negligible diameter.
@@ -935,7 +1094,8 @@ It is shown in subsequent sections of this chapter that the performance of most 
 
 Physical arrangements of practical machine windings are of two basic types, see section 4.2.1; those which are distributed over a magnetic surface and housed in slots are known as distributed windings, while those which assume the form of a multi-turn coil are called concentrated windings. The magnetic properties of concentrated and distributed windings are considered in some detail in Sections 5.2.1 and 5.2.2. Expressions for self- and mutual inductance, first determined for non-sinusoidal air-gap flux-density distributions, are subsequently modified to agree with the simplifying assumption of a fundamental air-gap flux density distribution. Finally, a distributed winding is shown to be transformable to an equivalent concentrated winding enabling all windings to be represented in this one basic form.
 
-\subsection{Concentrated rotor coil self- and mutual inductance.} A simple two-pole machine, Fig. 5.1, comprises a cylindrical rotor of radius $r$ and length $l$, and a salient-pole stator. Concentrated salient-pole windings of $N_s$ turns supplied with current $i_s$ provide air-gap excitation. The rotor coil of $N_r$ concentrated turns is short-chorded and of angular pitch $2\beta$.
+\subsection{Concentrated rotor coil self- and mutual inductance.}
+A simple two-pole machine, Fig.\ 5.1, comprises a cylindrical rotor of radius $r$ and length $l$, and a salient-pole stator. Concentrated salient-pole windings of $N_s$ turns supplied with current $i_s$ provide air-gap excitation. The rotor coil of $N_r$ concentrated turns is short-chorded and of angular pitch $2\beta$.
 
 A $d$-axis and $q$-axis, in space quadrature, designate main axes of symmetry for the machine and the rotor coil is located with its magnetic axis an arbitrary angle $\theta_r$ electrical radian to the $d$-axis.
 
@@ -953,7 +1113,7 @@ The harmonic crest values
 \begin{equation}
     B_{2n-1} = \frac{4}{\pi} B_m \frac{{(-1)}^{n+1}}{2n-1} \cos(2n-1)\gamma
 \end{equation}
-diminish rapidly with ascending order $n$, see Fig. 5.2. It is this fact which enables assumption (b), Section 5.51, to be made to a reasonable degree of accuracy in later work.
+diminish rapidly with ascending order $n$, see Fig.\ 5.2. It is this fact which enables assumption (b), Section 5.51, to be made to a reasonable degree of accuracy in later work.
 
 Assuming the stator m.m.f.\ to be employed entirely in driving flux across an air-gap of length $g$ and radial width $(\pi-2 \gamma)$
 \begin{equation}
@@ -969,7 +1129,7 @@ where the constant
     K_{2n-1} = \frac{4\mu_0N_s}{\pi g} \cos(2n-1) \gamma
 \end{equation}
 
-Consider an element of rotor surface $rl\dif\alpha$, Fig. 5.1. The contribution made to the rotor coil flux-linkage
+Consider an element of rotor surface $rl\dif\alpha$, Fig.\ 5.1. The contribution made to the rotor coil flux-linkage
 \begin{equation}
     \dif\varPsi_r = N_r l r B(\alpha) \dif\alpha
 \end{equation}
@@ -1001,7 +1161,7 @@ For third harmonic elimination $n = 2$ is written in (5.10) and the required coi
     2\beta = \frac{2\pi}{3} = 120^{\circ}
 \end{equation*}
 Special cases of (5.9):
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}
     \item Full-pitch rotor coil $\beta = \pi/2$
         \begin{equation}
             M_{sr} = 2 N_r l r \bigg( K_1 \cos\theta_r + \frac{K_3}{3^2} \cos 3 \theta_r + \frac{K_5}{5^2} \cos 5 \theta_r + \cdots \bigg)
@@ -1019,11 +1179,11 @@ Special cases of (5.9):
 \end{enumerate}
 
 \noindent
-(b) \textit{Self-inductance} For the machine structure shown in Fig. 5.1, the rotor coil m.m.f.\ acts on an air-gap permeance varying in a complex manner with changing position of the rotor coil. Resulting from the permeance variations is a gap flux density distribution which changes in magnitude and symmetry. A typical gap flux density distribution is shown in Fig. 5.3. \par
+(b) \textit{Self-inductance} For the machine structure shown in Fig.\ 5.1, the rotor coil m.m.f.\ acts on an air-gap permeance varying in a complex manner with changing position of the rotor coil. Resulting from the permeance variations is a gap flux density distribution which changes in magnitude and symmetry. A typical gap flux density distribution is shown in Fig.\ 5.3. \par
 
 The very difficult task of writing an equation for the gap flux density distribution prevents using a direct process of integration for finding rotor coil flux-linkages, hence self-inductance. An alternative procedure, employing certain permissible approximations, is described below. \par
 
-Consider the rotor coil to be full-pitch and its rectangular m.m.f.\ distribution to be described with sufficient accuracy by its space distributed fundamental $F$, of crest value $F_r$. Resolving $F_r$ along the $d$-axis and $q$-axis gives instantaneous crest values, $F_{rd}$ and $F_{rq}$ of two space stationary, sinusoidally distributed m.m.f.s $F_d$ and $F_q$ respectively. Acting on paths of different permeance, $F_d$ and $F_q$ produce space stationary, non-sinusoidal gap flux density distributions which are symmetrical about their respective axes of reference. These can be represented with sufficient accuracy by their fundamental components of spatial distribution $B_d$ and $B_q$ of crest value $B_{rd}$ and $B_{rq}$, see Fig. 5.3. Thus, the machine is considered ti possess two fictitious uniform air-gaps, one of length $g_d$ associated with the $d$-axis permeance and another of length $g_q$ associated with the $q$-axis permeance. As the permeance of the $d$-axis is greater than that of the $q$-axis, $g_q>g_d$. Resolving $F_r$ along the $d$-axis and $q$-axis respectively
+Consider the rotor coil to be full-pitch and its rectangular m.m.f.\ distribution to be described with sufficient accuracy by its space distributed fundamental $F$, of crest value $F_r$. Resolving $F_r$ along the $d$-axis and $q$-axis gives instantaneous crest values, $F_{rd}$ and $F_{rq}$ of two space stationary, sinusoidally distributed m.m.f.s $F_d$ and $F_q$ respectively. Acting on paths of different permeance, $F_d$ and $F_q$ produce space stationary, non-sinusoidal gap flux density distributions which are symmetrical about their respective axes of reference. These can be represented with sufficient accuracy by their fundamental components of spatial distribution $B_d$ and $B_q$ of crest value $B_{rd}$ and $B_{rq}$, see Fig.\ 5.3. Thus, the machine is considered ti possess two fictitious uniform air-gaps, one of length $g_d$ associated with the $d$-axis permeance and another of length $g_q$ associated with the $q$-axis permeance. As the permeance of the $d$-axis is greater than that of the $q$-axis, $g_q>g_d$. Resolving $F_r$ along the $d$-axis and $q$-axis respectively
 \begin{equation}
     \begin{aligned}
         F_{rd} & = F_r \cos \theta_r \\
@@ -1037,7 +1197,7 @@ With the $d$-axis as reference, the m.m.f.\ component acting at a displacement $
         F_{\alpha q} & = F_{r q} \cos\bigg( \alpha + \frac{\pi}{2} \bigg)= F_r \sin \theta_r \sin \alpha 
     \end{aligned}
 \end{equation}
-Referring to Fig. 5.4:
+Referring to Fig.\ 5.4:
 \begin{equation}
     \begin{aligned}
         \dif \varLambda_d & = \frac{\mu_0 r l \dif \alpha}{g_d}  \\
@@ -1068,7 +1228,7 @@ Substituting (5.15) in (5.19) and integrating for total rotor coil flux linkages
     & = \frac{2 F_r N_r}{\pi} (\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) && \nonumber \\
     \varPsi_r & = \frac{F_r N_r}{\pi} [(\varLambda_d + \varLambda_q) + (\varLambda_d - \varLambda_q)\cos 2 \theta_r ] &&
 \end{align}
-Referring to Fig. 5.3:
+Referring to Fig.\ 5.3:
 
 \noindent
 The rectangular m.m.f.\ distribution is of maximum value
@@ -1107,13 +1267,13 @@ where
     && L_{r2} & = \frac{2}{\pi^2} N_r^2 (\varLambda_d - \varLambda_q) \nonumber
 \end{flalign}
 
-As seen by (5.25) and Fig. 5.5, the self-inductance of a concentrated coil rotating within a salient-pole structure comprises a second harmonic term superimposed on a constant term.
+As seen by (5.25) and Fig.\ 5.5, the self-inductance of a concentrated coil rotating within a salient-pole structure comprises a second harmonic term superimposed on a constant term.
 
 \subsection{Distributed rotor winding self- and mutual inductance}
 
 Figure 5.6 shows the surface of the cylindrical rotor covered with uniformly distributed winding of $Z$ series connected conductors per electrical radian. Initially, the winding is connected single phase at diametrically opposite tapping points $P$ and $P'$. The magnetic axis of the single-phase winding is a line joining points $P$ and $P'$ through the rotor centre displaced an angle $\theta_r$ from the $d$-axis.
 \noindent
-(a) \textit{Mutual inductance}. With the stator salient-pole winding excited, the gap flux density distribution is given by (5.2) with the $d$-axis as reference. Referring to Fig. 5.6, the two elements of angle $\dif \beta$, each containing $Z \dif \beta$ conductors, are considered to form a concentrated coil of $Z \dif \beta$ turns and angular-pitch $2 \beta$. The elementary coil flux-linkage can be written directly from (5.8) with $N_r = Z \dif \beta$ 
+(a) \textit{Mutual inductance}. With the stator salient-pole winding excited, the gap flux density distribution is given by (5.2) with the $d$-axis as reference. Referring to Fig.\ 5.6, the two elements of angle $\dif \beta$, each containing $Z \dif \beta$ conductors, are considered to form a concentrated coil of $Z \dif \beta$ turns and angular-pitch $2 \beta$. The elementary coil flux-linkage can be written directly from (5.8) with $N_r = Z \dif \beta$ 
 \begin{equation}
     \dif \varPsi_r = 2 Z \dif \beta i_s l r \displaystyle \sum_{n = 1}^{n = \infty}\bigg( \frac{{(-1)}^{n + 1}}{{(2n - 1)}^2} K_{2n - 1} \cos(2n -1)\theta_r \sin(2n - 1) \beta \bigg)
 \end{equation}
@@ -1137,7 +1297,7 @@ Comparing (5.11) and (5.31) shows, for identical flux density distributions, the
 \begin{equation}
     M_{sr} = 4Z l r K_1 \cos \theta_r = M_m \cos \theta_r
 \end{equation}
-Referring to Fig. 5.6, the rotor windings is now considered to be connected three-phase at tapping a, b and c. To determine an expression for the mutual inductance of any of the three phases, (5.28) is employed with a change in the limits of integration and the magnetic axis of the phase taken as reference. Considering phase $\textrm{aa}'$ in Fig. 5.7, the changed limits of integration for (5.28) are $\beta = 2\pi / 3$ and $\beta = \pi / 3$. The total flux-linkage phase $\textrm{aa}'$
+Referring to Fig.\ 5.6, the rotor windings is now considered to be connected three-phase at tapping a, b and c. To determine an expression for the mutual inductance of any of the three phases, (5.28) is employed with a change in the limits of integration and the magnetic axis of the phase taken as reference. Considering phase $\textrm{aa}'$ in Fig.\ 5.7, the changed limits of integration for (5.28) are $\beta = 2\pi / 3$ and $\beta = \pi / 3$. The total flux-linkage phase $\textrm{aa}'$
 \begin{multline*}
     \mathbf{\varPsi_{aa'}} = 2 Z i_s l r \\
     \times \int_{\beta = \pi / 3}^{\beta = (2 \pi)/3} \displaystyle \sum_{n = 1}^{n = \infty} \bigg( \frac{{(-1)}^{n+1}}{{(2n - 1)}^2}K_{2n-1} \cos(2n - 1) \theta_r \sin(2n - 1) \beta \bigg) \dif \beta \\
@@ -1167,7 +1327,7 @@ Assuming the stator gap flux density distribution to be described with sufficien
     \boldsymbol M_{cc'} &= 2 Z l r K_1 \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) = \frac{1}{2} \mathbf{M_{m}} \cos \bigg( \theta_r + \frac{2 \pi}{3} \bigg) \nonumber
 \end{align}
 
-\noindent (b) \textit{Self-inductance}. The developed diagram, Fig. 5.8, shows the uniformly distributed rotor winding, supplied at tapping points $P$ and $P'$ with current $i_r$, producing a triangular m.m.f.\  distribution. Enclosed by the dotted path is a total current $Z \pi i_r$ and the triangular m.m.f.\ distribution is of maximum value
+\noindent (b) \textit{Self-inductance}. The developed diagram, Fig.\ 5.8, shows the uniformly distributed rotor winding, supplied at tapping points $P$ and $P'$ with current $i_r$, producing a triangular m.m.f.\  distribution. Enclosed by the dotted path is a total current $Z \pi i_r$ and the triangular m.m.f.\ distribution is of maximum value
 \begin{equation}
     F_m = \frac{Z \pi i_r}{2}
 \end{equation}
@@ -1185,7 +1345,7 @@ The fundamental crest value
 \end{equation}
 Since $F_r$ can now be resolved into $d$-axis and $q$-axis components, the method employed in Section 5.2.1 for finding the self-inductance of a concentrated winding, can be used to find the self-inductance of a distributed winding.
 
-\noindent Referring to Fig. 5.8: \\
+\noindent Referring to Fig.\ 5.8: \\
 The Flux-linkage for the elementary coil of $Z \dif \beta$ turns and angular-pitch $2 \beta$ can be found using (5.20) with a change in the limits of integration
 \begin{equation} \label{eq:Ec39}
     \begin{aligned}
@@ -1214,7 +1374,8 @@ where
 \end{flalign}
 Comparison of (5.24) and (5.40) shows for an assumption of sinusoidally distributed gap flux density, the self-inductance expressions for a distributed and concentrated winding are of similar form.
 
-\subsection{Concentrated and distributed winding equivalence.} Summarizing the derived expression for the self- and mutual inductances of concentrated and distributed windings with a m.m.f.\ distribution assumed sinusoidal:
+\subsection{Concentrated and distributed winding equivalence.}
+Summarizing the derived expression for the self- and mutual inductances of concentrated and distributed windings with a m.m.f.\ distribution assumed sinusoidal:
 
 concentrated full-pitch rotor winding;\\
 from (5.13) and (5.24) 
@@ -1249,8 +1410,9 @@ where\\
 \hspace*{4em} $\omega_r$ and $\theta_r$ are measured in electrical radian, and\\
 \hspace*{4em} $\omega_m$ and $\theta_m$ in mechanical radian.
 
-As the action of a multi-winding machine is the superimposed effect of winding pairs, equations of torque and voltage, derived for the transducer model Fig. 5.10, will form the basis of a generalized theory for rotating electrical machines.
-\subsection{Induced voltages.} The total flux-linkage of a coil comprises the sum of self- and mutual flux-linkages.
+As the action of a multi-winding machine is the superimposed effect of winding pairs, equations of torque and voltage, derived for the transducer model Fig.\ 5.10, will form the basis of a generalized theory for rotating electrical machines.
+\subsection{Induced voltages.}
+The total flux-linkage of a coil comprises the sum of self- and mutual flux-linkages.
 
 Stator flux-linkages
 \begin{flalign}
@@ -1389,7 +1551,8 @@ Writing in (5.56)
 
     Substituting the mutual and self-inductance values established in Section 5.2 in (5.58), (5.59) and (5.60) gives the stator and rotor voltage equations. 
 
-    \subsubsection{\itshape{Case (a)}\/} Zero saliency --- cylindrical rotor and stator:
+    \subsubsection{\textit{Case (a)}}
+    Zero saliency --- cylindrical rotor and stator:
     \begin{equation*}
         \begin{aligned}
             L_r & = \text{constant} \\
@@ -1457,9 +1620,11 @@ Writing in (5.56)
 
     \noindent \textit{Case} (\textit{c}) Two degree of saliency.  The analysis of machines with stator and rotor saliency will not be considered as such machines are rarely encountered in practice.
 
-    \subsection{Equivalent circuit} With the rotor of the doubly-excited transducer maintained stationary the coefficients of the $[G]$ matrix are zero, there are no rotational voltages and (5.60) reduces to the form normally written for the primary and secondary terminal voltages of an ideal two-winding transformer. It follows, to produce an equivalent circuit for the transducer, for which the current and voltage conditions can be determined for different modes of operation, it is only necessary to include rotational voltages in the equivalent circuit of the two-winding transformer. Rotational voltages are represented as voltage generators of zero internal impedance. The voltage generators are assigned instantaneous polarities according to the sign of the rotational voltage terms.
+    \subsection{Equivalent circuit}
+    With the rotor of the doubly-excited transducer maintained stationary the coefficients of the $[G]$ matrix are zero, there are no rotational voltages and (5.60) reduces to the form normally written for the primary and secondary terminal voltages of an ideal two-winding transformer. It follows, to produce an equivalent circuit for the transducer, for which the current and voltage conditions can be determined for different modes of operation, it is only necessary to include rotational voltages in the equivalent circuit of the two-winding transformer. Rotational voltages are represented as voltage generators of zero internal impedance. The voltage generators are assigned instantaneous polarities according to the sign of the rotational voltage terms.
     Figure 5.11 is the equivalent circuit for a doubly excited transducer with stator saliency, constructed in accordance with (5.64).
-    \subsection{Electromagnetic torque} Referring to (3.53), the energy stored within the air gap of a doubly-excited rotatory tranducer
+    \subsection{Electromagnetic torque}
+    Referring to (3.53), the energy stored within the air gap of a doubly-excited rotatory tranducer
     \begin{equation*}
         W_{fe} = \frac{1}{2} i_s^2 L_s + \frac{1}{2} i_r^2 L_r + i_s i_r M_{sr}
     \end{equation*}
@@ -1506,10 +1671,10 @@ Writing in (5.56)
         \end{bmatrix}
     \end{equation}
 
-    Consider the particular case of the stator and rotor coils supplied with constant positive d.c.\ currents. The angular variations of the torque components and the total electromagnetic torque is shown in Fig. 5.12.
+    Consider the particular case of the stator and rotor coils supplied with constant positive d.c.\ currents. The angular variations of the torque components and the total electromagnetic torque is shown in Fig.\ 5.12.
     \TabPositions{2.5cm,4cm}
-    The following points of interest can be deduced from Fig. 5.12:
-    \begin{enumerate}[label={(\alph*)}]
+    The following points of interest can be deduced from Fig.\ 5.12:
+    \begin{enumerate}
         \item\ $ 0 < \theta_r < \pi $ \tab\ $T_e - v e$ \tab\ torque opposes motion, generator action;\\
             $-\pi < \theta_r < 0 $ \tab\ $T_e + v e$ \tab\ torque assist motion, motor action.
 
@@ -1538,21 +1703,22 @@ Writing in (5.56)
 Mean torque is positive and a maximum when $\alpha = -45^{\circ}$ a condition achieved with a rotor current lagging the angular displacement $\theta_r$ by a time phase of $45^{\circ}$. The reluctance motor is not self-starting and can only operate at synchronous speed.
 
 \section{Commutator machines}
-An important group of a.c.\ and d.c.\ machines are those employing commutator windings. The simple two-pole commutator machine with stator saliency, Fig. 5.13.\ will serve as a model for determining the performance characteristics of commutator machines. For the purpose of making the subsequent analysis quite general, the two windings are assumed to be supplied with time-varying voltages and currents: the uniformly distributed commutator winding being connected to its supply by a brush-pair held stationary on an axis at $\theta_r$ to the $d$-axis.
+An important group of a.c.\ and d.c.\ machines are those employing commutator windings. The simple two-pole commutator machine with stator saliency, Fig.\ 5.13.\ will serve as a model for determining the performance characteristics of commutator machines. For the purpose of making the subsequent analysis quite general, the two windings are assumed to be supplied with time-varying voltages and currents: the uniformly distributed commutator winding being connected to its supply by a brush-pair held stationary on an axis at $\theta_r$ to the $d$-axis.
 
 As previously described, Section 4.2, commutator action effectively divides the commutator winding along the brush axis to form two uniform current sheets of opposite polarity. From the magnetic considerations the commutator windings behaves as a stationary concentrated coil of $N_r$ turns carrying current $i_r$. For total equivalence the stationary concentrated coil generates the same rotational voltage as the commutator winding. It follows, such a coil is fictitious and as it is to be used to represent commutator  windings it is given the identifying name of \emph{pseudo-stationary coil}.
 
-The two-pole commutator machine, Fig. 5.13, can now be represented in diagrammatic form as two stationary concentrated coils. The two coils are considered to produce the sinusoidally distributed air-gap m.m.f.s, space phase separated $\theta_r$, and in time phase with their respective currents.
+The two-pole commutator machine, Fig.\ 5.13, can now be represented in diagrammatic form as two stationary concentrated coils. The two coils are considered to produce the sinusoidally distributed air-gap m.m.f.s, space phase separated $\theta_r$, and in time phase with their respective currents.
 
-\subsection{Motor and generator action} Before proceeding with the study of motor and generator action, it is necessary to establish a convention for coil currents and electromagnetic torque.
+\subsection{Motor and generator action}
+Before proceeding with the study of motor and generator action, it is necessary to establish a convention for coil currents and electromagnetic torque.
 
-Commencing with coil currents, an applied coil voltage is shown in every case with the positive potential assigned to the end of the coil which is nearest the machine centre. The reference currents, in this case $i_s$ and $i_r$, are always shown to be positive, that is, entering at the positive potential end of coils. For the general case of current entering or leaving the point of positive potential, the current is represented by a separate symbol and equated to the reference current as shown in Fig. 5.14.
+Commencing with coil currents, an applied coil voltage is shown in every case with the positive potential assigned to the end of the coil which is nearest the machine centre. The reference currents, in this case $i_s$ and $i_r$, are always shown to be positive, that is, entering at the positive potential end of coils. For the general case of current entering or leaving the point of positive potential, the current is represented by a separate symbol and equated to the reference current as shown in Fig.\ 5.14.
 
-A similar convention is used for electromagnetic torque where the reference torque $T_e$ is always considered to act in the positive clockwise sense. For the general case of an electromagnetic torque $T$ acting clockwise or anticlockwise, we equate it to $T_e$, see Fig. 5.15.
+A similar convention is used for electromagnetic torque where the reference torque $T_e$ is always considered to act in the positive clockwise sense. For the general case of an electromagnetic torque $T$ acting clockwise or anticlockwise, we equate it to $T_e$, see Fig.\ 5.15.
 
 The merit of the above conventions, as will be shown later, is that a general set of machine equations can be formed in which the variables are the positive reference values. A particular mode of operation can then be described by substituting for the reference variables the actual variables.
 
-Figure 5.16 shows two instantaneous commutator machine conditions which differ only with respect to the assumed directions of current flow for the pseudo-stationary coil. Motor or generator action is determined by assigning to the coils magnetic polarities which accord with the directions of current flow. Where the magnetic forces assist motion there is motor action and when they oppose motion there is generator action. Referring to Fig. 5.16:\\
+Figure 5.16 shows two instantaneous commutator machine conditions which differ only with respect to the assumed directions of current flow for the pseudo-stationary coil. Motor or generator action is determined by assigning to the coils magnetic polarities which accord with the directions of current flow. Where the magnetic forces assist motion there is motor action and when they oppose motion there is generator action. Referring to Fig.\ 5.16:\\
 \TabPositions{0cm,2cm,4cm,6cm}
 $i_r = i_1$, \tab$i_s = i_2$, \tab$T_e = T$ \tab\ motion assisted, motor action \\
 $i_r = - i_1$, \tab$i_s = i_2$, \tab$T_e = - T$ \tab\ motion opposed, generator action.
@@ -1562,7 +1728,7 @@ As the previously discussed rotary transducer and the commutator machine each ha
 
 Commencing with the general stator and rotor voltage equations (5.54) and (5.55), all the rotational voltages in (5.54) may be deleted as
 \noindent
-\begin{enumerate}[itemindent=0cm, label ={(\alph*)}]
+\begin{enumerate}
     \item the stator conductors and the pseudo-stationary rotor coil flux are space-stationary, and
     \item the stator self-inductance $L_s$ is a constant value for cylindrical rotor.
 \end{enumerate} 
@@ -1714,14 +1880,14 @@ On no-load the terminal voltage, called the \emph{excitation voltage}, is given 
 \end{equation*}
 where $M_m$ is the value of mutual inductance between the stator coil and the pseudo-stationary rotor coil with the brush axis at $\theta_r = 0$.
 
-The equivalent circuits for steady-state d.c.\ motor and generator action are shown in Fig. 5.17.
+The equivalent circuits for steady-state d.c.\ motor and generator action are shown in Fig.\ 5.17.
 
 \section{The primitive multi-coil machine}
 It will be shown in subsequent chapters that the windings of a rotating electrical machine and their associated electrical quantities can be transformed mathematically into a different arrangement of coils with new electrical quantities. The machine which results after transformation has performance characteristics identical to those for the original machine. A transformation of special interest is one in which machine windings are transformed into a $d$-axis and $q$-axis array of stator and pseudo-stationary rotor coils. As this arrangement is the two-winding commutator machine repeated a number of times, the analytical results previously derived for this machine can be used to determine the performance characteristics of the transformed machine, hence the original machine.
 
-The name \emph{primitive machine} is given to the $d$-$q$ axis array of coils for which connections between coils are absent and each coil is supplied with a separate externally applied voltage. This machine is commonly referred to as the \emph{Kron primitive}. A primitive machine with two pseudo-stationary rotor coils and two stator coils is shown in Fig. 5.18. The number of coils for each axis could be increased without limit but as an excessive number of coils would make subsequent analysis laborious without adding to the understanding of the analytical technique employed, the number has been limited to that shown in Fig. 5.18. Each coil is identified by a suffix notation giving the axial location of the coil and the supporting magnetic structure, stator or rotor. For example, $_d^s$ is a stator $d$-axis coil and $_q^r$ a rotor $q$-axis coil. The two \emph{pseudo-stationary} coils are assumed to have the same number of concentrated turns, $N_d^r = N_q^r$.
+The name \emph{primitive machine} is given to the $d$-$q$ axis array of coils for which connections between coils are absent and each coil is supplied with a separate externally applied voltage. This machine is commonly referred to as the \emph{Kron primitive}. A primitive machine with two pseudo-stationary rotor coils and two stator coils is shown in Fig.\ 5.18. The number of coils for each axis could be increased without limit but as an excessive number of coils would make subsequent analysis laborious without adding to the understanding of the analytical technique employed, the number has been limited to that shown in Fig.\ 5.18. Each coil is identified by a suffix notation giving the axial location of the coil and the supporting magnetic structure, stator or rotor. For example, $_d^s$ is a stator $d$-axis coil and $_q^r$ a rotor $q$-axis coil. The two \emph{pseudo-stationary} coils are assumed to have the same number of concentrated turns, $N_d^r = N_q^r$.
 \subsection{Voltage coefficients: matrix form} 
-It is now proposed to construct $[L]$ and $[G]$ matrices for the $d$-$q$ axis primitive machine Fig. 5.18, with stator saliency. The $d$-$q$ axis coil array comprises a number of individual coil pairs. Relative to a $d$-axis coil, pairs are formed with coils displaced by angles $\theta_r = 0$, $\theta_r = -\pi/2$ and relative to a $q$-axis coil, pairs are fomed with coils displaced by angles of $\theta_r = 0$, $\theta_r = \pi/2$. Thus, for all coil pairs the displacement angles of concern are $\theta_r = 0$ and $\theta_r = \pm \pi / 2$.
+It is now proposed to construct $[L]$ and $[G]$ matrices for the $d$-$q$ axis primitive machine Fig.\ 5.18, with stator saliency. The $d$-$q$ axis coil array comprises a number of individual coil pairs. Relative to a $d$-axis coil, pairs are formed with coils displaced by angles $\theta_r = 0$, $\theta_r = -\pi/2$ and relative to a $q$-axis coil, pairs are fomed with coils displaced by angles of $\theta_r = 0$, $\theta_r = \pi/2$. Thus, for all coil pairs the displacement angles of concern are $\theta_r = 0$ and $\theta_r = \pm \pi / 2$.
 
 The rules for constructing $[L]$ and $[G]$ matrices for the primitive machine can be determined from the stator and rotor voltage equations (5.77) for a two-winding commutator machine.
 
@@ -1865,7 +2031,7 @@ Combining the results obtained in (5.80) and (5.82), substituting in the general
 \begin{equation*}
     [v] = \{[R] + [L]p+\omega_r[G]\}[i]
 \end{equation*}
-gives the complete impedance matrix for a four-coil, primitive machine, Fig. 5.18.
+gives the complete impedance matrix for a four-coil, primitive machine, Fig.\ 5.18.
 \begin{equation}
     \begin{bmatrix}
         v_d^s \\ v_d^r \\ v_q^s \\ v_q^r
@@ -1918,7 +2084,7 @@ An alternative method of deriving (5.85) is to consider the torque exerted of ea
 The physical arrangement of a d.c.\ or crossfield machine is identical to the primitive machine. The rotating commutator winding has one or more brush-pairs on orthogonal axes and stator coils are on the same orthogonal axes. The equation developed in chapter 5 for a primitive machine are directly applicable for these types of machines.
 \section{General analysis}
 Machine voltage and torque equations my be written down by inspection when the ideas and rules in chapter 5 are understood. For convenience, a two pole machine is always schematically shown although the equations apply for any number of pole-pairs.
-Consider a machine with one brush-pair on the quadrature-axis and two direct-axis stator coils as shown in Fig. 6.1. The voltage and electromagnetic torque equations are:
+Consider a machine with one brush-pair on the quadrature-axis and two direct-axis stator coils as shown in Fig.\ 6.1. The voltage and electromagnetic torque equations are:
 
 \begin{equation}
     \begin{bmatrix}
@@ -1978,8 +2144,9 @@ For example, a coil designated $f$ has resistance $r_f$, self-inductance $L_f$, 
 \section{D.C.\ machine steady state analysis}
 D.C.\ machines have one or more stator windings for the required load characteristic. Additional stator windings are included to give satisfactory commutation.
 
-\subsection{Field windings} The main stator or field windings are wound on salient poles. Coils may be connected:
-\begin{enumerate}[label ={(\alph*)}]
+\subsection{Field windings}
+The main stator or field windings are wound on salient poles. Coils may be connected:
+\begin{enumerate}
     \item in series with the rotor or armature winding, \\
         i.e.\ \textit{a series field}
     \item[or \stepcounter{enumi} (\alph{enumi})] energized from a separate d.c.\ supply, \\
@@ -1991,7 +2158,8 @@ A d.c.\ motor with a shunt winding is identical to a separately-excited machine 
 
 With a shunt generator, the simplifying assumption of a linear flux/current relationship is not justified as the open-circuit voltage is limited only by magnetic saturation. The analysis of this machine therefore requires a more realistic treatment, see Section 6.2.4.
 A \textit{compound machine} has a series field together with a shunt or separately-excited field winding. The following analysis is for a compound machine with series and separately-excited windings.
-\subsection{Compound machine analysis} Figure 6.2(a) shows the primitive coil arrangement for a compound machine. For simplicity, the armature and the series and separately-excited fields are designated $a$, $s$ and $f$, respectively. The primitive voltage equations are,
+\subsection{Compound machine analysis}
+Figure 6.2(a) shows the primitive coil arrangement for a compound machine. For simplicity, the armature and the series and separately-excited fields are designated $a$, $s$ and $f$, respectively. The primitive voltage equations are,
 
 \begin{equation}
     \begin{bmatrix}
@@ -2054,28 +2222,32 @@ Substituting for actual currents,
 
 The alternative sign $\pm$ is positive for a cumulative connected motor and a differential connected generator, and for a differential connected motor and a cummulative connected generator.
 
-\subsection{Steady-state analysis} The steady-state operation of a compound machine is determined from the general performance equations. By omitting the appropriate winding from the current results for the compound machine, steady-state solutions for series and separately-excited machines are readily obtained.
+\subsection{Steady-state analysis}
+The steady-state operation of a compound machine is determined from the general performance equations. By omitting the appropriate winding from the current results for the compound machine, steady-state solutions for series and separately-excited machines are readily obtained.
 
-\subsubsection{Compound machine} With constant speed and current values the $p \omega_r$ and $p i$ terms are zero, and (6.7), (6.8) and (6.5) may be written,
+\subsubsection{\textit{Compound machine}}
+With constant speed and current values the $p \omega_r$ and $p i$ terms are zero, and (6.7), (6.8) and (6.5) may be written,
 \begin{align}
     V & =\omega_r M_{af} I_f + (R \pm \omega_r M_{as}) I_a \\[2ex]
     T_e & = (\text{pole-pairs})[I_a M_{af} i_f \pm I_a^2 M_{as}] \\[2ex]
     T_m + T_e & = D \omega_m
 \end{align}
 
-Typical characteristics are shown for a compound machine in Fig. 6.3. A \textit{level-compounded} generator has  no voltage regulation.
+Typical characteristics are shown for a compound machine in Fig.\ 6.3. A \textit{level-compounded} generator has  no voltage regulation.
 
 \noindent In practice, saturation of the magnetic circuit increases the voltage regulation at high load currents and the term level-compounded describes a generator with zero voltage regulation at full load.
 
-\subsubsection{Series machine} Omitting the separately-excited winding gives the steady-state equations for a series motor
+\subsubsection{\textit{Series machine}}
+Omitting the separately-excited winding gives the steady-state equations for a series motor
 \begin{align}
     V & = (R + \omega_r M_{as}) I_a\\[2ex]
     T_e & = (\text{pole-pairs})(I_a^2 M_{as})
     \label{}
 \end{align}
-The characteristics for a series motor, Fig. 6.4.\ show a high starting torque and the danger of running the machine on no-load. The series generator is seldom employed.
+The characteristics for a series motor, Fig.\ 6.4.\ show a high starting torque and the danger of running the machine on no-load. The series generator is seldom employed.
 
-\subsubsection{\itshape\/Separately-excited machine or shunt motor} The steady-state equations are:
+\subsubsection{\textit{Separately-excited machine or shunt motor}}
+The steady-state equations are:
 \begin{align}
     V & = R_a I_a + \omega_r M_{af} I_f\\[2ex]
     T_e & = (\text{pole-pairs})(I_a M_{af} I_f)
@@ -2083,15 +2255,17 @@ The characteristics for a series motor, Fig. 6.4.\ show a high starting torque a
     \label{}
 \end{align}
 
-Typical characteristics are shown in Fig. 6.5.
+Typical characteristics are shown in Fig.\ 6.5.
 
-\subsection{Shunt generator} The assumption made in the previous work may give raise to appreciable errors in analysing the performance of d.c.\ machines. However, the ability to derive and solve general equations for both steady-state and transient behaviour often justifies these assumptions. With these simplifying assumptions the performance of the shunt generator cannot be determined. The analysis of this machine requires a more realistic approach employing the
+\subsection{Shunt generator}
+The assumption made in the previous work may give raise to appreciable errors in analysing the performance of d.c.\ machines. However, the ability to derive and solve general equations for both steady-state and transient behaviour often justifies these assumptions. With these simplifying assumptions the performance of the shunt generator cannot be determined. The analysis of this machine requires a more realistic approach employing the
 flux/excitation m.m.f.\ characteristic.
-\subsubsection{Actual characteristics} The field current for a shunt generator is supplied by the armature voltage, see Fig. 6.6. With the armature rotating the residual flux in the stator poles generates a voltage across the brush-pair which drives current through the field winding increasing the pole flux, and hence, the armature voltage. The voltage continues to rise in a fairly linear manner with field current and the machine is said to self-excite. When the magnetic circuit of the pole flux
-begins to saturate, the output voltage does not increases as rapidly as previously, see Fig. 6.7. A point is reached at which the voltage characteristic cuts the field resistance line and this corresponds to the open-circuit voltage of the machine.
+\subsubsection{\textit{Actual characteristics}}
+The field current for a shunt generator is supplied by the armature voltage, see Fig.\ 6.6. With the armature rotating the residual flux in the stator poles generates a voltage across the brush-pair which drives current through the field winding increasing the pole flux, and hence, the armature voltage. The voltage continues to rise in a fairly linear manner with field current and the machine is said to self-excite. When the magnetic circuit of the pole flux
+begins to saturate, the output voltage does not increases as rapidly as previously, see Fig.\ 6.7. A point is reached at which the voltage characteristic cuts the field resistance line and this corresponds to the open-circuit voltage of the machine.
 
 Two necessary conditions for self-excitation are,
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}
     \item the residual flux is in the \textit{correct sense}, i.e., field current due to rotational voltage reinforces the residual flux of the stator poles; and
     \item the slope of the field resistance line is sufficiently low to intersect the voltage characteristic at a reasonable value above the knee of the curve.
 \end{enumerate}
@@ -2099,7 +2273,8 @@ For a given speed the \textit{critical field resistance} is the maximum value of
 
 The solution of shunt generator problems requires graphical methods unless the magnetization characteristic can be expressed as an analytic function of the field current.
 
-\subsubsection{Method of analysis} The non-linear voltage characteristic of a shunt generator, Fig. 6.7, may be represented wit reasonable accuracy by two linear parts of different slope as Fig. 6.8.
+\subsubsection{\textit{Method of analysis}}
+The non-linear voltage characteristic of a shunt generator, Fig.\ 6.7, may be represented wit reasonable accuracy by two linear parts of different slope as Fig.\ 6.8.
 
 With \textit{incremental inductance coefficients} of $G_{af}^m$, $M_{af}^m$ and $G_{af}^n$, $M_{af}^n$ for the two slopes, the rotational voltage term in the armature coil is given by
 
@@ -2143,13 +2318,14 @@ For steady-state operation,
 
 Equations (6.19) and (6.20) are valid for operation in region $n$ only, corresponding to a range of field current $i_f \geq i_{f1}$.
 
-\subsection{Compensating winding} A d.c.\ machine with a severely fluctuating load, e.g.\ a rolling mill motor, may flashover across the commutator segments due to the high voltages induced in the armature coils by the rapidly changing armature current. A flashover often results in severe damage as short-circuit current may flow along the breakdown path. The large voltages induced in the armature coils may be eliminated by including a \textit{compensating winding} in the machine.
+\subsection{Compensating winding}
+A d.c.\ machine with a severely fluctuating load, e.g.\ a rolling mill motor, may flashover across the commutator segments due to the high voltages induced in the armature coils by the rapidly changing armature current. A flashover often results in severe damage as short-circuit current may flow along the breakdown path. The large voltages induced in the armature coils may be eliminated by including a \textit{compensating winding} in the machine.
 
 The voltage induced between two adjacent commutator segments depends on the rate of flux-linkage with the armature coil connected to the segments. There is an induced voltage (nearly independent of load current) due to the main excitation flux (an $\omega_r M$ term). An additional induced voltage may appear due to a rapid change of armature current and, hence, self-linkage (an $L p i$ term).
 
-The compensating winding, connected in series with the armature, produces an m.m.f.\ equal and opposite to that of the armature, see Fig. 6.9(a). A rapid change of load current produces negligible change of flux along the $q$-axis, inducing little voltage in the armature coils.
+The compensating winding, connected in series with the armature, produces an m.m.f.\ equal and opposite to that of the armature, see Fig.\ 6.9(a). A rapid change of load current produces negligible change of flux along the $q$-axis, inducing little voltage in the armature coils.
 
-Representing a separately-excited machine with a compensating winding as a primitive machinem Fig. 6.9(b), the coil voltages are
+Representing a separately-excited machine with a compensating winding as a primitive machinem Fig.\ 6.9(b), the coil voltages are
 \begin{equation}
     \begin{bmatrix}
         v_d^{s1} \\[2ex] v_q^{s1} \\[2ex] v_q^{r1}
@@ -2193,12 +2369,12 @@ Equations (6.22) are identical to those for a separately-excited machine with an
 \end{equation*}
 and the effective armature inductance ($L_a + L_c - 2M_{ac}$) is negligible.
 
-With the compensating winding not extending to the interpolar regions, as shown in Fig. 6.9(a), i.e., restricted to the pole faces, the compensating winding inductance is less than the armature self-inductance and the effective armature inductance ($L_a + L_c - 2M_{ac}$) may not be negligible.
+With the compensating winding not extending to the interpolar regions, as shown in Fig.\ 6.9(a), i.e., restricted to the pole faces, the compensating winding inductance is less than the armature self-inductance and the effective armature inductance ($L_a + L_c - 2M_{ac}$) may not be negligible.
 
 \subsection{Interpole windings}
-Satisfactory commutator action requires the current in a coil undergoing commutation to reverse in the commutation period, see Fig. 6.10. An induced voltage, produced by changing self-flux in the coil, opposes the current change and may prevent complete current reversal in the time allowed for commutation.
+Satisfactory commutator action requires the current in a coil undergoing commutation to reverse in the commutation period, see Fig.\ 6.10. An induced voltage, produced by changing self-flux in the coil, opposes the current change and may prevent complete current reversal in the time allowed for commutation.
 
-The difficulty is overcome in all modern machines by fitting \textit{interpoles} to give practically spark-free commutation at all loads and speeds. Interpoles, located s their name suggest in the interpolar region, see Fig. 6.11(a), are connected in series with the armature winding and produces fluxed which induce voltages in the coils undergoing commutation. These voltages are approximately equal and opposite to the self-induced voltages and enable the current to reverse
+The difficulty is overcome in all modern machines by fitting \textit{interpoles} to give practically spark-free commutation at all loads and speeds. Interpoles, located s their name suggest in the interpolar region, see Fig.\ 6.11(a), are connected in series with the armature winding and produces fluxed which induce voltages in the coils undergoing commutation. These voltages are approximately equal and opposite to the self-induced voltages and enable the current to reverse
 completely in the commutation period. Both self-induced and interpole induced voltages are proportional to speed and armature current, hence correct compensation is achieved for all values of speed and load, including rotation in either direction.
 
 The interpole acts as a compensating winding over a small angle and is sometimes termed a \textit{commutating pole} or \textit{compole}.
@@ -2213,7 +2389,7 @@ starter resistor has several sections which are cut out in turn as the motor inc
 value provided that sufficient time is allowed for the current to fall to a certain minimum level before the next section is cut out. The problem is considered in more detail in Section 6.4.
 
 \section{Sudden short-circuit of a d.c.\ generator}
-The voltage and torque equations describing the performance of a machine are completely general and apply to transient as well as steady-state behaviour. As an example of transient analysis consider the sudden short-circuit of a d.c.\ generator with differential series and separately-excited field windings. The voltage equations are identical to those derived in Section 6.2.1 for the cumulative compound motor represented schematically in Fig. 6.2(b)
+The voltage and torque equations describing the performance of a machine are completely general and apply to transient as well as steady-state behaviour. As an example of transient analysis consider the sudden short-circuit of a d.c.\ generator with differential series and separately-excited field windings. The voltage equations are identical to those derived in Section 6.2.1 for the cumulative compound motor represented schematically in Fig.\ 6.2(b)
 \begin{equation}
     \begin{bmatrix}
         v_f \\[2ex] v
@@ -2384,7 +2560,8 @@ Transforming
     \label{}
 \end{multline}
 
-\subsection{Simplified solution} In a typical compound machine the self-inductance of the weak series field is small compared with the armature self-inductance. The armature circuit time constant is small compared with the time constant of the separately-excited field winding; i.e.\ $L_a \gg L_s$ hence $(L_a + L_s) \gg L_s$, $L \gg L_s$, and $\tau_f \gg \tau$. Neglecting the relatively small values in (6.35) and (6.36)
+\subsection{Simplified solution}
+In a typical compound machine the self-inductance of the weak series field is small compared with the armature self-inductance. The armature circuit time constant is small compared with the time constant of the separately-excited field winding; i.e.\ $L_a \gg L_s$ hence $(L_a + L_s) \gg L_s$, $L \gg L_s$, and $\tau_f \gg \tau$. Neglecting the relatively small values in (6.35) and (6.36)
 \begin{align}
     A & \bumpeq \dfrac{1}{2 \tau \tau_f} \bigg[\tau_f - \dfrac{\omega_r M_{af} m_{sf}}{R_f (R + \omega_r M_{as})}\bigg] \\
     B^2 & \bumpeq \big[ A^2 - \dfrac{1}{\tau \tau_f} \bigg]
@@ -2447,7 +2624,8 @@ Neglecting the relatively small value in (6.46)
 
 Figure 6.12 shows typical short-circuit current against time characteristics for three different values of $K$ and a machine with $\tau'=0.0132$ second and $\tau_f' = 0.226$ second.
 
-\subsection{Discussion} The example considered in the previous sections show how the short-circuit of a d.c.\ machine may be analysed. Simplifying assumptions, e.g., constant speed, are very necessary for analytical solutions to be readily obtained from the differential equations.
+\subsection{Discussion}
+The example considered in the previous sections show how the short-circuit of a d.c.\ machine may be analysed. Simplifying assumptions, e.g., constant speed, are very necessary for analytical solutions to be readily obtained from the differential equations.
 
 In actual machines, the large armature current on short-circuit causes heave saturation in parts of the magnetic circuit and appreciable errors occur in the solution as constant machine inductances are assumed. Delayed commutation, due to interpole saturation, has the effect of brush-shift which may be represented by a series coil on the $d$-axis. Rapid changes of armature current and flux induce eddy currents in the magnetic circuit which limit initial flux changes of non-laminated
 iron and, consequently, the machine inductances for transient and steady-state conditions are of different value.
@@ -2457,9 +2635,10 @@ The general voltage and torque equations may be used to analyse machine operatio
 
 In general, a change of load on a d.c.\ motor alters the speed. With a sudden change of load torque the mechanical inertia of the machine prevents instantaneous speed change, in a similar manner to inductance preventing sudden change on an electrical circuit. With a sudden change of inertia, e.g.\ by engaging a flywheel, there is a rapid change of speed which can be represented for purposes of analysis as a step change.
 
-\subsection{Mechanical time constant} Consider an unloaded d.c.\ machine at rest with a suddenly applied armature voltage. With suitable assumptions the build-up of speed is exponential and the machine has a \textit{mechanical time constant} which depends on the moment of inertia, the electrical parameters, and the field excitation.
+\subsection{Mechanical time constant}
+Consider an unloaded d.c.\ machine at rest with a suddenly applied armature voltage. With suitable assumptions the build-up of speed is exponential and the machine has a \textit{mechanical time constant} which depends on the moment of inertia, the electrical parameters, and the field excitation.
 
-A separately-excited motor, Fig. 6.13(a), with constant field current $I_f$ has the following general equations,
+A separately-excited motor, Fig.\ 6.13(a), with constant field current $I_f$ has the following general equations,
 \begin{align}
     v_a & = (R_a + L_a p)i_a + \omega_r M_{af} I_f \\
     T_e & = (\text{pole-pairs})(i_a M_{af} I_f) \\
@@ -2527,8 +2706,9 @@ Now
 
 Hence, a simple expression is obtained for the mechanical time constant with mechanical damping and armature inductance neglected. Figure 6.13(b) illustrates the run-up speed and current characteristics.
 
-\subsection{Starting transient} The armature of a d.c.\ motor is energized through resistance on starting, see Section 6.2.7. Consider the starting transient of a shunt motor. To simplify the solution it will be assumed that,
-\begin{enumerate}[label={(\alph*)}]
+\subsection{Starting transient}
+The armature of a d.c.\ motor is energized through resistance on starting, see Section 6.2.7. Consider the starting transient of a shunt motor. To simplify the solution it will be assumed that,
+\begin{enumerate}
     \item the field current has a steady value $I_f$ before the armature circuit is energized,
     \item the armature self-inductance is small and may be neglected, and
     \item the machine is unloaded, $T_m = 0$, and mechanical damping is ignored.
@@ -2540,7 +2720,8 @@ For an armature circuit resistance $R_m$,, which includes starting resistance, t
     T_e & = {(\text{pole-pairs})}(M_{af} I_f) = J p \omega_m
     \label{}
 \end{align}
-\subsubsection{\textit{Number of resistor section}} A relationship may be determined for the required number of starter sections. Let there be $(n - 1)$ sections, $n$ contact studs and a total starter resistance $R_n$ including armature resistance $R_a$, see Fig. 6.14. For each stud position armature current limits of $I_{a(\max)}$ and $I_{a(\min)}$ are assumed.
+\subsubsection{\textit{Number of resistor section}}
+A relationship may be determined for the required number of starter sections. Let there be $(n - 1)$ sections, $n$ contact studs and a total starter resistance $R_n$ including armature resistance $R_a$, see Fig.\ 6.14. For each stud position armature current limits of $I_{a(\max)}$ and $I_{a(\min)}$ are assumed.
 
 The following tabulated results are obtained using these limits in (6.60).
 
@@ -2579,7 +2760,8 @@ Multiplying all resistance ratios,
 
 Equations (6.62) and (6.63) enable the number of sections and section resistance values to be determined for prescribed limiting values of armature current.
 
-\subsubsection{\textit{Run-up speed characteristic}} The speed change is exponential for the assumptions listed in Section 6.4.1.
+\subsubsection{\textit{Run-up speed characteristic}}
+The speed change is exponential for the assumptions listed in Section 6.4.1.
 From (6.58),
 \begin{equation*}
     \omega_m = \omega_{m (\max)}(1 - e^{-t / \tau_m})
@@ -2609,7 +2791,8 @@ Considering the times $t_1$, $t_2$, etc., defined previously
 \end{flalign}
 The reason for reproducing further instant of time $t'$, $t''$ in (6.64) is seen in the run-up characteristic, Gig. 6.15. The speed curve consists of sections of different exponentials commencing at time 0, $t'$, $t''$, etc. The armature current at each resistance setting decays exponentially, see Section 6.4.1. Figure 6.15 is drawn for a machine with a four-section starter and a ratio of 2 for $I_{a(\max)}/I_{a(\min)}$.
 
-\subsection{Sudden torque change} Consider a two-pole shunt motor, initially unloaded, with a load torque suddenly applied at $t = 0$.
+\subsection{Sudden torque change}
+Consider a two-pole shunt motor, initially unloaded, with a load torque suddenly applied at $t = 0$.
 With constant armature voltage $V_a$ and field current $I_f$ the general machine equations are,
 \begin{align}
     V_a & = (R_a + L_a p)i_a + \omega_r M_{af} I_f \nonumber \\
@@ -2678,7 +2861,8 @@ Tipically $\tau_m \gg \tau_a$ and simplifies to
     \omega_m(t) \bumpeq \mathring \omega_m + \dfrac{T_m}{J}(1 - e^{-t/\tau_m})
     \label{eq:Eq6.73}
 \end{equation}
-\subsection{Discussion} The solution for a sudden torque change on a shunt machine is obtained without difficulty in the last section. Unfortunately, some problems of this type involving simultaneous changes in speed and current produce equations with products of variables and their derivatives which are non-linear differential equations. These equations are extremely difficult to solve and numerical or analogue methods of solutions are invariably necessary.
+\subsection{Discussion}
+The solution for a sudden torque change on a shunt machine is obtained without difficulty in the last section. Unfortunately, some problems of this type involving simultaneous changes in speed and current produce equations with products of variables and their derivatives which are non-linear differential equations. These equations are extremely difficult to solve and numerical or analogue methods of solutions are invariably necessary.
 
 To illustrate the difficulty consider a two-pole compound machine, Fog. 6.16, with a load torque $T_m$ suddenly applied at $t = 0$.
 \begin{equation}
@@ -2703,11 +2887,12 @@ Eliminating $T_e$, combining the armature and series winding to give an impedanc
 A sudden change of torque $T_m$ changes the current $i_f$, $i_a$ and the speed $\omega_m$. The terms $\omega_m M_{as} i_a$ and $M_{as}i_a^2$ cannot be transformed by Laplace into the $\textbf{s}$ domain.
 
 \section{Crossfield machines}
-The crossfield machine has a rotating commutator winding with brush-pairs on both quadrature and direct axes. To provide a low reluctance path for the cross-flux on the quadrature axis, the stator poles are usually arranged as Fig. 6.17 with two polar projections for each magnetic pole. This arrangement gives paths of similar reluctance for both direct and quadrature axis fluxes.
+The crossfield machine has a rotating commutator winding with brush-pairs on both quadrature and direct axes. To provide a low reluctance path for the cross-flux on the quadrature axis, the stator poles are usually arranged as Fig.\ 6.17 with two polar projections for each magnetic pole. This arrangement gives paths of similar reluctance for both direct and quadrature axis fluxes.
 
 Interpoles are usually fitted for good commutation.
 
-\subsection{Metadyne transformer} The metadyne transformer or constant current generator has no stator windings. The general equations for the machine, Fig. 6.18, are
+\subsection{Metadyne transformer}
+The metadyne transformer or constant current generator has no stator windings. The general equations for the machine, Fig.\ 6.18, are
 \begin{align}
     \begin{bmatrix}
         v_d \\ v_q
@@ -2726,7 +2911,7 @@ Interpoles are usually fitted for good commutation.
 
 The machine is energized across one brush-pair, e.g., the $d$-axis, and a load is supplied from the orthogonal brush-pair on the $q$-axis.
 
-The physical arrangement, Fig. 6.17, gives equal self-inductances and resistances for each brush-pair.
+The physical arrangement, Fig.\ 6.17, gives equal self-inductances and resistances for each brush-pair.
 \begin{align*}
     \text{Let } L_a & = L_d = L_q \\
     \text{and, } R_a & = R_d = R_q 
@@ -2759,7 +2944,8 @@ With a load of resistance $R_L$ and inductance $L_L$
     \label{eq_Eq6.80}
 \end{equation}
 
-\subsubsection{\textit{Steady-state solution}} Neglecting $p i$ terms in (6.78) and (6.80) gives the steady-state solution. Replacing instantaneous values by steady values,
+\subsubsection{\textit{Steady-state solution}}
+Neglecting $p i$ terms in (6.78) and (6.80) gives the steady-state solution. Replacing instantaneous values by steady values,
 \begin{equation}
     \begin{aligned}
         V  & = R_a I_s + \omega_r L_ a I_L \\
@@ -2781,9 +2967,11 @@ At constant speed and supply voltage the load current remains approximately cons
 
 The machine transforms constant voltage to constant current, hence the name \textit{metadyne transformer}.
 
-\subsubsection{\textit{Transient analysis}} Equations (6.78) may be used to solve transient problems, e.g., a sudden change of supply voltage.
+\subsubsection{\textit{Transient analysis}}
+Equations (6.78) may be used to solve transient problems, e.g., a sudden change of supply voltage.
 
-\subsection{Metadyne generator} The metadyne generator has a field winding on the $d$-axis and a short-circuited $q$-axis brush-pair, Fig. 6.19. The machine equations are
+\subsection{Metadyne generator}
+The metadyne generator has a field winding on the $d$-axis and a short-circuited $q$-axis brush-pair, Fig.\ 6.19. The machine equations are
 \begin{align}
     \begin{bmatrix}
         v_f \\ v_d \\ 0
@@ -2832,9 +3020,10 @@ Defining the output current from the $d$-axis brush-pair, $I_L = -I_d$ and the o
     \label{eq:Eq6.89}
 \end{align}
 
-\subsection{Compensated metadyne generator} The characteristics of the crossfield machine in Section 6.5.2 are not particularly useful. An additional stator winding called \textit{compensating winding} improves the characteristics. This winding is connected in series with the load current and has a similar action to the one used in d.c.\ machines. It produces an m.m.f.\ opposing the $d$-axis armature reaction.
+\subsection{Compensated metadyne generator}
+The characteristics of the crossfield machine in Section 6.5.2 are not particularly useful. An additional stator winding called \textit{compensating winding} improves the characteristics. This winding is connected in series with the load current and has a similar action to the one used in d.c.\ machines. It produces an m.m.f.\ opposing the $d$-axis armature reaction.
 
-The primitive coil arrangement and connection diagram for a compensated machine are given in Fig. 6.20. Taking the self-inductance and resistance of the $d$-axis and $q$-axis rotor coils to be equal, the machine equations are
+The primitive coil arrangement and connection diagram for a compensated machine are given in Fig.\ 6.20. Taking the self-inductance and resistance of the $d$-axis and $q$-axis rotor coils to be equal, the machine equations are
 \begin{align}
     \begin{bmatrix}
         v_f \\ v_d \\ v_q \\ v_c
@@ -2853,7 +3042,7 @@ The primitive coil arrangement and connection diagram for a compensated machine 
     \label{eq:Eq6.91}
 \end{align}
 
-The machine coils are connected as Fig. 6.20(b), and $v_q = 0$. Defining $i = -i_d = i_c$ and $v = (v_d - v_c)$, (6.90) and (6.91) may be written
+The machine coils are connected as Fig.\ 6.20(b), and $v_q = 0$. Defining $i = -i_d = i_c$ and $v = (v_d - v_c)$, (6.90) and (6.91) may be written
 \begin{multline}
     \begin{bmatrix}
         v_f \\ v \\ 0
@@ -2906,7 +3095,8 @@ Eliminating $i_q$ in (6.92),
 
 These equations, together with the torque equation, may be used to analyse a machine with any degree of compensation.
 
-\subsection{Fully compensated metadyne generator} Of particular interest is the 100 per cent compensated or \textit{full compensated} machine which the compensating winding m.m.f.\ and the $d$-axis armature m.m.f.\ are equal and opposite. This machine has a high ratio of output voltage and power to field (control) winding voltage and power. Employed in control schemes as an amplifying device it is often called a \textit{rotating amplifier} or \textit{amplidyne}.
+\subsection{Fully compensated metadyne generator}
+Of particular interest is the 100 per cent compensated or \textit{full compensated} machine which the compensating winding m.m.f.\ and the $d$-axis armature m.m.f.\ are equal and opposite. This machine has a high ratio of output voltage and power to field (control) winding voltage and power. Employed in control schemes as an amplifying device it is often called a \textit{rotating amplifier} or \textit{amplidyne}.
 
 To simplify the analysis, leakage flux is neglected between the armature and compensating windings,
 \begin{flalign*}
@@ -2929,7 +3119,8 @@ Substituting in (6.94)
     \label{}
 \end{equation}
 
-\subsubsection{\textit{Steady-state solution}} With all $p$ terms equal to zero the voltage expression is
+\subsubsection{\textit{Steady-state solution}}
+With all $p$ terms equal to zero the voltage expression is
 \begin{equation}
     V = -(R_a + R_c)I + \dfrac{(\omega_r^2 L_a M_{af}) I_f}{R_a}
     \label{eq:Eq6.96}
@@ -2937,7 +3128,8 @@ Substituting in (6.94)
 
 A large gain for$V/I_f$ is achieved, especially at high speed.
 
-\subsubsection{\textit{Transient operation}} Consider a machine operating with a constant load connected to its output terminals. Assuming an inductive load of ($R_L + L_L p$), the voltage $v$ is equal to $(R_L + L_L p)i$.
+\subsubsection{\textit{Transient operation}}
+Consider a machine operating with a constant load connected to its output terminals. Assuming an inductive load of ($R_L + L_L p$), the voltage $v$ is equal to $(R_L + L_L p)i$.
 
 Substituting in (6.95),
 \begin{equation}
@@ -2990,11 +3182,12 @@ where $A$, $B$, $C$, $D$ are constants such that $B + C + D = 1$ and $A$ represe
     \tau_f & = R_f / L_f = \text{field time constant}
 \end{align*}
 
-\subsection{Machine practice} A fully compensated crossfield machine requires only a small control (field) current. Unfortunately, hysteresis in the magnetic circuit of the machine affects the incremental gain and causes a further lag or phase-shift between the input and output signals. This error may be reduced by a demagnetizing winding energized with a.c. The cyclic variation of flux in the magnetic circuit of the machine reduces the hysteresis effect. The demagnetizing winding
-consists of balanced coils on each polar projection which contribute zero net flux along the direct and quadrature axes. Figure 6.21 shows a typical machine with compensating, demagnetizing, interpole, and field windings, and the response of a machine with and without a demagnetizing winding is given in Fig. 6.22.
+\subsection{Machine practice}
+A fully compensated crossfield machine requires only a small control (field) current. Unfortunately, hysteresis in the magnetic circuit of the machine affects the incremental gain and causes a further lag or phase-shift between the input and output signals. This error may be reduced by a demagnetizing winding energized with a.c. The cyclic variation of flux in the magnetic circuit of the machine reduces the hysteresis effect. The demagnetizing winding
+consists of balanced coils on each polar projection which contribute zero net flux along the direct and quadrature axes. Figure 6.21 shows a typical machine with compensating, demagnetizing, interpole, and field windings, and the response of a machine with and without a demagnetizing winding is given in Fig.\ 6.22.
 
 Further features of crossfield machines used in control schemes are
-\begin{enumerate}[label={(\alph*)}]
+\begin{enumerate}
     \item laminated structures to reduce iron losses and improve machine response and,
     \item the inclusion of more than one control winding to facilitate the comparison of several input signals.
 \end{enumerate}
@@ -3014,7 +3207,7 @@ Previous discussion has been solely concerned with the equivalence of m.m.f.s. I
 
 \section{Transformation between three-phase {\mdseries(abc)} and two-phase \textrm{($\alpha \beta \gamma)$} windings}
 
-Referring to Fig. 7.1, a symmetrical, two pole, three-phase winding, supported by a cylindrical magnetic structure, is represented in the conventional manner as three concentrated coils each of $N_1$ turns and mutually displaced $120^{\circ}$. Orthogonal $\alpha \beta$ axes, fixed to the surface of the magnetic structure, are located in an arbitrary position with coincident axes for phases $a$ and $\alpha$.
+Referring to Fig.\ 7.1, a symmetrical, two pole, three-phase winding, supported by a cylindrical magnetic structure, is represented in the conventional manner as three concentrated coils each of $N_1$ turns and mutually displaced $120^{\circ}$. Orthogonal $\alpha \beta$ axes, fixed to the surface of the magnetic structure, are located in an arbitrary position with coincident axes for phases $a$ and $\alpha$.
 
 Resolving instantaneous phase m.m.f.s along the $\alpha \beta$ axes 
 \begin{align}
@@ -3047,7 +3240,7 @@ or
 
 In its existing form (7.4) cannot be used directly to derive the inverse relationship, three-phase m.m.f.s from two-phase m.m.f.s, as the non-square form of $[M]$ precludes inversion. To make inversion possible, a square $3 \times 3$ matrix must be found to replaces $[M]$ without giving rise to an additional contribution to either $F_{\alpha}$ or $F_{\beta}$ as they are defined precisely by (7.3).
 
-The required modification derives from Fig. 7.2 where a unique set of instantaneous phase m.m.f.s, $F_a'$, $F_b'$, $F_c'$ are individually increased in magnitude by the same amount $F$ to provide algebraic resultants $F_a$, $F_b$ and $F_c$. Assuming $F$ to have an infinite range of values implies infinite sets for $F_a$, $F_b$, $F_c$.
+The required modification derives from Fig.\ 7.2 where a unique set of instantaneous phase m.m.f.s, $F_a'$, $F_b'$, $F_c'$ are individually increased in magnitude by the same amount $F$ to provide algebraic resultants $F_a$, $F_b$ and $F_c$. Assuming $F$ to have an infinite range of values implies infinite sets for $F_a$, $F_b$, $F_c$.
 
 From (7.4)
 \begin{equation}
@@ -3297,8 +3490,9 @@ Comparing (7.6) and (7.8),
         F_a + F_b + F_c \neq 0 \quad \text{and} \quad F_{\gamma} \neq 0
     \end{equation*}
 
-    \subsection{Current transformation} As previously stated, $F_{\alpha}$ and $F_{\beta}$ are considered to originate from an appropriately excited two-phase winding. It is assumed the $\alpha$-axis and$\beta$-axis coils are each of $N_2$ turns, and in addition, the coil producing $F_{\gamma}$ if of $N_2$ turns also. To satisfy the requirements that $F_{\gamma}$ shall make no contribution to the space resultant of $F_{\alpha}$ and $F_{\beta}$, the physical location of the
-    $\gamma$-coil may be considered to be on $\gamma$-axis normal to the plane of the $\alpha \beta$ axes, see Fig. 7.3. In essence, a transformation is being from a two-dimensional $abc$ co-ordinate system to a three dimensional $\alpha \beta \gamma$ co-ordinate system.
+    \subsection{Current transformation}
+    As previously stated, $F_{\alpha}$ and $F_{\beta}$ are considered to originate from an appropriately excited two-phase winding. It is assumed the $\alpha$-axis and$\beta$-axis coils are each of $N_2$ turns, and in addition, the coil producing $F_{\gamma}$ if of $N_2$ turns also. To satisfy the requirements that $F_{\gamma}$ shall make no contribution to the space resultant of $F_{\alpha}$ and $F_{\beta}$, the physical location of the
+    $\gamma$-coil may be considered to be on $\gamma$-axis normal to the plane of the $\alpha \beta$ axes, see Fig.\ 7.3. In essence, a transformation is being from a two-dimensional $abc$ co-ordinate system to a three dimensional $\alpha \beta \gamma$ co-ordinate system.
 
     Defining currents $i_{\alpha}$, $i_{\beta}$, $i_{\gamma}$ associated respectively with $F_{\alpha}$, $F_{\beta}$, $F_{\gamma}$
     \begin{equation}
@@ -3332,7 +3526,8 @@ Comparing (7.6) and (7.8),
         \label{eq:Eq7.27}
     \end{equation}
 
-    \subsection{Voltage transformations} The power relationship determined  for the primitive machine apply equally for the original machine. This condition is satisfied when the transformation relationships employed, define a primitive machine which is power invariant with the original machine. Two machines or networks are called power invariant when the sum of their individual instantaneous power are equal and the transformations describing two such systems are called power
+    \subsection{Voltage transformations}
+    The power relationship determined  for the primitive machine apply equally for the original machine. This condition is satisfied when the transformation relationships employed, define a primitive machine which is power invariant with the original machine. Two machines or networks are called power invariant when the sum of their individual instantaneous power are equal and the transformations describing two such systems are called power
     invariant transformations.
 
     With $abc$ to $\alpha \beta \gamma$ transformations of current established, the corresponding transformations of voltage are determined from power invariance,
@@ -3357,7 +3552,8 @@ Comparing (7.6) and (7.8),
         \label{eq:Eq7.30}
     \end{equation}
 
-    \subsection{Impedance and inductance transformations} Defining system impedances as $Z_{abc}$ and $[Z_{\alpha \beta \gamma}]$ respectively
+    \subsection{Impedance and inductance transformations}
+    Defining system impedances as $Z_{abc}$ and $[Z_{\alpha \beta \gamma}]$ respectively
     \begin{equation}
         [v_{abc}] = [Z_{abc}] [i_{abc}]
         \label{eq:Eq7.31}
@@ -3540,7 +3736,8 @@ Comparing (7.6) and (7.8),
     \end{align*}
 
     These expressions are only true for a machine with a uniform air-gap. A symmetrical three-phase winding with a non-uniform air-gap, i.e., saliency, is analysed later in Section 8.2.
-    \subsection{Flux-linkage transformations} The general relationship may be written
+    \subsection{Flux-linkage transformations}
+    The general relationship may be written
     \begin{align}
         [\varPsi] & = [L][i] \nonumber \\
         [\varPsi_{\alpha \beta \gamma}] & = [L_{\alpha \beta \gamma}][i_{\alpha \beta \gamma}]
@@ -3595,7 +3792,7 @@ Comparing (7.6) and (7.8),
 
     \section{Transformation between three-phase ($abc$) and two-phase ($d q \gamma$) windings}
 
-    The three-phase $abc$ winding and its supporting cylindrical structure, Fig. 7.1, is now assumed to rotate clockwise with angular velocity $\omega_r$ elec rad/s. Taking space-stationary, orthogonal $dq$ axes as reference, the instantaneous location of the $\alpha \beta$ axes is defined by the angle $\theta_r$, see Fig. 7.4. At $t = 0$ sec, the $d$-, $\alpha$- and phase $a$-axes are coincident.
+    The three-phase $abc$ winding and its supporting cylindrical structure, Fig.\ 7.1, is now assumed to rotate clockwise with angular velocity $\omega_r$ elec rad/s. Taking space-stationary, orthogonal $dq$ axes as reference, the instantaneous location of the $\alpha \beta$ axes is defined by the angle $\theta_r$, see Fig.\ 7.4. At $t = 0$ sec, the $d$-, $\alpha$- and phase $a$-axes are coincident.
 
     Resolving $F_{\alpha}$ and $F_{\beta}$ along the $d$-$q$ axes and summing components,
     \begin{equation}
@@ -3854,7 +4051,7 @@ Comparing (7.6) and (7.8),
     \section{The polyphase magnetic field}
     For a clear understanding of the operation of synchronous and asynchronous polyphase machines it is necessary to first study the magnetic properties of symmetrical polyphase windings.
 
-    It can be shown that polyphase windings of all possible phase number can be appropriately excited to provide similar space fundamental m.m.f.\ distributions. Arbitrarily choosing the symmetrical three-phase winding, Fig. 7.1, consider the phases are supplied with balanced three-phase voltages and currents of supply frequency $F = \omega /(2\pi)$.
+    It can be shown that polyphase windings of all possible phase number can be appropriately excited to provide similar space fundamental m.m.f.\ distributions. Arbitrarily choosing the symmetrical three-phase winding, Fig.\ 7.1, consider the phases are supplied with balanced three-phase voltages and currents of supply frequency $F = \omega /(2\pi)$.
 
     Before proceeding with the analysis, it is necessary to make reference to the time sequence of phase currents and the physical arrangement of phases, as both influence the character of the resultant space distributed m.m.f. Considering time sequence first, Figs. 7.5(a) and 7.5(b) show two balanced systems of three-phase currents with different time sequence of phase currents. With increasing time the order in which the phase current maxima arise are $a \rightarrow b \rightarrow c$ for \textit{positive
     sequence}  and $a \rightarrow c \rightarrow b$ for \textit{negative sequence}.
@@ -3893,7 +4090,7 @@ Comparing (7.6) and (7.8),
     \end{equation}
 
     The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs. 7.6(a) and 7.6(b).
-    Fig. 7.6(a)
+    Fig.\ 7.6(a)
     \begin{equation}
         [\overset{+}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
         \begin{bmatrix}
@@ -3975,7 +4172,7 @@ Comparing (7.6) and (7.8),
 
     It is seen from (7.87) that $F_d$ and $F_q$ are phase separated by $90^{\circ}$ in space and time.
 
-    In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig. 7.7.
+    In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig.\ 7.7.
 
     Contributions made by $F_d$ and $F_q$ at point \textbf{P}
     \begin{equation}
@@ -4013,340 +4210,345 @@ Comparing (7.6) and (7.8),
 
     As the same is true for all point on the graph of the function $F(t,\sigma)$ it represents a travelling wave of constant crest value $\frac{3}{2} I_m N_1$ moving with uniform angularvelocity $(\omega_r - \omega)$.
 
-    Three conditions of interest are illustrated in Fig. 7.8(a), (b) and (c),
+    Three conditions of interest are illustrated in Fig.\ 7.8(a), (b) and (c),
     \begin{flalign*}
-        \text{case }(a)\quad & \omega_r > \omega  && \dfrac{\Delta\sigma}{\Delta t} + ve, && \text{clockwise travel} && \text{Fig. 7.8(a)} \\
-        \text{case }(b) \quad & \omega_r < \omega && \dfrac{\Delta\sigma}{\Delta t} - ve, && \text{anticlockwise travel} && \text{Fig. 7.8(b)} \\
-        \text{case }(c) \quad &\omega_r = \omega && \dfrac{\Delta\sigma}{\Delta t} = 0, && \text{stationary wave} && \text{Fig. 7.8(c)}
+        \text{case }(a)\quad & \omega_r > \omega  && \dfrac{\Delta\sigma}{\Delta t} + ve, && \text{clockwise travel} && \text{Fig.\ 7.8(a)} \\
+        \text{case }(b) \quad & \omega_r < \omega && \dfrac{\Delta\sigma}{\Delta t} - ve, && \text{anticlockwise travel} && \text{Fig.\ 7.8(b)} \\
+        \text{case }(c) \quad &\omega_r = \omega && \dfrac{\Delta\sigma}{\Delta t} = 0, && \text{stationary wave} && \text{Fig.\ 7.8(c)}
     \end{flalign*}
 
     Finally, it is instructive to determine expressions for the instantaneous currents $i_d$ and $i_q$ for cases ($a$), ($b$) and ($c$).
     \begin{equation*}
         [i_{d q \gamma}] = \dfrac{[F_{d q \gamma}]}{N_2} \quad \text{and} \quad \dfrac{N_1}{N_2} = \sqrt*{\dfrac{2}{3}}
     \end{equation*}
-combining with (7.87)
-\begin{equation}
-    [i_{d q \gamma}] = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m
-    \begin{bmatrix}
-        \cos \{(\omega_r - \omega)t -K\} \\
-        -\sin \{(\omega_r - \omega)t -K\} \\
-        0
-    \end{bmatrix}
-    \label{eq:Eq7.93}
-\end{equation}
-case ($a$) $\omega_r > \omega$, $(\omega_r - \omega) = \omega$
-\begin{equation*}
-    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t - K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t - K)
-\end{equation*}
+    combining with (7.87)
+    \begin{equation}
+        [i_{d q \gamma}] = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m
+        \begin{bmatrix}
+            \cos \{(\omega_r - \omega)t -K\} \\
+            -\sin \{(\omega_r - \omega)t -K\} \\
+            0
+        \end{bmatrix}
+        \label{eq:Eq7.93}
+    \end{equation}
+    case ($a$) $\omega_r > \omega$, $(\omega_r - \omega) = \omega$
+    \begin{equation*}
+        i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t - K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t - K)
+    \end{equation*}
 
-$i_q$ leads $i_d$ by $90^{\circ}$; see Fig. 7.9(a) \\
-case ($b$) $\omega_r < \omega$, $(\omega_r - \omega) = -\omega'$
-\begin{equation*}
-    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t + K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t + K)
-\end{equation*}
+    $i_q$ leads $i_d$ by $90^{\circ}$; see Fig.\ 7.9(a) \\
+    case ($b$) $\omega_r < \omega$, $(\omega_r - \omega) = -\omega'$
+    \begin{equation*}
+        i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t + K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t + K)
+    \end{equation*}
 
-$i_d$ leads $i_q$ by $90^{\circ}$; see Fig. 7.9(b) \\
-case ($c$) $\omega_r = \omega$, $\omega' = 0$
-\begin{equation*}
-    i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos K \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin K
-\end{equation*}
-$K$ is a constant angle, $i_d$ and $i_q$ are steady direct currents.
+    $i_d$ leads $i_q$ by $90^{\circ}$; see Fig.\ 7.9(b) \\
+    case ($c$) $\omega_r = \omega$, $\omega' = 0$
+    \begin{equation*}
+        i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos K \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin K
+    \end{equation*}
+    $K$ is a constant angle, $i_d$ and $i_q$ are steady direct currents.
 
-From (7.87)
-\begin{equation*}
-    F_d = \dfrac{3}{2} I_m N_1 \cos K \qquad i_q = \dfrac{3}{2} I_m N_1 \sin K
-\end{equation*}
+    From (7.87)
+    \begin{equation*}
+        F_d = \dfrac{3}{2} I_m N_1 \cos K \qquad i_q = \dfrac{3}{2} I_m N_1 \sin K
+    \end{equation*}
 
-The crest value of the sinusoidally distributed resultant m.m.f.
-\begin{align*}
-    F_r & = F_d + jF_q\\
-    & = \dfrac{3}{2} I_m N_1 (\cos K + j \sin K) = \dfrac{3}{2} I_m N_1 e^{jK}
-\end{align*}
+    The crest value of the sinusoidally distributed resultant m.m.f.
+    \begin{align*}
+        F_r & = F_d + jF_q\\
+        & = \dfrac{3}{2} I_m N_1 (\cos K + j \sin K) = \dfrac{3}{2} I_m N_1 e^{jK}
+    \end{align*}
 
-The resultant m.m.f.\ distribution is stationary with a constant crest value $frac{3}{2}$ times the maximum value of a phase m.m.f.
-\chapter{Three-phase synchronous machine}
+    The resultant m.m.f.\ distribution is stationary with a constant crest value $frac{3}{2}$ times the maximum value of a phase m.m.f.
+    \chapter{Three-phase synchronous machine}
 
-A three-phase synchronous machine employs two main windings, a field winding supplied with direct current and a three-phase winding excited with impressed or derived alternating currents depending on the machine mode of action being motoring or generating. It is assumed that both winding m.m.f.s are space-fundamentals. With respect to the winding of origin, the field m.m.f.\ is stationary and the resultant three-phase m.m.f.\ moves as a travelling wave, see Section 4.2.3.
+    A three-phase synchronous machine employs two main windings, a field winding supplied with direct current and a three-phase winding excited with impressed or derived alternating currents depending on the machine mode of action being motoring or generating. It is assumed that both winding m.m.f.s are space-fundamentals. With respect to the winding of origin, the field m.m.f.\ is stationary and the resultant three-phase m.m.f.\ moves as a travelling wave, see Section 4.2.3.
 
-A constant phase displacement of m.m.f.s is achieved in practice using two alternative forms of machine construction. With the three-phase winding stationary the field winding rotates at $\omega_r = \omega$ electrical rad/s in synchronism with the travelling wave of stator m.m.f. Alternatively, with the field winding stationary the three-phase winding rotates at $\omega_r = \omega$ electrical rad/s in contradirection to its travelling wave of m.m.f. With either form of
-construction the speed of mechanical rotation is a unique value $n_s = \omega / (2 \pi \text{pole-pairs})$ r.p.s.\ called the synchronous speed, from which the name of this type of machine is derived.
+    A constant phase displacement of m.m.f.s is achieved in practice using two alternative forms of machine construction. With the three-phase winding stationary the field winding rotates at $\omega_r = \omega$ electrical rad/s in synchronism with the travelling wave of stator m.m.f. Alternatively, with the field winding stationary the three-phase winding rotates at $\omega_r = \omega$ electrical rad/s in contradirection to its travelling wave of m.m.f. With either form of
+    construction the speed of mechanical rotation is a unique value $n_s = \omega / (2 \pi \text{pole-pairs})$ r.p.s.\ called the synchronous speed, from which the name of this type of machine is derived.
 
-A three-phase stator construction is employed for all but the smallest synchronous machines as the three-phase winding can be linked with rigid connections to external circuits and comparatively light-duty slip rings supply the field current. 
+    A three-phase stator construction is employed for all but the smallest synchronous machines as the three-phase winding can be linked with rigid connections to external circuits and comparatively light-duty slip rings supply the field current. 
 
-For steady-state synchronous motor or generator action, the phase separation $\theta$ between the stator and rotor m.m.f.s is a function of the mechanical or electrical loading. If the load is gradually increased so as not to cause mechanical oscillation of the rotor, $\theta$ and the electromagnetic torque $T_e$ increase in value until $T_e$, becomes a maximum called the \textit{pull-out torque}. Any attempt to increase the load further, breaks the magnetic locking of the stator and rotor
-fields and synchronous operation is lost. Following loss of synchronism, the three-phase winding is usually disconnected from external circuits by circuit-breaker operation to prevent the flow of excessive three-phase currents.
+    For steady-state synchronous motor or generator action, the phase separation $\theta$ between the stator and rotor m.m.f.s is a function of the mechanical or electrical loading. If the load is gradually increased so as not to cause mechanical oscillation of the rotor, $\theta$ and the electromagnetic torque $T_e$ increase in value until $T_e$, becomes a maximum called the \textit{pull-out torque}. Any attempt to increase the load further, breaks the magnetic locking of the stator and rotor
+    fields and synchronous operation is lost. Following loss of synchronism, the three-phase winding is usually disconnected from external circuits by circuit-breaker operation to prevent the flow of excessive three-phase currents.
 
-As synchronous operation is only possible at synchronous speed $n_s$, synchronous motors are not self-starting and auxiliary methods have to be employed. The most common method is the use of closed windings, called damper or amortisseur windings, which are housed in slots at the surface of the field pole structure. Initially, with the field supply open and the three-phase winding appropriately excited, the damper winding acts as the cage of an induction motor and the machine runs up to near synchronous speed. Energizing the field winding pulls the rotor into step at synchronous speed and load can then be applied.
+    As synchronous operation is only possible at synchronous speed $n_s$, synchronous motors are not self-starting and auxiliary methods have to be employed. The most common method is the use of closed windings, called damper or amortisseur windings, which are housed in slots at the surface of the field pole structure. Initially, with the field supply open and the three-phase winding appropriately excited, the damper winding acts as the cage of an induction motor and the machine runs up to near synchronous speed. Energizing the field winding pulls the rotor into step at synchronous speed and load can then be applied.
 
-Damper windings are also fitted to suppress mechanical oscillations of the rotor about synchronous speed, called \textit{hunting}, induced by sudden changes in the electrical or mechanical loading. Immediately following a sudden change in load the m.m.f.\ displacement angle $\theta$ is maintained momentarily at the predisturbance value. The mechanical and electromagnetic torques, $T_m$ and $T_e$, are unequal and the difference torque decelerates or accelerates the rotor depending on whether
-there has been an increase or decrease of load. With time the m.m.f.\ displacement angle changes to that required for zero accelerating torque, $T_m$ and $T_e$ balanced, but due to rotor inertia overshooting occurs with consequent hunting. During the disturbance the damper winding moves relative to the air-gap flux, voltages are induced by flux-cutting and current circulates. By Lenz's Law the interaction of the damper winding and main fluxes produce damping torques which oppose rotor hunting.
+    Damper windings are also fitted to suppress mechanical oscillations of the rotor about synchronous speed, called \textit{hunting}, induced by sudden changes in the electrical or mechanical loading. Immediately following a sudden change in load the m.m.f.\ displacement angle $\theta$ is maintained momentarily at the predisturbance value. The mechanical and electromagnetic torques, $T_m$ and $T_e$, are unequal and the difference torque decelerates or accelerates the rotor depending on whether
+    there has been an increase or decrease of load. With time the m.m.f.\ displacement angle changes to that required for zero accelerating torque, $T_m$ and $T_e$ balanced, but due to rotor inertia overshooting occurs with consequent hunting. During the disturbance the damper winding moves relative to the air-gap flux, voltages are induced by flux-cutting and current circulates. By Lenz's Law the interaction of the damper winding and main fluxes produce damping torques which oppose rotor hunting.
 
-In this chapter a study is made of the transient and steady-state performance of synchronous machines. Consider a two-pole three­phase machine embodying the idealizing assumptions of Section 5.1. In essential form the machine, Fig. 8.1, comprises a salient-pole stator with a field winding $f$ and a cylindrical three-phase rotor with phases $abc$ represented as three concentrated coils. A choice of clockwise rotating phases and a stator field winding has been made to accord with the convention employed for d.c.\ commutator machines.
+    In this chapter a study is made of the transient and steady-state performance of synchronous machines. Consider a two-pole three­phase machine embodying the idealizing assumptions of Section 5.1. In essential form the machine, Fig.\ 8.1, comprises a salient-pole stator with a field winding $f$ and a cylindrical three-phase rotor with phases $abc$ represented as three concentrated coils. A choice of clockwise rotating phases and a stator field winding has been made to accord with the convention employed for d.c.\ commutator machines.
 
-The stator is provided with two orthogonal axes of symmetry, a $d$-axis coincident with the pole axis and a $q$-axis situated midway between poles. Subsequent analysis will assume the presence of a damper winding, the winding to be represented equivalently as two closed stator coils $s$ and $t$ located respectively on the $d$-axis and $q$-axis.
+    The stator is provided with two orthogonal axes of symmetry, a $d$-axis coincident with the pole axis and a $q$-axis situated midway between poles. Subsequent analysis will assume the presence of a damper winding, the winding to be represented equivalently as two closed stator coils $s$ and $t$ located respectively on the $d$-axis and $q$-axis.
 
-\section{Introduction to machine analysis }
-In this chapter, previously determined analytical results are employed to derive the transient and steady-state performance of the synchronous machine illustrated in Fig. 8.1. 
+    \section{Introduction to machine analysis}
+    In this chapter, previously determined analytical results are employed to derive the transient and steady-state performance of the synchronous machine illustrated in Fig.\ 8.1. 
 
-The synchronous machine is represented as an equivalent $d$-$q$ axis primitive machine comprising a stationary array of stator coils and pseudo-stationary rotor coils of known self-and mutual inductance. To determine the primitive machine inductances., expressions derived initially for the self- and mutual inductances of the synchronous machine windings are subsequently transformed to $d q \gamma$-axis quantities using the $abc$ to $d q \gamma$ axis transformations of Section 7.2. Matrices
-$[L]$ and $[G]$,  formed by the method described in Section 5.5.1, are employed to provide characteristic voltage and torque equations for the primitive machine and therefore the synchronous machine. From these equations the performance of the synchronous machine is derived. 
+    The synchronous machine is represented as an equivalent $d$-$q$ axis primitive machine comprising a stationary array of stator coils and pseudo-stationary rotor coils of known self-and mutual inductance. To determine the primitive machine inductances., expressions derived initially for the self- and mutual inductances of the synchronous machine windings are subsequently transformed to $d q \gamma$-axis quantities using the $abc$ to $d q \gamma$ axis transformations of Section 7.2. Matrices
+    $[L]$ and $[G]$,  formed by the method described in Section 5.5.1, are employed to provide characteristic voltage and torque equations for the primitive machine and therefore the synchronous machine. From these equations the performance of the synchronous machine is derived. 
 
-\section{Idealized machine inductances}
-Sections 8.2.1 and 8.2.2 are concerned with the derivation of expressions for the self- and mutual inductances of the synchronous machine and primitive machine windings. The derivation assumes the machines to be idealized according to the simplifying assumptions of Section 5.1.
+    \section{Idealized machine inductances}
+    Sections 8.2.1 and 8.2.2 are concerned with the derivation of expressions for the self- and mutual inductances of the synchronous machine and primitive machine windings. The derivation assumes the machines to be idealized according to the simplifying assumptions of Section 5.1.
 
-\subsection{Synchronous machine inductances}
-Each winding of Fig. 8.1 is considered to produce a self flux comprising separate components of leakage and main gap flux linking all turns, i.e., no partial flux-linkage. The two flux components result from the action of a coil m.m.f.\ on two parallel paths of different permeance.
+    \subsection{Synchronous machine inductances}
+    Each winding of Fig.\ 8.1 is considered to produce a self flux comprising separate components of leakage and main gap flux linking all turns, i.e., no partial flux-linkage. The two flux components result from the action of a coil m.m.f.\ on two parallel paths of different permeance.
 
-\subsubsection{\textit{Stator self- and mutual inductance}} The rotor being cylindrical, the m.m.f.s of stator windings $f$, $s$ and $t$ act on magnetic paths of constant permeance for all values of $\theta_r$. The self-inductances $L_f$, $L_s$ and $L_t$ and the mutual inductance $M_{fs}$ are all of constant value.
+    \subsubsection{\textit{Stator self- and mutual inductance}}
+    The rotor being cylindrical, the m.m.f.s of stator windings $f$, $s$ and $t$ act on magnetic paths of constant permeance for all values of $\theta_r$. The self-inductances $L_f$, $L_s$ and $L_t$ and the mutual inductance $M_{fs}$ are all of constant value.
 
-\subsubsection{\textit{Rotor self-inductances}} Referring to Fig. 8.2, the instantaneous phase m.m.f.\ $F_{\textup{a}}$ is resolved into $d$-axis and $q$-axis components.
-\begin{equation}
-    \begin{aligned}
-        F_{d\textup{a}} & = F_{\textup{a}} \cos \theta_r = N_1 i_{\textup{a}} \cos \theta_r \\
-        F_{q\textup{a}} & = - F_{\textup{a}} \sin \theta_r = - N_1 i_{\textup{a}} \sin \theta_r
-    \end{aligned}
-    \label{eq:Eq8.1}
-\end{equation}
-$F_{d\textup{a}}$ and $F_{q\textup{a}}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
+    \subsubsection{\textit{Rotor self-inductances}}
+    Referring to Fig.\ 8.2, the instantaneous phase m.m.f.\ $F_{\textup{a}}$ is resolved into $d$-axis and $q$-axis components.
+    \begin{equation}
+        \begin{aligned}
+            F_{d\textup{a}} & = F_{\textup{a}} \cos \theta_r = N_1 i_{\textup{a}} \cos \theta_r \\
+            F_{q\textup{a}} & = - F_{\textup{a}} \sin \theta_r = - N_1 i_{\textup{a}} \sin \theta_r
+        \end{aligned}
+        \label{eq:Eq8.1}
+    \end{equation}
+    $F_{d\textup{a}}$ and $F_{q\textup{a}}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
 
-Phase $a$, $d$-$q$ axis flux-linkages
-\begin{equation}
-    \begin{aligned}
-        \varPsi_{d\textup{a}} & = N_1 \Lambda_d F_{d\textup{a}} = {(N_1)}^2 \Lambda_d i_{\textup{a}} \cos \theta_r \\
-\varPsi_{q\textup{a}} & = N_1 \Lambda_q F_{q\textup{a}} = - {(N_1)}^2 \Lambda_q i_{\textup{a}} \sin \theta_r 
-    \end{aligned}
-    \label{eq:Eq8.2}
-\end{equation}
+    Phase $a$, $d$-$q$ axis flux-linkages
+    \begin{equation}
+        \begin{aligned}
+            \varPsi_{d\textup{a}} & = N_1 \Lambda_d F_{d\textup{a}} = {(N_1)}^2 \Lambda_d i_{\textup{a}} \cos \theta_r \\
+            \varPsi_{q\textup{a}} & = N_1 \Lambda_q F_{q\textup{a}} = - {(N_1)}^2 \Lambda_q i_{\textup{a}} \sin \theta_r 
+        \end{aligned}
+        \label{eq:Eq8.2}
+    \end{equation}
 
-The gap flux-linkage for phase $a$
-\begin{equation}
-    \varPsi_{q\textup{a}} = \varPsi_{d\textup{a}} \cos \theta_r - \varPsi_{q\textup{a}} \sin \theta_r
-    \label{eq:Eq8.3}
-\end{equation}
+    The gap flux-linkage for phase $a$
+    \begin{equation}
+        \varPsi_{q\textup{a}} = \varPsi_{d\textup{a}} \cos \theta_r - \varPsi_{q\textup{a}} \sin \theta_r
+        \label{eq:Eq8.3}
+    \end{equation}
 
-From (8.2) and (8.3)
-\begin{align}
-    \varPsi_{q\textup{a}} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
-    & = {(N_1)}^2 i_{\textup{a}} \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
-    \label{eq:Eq8.4}
-\end{align}
+    From (8.2) and (8.3)
+    \begin{align}
+        \varPsi_{q\textup{a}} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
+        & = {(N_1)}^2 i_{\textup{a}} \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
+        \label{eq:Eq8.4}
+    \end{align}
 
-The leakage flux of a rotor phase is little affected by the rotor position. Assuming a constant leakage permeance $\Lambda_l$,
+    The leakage flux of a rotor phase is little affected by the rotor position. Assuming a constant leakage permeance $\Lambda_l$,
 
-phase $a$, leakage flux-linkage
-\begin{equation}
-    \varPsi_{l\textup{a}} = N_1 \Lambda_l F_{\textup{a}} = {(N_1)}^2 \Lambda_l i_{\textup{a}} 
-    \label{eq:Eq8.5}
-\end{equation}
+    phase $a$, leakage flux-linkage
+    \begin{equation}
+        \varPsi_{l\textup{a}} = N_1 \Lambda_l F_{\textup{a}} = {(N_1)}^2 \Lambda_l i_{\textup{a}} 
+        \label{eq:Eq8.5}
+    \end{equation}
 
-Total flux-linkage
-\begin{equation}
-    \varPsi_{\textup{a}} = \varPsi_{l\textup{a}} + \varPsi_{g\textup{a}}
-    \label{eq:Eq8.6}
-\end{equation}
+    Total flux-linkage
+    \begin{equation}
+        \varPsi_{\textup{a}} = \varPsi_{l\textup{a}} + \varPsi_{g\textup{a}}
+        \label{eq:Eq8.6}
+    \end{equation}
 
-From (8.4) and (8.5)
-\begin{equation}
-    \varPsi_{\textup{a}} = {(N_1)}^2 i_{\textup{a}} \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
-    \label{eq:Eq8.7}
-\end{equation}
+    From (8.4) and (8.5)
+    \begin{equation}
+        \varPsi_{\textup{a}} = {(N_1)}^2 i_{\textup{a}} \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
+        \label{eq:Eq8.7}
+    \end{equation}
 
-Defining inductances
-\begin{equation}
-    \begin{aligned}
-        L_l & ={(N_1)}^2 \Lambda_l \\
-        L_1 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) \\
-        L_2 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \\
-    \end{aligned}
-    \label{eq:Eq8.8}
-\end{equation}
-Self-inductance of phase $a$
-\begin{equation}
-    \mathcal{L}_{\textup{aa}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2\theta_r
-    \label{eq:Eq8.9}
-\end{equation}
-where $\mathcal{L}$ denoted a self- or mutual inductance which depends on the angle $\theta_r$.
+    Defining inductances
+    \begin{equation}
+        \begin{aligned}
+            L_l & ={(N_1)}^2 \Lambda_l \\
+            L_1 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) \\
+            L_2 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \\
+        \end{aligned}
+        \label{eq:Eq8.8}
+    \end{equation}
+    Self-inductance of phase $a$
+    \begin{equation}
+        \mathcal{L}_{\textup{aa}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2\theta_r
+        \label{eq:Eq8.9}
+    \end{equation}
+    where $\mathcal{L}$ denoted a self- or mutual inductance which depends on the angle $\theta_r$.
 
-Similarly, the self-inductances of phases $b$ and $c$ are
-\begin{equation}
-    \mathcal{L}_{\textup{bb}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r - 120^{\circ})
-    \label{eq:Eq8.10}
-\end{equation}
-\begin{equation}
-    \mathcal{L}_{\textup{cc}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r + 120^{\circ})
-    \label{eq:Eq8.11}
-\end{equation}
+    Similarly, the self-inductances of phases $b$ and $c$ are
+    \begin{equation}
+        \mathcal{L}_{\textup{bb}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r - 120^{\circ})
+        \label{eq:Eq8.10}
+    \end{equation}
+    \begin{equation}
+        \mathcal{L}_{\textup{cc}} = \dfrac{\varPsi_{\textup{a}}}{i_{\textup{a}}} = L_l +L_1 +L_2 \cos 2(\theta_r + 120^{\circ})
+        \label{eq:Eq8.11}
+    \end{equation}
 
-\subsubsection{\textit{Rotor mutual inductance}} The mutual inductance between any pair of rotor coils is determined from the mutual flux-linkage obtained with one coil excited and the other open-circuit.
+    \subsubsection{\textit{Rotor mutual inductance}}
+    The mutual inductance between any pair of rotor coils is determined from the mutual flux-linkage obtained with one coil excited and the other open-circuit.
 
-Consider phase coils $a$ and $b$ with coil $a$ excited and coil $b$ open-circuit.
+    Consider phase coils $a$ and $b$ with coil $a$ excited and coil $b$ open-circuit.
 
-Resolving $\varPsi_{d\textup{a}}$ and $\varPsi_{q\textup{a}}$, from (8.3), along the axis of phase $b$ and summing components to give total flux-linkage with phase $b$,
-\begin{align}
-    \varPsi_{\textup{ba}} & = \varPsi_{q\textup{a}} \cos (\theta_r + 90^{\circ} -120^{\circ}) +\varPsi_{d\textup{a}} \cos(\theta_r - 120^{circ}) \nonumber \\
-    \varPsi_{\textup{ba}} & = -\varPsi_{q\textup{a}} \sin (\theta_r - 120^{\circ}) + \varPsi_{d\textup{a}} \cos(\theta_r -120^{\circ}) 
-    \label{eq:Eq8.12}
-\end{align}
+    Resolving $\varPsi_{d\textup{a}}$ and $\varPsi_{q\textup{a}}$, from (8.3), along the axis of phase $b$ and summing components to give total flux-linkage with phase $b$,
+    \begin{align}
+        \varPsi_{\textup{ba}} & = \varPsi_{q\textup{a}} \cos (\theta_r + 90^{\circ} -120^{\circ}) +\varPsi_{d\textup{a}} \cos(\theta_r - 120^{circ}) \nonumber \\
+        \varPsi_{\textup{ba}} & = -\varPsi_{q\textup{a}} \sin (\theta_r - 120^{\circ}) + \varPsi_{d\textup{a}} \cos(\theta_r -120^{\circ}) 
+        \label{eq:Eq8.12}
+    \end{align}
 
-Substituting (8.2) in (8.12)
-\begin{align}
-    \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}}[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
-    \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}} \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
-    \label{eq:Eq8.13}
-\end{align}
+    Substituting (8.2) in (8.12)
+    \begin{align}
+        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}}[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
+        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}} \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
+        \label{eq:Eq8.13}
+    \end{align}
 
-Ignoring the small amount of leakage flux which does not cross the air-gap and substituting (8.8) in (8.13), the expression for mutual inductance between phases $a$ and $b$ is
-\begin{equation}
-    \mathcal{L}_{\textup{ba}} = \mathcal{L}_{\textup{ab}} = \dfrac{\varPsi_{\textup{ba}}}{i_{\textup{a}}} = \dfrac{-L_1}{2} + L_2 \cos 2(\theta_r - 60^{\circ})
-    \label{eq:Eq8.14}
-\end{equation}
+    Ignoring the small amount of leakage flux which does not cross the air-gap and substituting (8.8) in (8.13), the expression for mutual inductance between phases $a$ and $b$ is
+    \begin{equation}
+        \mathcal{L}_{\textup{ba}} = \mathcal{L}_{\textup{ab}} = \dfrac{\varPsi_{\textup{ba}}}{i_{\textup{a}}} = \dfrac{-L_1}{2} + L_2 \cos 2(\theta_r - 60^{\circ})
+        \label{eq:Eq8.14}
+    \end{equation}
 
-Expressions for $\mathcal{L}_{\textup{cb}}$ and $\mathcal{L}_{\textup{ac}}$ can be written directly by noting in (8.14) that $(\theta_r - 60^{\circ})$ is the angle measured from the $d$-axis to a line bisecting the angle between the axes of phase $a$ and $b$.
+    Expressions for $\mathcal{L}_{\textup{cb}}$ and $\mathcal{L}_{\textup{ac}}$ can be written directly by noting in (8.14) that $(\theta_r - 60^{\circ})$ is the angle measured from the $d$-axis to a line bisecting the angle between the axes of phase $a$ and $b$.
 
-Thus, for phases $c$ and $b$ the angle us $(\theta_r - 180^{\circ})$ and for phases $c$ and $a$, $(\theta_r + 60^{\circ})$.
-\begin{align}
-    \mathcal{L}_{\textup{cb}} & = \mathcal{L}_{\textup{bc}} = \dfrac{\varPsi_{\textup{cb}}}{i_{\textup{b}}} = \dfrac{-L_1}{2} \cos 2\theta_r \\
-    \mathcal{L}_{\textup{ac}} & = \mathcal{L}_{\textup{ca}} = \dfrac{\varPsi_{\textup{ac}}}{i_{\textup{c}}} = \dfrac{-L_1}{2} \cos 2(\theta_r + 60^{\circ}) 
-    \label{eq:Eq8.16}
-\end{align}
+    Thus, for phases $c$ and $b$ the angle us $(\theta_r - 180^{\circ})$ and for phases $c$ and $a$, $(\theta_r + 60^{\circ})$.
+    \begin{align}
+        \mathcal{L}_{\textup{cb}} & = \mathcal{L}_{\textup{bc}} = \dfrac{\varPsi_{\textup{cb}}}{i_{\textup{b}}} = \dfrac{-L_1}{2} \cos 2\theta_r \\
+        \mathcal{L}_{\textup{ac}} & = \mathcal{L}_{\textup{ca}} = \dfrac{\varPsi_{\textup{ac}}}{i_{\textup{c}}} = \dfrac{-L_1}{2} \cos 2(\theta_r + 60^{\circ}) 
+        \label{eq:Eq8.16}
+    \end{align}
 
-\subsubsection{\textit{Stator-rotor mutual inductances}} These expressions can be written directly by inspection of Fig. 8.1,
-\begin{equation}
-    \begin{aligned}
-        \mathcal{L}_{\textup{a}f} & = \mathcal{L}_{f\textup{a}} = M_{rf} \cos \theta_r \\
-        \mathcal{L}_{\textup{b}f} & = \mathcal{L}_{f\textup{b}} = M_{rf} \cos (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{\textup{c}f} & = \mathcal{L}_{f\textup{c}} = M_{rf} \cos (\theta_r + 120^{\circ}) \\
-    \end{aligned}
-    \label{eq:Eq8.17}
-\end{equation}
+    \subsubsection{\textit{Stator-rotor mutual inductances}}
+    These expressions can be written directly by inspection of Fig.\ 8.1,
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{L}_{\textup{a}f} & = \mathcal{L}_{f\textup{a}} = M_{rf} \cos \theta_r \\
+            \mathcal{L}_{\textup{b}f} & = \mathcal{L}_{f\textup{b}} = M_{rf} \cos (\theta_r - 120^{\circ}) \\
+            \mathcal{L}_{\textup{c}f} & = \mathcal{L}_{f\textup{c}} = M_{rf} \cos (\theta_r + 120^{\circ}) \\
+        \end{aligned}
+        \label{eq:Eq8.17}
+    \end{equation}
 
-$M_{rf}$ is the maximum value of mutual inductance between a rotor phase and the field winding $f$,
-\begin{equation}
-    \begin{aligned}
-        \mathcal{L}_{\textup{a}s} & = \mathcal{L}_{s\textup{a}} = M_{rs} \cos \theta_r \\
-        \mathcal{L}_{\textup{b}s} & = \mathcal{L}_{s\textup{b}} = M_{rs} \cos (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{\textup{c}s} & = \mathcal{L}_{s\textup{c}} = M_{rs} \cos (\theta_r + 120^{\circ}) \\
-    \end{aligned}
-    \label{eq:Eq8.18}
-\end{equation}
+    $M_{rf}$ is the maximum value of mutual inductance between a rotor phase and the field winding $f$,
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{L}_{\textup{a}s} & = \mathcal{L}_{s\textup{a}} = M_{rs} \cos \theta_r \\
+            \mathcal{L}_{\textup{b}s} & = \mathcal{L}_{s\textup{b}} = M_{rs} \cos (\theta_r - 120^{\circ}) \\
+            \mathcal{L}_{\textup{c}s} & = \mathcal{L}_{s\textup{c}} = M_{rs} \cos (\theta_r + 120^{\circ}) \\
+        \end{aligned}
+        \label{eq:Eq8.18}
+    \end{equation}
 
-$M_{rs}$ is the maximum value of mutual inductance between a rotor phase and closed winding $s$
-\begin{equation}
-    \begin{aligned}
-        \mathcal{L}_{\textup{a}t} & = \mathcal{L}_{t\textup{a}} = M_{rt} \cos (\theta_r + 90^{\circ}) = -M_{rt} \sin \theta_r \\
-        \mathcal{L}_{\textup{b}t} & = \mathcal{L}_{t\textup{b}} = M_{rt} \cos (\theta_r + 90^{\circ} - 120^{\circ}) =  -M_{rt} \sin (\theta_r - 120^{\circ}) \\
-        \mathcal{L}_{\textup{c}t} & = \mathcal{L}_{t\textup{c}} = M_{rt} \cos (\theta_r + 90^{\circ} + 120^{\circ}) =  -M_{rt} \sin (\theta_r + 120^{\circ}) \\
-    \end{aligned}
-    \label{eq_Eq8.19}
-\end{equation}
+    $M_{rs}$ is the maximum value of mutual inductance between a rotor phase and closed winding $s$
+    \begin{equation}
+        \begin{aligned}
+            \mathcal{L}_{\textup{a}t} & = \mathcal{L}_{t\textup{a}} = M_{rt} \cos (\theta_r + 90^{\circ}) = -M_{rt} \sin \theta_r \\
+            \mathcal{L}_{\textup{b}t} & = \mathcal{L}_{t\textup{b}} = M_{rt} \cos (\theta_r + 90^{\circ} - 120^{\circ}) =  -M_{rt} \sin (\theta_r - 120^{\circ}) \\
+            \mathcal{L}_{\textup{c}t} & = \mathcal{L}_{t\textup{c}} = M_{rt} \cos (\theta_r + 90^{\circ} + 120^{\circ}) =  -M_{rt} \sin (\theta_r + 120^{\circ}) \\
+        \end{aligned}
+        \label{eq_Eq8.19}
+    \end{equation}
 
-$M_{rt}$ is the maximum value of mutual inductance between a rotor phase and close winding $t$.
+    $M_{rt}$ is the maximum value of mutual inductance between a rotor phase and close winding $t$.
 
-\subsection{Primitive machine inductances} Writing in matrix form flux-linkage equations for the coils shown in Fig. 8.1
-\begin{equation}
-    \begin{bmatrix}
-        \varPsi_{\textup{a}} \\[1ex] \varPsi_{\textup{b}} \\[1ex] \varPsi_{\textup{c}} \\[1ex] \varPsi_{f} \\[1ex] \varPsi_{s} \\[1ex] \varPsi_{t}
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
+    \subsection{Primitive machine inductances}
+    Writing in matrix form flux-linkage equations for the coils shown in Fig.\ 8.1
+    \begin{equation}
+        \begin{bmatrix}
+            \varPsi_{\textup{a}} \\[1ex] \varPsi_{\textup{b}} \\[1ex] \varPsi_{\textup{c}} \\[1ex] \varPsi_{f} \\[1ex] \varPsi_{s} \\[1ex] \varPsi_{t}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
 
-        \mathcal{L}_{\textup{aa}} & \mathcal{L}_{\textup{ab}} & \mathcal{L}_{\textup{ac}} & \mathcal{L}_{\textup{a}f} & \mathcal{L}_{\textup{a}s} & \mathcal{L}_{\textup{a}t} \\[1ex]  
-        \mathcal{L}_{\textup{ba}} & \mathcal{L}_{\textup{bb}} & \mathcal{L}_{\textup{bc}} & \mathcal{L}_{\textup{b}f} & \mathcal{L}_{\textup{b}s} & \mathcal{L}_{\textup{b}t} \\[1ex]
-        \mathcal{L}_{\textup{ca}} & \mathcal{L}_{\textup{cb}} & \mathcal{L}_{\textup{cc}} & \mathcal{L}_{\textup{c}f} & \mathcal{L}_{\textup{c}s} & \mathcal{L}_{\textup{c}t} \\[1ex]  
-        \mathcal{L}_{f\textup{a}} & \mathcal{L}_{f\textup{b}} & \mathcal{L}_{f\textup{c}} & \mathcal{L}_{ff} & \mathcal{L}_{fs} & 0 \\[1ex]  
-        \mathcal{L}_{s\textup{a}} & \mathcal{L}_{s\textup{b}} & \mathcal{L}_{s\textup{c}} & \mathcal{L}_{sf} & \mathcal{L}_{ss} & 0 \\[1ex]  
-        \mathcal{L}_{t\textup{a}} & \mathcal{L}_{t\textup{b}} & \mathcal{L}_{t\textup{c}} & 0 & 0 & \mathcal{L}_{tt} 
-    \end{bmatrix}
-    \begin{bmatrix}
-        i_{\textup{a}} \\[1ex] i_{\textup{b}} \\[1ex] i_{\textup{c}} \\[1ex] i_{f} \\[1ex] i_{s} \\[1ex] i_{t}
-    \end{bmatrix}
-    \label{eq:Eq8.20}
-\end{equation} %TODO diagonal de la matriz
+            \mathcal{L}_{\textup{aa}} & \mathcal{L}_{\textup{ab}} & \mathcal{L}_{\textup{ac}} & \mathcal{L}_{\textup{a}f} & \mathcal{L}_{\textup{a}s} & \mathcal{L}_{\textup{a}t} \\[1ex]  
+            \mathcal{L}_{\textup{ba}} & \mathcal{L}_{\textup{bb}} & \mathcal{L}_{\textup{bc}} & \mathcal{L}_{\textup{b}f} & \mathcal{L}_{\textup{b}s} & \mathcal{L}_{\textup{b}t} \\[1ex]
+            \mathcal{L}_{\textup{ca}} & \mathcal{L}_{\textup{cb}} & \mathcal{L}_{\textup{cc}} & \mathcal{L}_{\textup{c}f} & \mathcal{L}_{\textup{c}s} & \mathcal{L}_{\textup{c}t} \\[1ex]  
+            \mathcal{L}_{f\textup{a}} & \mathcal{L}_{f\textup{b}} & \mathcal{L}_{f\textup{c}} & \mathcal{L}_{ff} & \mathcal{L}_{fs} & 0 \\[1ex]  
+            \mathcal{L}_{s\textup{a}} & \mathcal{L}_{s\textup{b}} & \mathcal{L}_{s\textup{c}} & \mathcal{L}_{sf} & \mathcal{L}_{ss} & 0 \\[1ex]  
+            \mathcal{L}_{t\textup{a}} & \mathcal{L}_{t\textup{b}} & \mathcal{L}_{t\textup{c}} & 0 & 0 & \mathcal{L}_{tt} 
+        \end{bmatrix}
+        \begin{bmatrix}
+            i_{\textup{a}} \\[1ex] i_{\textup{b}} \\[1ex] i_{\textup{c}} \\[1ex] i_{f} \\[1ex] i_{s} \\[1ex] i_{t}
+        \end{bmatrix}
+        \label{eq:Eq8.20}
+    \end{equation} %TODO diagonal de la matriz
 
-Alternatively (8.20) may be written,
-\begin{equation}
-    [\varPsi_{\textup{abc}fst}] = [\mathcal{L}_{\textup{abc}fst}] [i_{\textup{abc}fst}]
-    \label{eq:Eq8.21}
-\end{equation}
+    Alternatively (8.20) may be written,
+    \begin{equation}
+        [\varPsi_{\textup{abc}fst}] = [\mathcal{L}_{\textup{abc}fst}] [i_{\textup{abc}fst}]
+        \label{eq:Eq8.21}
+    \end{equation}
 %3168,3372s/\(_{\w\{-}\)\(abc\|ab\|ac\|ba\|bc\|ca\|cb\|[abc]\)\(\w\{-}}\)/\1\\textup{\2}\3/g
 
-Substituting $[\mathcal{L}_{\textup{abc}fst}]$ the expressions derived in Section 8.2.1 for the synchronous machine inductances,\\ \vfill \pagebreak[4]
-\begin{multline}
-    [\mathcal{L}_{\textup{abc}fst}] = \\ 
-    \begin{bmatrix}
-        \begin{bmatrix*}[l]
-            \begin{pmatrix}
-                L_l + L_1 \\ + L_2 \cos 2\theta_r 
-            \end{pmatrix}
-            & 
-            \begin{pmatrix}
-                -0.5 L_1 \\ + L_2 \cos 2(\theta_r - 60^{\circ})
-            \end{pmatrix}
-            & 
-            \begin{pmatrix}
-                -0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ})
-            \end{pmatrix}
-            \\
-            \begin{pmatrix}
-                - 0.5 L_1 \\ + L_2 \cos 2(\theta_r -60^{\circ}) 
-            \end{pmatrix}
-            &
-            \begin{pmatrix}
-                L_l + L_1 \\ + L_2 \cos 2(\theta_r - 120^{\circ})
-            \end{pmatrix}
-            &
-            \begin{pmatrix}
-                -0.5 L_1 \\ + L_2 \cos 2\theta_r
-            \end{pmatrix}
-            \\
-            \begin{pmatrix}
-                - 0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ}) 
-            \end{pmatrix}
-            &
-            \begin{pmatrix}
-                -0.5 L_1 \\ + L_2 \cos 2 \theta_r
-            \end{pmatrix}
-            &
-            \begin{pmatrix}
-                L_l + L_1 \\ + L_2 \cos 2(\theta_r  + 120^{\circ})
-            \end{pmatrix}
-        \end{bmatrix*} &
+    Substituting $[\mathcal{L}_{\textup{abc}fst}]$ the expressions derived in Section 8.2.1 for the synchronous machine inductances,\\ \vfill \pagebreak[4]
+    \begin{multline}
+        [\mathcal{L}_{\textup{abc}fst}] = \\ 
         \begin{bmatrix}
-            M_{rf} \cos \theta_r & M_{rs} \cos \theta_r & - M_{rt} \sin \theta_r \\
-            M_{rf} \cos (\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r - 120^{\circ}) & - M_{rt} \sin (\theta_r - 120^{\circ}) \\ 
-            M_{rf} \cos(\theta_r + 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) & - M_{rt} \cos(\theta_r + 120^{\circ}) \\
-        \end{bmatrix}\\
-        \begin{bmatrix}
-            M_{rf} \cos\theta_r & M_{rf} \cos(\theta_r - 120^{\circ}) & M_{rf} \cos(\theta_r + 120^{\circ}) \\
-            M_{rs} \cos\theta_r & M_{rs} \cos(\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) \\
-            - M_{rt} \sin \theta_r & - M_{rt} \sin (\theta_r - 120^{\circ}) & - M_{rt} \sin(\theta_r + 120^{\circ})
-        \end{bmatrix} &
-        \begin{bmatrix}
-            L_f & M_{fs} & 0 \\
-            M_{fs} & L_s & 0 \\
-            0 & 0 & L_t
+            \begin{bmatrix*}[l]
+                \begin{pmatrix}
+                    L_l + L_1 \\ + L_2 \cos 2\theta_r 
+                \end{pmatrix}
+                & 
+                \begin{pmatrix}
+                    -0.5 L_1 \\ + L_2 \cos 2(\theta_r - 60^{\circ})
+                \end{pmatrix}
+                & 
+                \begin{pmatrix}
+                    -0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ})
+                \end{pmatrix}
+                \\
+                \begin{pmatrix}
+                    - 0.5 L_1 \\ + L_2 \cos 2(\theta_r -60^{\circ}) 
+                \end{pmatrix}
+                &
+                \begin{pmatrix}
+                    L_l + L_1 \\ + L_2 \cos 2(\theta_r - 120^{\circ})
+                \end{pmatrix}
+                &
+                \begin{pmatrix}
+                    -0.5 L_1 \\ + L_2 \cos 2\theta_r
+                \end{pmatrix}
+                \\
+                \begin{pmatrix}
+                    - 0.5 L_1 \\ + L_2 \cos 2(\theta_r + 60^{\circ}) 
+                \end{pmatrix}
+                &
+                \begin{pmatrix}
+                    -0.5 L_1 \\ + L_2 \cos 2 \theta_r
+                \end{pmatrix}
+                &
+                \begin{pmatrix}
+                    L_l + L_1 \\ + L_2 \cos 2(\theta_r  + 120^{\circ})
+                \end{pmatrix}
+            \end{bmatrix*} &
+            \begin{bmatrix}
+                M_{rf} \cos \theta_r & M_{rs} \cos \theta_r & - M_{rt} \sin \theta_r \\
+                M_{rf} \cos (\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r - 120^{\circ}) & - M_{rt} \sin (\theta_r - 120^{\circ}) \\ 
+                M_{rf} \cos(\theta_r + 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) & - M_{rt} \cos(\theta_r + 120^{\circ}) \\
+            \end{bmatrix}\\
+            \begin{bmatrix}
+                M_{rf} \cos\theta_r & M_{rf} \cos(\theta_r - 120^{\circ}) & M_{rf} \cos(\theta_r + 120^{\circ}) \\
+                M_{rs} \cos\theta_r & M_{rs} \cos(\theta_r - 120^{\circ}) & M_{rs} \cos(\theta_r + 120^{\circ}) \\
+                - M_{rt} \sin \theta_r & - M_{rt} \sin (\theta_r - 120^{\circ}) & - M_{rt} \sin(\theta_r + 120^{\circ})
+            \end{bmatrix} &
+            \begin{bmatrix}
+                L_f & M_{fs} & 0 \\
+                M_{fs} & L_s & 0 \\
+                0 & 0 & L_t
+            \end{bmatrix}
         \end{bmatrix}
-    \end{bmatrix}
-    \label{eq:Eq8.22}
-\end{multline}
-Thus
-\begin{equation}
-    [\varPsi{\textup{abc}fst}] = 
-    \begin{bmatrix}
-        [\varPsi_{\textup{abc}}] \\
-        [\varPsi_{fst}]
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        [L_w] & [L_x] \\
-        [L_x] & [L_z]
-    \end{bmatrix}
-    \begin{bmatrix}
-        [i_{\textup{abc}}] \\
-        [i_{fst}]
-    \end{bmatrix}
-    \label{eq:Eq8.23}
-\end{equation}
+        \label{eq:Eq8.22}
+    \end{multline}
+    Thus
+    \begin{equation}
+        [\varPsi{\textup{abc}fst}] = 
+        \begin{bmatrix}
+            [\varPsi_{\textup{abc}}] \\
+            [\varPsi_{fst}]
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            [L_w] & [L_x] \\
+            [L_x] & [L_z]
+        \end{bmatrix}
+        \begin{bmatrix}
+            [i_{\textup{abc}}] \\
+            [i_{fst}]
+        \end{bmatrix}
+        \label{eq:Eq8.23}
+    \end{equation}
 
-Transform from $abc$ to $dq\gamma$
-\end{document}
+    Transform from $abc$ to $dq\gamma$
+    \end{document}
