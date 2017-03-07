@@ -28,6 +28,33 @@
 \setenumerate{label={(\alph*)},leftmargin=*,itemsep=0pt}
 
 \begin{document}
+\chapter{Conventions and basic principles}
+This chapter contains essential material required for the analysis of electrical networks and machines.
+
+\section{Complexors and phasors}
+The \textit{complexor} is a convenient mathematical tool for representing the instantaneous value of a steady-state sinusoidal alternating quantity. A complexor is shown in Fig.\ 1.1 as a modulus $I_m$ rotating anticlockwise with uniform angular velocity $\omega$ equal to the angular frequency of the alternating quantity.Stationary orthogonal $xy$­axes define a stationary space-frame and with respect to the $x$-axis the modulus $I_m$ is displaced an instantaneous angle
+$(\omega t + \alpha)$.
+
+Instantaneous $xy$-axis components
+\begin{equation}
+    \begin{gathered}
+        i_x = I_m \cos(\omega t + \alpha) \\
+        i_y = I_m \sin(\omega t + \alpha) 
+    \end{gathered}
+    \label{\eq:Eq1.1}
+\end{equation}
+A complexor is a time-dependent complex quantity defined as
+\begin{align}
+     \mathbf{\hat I} & = i_x +ji_y \nonumber \\
+     & = I_m[\cos (\omega t + \alpha) + j \sin (\omega t + \alpha)] \nonumber \\ 
+     \mathbf{\hat I} = I_m e^{j(\omega t +\alpha)}
+    \label{eq:Eq1.2}
+\end{align}
+
+The instantaneous value of a sinusoidal alternating current of crest value $I_m$ and supply angular frequency $\omega$ may be expressed in one of the following ways, depending on the instantaneous value being a $\cos$ or $\sin$ function. 
+
+
+
 \chapter{Electro-mechanical energy conversion}
 Energy is the capacity to do work. In a mechanical system mass may have two types of energy:
 \begin{enumerate}
