@@ -32,7 +32,7 @@
 This chapter contains essential material required for the analysis of electrical networks and machines.
 
 \section{Complexors and phasors}
-The \textit{complexor} is a convenient mathematical tool for representing the instantaneous value of a steady-state sinusoidal alternating quantity. A complexor is shown in Fig.\ 1.1 as a modulus $I_m$ rotating anticlockwise with uniform angular velocity $\omega$ equal to the angular frequency of the alternating quantity.Stationary orthogonal $xy$­axes define a stationary space-frame and with respect to the $x$-axis the modulus $I_m$ is displaced an instantaneous angle
+The \textit{complexor} is a convenient mathematical tool for representing the instantaneous value of a steady-state sinusoidal alternating quantity. A complexor is shown in Fig.\ 1.1 as a modulus $I_m$ rotating anticlockwise with uniform angular velocity $\omega$ equal to the angular frequency of the alternating quantity. Stationary orthogonal $xy$-axes define a stationary space-frame and with respect to the $x$-axis the modulus $I_m$ is displaced an instantaneous angle
 $(\omega t + \alpha)$.
 
 Instantaneous $xy$-axis components
@@ -41,19 +41,431 @@ Instantaneous $xy$-axis components
         i_x = I_m \cos(\omega t + \alpha) \\
         i_y = I_m \sin(\omega t + \alpha) 
     \end{gathered}
-    \label{\eq:Eq1.1}
+    \label{eq:Eq1.1}
 \end{equation}
 A complexor is a time-dependent complex quantity defined as
 \begin{align}
-     \mathbf{\hat I} & = i_x +ji_y \nonumber \\
+    \mathbf{\hat I} & = i_x +ji_y \nonumber \\
      & = I_m[\cos (\omega t + \alpha) + j \sin (\omega t + \alpha)] \nonumber \\ 
-     \mathbf{\hat I} = I_m e^{j(\omega t +\alpha)}
-    \label{eq:Eq1.2}
+     \mathbf{\hat I} & = I_m e^{j(\omega t +\alpha)}
+     \label{eq:Eq1.2}
 \end{align}
 
 The instantaneous value of a sinusoidal alternating current of crest value $I_m$ and supply angular frequency $\omega$ may be expressed in one of the following ways, depending on the instantaneous value being a $\cos$ or $\sin$ function. 
+\begin{flalign}
+    &\!\begin{aligned}
+    && Re\ \mathbf{\hat I} & = i_x = I_m \cos (\omega t + \alpha) && \\
+    \text{or}\hspace{3cm} && Im\ \mathbf{\hat I} & = i_y = I_m \sin (\omega t + \alpha) &&
+    \end{aligned} &
+    \label{eq:Eq1.3}
+\end{flalign}
+where $Re\ \mathbf{\hat I}$ and $Im\ \mathbf{\hat I}$ denote, respectively, the real and imaginary parts of the complexor $\mathbf{\hat I}$. Similar expressions can be written for sinusoidal alternating voltages.
 
+In partially expanded form
+\begin{equation}
+    \mathbf{\hat I} = \sqrt* 2 \Big( \dfrac{I_m}{\sqrt* 2} e^{j\alpha} \Big) e^{j \omega t}
+    \label{eq:Eq1.4}
+\end{equation}
 
+The time-invariant complex quantity shown in brackets in (1.4) is called a \textit{phasor}.
+\begin{equation}
+    \text{Phasor } \mathbf{I} = I e^{j\alpha}
+    \label{eq:Eq1.5}
+\end{equation}
+where the r.m.s.\ current
+\begin{equation}
+    I = \dfrac{I_m}{\sqrt*2}
+    \label{eq:Eq1.6}
+\end{equation}
+
+As shown in Fig.\ 1.2, orthogonal $m$, $n$-axes define a space-frame which rotates in synchronism with $\mathbf{I}$ and $\mathbf{\hat I}$. With respect to the $m$-axis, $\mathbf{I}$ maintains a fixed angular displacement.
+
+Analysis of circuit response to steady-state sinusoidal alternating currents and voltages of common frequency is simplified by the use of complexors and phasors. Consider, for example, a series $R$, $L$, and $C$ circuit with an instantaneous current
+\begin{equation*}
+    i = I_m \sin (\omega t + \alpha)
+\end{equation*}
+
+The corresponding complexor current
+\begin{equation}
+    \mathbf{\hat I} = \sqrt* 2 \mathbf{I} e^{j \omega t}
+    \label{eq:Eq1.7}
+\end{equation}
+
+Operational circuit impedance
+\begin{flalign}
+    && Z(p) = R + Lp + \dfrac{1}{Cp} &&\\
+    \text{where} && p = \dfrac{\dif}{\dif t} \quad \text{and} \quad \dfrac{1}{p} = \int \dif t \nonumber &&
+    \label{eq:Eq1.8}
+\end{flalign}
+
+Complexor voltage applied to the circuit
+\begin{align}
+    \mathbf{\hat V} & = Z(p) \mathbf{\hat I} \nonumber\\
+    & = \Big(R + Lp + \dfrac{1}{Cp} \Big) \sqrt* 2 \mathbf{I} e^{j \omega t} \\
+    \mathbf{\hat V} & = \Big( R + j \omega L + \dfrac{1}{j \omega C}\Big) \mathbf{\hat I}
+    \label{eq:Eq1.10}
+\end{align}
+
+For steady-state sinusoidal conditions the impedance $\mathbf{Z}(j\omega)$ is a complex quantity obtained by substituting $j \omega$ for $p$ in the operational impedance $Z(p)$.
+\begin{align}
+    \mathbf{Z}(j \omega) & = R + j \omega L - \dfrac{j}{\omega C} \nonumber \\
+    & = R + j (X_L - X_C)
+    \label{eq:Eq1.11}
+\end{align}
+
+\begin{align*}
+    &\text{\textit{Inductive reactance}} & X_L & = \omega L \text{\ ohm} && \\
+    &\text{\textit{Capacitive reactance}} & X_C &= \dfrac{1}{\omega C} \text{\ ohm}&&
+\end{align*}
+\begin{equation}
+    \mathbf{\hat V} = \mathbf{Z}(j \omega) \mathbf{\hat I}
+    \label{eq:Eq1.12}
+\end{equation}
+
+Referring to Fig.\ 1.3, $\mathbf{Z}(j \omega)$ is represented as a modulus $Z$ and an argument $\phi$ for the two conditions $X_L > X_C$ and $X_L < X_C$
+\begin{align*}
+    Z &= \sqrt* \{R^2 + {(X_L - X_C)}^2\} \\
+    \varphi & = \tan^{-1} \Big(\dfrac{X_L - X_C}{R}\Big)
+\end{align*}
+thus
+\begin{equation}
+    \mathbf{Z}(j \omega) = Z \angle \varphi = Z e^{j \varphi}
+    \label{eq:Eq1.13}
+\end{equation}
+\begin{align*}
+    X_L & > X_C,\ \varphi\ \text{is a positive angle, and} \\
+    X_L & < X_C,\ \varphi\ \text{is a negative angle}
+\end{align*}
+Substituting (1.7) and (1.13) in (1.12)
+\begin{align}
+    \mathbf{\hat V} & = Ze^{j \varphi} \sqrt*{2} \mathbf{I} e^{j \omega t} \nonumber \\
+    & = \sqrt*{2} (Z \mathbf{I} e^{j \varphi}) e^{j \omega t}
+    \label{eq:Eq1.14}
+\end{align}
+
+The time-invariant complex quantity shown in brackets in (1.14) is a phasor voltage
+\begin{equation}
+    \mathbf{V} = Z \mathbf{I} e^{j\varphi}
+    \label{eq:Eq1.15}
+\end{equation}
+
+From a point of observation within the $m$, $n$-axis space-frame $\mathbf{I}$ and $\mathbf{V}$, given by (1.6) and (1.15), are time-invariant, i.e., stationary, and phase-separated by an angle $\varphi$. Referring to Fig.\ 1.4, a phasor diagram is shown for the following conditions
+\begin{align*}
+    X_L & > X_C, \qquad \mathbf{I}\ \text{lagging}\ \mathbf{V} \\
+    X_L & < X_C, \qquad \mathbf{I}\ \text{leading}\ \mathbf{V} \\
+\end{align*}
+
+Phasors are employed for steady-state a.c.\ circuit analysis as the analysis is concerned with the relative phase separation of currents and voltages. In addition, mean or average circuit power will be shown later to be expressed in terms of r.m.s.\ voltage and current and the cosine of the phase separation.
+
+\section{Power}
+Power expressions are determined for single-phase and three-phase loads supplied with steady-state sinusoidal alternating currents and voltages. The three-phase load is assumed to be balanced, i.e., equal phase impedances, and supplied with symmetrical three-phase voltages.
+
+\subsection{Single-phase power}
+A steady-state, single-phase, sinusoidal voltage $v$ applied to an impedance containing a resistance element $R$ results in a current $i$, where
+\begin{flalign*}
+    && v &= V_m \sin (\omega t + \varphi) &&\\
+    \text{and}  && i &= I_m \sin \omega t &&
+\end{flalign*}
+
+Instantaneous power supplied to the load
+\begin{equation}
+    P(t) = vi = V_m I_m \sin (\omega t + \varphi) \sin \omega t
+    \label{eq:Eq1.16}
+\end{equation}
+but
+\begin{equation*}
+    \sin (\omega t + \varphi) \sin \omega t = \dfrac{1}{2} [\cos \varphi - \cos (2\omega t + \varphi)] 
+\end{equation*}
+thus
+\begin{equation}
+    P(t) = VI [\cos \varphi - \cos (2 \omega t + \varphi)] \text{watt}
+    \label{eq:Eq1.17}
+\end{equation}
+The time-dependent instantaneous power comprises a constant term and a double-frequency term. For practical purposes the 
+mean or average power $P$ is employed. 
+
+Mean power
+\begin{align}
+    P & = \dfrac{1}{2 \pi} \int_0^{2 \pi} P(t) \dif(\omega t) \\
+    & = \dfrac{VI}{2 \pi} {\Big( \omega t \cos \varphi - \dfrac{1}{2} \sin (2 \omega t + \varphi) \Big)}_0^{2 \pi} \nonumber
+\end{align}
+\begin{flalign}
+    \text{thus}  && P = V I \cos \varphi\ \text{watt} &&
+    \label{eq:Eq1.19}
+\end{flalign}
+The mean value of the double-frequency term is zero. The physical significance of this condition is that energy stored within the magnetic and electric fields of the load elements ($L$ and $C$) during one half-cycle is returned to the supply during the next half-cycle. Power dissipated by the load resistance $R$ corresponds to the mean power $P$ which is the scalar product of an r.m.s.\ voltage and current and the cosine of the phase angle $\varphi$ between their respective phasors.
+\begin{equation}
+    \text{Power-factor (p.f.)} = \cos \varphi
+    \label{eq:Eq1.20}
+\end{equation}
+
+The power-factor is described as lagging or leading depending on $\mathbf{I}$ lagging or leading $\mathbf{V}$.
+
+Mean or average power $P$ can be expressed in terms of phasor quantities. Consider a voltage $\mathbf{V}$ applied to an impedance $\mathbf{Z}(j \omega)$ to result in a current $\mathbf{I}$, where
+\begin{align*}
+    \mathbf{V} & = V e^{j \alpha_1} \\
+    \mathbf{I} & = I e^{j \alpha_2}
+\end{align*}
+
+The phase angle between $\mathbf{V}$ and $\mathbf{I}$ is
+\begin{equation}
+    \varphi = \alpha_1 - \alpha_2
+    \label{eq:Eq1.21}
+\end{equation}
+Mean power
+\begin{align*}
+    P & = V I \cos (\alpha_1 - \alpha_2) \\
+    & = Re\ (Ve^{j\alpha_1} I e^{-j \alpha_2}) \\
+    \mathbf{I \text{\bfseries *}} &= I e^{-j \alpha_2} \ \text{the complex conjugate of}\ \mathbf{I}
+\end{align*}
+Thus
+\begin{equation}
+    P = Re \ (\mathbf{V} \mathbf{I \text{\bfseries *}}) \ \text{watt}
+    \label{eq:Eq1.22}
+\end{equation}
+
+The complex quantity in brackets in (1.22) is a phasor with units of volt-ampere and is called the \textit{phasor volt-amperes} $\mathbf{S}$
+\begin{align}
+    \mathbf{S} & = \mathbf{V} \mathbf{I}\text{\bfseries*}\ \text{volt-amperes} \nonumber \\
+    \mathbf{S} & = P + jQ
+    \label{eq:Eq1.23}
+\end{align}
+where
+\begin{equation}
+    Q = Im\ (\mathbf{V}\mathbf{I \text{\bfseries *}}) = V I \sin \varphi\ \text{reactive volt-amperes}
+    \label{eq:Eq1.24}
+\end{equation}
+
+In addition to providing mean power $P$, the voltage source must be capable of supplying or absorbing the reactive volt-amperes of the load. As for power, positive $Q$ corresponds to the flow of reactive volt-amperes from source to load. Conversely, with $Q$, a negative quantity, the reactive volt-amperes flow from load to source. 
+
+\noindent(\textit{Note:} Alternatively, power may be defined as 
+\begin{equation*}
+    P = Re\ (\mathbf{V}\mathbf{I}\text{\bfseries *})
+\end{equation*}
+With this convention the sign for reactive volt-amperes is reversed, e.g., positive $Q$ corresponds to the flow of reactive volt-amperes from load to source.)
+
+For a load of lagging power factor $(X_L > X_C)$, $\sin \varphi$ and $Q$ are positive quantities and the load imports power and reactive volt­amperes from the supply.
+
+For a load of leading power factor $(X_L < X_C)$, $\sin \varphi$ and $Q$ are negative quantities and the load imports power and exports reactive volt-amperes.
+The above conditions are shown in Fig.\ 1.5. 
+\subsection{Three-phase power} Instantaneous three-phase power
+\begin{equation}
+    P(t) = v_\textup{a} i_\textup{a} + v_\textup{b} i_\textup{b} + v_\textup{c} i_\textup{c} =
+    \begin{bmatrix}
+        v_\textup{a} & v_\textup{b} & v_\textup{c}
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_\textup{a} \\ i_\textup{b} \\ i_\textup{c}
+    \end{bmatrix}
+    \label{eq:Eq1.25}
+\end{equation}
+
+For balanced conditions: instantaneous phase voltages
+\begin{equation}
+    \begin{bmatrix}
+        v_\textup{a} \\ v_\textup{b} \\ v_\textup{c}
+    \end{bmatrix}
+    = V_m
+    \begin{bmatrix*}[l]
+        \sin(\omega t + \varphi) \\
+        \sin(\omega t + \varphi - 120^\circ )\\
+        \sin(\omega t + \varphi + 120^\circ )
+    \end{bmatrix*}
+    \label{eq:Eq1.26}
+\end{equation}
+instantaneous phase current
+\begin{equation}
+    \begin{bmatrix}
+        i_\textup{a} \\ i_\textup{b} \\ i_\textup{c}
+    \end{bmatrix}
+    = I_m
+    \begin{bmatrix*}[l]
+        \sin(\omega t ) \\
+        \sin(\omega t - 120^\circ )\\
+        \sin(\omega t + 120^\circ )
+    \end{bmatrix*}
+    \label{eq:Eq1.27}
+\end{equation}
+
+Substituting (1.26) and (1.27) in (1.25) and expanding
+\begin{multline*}
+    P(t) = (3/2) V_m I_m \left\{\cos \varphi \right. \\
+        \underbrace{\left.-[\cos (2 \omega t + \varphi) + \cos (2\omega t + \varphi - 240^\circ) + \cos (2 \omega t +240^\circ)]\right\}}_{\text{zero}}
+\end{multline*}
+\begin{equation}
+    P(t) = P = 3 V I \cos \varphi
+    \label{eq:Eq1.28}
+\end{equation}
+
+As there is no double-frequency power term the instantaneous and mean powers are equal.
+
+The voltage and current phasors corresponding to (1.26) and (1.27)
+\begin{equation}
+    \begin{bmatrix}
+       \mathbf{V_a} \\ \mathbf{V_b} \\ \mathbf{V_c}
+    \end{bmatrix}
+    = V
+    \begin{bmatrix*}[l]
+        e^{j \varphi} \\ e^{j (\varphi - 120^\circ)} \\ e^{j (\varphi + 120^\circ)}
+    \end{bmatrix*}
+    \label{eq:Eq1.29}
+\end{equation}
+
+\begin{equation}
+    \begin{bmatrix}
+       \mathbf{I_a} \\ \mathbf{I_b} \\ \mathbf{I_c}
+    \end{bmatrix}
+    = I
+    \begin{bmatrix*}[l]
+        1 \\ e^{- j 120^\circ} \\ e^{j 120^\circ}
+    \end{bmatrix*}
+    \quad \text{and} \quad
+    \begin{bmatrix}
+        \mathbf{I_a \text{\bfseries *}} \\ \mathbf{I_b \text{\bfseries *}} \\ \mathbf{I_c \text{\bfseries *}}
+    \end{bmatrix}
+    = I
+    \begin{bmatrix*}[l]
+        1 \\ e^{j 120^\circ} \\ e^{- j 120^\circ}
+    \end{bmatrix*}
+    \label{eq:Eq1.30}
+\end{equation}
+
+Total phasor volt-amperes
+\begin{align}
+    \mathbf{S} & = \mathbf{V_a}\mathbf{I_a \text{\bfseries *}} + \mathbf{V_b}\mathbf{I_b \text{\bfseries *}} + \mathbf{V_c}\mathbf{I_c \text{\bfseries *}} \nonumber \\
+    & = V I (e^{j\varphi} + e^{j \varphi} + e^{j \varphi}) \nonumber \\
+    & = 3 V I e^{j\varphi} \text{volt-amperes}
+    \label{eq:Eq1.31}
+\end{align}
+
+Total three-phase power
+\begin{equation}
+    P = Re\ \mathbf{S} = 3 V I \cos \varphi
+    \label{eq:Eq1.32}
+\end{equation}
+
+Total three-phase reactive volt-amperes
+\begin{equation}
+    Q = Im\ \mathbf{S} = 3 V I \sin \varphi
+    \label{eq:Eq1.33}
+\end{equation}
+
+For a star-connected load
+
+\hspace{1cm} line voltage $V_L = \sqrt* 3 V$ and line current $I_L = I$
+\begin{equation}
+    \mathbf{S} = \sqrt*  V_L I_L e^{j \varphi} = \sqrt* 3 V_L I_L (\cos \varphi + j \sin \varphi)
+    \label{eq:Eq1.34}
+\end{equation}
+
+For a mesh-connected load
+
+\hspace{1cm} line voltage $V_L = V$ and line current $I_L = \sqrt* 3 I$
+\begin{equation}
+    \mathbf{S} = \sqrt*  V_L I_L e^{j \varphi} = \sqrt* 3 V_L I_L (\cos \varphi + j \sin \varphi)
+    \label{eq:Eq1.35}
+\end{equation}
+
+\section{Units}
+The M.K.S.\ system of units is employed for all quantities. Electrical and mechanical quantities frequently employed in machine studies are:
+\TabPositions{3cm,4.5cm,5.2cm}
+\tab\tab\ Power \tab\ $P$ \tab\ watt
+
+\tab\ Energy \tab\ $W$ \tab\ joule
+
+\tab\ Torque \tab\ $T$ \tab\ newton-metre
+
+These quantities are related by the following expressions for mechanical quantities:
+\begin{equation}
+    \dif W_m = T_m \dif \theta_m
+    \label{eq:Eq1.36}
+\end{equation}
+$\theta_m$ the mechanical angular displacement
+\begin{align}
+    P_m & = \dfrac{\dif W_m}{\dif t} = T_m \dfrac{\dif \theta}{\dif t} \nonumber \\
+    P_m & = T_m \omega_m
+    \label{eq:Eq1.37}
+\end{align}
+$\omega_m$ the mechanical angular velocity.
+
+\section{Theorem of constant flux-linkages}
+This theorem is useful for analysing the conditions obtained when the electrical quantities or physical properties of inductive circuits are suddenly changed. The general voltage equation for inductive circuits is given by
+\begin{equation}
+    v = iR + p\varPsi \qquad \text{where} \qquad p = \dif/\dif t
+    \label{eq:Eq1.38}
+\end{equation}
+$v$, $i$, and $\varPsi$ are instantaneous values of impressed voltage, current, and flux-linkage.
+
+Consider $\varPsi$ to change by an amount $\Delta \varPsi$ in time $\Delta t$. Rearranging (1.38) and integrating
+\begin{equation*}
+    \int_\varPsi^{\varPsi + \Delta \varPsi} \dfrac{\dif \varPsi}{\dif t} \dif t = \int_t^{t + \Delta t} (v - iR) \dif t 
+\end{equation*}
+
+\begin{flalign*}
+    \text{thus} && \Delta \varPsi = \int_t^{t + \Delta t} (v - iR)\dif t &&
+\end{flalign*}
+
+Referring to Fig.\ 1.6, $\Delta \varPsi$ corresponds to the shaded area under the graph of $(v - iR)$.
+
+As $\Delta t \to 0$, $\Delta \varPsi \to 0$ which is equivalent to stating that the \textit{flux­linkages cannot change in zero time}.
+
+The same conclusion can be deduced from (1.38) since a step­change of $\varPsi$, no matter how small in magnitude, would result in an infinite value for $(v - iR)$.
+
+An interesting example is the sudden removal of a closed loop of wire from a magnetic field. To maintain the flux-linkage constant at the value existing at the instant of removal, a current is induced in the loop of wire. Due to resistance, this current and its associated flux decays with time.
+
+As a further example, consider two identical mutually-coupled coils, one short-circuited and the other excited with current $i$. It is assumed that the flux-linkage of both coils is the same. Following switching of $i$ to zero, a current is instantaneously induced in the short-circuited coil. To maintain the flux-linkage momentarily unchanged immediately following switching, the initial value of induced current in the short-circuited coil is $i$.
+
+\section{Conventions}
+In this section conventions are established for indicating the positive sense of action of various electrical and mechanical quantities subsequently employed for circuit and machine analysis.
+
+\subsection{Electrical and mechanical quantities}
+\subsubsection{\textit{Voltage, current, and power}} Figure 1.7 represents a single-port energy device connected through an external resistance $R$ to a voltage source which raises the potential of terminal 1 with respect to terminal 2 by a positive amount $v$. A rise in potential between two points in a circuit is indicated by an arrow.
+
+Electrical power $P_e$ flowing into ports is assumed positive.
+
+This establishes the positive direction for current flow $i$ in Fig.\ 1.7 as being from terminal 1 to terminal 3.
+
+\subsubsection{\textit{Torque and mechanical rotation}} Mechanical angular rotation $\theta_m$ and angular velocity $\omega_m$ are positive in a clockwise sense. Torque is assumed positive when acting in the sense of positive rotation, see Fig. 1.8.
+Mechanical power
+\begin{equation*}
+    P_m = T_m \omega_m
+\end{equation*}
+
+With $T_m$ and $\omega_m$ positive quantities, $P_m$ is positive and corresponds to power input to the shaft.
+
+Thus power flow into mechanical and electrical energy ports is positive.
+
+Considering motors and generators as two-port energy devices, electrical power $P_e$ flows into the energy port formed by the machine terminals and mechanical power $P_m$ flows into the energy port formed by the shaft, see Fig.\ 1.9.
+
+\subsection{Dot convention}
+For the study of magnetically coupled circuits information is required as to the relative sense of winding of individual coil pairs along a magnetic path linking both coils. The \textit{dot convention} is a convenient method of providing a coil diagram with this information. An appropriate end of each coil is marked with a dot and the order in which the dots arise, when traversing the common magnetic path, is indicative of the relative sense of coil winding. Referring to Fig.\ 1.10 for symmetrical dot arising
+coils are wound in the same sense, and with unsymmetrical dot arising
+coils are wound in an opposite sense. If both currents are shown simultaneously entering or leaving at dots the coil m.m.f.s and fluxes act in the same sense. Conversely, with one current entering and the other current leaving at a dot, the m.m.f.s and fluxes act in an opposite sense.
+
+\section{Primitive network}
+The analysis of an interconnected network may be rationalized by representing such a network in a modified form known as the \textit{primitive network}. For the primitive network, interconnections are deleted, impressed voltages are shown with their positive potentials driving currents into the ends of coils marked with dots. The voltage equations for the primitive network, expressed in terms of voltage, current, and flux of positive sense are completely general as they are independent of circuit connections. 
+The primitive voltage equations may be used to provide actual circuit voltage equations for any arrangement of interconnections. This is achieved by relating primitive and actual circuit values followed by the substitution of these values in the primitive voltage equations. 
+Figure 1.11 represents an interconnected coupled circuit and the corresponding primitive network. Leakage fluxes are ignored and related primitive and actual circuit quantities are distinguished by the use of different suffices.
+
+Primitive network voltage equations
+\begin{align*}
+    v_1 & = i_1 R_\textup{a} + N_\textup{a} p (\Phi_1 + \Phi_2) \\
+    v_2 & = i_2 R_\textup{b} + N_\textup{b} p (\Phi_1 + \Phi_2) \\ 
+\end{align*}
+
+Relating primitive and actual values
+\begin{gather*}
+    \Phi_1 = \Phi_\textup{a} \qquad \Phi_2 = - \Phi_\textup{b} \\
+    i_1 = i \qquad i_2 = -i \\
+    v = v_1 - v_2
+\end{gather*}
+
+Thus
+\begin{align*}
+    v_1 & = i R_\textup{a} + N_\textup{a} p (\Phi_\textup{a} - \Phi_\textup{b}) \\
+    v_2 & = -i R_\textup{b} + N_\textup{b} p (\Phi_\textup{a} - \Phi_\textup{b}) \\
+    v & = i (R_\textup{a} + R_\textup{b}) + N_\textup{b} p (\Phi_\textup{a} - \Phi_\textup{b}) - N_\textup{a} p (\Phi_\textup{a} - \Phi_\textup{b})
+\end{align*}
 
 \chapter{Electro-mechanical energy conversion}
 Energy is the capacity to do work. In a mechanical system mass may have two types of energy:
