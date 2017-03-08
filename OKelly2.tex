@@ -512,6 +512,211 @@ Expressing the flux-linkage components of (2.4) In terms of magnetic permeance a
     \label{eq_Eq2.7}
 \end{align}
 
+Defining inductances:
+\begin{align}
+    &\text{Leakage inductance}\ L_{lk} \Lambda_{lk} N_k^2 = \dfrac{N_k \Phi_{lk}}{i_k} \\
+    &\text{Magnetizing inductance}\ L_{mk} = \Lambda_{mk} N_k^2 = \dfrac{N_k \Phi_{mk}}{i_k} \\
+    &\text{Self-inductance}\ L_k = (\Lambda_{lk} + \Lambda_{mk}) N_k^2 = \dfrac{N_k \Phi_{kk}}{i_k}
+    \label{eq:Eq2.10}
+\end{align}
+Mutual inductance between the $k$th and $j$th coils
+\begin{equation}
+    M_{kj} = \Lambda_{kj} N_k N_j = \dfrac{N_k \Phi_{kj}}{i_j}
+    \label{eq:Eq2.11}
+\end{equation}
+and
+\begin{equation}
+    M_{jk} = \Lambda_{jk} N_j N_k = \dfrac{N_j \Phi_{jk}}{i_k}
+    \label{eq:Eq2.12}
+\end{equation}
+\begin{flalign*}
+    \text{but}\ && \Lambda_{kj} = \Lambda_{jk}&&
+\end{flalign*}
+\begin{flalign}
+    \text{thus} && M_{kj} = M_{jk} &&
+    \label{eq_Eq2.13}
+\end{flalign}
+
+It follows from (2.13) that for any pair of coils there is one value of mutual inductance.
+
+Expressing (2.4) in terms of inductance-current products
+\begin{equation}
+    \varPsi_k = L_k i_k + \sum_{\substack{j = 1\\j \neq k}}^{j=n} M_{kj}i_j
+    \label{eq:Eq2.14}
+\end{equation}
+
+The total flux-linkage for each of the $n$ coils are determined from (2.14) with $k = 1,2,3,\dotsc, n$.
+
+In matrix form
+\begin{equation}
+    \begin{bmatrix}
+        \varPsi_1 \\[1ex] \varPsi_2 \\[1ex] \varPsi_3 \\[1ex] \vdots \\[1ex] \varPsi_k \\[1ex] \vdots \\[1ex] \varPsi_n
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        L_1 & M_{12} & M_{13} & \cdots & M_{1k} & \cdots & M_{1,n} \\[1ex]
+        M_{21} & L_{2} & M_{23} & \cdots & M_{2k} & \cdots & M_{2,n} \\[1ex]
+        M_{31} & M_{32} & L_{3} & \cdots & M_{3k} & \cdots & M_{3,n} \\[1ex]
+        \vdots & \vdots & \vdots &  &\vdots &  & \vdots \\[1ex]
+        M_{k1} & M_{k2} & M_{k3} & \cdots & L_{k} & \cdots & M_{k,n} \\[1ex]
+        \vdots & \vdots & \vdots &  &\vdots &  & \vdots \\[1ex]
+        M_{n1} & M_{n2} & M_{n3} & \cdots & M_{nk} & \cdots & L_{n} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        i_1 \\[1ex] i_2 \\[1ex] i_3 \\[1ex] \vdots \\[1ex] i_k \\[1ex] \vdots \\[1ex] i_n
+    \end{bmatrix}
+    \label{eq:Eq2.15}
+\end{equation}
+\begin{equation}
+    [\varPsi] = [L][i]
+    \label{eq:Eq2.16}
+\end{equation}
+
+\subsection{Voltage equations}
+The instantaneous voltage applied to the $k$th coil
+\begin{equation}
+    v_k = i_k R_k + p \varPsi_k \quad \text{where} \quad p = \dfrac{\dif}{\dif t}
+    \label{eq:Eq2.17}
+\end{equation}
+For $n$ coils
+\begin{align}
+    [v] & = [R][i] + [L]p[i] \nonumber \\
+    & = ([R] + [L] p)[i]
+    \label{eq:Eq2.18}
+\end{align}
+$[R]$ is a diagonal resistance matrix and $[L]$ is defined by (2.15).
+
+Relating $[v]$ and $[i]$ is an operational impedance matrix
+\begin{equation}
+    [Z(p)] = [R] + [L]p
+    \label{eq:Eq2.19}
+\end{equation}
+
+For sinusoidal voltages and currents $p = j \omega$
+\begin{equation}
+    [\mathbf{Z} (j \omega)] = [R] + j \omega[L]
+    \label{eq:Eq2.20}
+\end{equation}
+and for phasor quantities
+\begin{equation}
+    [\mathbf{V}] = [\mathbf{Z} (j \omega)] [\mathbf{I}]
+    \label{eq:Eq2.21}
+\end{equation}
+
+\textsc{EXAMPLE} 2.1 To determine expressions for the voltages $v_a$ and $v_b$ applied to the coupled circuit Fig. 2.2.
+
+Commencing with the primitive circuit Fig. 2.3
+\begin{equation*}
+    \begin{bmatrix}
+        v_1 \\[1ex] v_2 \\[1ex] v_3
+    \end{bmatrix}
+    =
+    \left\{
+    \begin{bmatrix}
+        R_1 & 0 & 0 \\[1ex]
+        0 & R_2 & 0 \\[1ex]
+        0 & 0 & R_3 \\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        L_1 & M_{12} & M_{13} \\[1ex]
+        M_{12} & L_2 & M_{23} \\[1ex]
+        M_{13} & M_{23} & L_3 \\
+    \end{bmatrix}
+    p \right\}
+    \begin{bmatrix}
+        i_1 \\[1ex] i_2 \\[1ex] i_3
+    \end{bmatrix}
+\end{equation*}
+\begin{gather*}
+    \begin{aligned}
+        i_1 = -i_{\textup{a}}, \qquad i_2 & = i_{\textup{a}}, \qquad i_3 = -i_{\textup{b}} \\
+        v_{\textup{a}} & = v_2 - v_1 \\
+        v_{\textup{b}} & = -v_3
+    \end{aligned}
+    \\
+    \begin{aligned}
+        v_1 & = -R_1 i_{\textup{a}} - (L_1 - M_{12}) p i_{\textup{a}} - M_{13} p i_{\textup{b}} \\
+        v_2 & = R_2 i_{\textup{a}} - (L_2 - M_{12}) p i_{\textup{a}} - M_{23} p i_{\textup{b}} \\
+        v_3 & = -R_3 i_{\textup{b}} - L_3 p i_{\textup{b}} - (M_{13} - M_{23}) p i_{\textup{a}} \\
+    \end{aligned}
+\end{gather*}
+
+\begin{multline*}
+    \begin{bmatrix}
+        v_{\textup{a}} \\[1ex] v_{\textup{b}}
+    \end{bmatrix}
+    = \left\{ 
+        \begin{bmatrix}
+            (R_2 + R_1) & 0 \\[1ex] 0 & R_3
+        \end{bmatrix} 
+        \right.
+        \\
+        +
+        \left.
+        \begin{bmatrix}
+            (L_1 + L_2 - 2 M_{12}) & (M_{13} - M_{23}) \\[1ex]
+            (M_{13} - M_{23}) & L_3
+        \end{bmatrix}
+        p
+    \right\}
+    \begin{bmatrix}
+        i_{\textup{a}} \\[1ex] i_{\textup{b}}
+    \end{bmatrix}
+\end{multline*}
+
+The corresponding phasor equations
+\begin{multline*}
+    \begin{bmatrix}
+        \mathbf{V}_{\textup{a}} \\[1ex] \mathbf{V}_{\textup{b}}
+    \end{bmatrix}
+    = \left\{ 
+        \begin{bmatrix}
+            (R_2 + R_1) & 0 \\[1ex] 0 & R_3
+        \end{bmatrix} 
+        \right.
+        \\
+        + j \omega
+        \left.
+        \begin{bmatrix}
+            (L_1 + L_2 - 2 M_{12}) & (M_{13} - M_{23}) \\[1ex]
+            (M_{13} - M_{23}) & L_3
+        \end{bmatrix}
+        p
+    \right\}
+    \begin{bmatrix}
+        \mathbf{I}_{\textup{a}} \\[1ex] \mathbf{I}_{\textup{b}}
+    \end{bmatrix}
+\end{multline*}
+
+\subsection{Coefficient of coupling $k$ and leakage coefficient $\sigma$} Consider multiplying together (2.11) and (2.12)
+\begin{equation*}
+    M_{jk}^2 = \dfrac{N_k N_j \Phi_{jk} \Phi_{kj}}{I_k i_j}
+\end{equation*}
+From (2.10)
+\begin{equation*}
+    \dfrac{N_k}{i_k} = \dfrac{L_k}{\Phi_{kk}}
+\end{equation*}
+Similarly, for the $j$th coil
+\begin{equation*}
+    \dfrac{N_j}{i_j} = \dfrac{L_j}{\Phi_{jj}}
+\end{equation*}
+Thus
+\begin{equation}
+    M_{jk}^2 = L_k L_j \dfrac{\Phi_{jk}}{\Phi_{kk}} \dfrac{\Phi_{kj}}{\Phi_{jj}}
+    \label{eq:Eq2.22}
+\end{equation}
+The flux ratios represent the fraction of total self-flux which links a second coil. In the absence of saturation and with a fixed separation between coils these ratios are constant values
+\begin{equation}
+    k_k = \dfrac{\Phi_{jk}}{\Phi_{kk}} \quad \text{and} \quad k_j = \dfrac{\Phi_{kj}}{\Phi_{jj}}
+    \label{eq:Eq2.23}
+\end{equation}
+Constants $k_k$ and $k_j$ are called \textit{coupling factors} which are said to give a measure of the `tightness' of coupling between coil pairs. With decreasing separation the coupling factors increase in value and have a (theoretical) maximum value of unity.
+
+Substituting (2.23) in (2.22)
+
+
+
 
 
 \chapter{Electro-mechanical energy conversion}
