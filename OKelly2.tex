@@ -467,6 +467,53 @@ Thus
     v & = i (R_\textup{a} + R_\textup{b}) + N_\textup{b} p (\Phi_\textup{a} - \Phi_\textup{b}) - N_\textup{a} p (\Phi_\textup{a} - \Phi_\textup{b})
 \end{align*}
 
+\chapter{Coupled circuits and the two-winding transformer}
+In this chapter a study is made of magnetically coupled circuits which are stationary relative to one another and to the surrounding magnetic medium. The magnetic medium is considered homogeneous and of constant permeability resulting in linear flux/current relationships for the coupled circuits and a linear theory describing their 
+magnetic interactions.
+
+The linear theory, which is shown later to form the basis of a generalized theory for electrical machines, is employed for the steady­state and transient performance analysis of a two-winding transformer.
+
+\section{Coupled circuits}
+Consider a system of $n$ separate circuits magnetically coupled to one another. Circuits are represented as magnetically equivalent concentrated coils with fluxes linking total turns, i.e., no partial flux­linking. The effective circuit resistance is connected externally in series with the concentrated coil and a time-dependent voltage, applied to the series combination, results in a time-dependent current and flux. Currents are shown entering coils at dots and in accordance with the dot convention, described in chapter 1, self- and mutual fluxes link coils in the same sense.
+
+With linear conditions, the total flux linking anyone coil of the $n$ coil system is the superposition of the self-flux and $n - 1$ components of mutual flux. To show the significance of these fluxes attention is given to the fluxes linking the $k$th coil.
+
+Figure 2.1(a) represents the flux distribution with only the $k$th coil excited. The total self-flux $\Phi_{kk}$ due to $i_k$, comprises a magnetizing flux $\Phi_{tk}$ which links the other coils and a leakage flux $\Phi_{lk}$ linking $N_k$ turns only.
+\begin{equation}
+    \Phi_{kk} = \Phi_{lk} + \Phi_{mk}
+    \label{eq:Eq2.1}
+\end{equation}
+
+Figure 2.1(b) shows the mutual fluxes linking the $k$th coil with all coils except the $k$th coil excited. The mutual flux $\Phi_{Mk}$ comprises $n - 1$ components
+\begin{equation}
+    \Phi_{Mk} = \sum_{\substack{j = 1\\j \neq k}}^{j = n} \Phi_{kj}
+    \label{eq:Eq2.2}
+\end{equation}
+$\Phi_{Mk}$ is a mutual flux produced by the $j$th coil and linking the $k$th coil.
+
+By superposition, the total flux $\Phi_k$ linking the $k$th coil
+\begin{align}
+    \Phi_{k} & = \Phi_{kk} + \Phi_{Mk} = \Phi_{lk} + \Phi_{mk} + \Phi_{Mk} \nonumber \\
+    & = \Phi_{lk} + \Phi_{mk} + \sum_{\substack{j = 1\\j \neq k}}^{j = n} \Phi_{kj}
+    \label{eq:Eq2.3}
+\end{align}
+
+Flux-linkages
+\begin{equation}
+    \varPsi_k = N_k \Phi_k = \varPsi_{lk} + \varPsi_{mk} + \sum_{\substack{j = 1\\j \neq k}}^{j = n} \varPsi_{kj}
+    \label{eq:Eq2.4}
+\end{equation}
+
+Expressing the flux-linkage components of (2.4) In terms of magnetic permeance and exciting current.
+\begin{align}
+    \varPsi_{lk} & = N_k \Phi{lk} = \Lambda_{lk} N_k^2 i_k \\
+    \varPsi_{mk} & = N_k \Phi{mk} = \Lambda_{mk} N_k^2 i_k \\
+    \varPsi_{kj} & = N_k \Phi{kj} = \Lambda_{kj} N_k N_j i_j
+    \label{eq_Eq2.7}
+\end{align}
+
+
+
 \chapter{Electro-mechanical energy conversion}
 Energy is the capacity to do work. In a mechanical system mass may have two types of energy:
 \begin{enumerate}
