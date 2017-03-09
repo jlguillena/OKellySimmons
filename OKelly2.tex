@@ -290,7 +290,10 @@ instantaneous phase current
 Substituting (1.26) and (1.27) in (1.25) and expanding
 \begin{multline*}
     P(t) = (3/2) V_m I_m \left\{\cos \varphi \right. \\
-        \underbrace{\left.-[\cos (2 \omega t + \varphi) + \cos (2\omega t + \varphi - 240^\circ) + \cos (2 \omega t +240^\circ)]\right\}}_{\text{zero}}
+        \underbrace{\left.-[\cos (2 \omega t + \varphi) + \cos (2\omega t + \varphi - 240^\circ) + \cos (2 \omega t +240^\circ)]\right\}}_{%
+            \begin{gathered}
+                \text{zero}
+            \end{gathered}}
 \end{multline*}
 \begin{equation}
     P(t) = P = 3 V I \cos \varphi
@@ -714,9 +717,147 @@ The flux ratios represent the fraction of total self-flux which links a second c
 Constants $k_k$ and $k_j$ are called \textit{coupling factors} which are said to give a measure of the `tightness' of coupling between coil pairs. With decreasing separation the coupling factors increase in value and have a (theoretical) maximum value of unity.
 
 Substituting (2.23) in (2.22)
+\begin{align*}
+    M_{jk}^2 & = k_j k_k L_j L_k \\
+    M_{jk} & = \sqrt*(k_j k_k) \sqrt*(L_j L_k)
+\end{align*}
 
+The geometric mean of the coupling factors is called the \textit{coefficient of coupling} $k_{jk}$
+\begin{equation}
+    k_{jk} = \sqrt*(k_j k_k)
+    \label{eq:Eq2.24}
+\end{equation}
+\begin{equation*}
+    1 \leq k_{jk} \leq 0
+\end{equation*}
 
+Thus
+\begin{equation}
+    M_{jk} = k_{jk} \sqrt* L_j L_k
+    \label{eq:Eq2.25}
+\end{equation}
+Another constant used in coupled circuit theory is the \textit{leakage coefficient}
+\begin{equation}
+    \sigma_{jk} = 1 - k_{jk}^2
+    \label{eq:Eq2.26}
+\end{equation}
+and from (2.25)
+\begin{equation}
+    \sigma_{jk} = 1 - \dfrac{M_{jk}^2}{L_j L_k}
+    \label{eq:Eq2.27}
+\end{equation}
 
+\section{The air-cored two-winding transformer}
+An air-cored two-winding transformer, Fig.\ 2.4, comprises two concentrated coils of $N_1$ and $N_2$ turns respectively, maintained at a fixed distance of separation in air. The winding connected to the supply is called the \textit{primary} and the winding connected to the load, the \textit{secondary}. Equations derived in the preceding sections, describing the magnetic interactions of $n$ magnetically coupled coils, are employed for analysing the performance of the transformer.
+
+With $n = 2$, the mutual and magnetizing fluxes are equal
+\begin{equation}
+    \begin{aligned}
+        \text{coil 1}\quad \Phi_{12} = \Phi_{m2} \\
+        \text{coil 2}\quad \Phi_{21} = \Phi_{m1} 
+    \end{aligned}
+    \label{eq:Eq2.28}
+\end{equation}
+
+The total mutual flux linking the primary and secondary windings
+\begin{equation}
+    \Phi_M = \Phi_{21} + \Phi_{12} = \Phi_{m1} + \Phi_{m2}
+    \label{eq:Eq2.29}
+\end{equation}
+From (2.23)
+\begin{equation}
+    \Phi_1 = \Phi_{l1} + \underbrace{\Phi_{21} + \Phi_{12}}_{%
+        \begin{gathered}
+            \Phi_M
+        \end{gathered}}
+    \label{eq:Eq2.30}
+\end{equation}
+\begin{equation}
+    \Phi_2 = \Phi_{l2} + \underbrace{\Phi_{12} + \Phi_{21}}_{%
+        \begin{gathered}
+            \Phi_M
+        \end{gathered}}
+    \label{eq:Eq2.31}
+\end{equation}
+
+From (2.8) through to (2.13),
+\begin{gather}
+    L_{l1} = \dfrac{N_1 \Phi_{l1}}{i_1} \qquad L_{l2} = \dfrac{N_2 \Phi_{l2}}{i_2}\\
+    M_{12} = \dfrac{N_1 \Phi_{12}}{i_2} \qquad M_{21} = \dfrac{N_2 \Phi_{21}}{i_1}\\
+    M_{12} = M_{21} = M \nonumber\\
+    L_{m1} = \dfrac{N_1 \Phi_{21}}{i_1} \qquad L_{m2} = \dfrac{N_2 \Phi_{12}}{i_2}\\
+    L_1 = L_{l1} + L_{m1} \qquad L_2 = L_{l2} + L_{m2}
+\end{gather}
+From (2.33)
+\begin{equation}
+    \Phi_{21} = dfrac{M i_{1}}{N_2} \qquad \Phi_{12} = dfrac{M i_{2}}{N_1}
+    \label{eq:Eq2.36}
+\end{equation}
+Substituting respectively in (2.34)
+\begin{equation}
+    L_{m1} = \dfrac{N_1}{N_2} M \qquad L_{m2} = \dfrac{N_2}{N_1} M
+    \label{eq:Eq2.37}
+\end{equation}
+whence
+\begin{equation}
+    L_{m1} = {\left( \dfrac{N_1}{N_2}\right)}^2 L_{m2} \qquad L_{m2} = {\left( \dfrac{N_2}{N_1}\right)}^2 L_{m1}
+    \label{eq:Eq2.38}
+\end{equation}
+From (2.18)
+\begin{equation}
+    \begin{aligned}
+        v_1 & = i_1 R_1 + L_1 p i_1 + M p i_2 \\
+        v_2 & = i_2 R_2 + L_2 p i_2 + M p i_1
+    \end{aligned}
+    \label{eq:Eq2.39}
+\end{equation}
+Rearranging (2.39)
+\begin{equation}
+    \begin{aligned}
+        v_1 & = i_1 R_1 + (L_1 - M) p i_1 + M p (i_1 + i_2) \\
+        v_2 & = i_2 R_2 + (L_2 - M) p i_2 + M p (i_1 + i_2)
+    \end{aligned}
+    \label{eq:Eq2.40}
+\end{equation}
+
+Equations (2.39) and (2.40) are satisfied respectively by the circuits shown in Fig.\ 2.5, which are equivalent circuits for the two-winding air-cored transformer.
+
+An alternative form of equivalent circuit, leading to the equivalent circuit for an iron-cored transformer, is now developed. Defining voltages $v_{M1}$ and $v_{M2}$ which are respectively due to the primary and secondary voltages induced by the mutual flux $\Phi_M$
+\begin{equation}
+    v_{M1} = N_1 p \Phi_M \qquad v_{M2} = N_2 p \Phi_M
+    \label{eq:Eq2.41}
+\end{equation}
+thus
+\begin{equation}
+    \dfrac{v_{M1}}{v_{M2}} = \dfrac{N_1}{N_2}
+    \label{eq:Eq2.42}
+\end{equation}
+From (2.30) and (2.31)
+\begin{align*}
+    N_1 p \Phi_1 & = N_1 p \Phi_{l1} + N_1 p \Phi_M \\
+    N_2 p \Phi_2 & = N_2 p \Phi_{l2} + N_2 p \Phi_M \\
+\end{align*}
+Substituting (2.41) in (2.18)
+\begin{equation}
+    \begin{aligned}
+        v_1 & = i_1 R_1 + L_{l1} p i_1 + v_{M1} \\
+        v_2 & = i_2 R_2 + L_{l2} p i_2 + v_{M2}
+    \end{aligned}
+    \label{eq:Eq2.43}
+\end{equation}
+From (2.33)
+\begin{gather}
+    \Phi_{12} = \dfrac{M i_2}{N_1}, \qquad \Phi_{21} = \dfrac{M i_1}{N_2} \nonumber \\
+    \Phi_M = \Phi_{12} + \Phi_{21} = \dfrac{M}{N_1 N_2} (N_1 i_1 + N_2 i_2)
+    \label{eq:Eq2.44}
+\end{gather}
+The mutual flux $\Phi_M$ is provided by an m.m.f.\ $N_1 i_m$ where $i_m$ is the primary magnetizing current
+\begin{gather}
+    i_m N_1 = N_1 i_1 + N_2 i_2 \nonumber\\
+    i_m = i_1 + \dfrac{N_2}{N_1} i_2 = i_1 + i_2'
+    \label{eq:Eq2.45}
+\end{gather}
+where $i_2' = (N_2 / N_1)i_2$ is the secondary current referred to the primary
 
 
 \chapter{Electro-mechanical energy conversion}
