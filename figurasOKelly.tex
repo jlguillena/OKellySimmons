@@ -50,6 +50,7 @@
 %-----------------------------------
 \begin{tikzpicture} %TODO corregir capacitor
     \coordinate (O) at (0,0);
+    \ctikzset {bipoles/capacitor/height=0.2,bipoles/capacitor/width=0.1}
     \draw (-2.33,4.28) to[R=$R$](-0.6,4.28) (0.9,4.28)to[L,l_=$jX_L$](-0.6,4.28) (0.9,4.28)to[C=$-jX_c$](2.24,4.28);
     \draw [pri](-1.9,0)--(3.7,0) (0,2.5) -- (0,-2.5);
     \draw [pra](O)--(2.3,2.3)node[pos=0.8,above left]{$\mathbf{Z}$};
