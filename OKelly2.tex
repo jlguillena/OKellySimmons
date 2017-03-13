@@ -790,7 +790,7 @@ From (2.8) through to (2.13),
 \end{gather}
 From (2.33)
 \begin{equation}
-    \Phi_{21} = dfrac{M i_{1}}{N_2} \qquad \Phi_{12} = dfrac{M i_{2}}{N_1}
+    \Phi_{21} = \dfrac{M i_{1}}{N_2} \qquad \Phi_{12} = \dfrac{M i_{2}}{N_1}
     \label{eq:Eq2.36}
 \end{equation}
 Substituting respectively in (2.34)
@@ -858,6 +858,371 @@ The mutual flux $\Phi_M$ is provided by an m.m.f.\ $N_1 i_m$ where $i_m$ is the 
     \label{eq:Eq2.45}
 \end{gather}
 where $i_2' = (N_2 / N_1)i_2$ is the secondary current referred to the primary
+\begin{equation*}
+    \Phi_M = \dfrac{M}{N_2}i_m = \dfrac{L_{m1}}{N_1} i_m
+\end{equation*}
+\begin{flalign}
+    \text{Thus} && v_{M1} = L_{m1} i_m &&
+    \label{eq:Eq2.46}
+\end{flalign}
+
+Equation (2.46) shows that magnetization, for $\Phi_M$ can be represented in an equivalent circuit as a current $i_m$ flowing in a magnetizing inductance $L_{m1}$ connected across the voltage $v_{m1}$. Between $v_{m1}$ and $v_{m2}$ is an \textit{ideal} two-winding transformer, so called as it has no losses, has no leakage fluxes, and does not require a magnetizing m.m.f. The equivalent circuit satisfying equations (2.43), (2.45), and (2.46) is shown in Fig. 2.6.
+
+For the ideal transformer
+\begin{equation*}
+    i_1 N_1 - i_2'N_2 = 0
+\end{equation*}
+combining with (2.42)
+\begin{equation}
+    \dfrac{v_{M1}}{v_{M2}} = \dfrac{N_1}{N_2} = \dfrac{i_2}{i_2'}
+    \label{eq:Eq2.47}
+\end{equation}
+\begin{equation*}
+    v_{M1} i_2' = v_{M2} i_1
+\end{equation*}
+
+It is seen for the ideal transformer that power is transferred without loss. For the actual transformer, power to the load equals the power supplied at the primary circuit terminals minus the total winding resistance loss.
+
+\subsection{Referred values} A simplified version of Fig. 2.6 is obtained by referring secondary values to the primary circuit. Commencing with
+\begin{equation*}
+    v_2 = I_2 R_2 + L_{l2} p i_2 + v_{M2}
+\end{equation*}
+
+Expressed in terms of $i_2'$
+\begin{align*}
+    v_2 & = i_2' \dfrac{N_1}{N_2} R_2 + \dfrac{N_1}{N_2} L_{l2} p i_2' + v_{M2} \\
+    v_2' & = \dfrac{N_1}{N_2} v_2 \quad \text{and} v_{M1} = v_{M2}' = \dfrac{N_1}{N_2} v_{M2} \\
+    v_2' & = i_2' {\Big(\dfrac{N_1}{N_2}\Big)}^2 R_2 + {\Big(\dfrac{N_1}{N_2}\Big)}^2 L_{l2} p i_2' + v_{M1}
+\end{align*}
+
+Secondary referred values
+\begin{align*}
+    R_2' & = {\Big(\dfrac{N_1}{N_2}\Big)}^2 R_2 \\
+    L_{l2}' & = {\Big(\dfrac{N_1}{N_2}\Big)}^2 L_{l2}'
+\end{align*}
+
+Similarly, the referred value of load operational impedance
+\begin{equation*}
+    Z_{L}' (p) = {\Big(\dfrac{N_1}{N_2}\Big)}^2 Z_L (p)
+\end{equation*}
+thus
+\begin{align}
+    v_1 & = i_1 R_1 + L_{l1} p i_1 + v_{M1} \nonumber \\
+    v_2' & = - Z_L' (p) i_2' = i_2' R_2' + L_{l2}' + v_{M1}
+    \label{eq:Eq2.48}
+\end{align}
+
+With secondary values referred to the primary, the turns ratio of the ideal transformer $N_1/N_2 = 1$ and its presence can be ignored. The equivalent circuit satisfying (2.45) and (2.47) is shown in Fig. 2.7. 
+
+
+\subsection{Phasor equations and phasor diagram}
+Expressing (2.45), (2.46), and (2.48) in terms of r.m.s.\ phasor quantities
+\begin{align}
+    \begin{split}
+        \mathbf{V}_1 & = (R_1 + j\omega L_{l1}) \mathbf{I}_1 + \mathbf{V}_{M1} \\
+        \mathbf{V}_2' & = (R_2 + j\omega L_{l2}') + \mathbf{V}_{M1}
+    \end{split}\\
+    \mathbf{V}_{M1} & = j\omega L_{m1} \mathbf{I}_m \quad \mathbf{I}_m\ \text{lags}\ \mathbf{V}_{M1} \ \text{by} \ 90^\circ \\
+    \mathbf{I}_m & = \mathbf{I}_1 + \mathbf{I}_2'
+    \label{eq:Eq2.49}
+\end{align}
+
+As previously discussed, power transfer is from the supply to the load and to accord with this sense of power flow the secondary current is more usually represented as flowing into the load. Defining primary and secondary referred currents as $\mathbf{I}_p$ and $\mathbf{I}_s'$
+\begin{align}
+    \mathbf{I}_1 & = \mathbf{I}_p, \quad \mathbf{I}_2' = - \mathbf{I}_s' \nonumber \\
+    \begin{split} 
+        \mathbf{V}_p & = (R_p j \omega L_{lp}) \mathbf{I}_p + \mathbf{V}_{Mp} \\
+        \mathbf{V}_s' & = -(R_s' + j \omega L_{ls}')\mathbf{I}_s' + \mathbf{V}_{Mp} 
+    \end{split} \\
+    \mathbf{V}_{Mp} & =j \omega L_{mp} \mathbf{I}_m \\
+    \mathbf{I}_m &= \mathbf{I}_p - \mathbf{I}_s'
+    \label{eq:Eq2.54}
+\end{align}
+
+\textit{Primary leakage reactance} $X_{lp} = \omega L_{lp}$ 
+
+\textit{Referred secondary leakage reactance} $X_{ls}' = \omega L_{ls}'$ 
+
+\textit{Primary magnetizing reactance} $X_{mp} = \omega L_{mp}$
+
+Primary impedance
+\begin{equation*}
+    \mathbf{Z}_p = R_p + jX_{lp}
+\end{equation*}
+
+Referred secondary impedance
+\begin{equation*}
+    \mathbf{Z}_s' = R_s' + j X_{ls}'
+\end{equation*}
+
+Figure 2.8 is a phasor diagram for all values referred to the primary and $I_s'$ assumed to be lagging $V_s'$ by an angle $\varphi$.
+
+\subsection{Transient analysis} The transient response of the air-cored two-winding transformer may be determined from the differential equations (2.39). 
+
+Writing (2.39) in Laplace form and assuming zero excitation prior to the application of a forcing function of voltage at the primary or secondary terminals:
+\begin{equation}
+    \begin{split}
+        \bar{v}_1 & = (R_1 + L_1 \mathbf{s})\bar{i}_1 + M \mathbf{s} \bar{i}_2 \\ %chktex 7
+        \bar{v}_2 & = (R_2 + L_2 \mathbf{s})\bar{i}_2 + M \mathbf{s} \bar{i}_1  %chktex 7
+    \end{split}
+    \label{eq:Eq2.55}
+\end{equation}
+
+\noindent(a) Consider the secondary circuit terminals to be open-circuit
+\begin{align}
+    \bar{i}_2 & = 0 \nonumber \\%chktex 7
+    \bar{v}_1 & = (R_1 + L_1 \mathbf{s}) \bar{i}_1 \nonumber \\%chktex 7
+    \bar{v}_2 & = M \mathbf{s} \bar{i}_1 \nonumber \\%chktex 7
+    \bar{v}_2 & = \dfrac{M \mathbf{s} \bar{v}_1}{L_1 \Big( \dfrac{1}{\tau_1} + \mathbf{s}\Big)}
+    \label{eq:Eq2.56}
+\end{align}
+where the primary open-circuit time constant $\tau_1 = (L_1 / R_1)$.
+(i) With $v_1$ a step of voltage $V$ at time $t = 0$
+\begin{flalign}
+    && \bar{v}_1 & = \dfrac{V}{\mathbf{s}} && \nonumber \\
+    \text{and} &&\bar{v}_2 & = \dfrac{M V}{L_1 \Big( \dfrac{1}{\tau_1} + \mathbf{s} \Big)} && \nonumber \\
+    && v_2 & = \dfrac{M V}{L_1} e^{-t / \tau_1} = V k_{12} \sqrt*{\Big( \dfrac{L_2}{L_1} \Big)} e^{-t / \tau_1} &&
+\end{flalign}
+
+With increasing $L_1$, the amplitude of $v_2$ at $t = 0$ diminishes in value with a corresponding increase of $\tau_1$, see Fig.\ 2.9. With $L_1$ small compared with $L_2$, the secondary response approximates to an impulse.
+
+\noindent(ii) Forcing function $v_1 = V \sin \omega t$, applied for $t \geq 0$
+\begin{equation*}
+    \bar{v}_1 = \dfrac{V \omega}{\mathbf{s}^2 + \omega^2} = \dfrac{V \omega}{(\mathbf{s} + j \omega)(\mathbf{s} -j \omega )}
+\end{equation*}
+
+Substituting in (2.56)
+\begin{equation*}
+    \bar{v}_2 = \dfrac{M \omega V}{L_1} \dfrac{\mathbf{s}}{\Big( \mathbf{s} + \dfrac{1}{\tau_1}\Big) (\mathbf{s} + j \omega)(\mathbf{s} - j \omega)}
+\end{equation*}
+
+In partial fractions
+\begin{multline*}
+    \bar{v}_2 = \dfrac{M \omega V}{L_1}
+    \left( \dfrac{\dfrac{-1}{\tau_1}}{\Big( \mathbf{s} + \dfrac{1}{\tau_1}\Big) \Big( \dfrac{1}{\tau_1^2} + \omega^2 \Big)} - \dfrac{j \omega}{\Big( -j \omega + \dfrac{1}{\tau_1}\Big)(\mathbf{s} + j\omega)(-2 j \omega)}\right. \\
+    \left. + \dfrac{j \omega}{\Big( j \omega + \dfrac{1}{\tau_1}\Big)(2 j \omega)(\mathbf{s} - j \omega)} \right)
+\end{multline*}
+\begin{flalign*}
+    v_2 & = \dfrac{M \omega V}{L_1 \Big( \omega^2 + \dfrac{1}{\tau^2}\Big)}\Big( -\dfrac{e^{-t / \tau}}{\tau_1} + \omega \sin \omega t + \dfrac{1}{\tau_1} \cos \omega t \Big)
+\end{flalign*}
+
+Let
+\begin{gather*}
+    \cos \varphi = \dfrac{\omega}{\sqrt*{\Big( \omega^2 + \dfrac{1}{\tau_1^2} \Big)}} \quad \text{and} \quad \sin \varphi = \dfrac{1}{\tau_1 \sqrt*{\Big( \omega^2 + \dfrac{1}{\tau_1^2} \Big)}} \\
+    \omega \sin \omega t + \dfrac{1}{\tau_1} \cos \omega t = \sqrt*{\Big( \omega^2 + \dfrac{1}{\tau_1^2} \Big)} \sin(\omega t + \varphi)
+\end{gather*}
+and
+\begin{equation}
+    v_2 = \dfrac{M \omega V}{L_1 \sqrt*{\Big( \omega^2 + \dfrac{1}{\tau_1^2}\Big)}}( \sin(\omega t + \varphi) - \sin \varphi e^{-t /\tau_1})
+    \label{eq:Eq2.58}
+\end{equation}
+
+A typical response, illustrating (2.58), is shown in Fig.\ 2.10.
+
+\noindent(b) The secondary circuit terminals are short-circuited $v_2 = 0$
+\begin{equation}
+    \begin{aligned}
+        \bar{v}_1 &= (R_1 + L_1\mathbf{s})\bar{i}_1 + M \mathbf{s} \bar{i}_2\\ %chktex 7 
+        0  &= (R_2 + L_2 \mathbf{s})\bar{i}_2 + M \mathbf{s} \bar{i}_1 %chktex 7
+    \end{aligned}
+    \label{eq:Eq2.59}
+\end{equation}
+\begin{align*}
+    \bar{i}_2 & = - \dfrac{M \mathbf{s}}{(R_2 + L_2 \mathbf{s})} \bar{i}_1\\%chktex 7
+    \bar{v}_1 & = \Big( R_1 + L_1 \mathbf{s} - \dfrac{M^2 \mathbf{s}^2}{R_2 + L_2 \mathbf{s}}\Big) \bar{i}_1 \\%chktex 7
+    & = \dfrac{(L_1 L_2 - M^2) \mathbf{s}^2 +(L_1 R_2 + L_2 R_1) \mathbf{s} + R_1 R_2 }{R_2 + L_2 \mathbf{s}} \bar{i}_1 %chktex 7
+\end{align*}
+\begin{equation*}
+    L_1 L_2 - M^2 = L_1 L_2 \sigma
+\end{equation*}
+where $\sigma$ is the leakage coefficient.
+
+With $\tau_1 = L_1 / R_1$ and $\tau_2 = L_2 / R_2$
+\begin{align*}
+    i_1 & = \dfrac{1}{L_1 \sigma} \dfrac{\Big( \dfrac{1}{\tau_2} + \mathbf{s}\Big)}{\Big[ \mathbf{s}^2 + \dfrac{1}{\sigma} \Big( \dfrac{1}{\tau_1} + \dfrac{1}{\tau_2}\Big)\mathbf{s} + \dfrac{1}{\tau_1 \tau_2 \sigma}\Big]} \bar{v}_1 \\ %chktex 7
+    \bar{i}_2 & = - \dfrac{M}{\sigma L_1 L_2} \dfrac{\mathbf{s}}{\Big[ \mathbf{s}^2 + \dfrac{1}{\sigma} \Big( \dfrac{1}{\tau_1} + \dfrac{1}{\tau_2}\Big)\mathbf{s} + \dfrac{1}{\tau_1 \tau_2 \sigma}\Big]} \bar{v}_1 %chktex 7
+\end{align*} 
+
+Roots of the polynomial, $m$ and $n$
+\begin{equation}
+    m,\ n = - \dfrac{1}{2 \sigma} \Big(\dfrac{1}{\tau_1} + \dfrac{1}{\tau_2}\Big) \pm \sqrt*{\Big[ \dfrac{1}{4 \sigma^2} {\Big( \dfrac{1}{\tau_1} + \dfrac{1}{\tau_2} \Big)}^2 - \dfrac{1}{\tau_1 \tau_2 \sigma}\Big]}
+    \label{eq:Eq2.60}
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        \bar{i}_1 & = \dfrac{1}{L_1 \sigma} \dfrac{\Big( \dfrac{1}{\tau_2} + \mathbf{s}\Big)}{(\mathbf{s} -m)(\mathbf{s} - n)} \bar{v}_1 \\ %chktex 7
+        \bar{i}_2 & = \dfrac{M}{L_1 L_2 \sigma} \dfrac{\mathbf{s}}{(\mathbf{s} -m)(\mathbf{s} - n)} \bar{v}_1  %chktex 7
+    \end{aligned}
+    \label{eq:Eq2.61}
+\end{equation}
+
+Equations (2.91) can be solved for a variety of primary forcing functions $v_1$. Consider $v_1$ a step change in voltage $V$ at time $t = 0$
+\begin{align}
+    \bar{v}_1 & = \dfrac{V}{\mathbf{s}} \nonumber \\
+    \begin{split}
+        \bar{i}_1 & = \dfrac{V}{L_1 \sigma} \dfrac{\Big( \dfrac{1}{\tau_2} + \mathbf{s}\Big)}{(\mathbf{s} - m)(\mathbf{s} -n)\mathbf{s}} \\ %chktex 7
+        \bar{i}_2 & = -\dfrac{M V}{L_1 L_2 \sigma} \dfrac{1}{(\mathbf{s} - m)(\mathbf{s} - n)} %chktex 7
+    \end{split}
+    \label{eq:Eq2.62}
+\end{align}
+Expressing (2.62) in partial fractions
+\begin{align*}
+    \bar{i}_1 & = \dfrac{V}{L_1 \sigma} \left( \dfrac{\Big( \dfrac{1}{\tau_2} + m\Big)}{(\mathbf{s} - m)(m - n) m} + \dfrac{\Big( \dfrac{1}{\tau_2} + n \Big)}{(n - m)(\mathbf{s} - n)n} + \dfrac{1}{\tau_2 m n \mathbf{s}} \right) \\ %chktex 7
+    \bar{i}_2 & = -\dfrac{M V}{L_1 L_2 \sigma} \Big(\dfrac{1}{(\mathbf{s} - m)(m - n)} + \dfrac{1}{(n - m)(\mathbf{s} - n)}\Big) %chktex 7
+\end{align*}
+The inverse Laplace transform
+\begin{equation}
+    \begin{aligned}
+        i_1 & = \dfrac{V}{L_1 \sigma}(A_1 e^{mt} + B_1 e^{nt} + C_1)\\
+        i_2 & = \dfrac{-M V}{L_1 L_2 \sigma} A_2 (e^{mt} - e^{nt})
+    \end{aligned}
+    \label{eq:Eq2.63}
+\end{equation}
+
+As seen by (2.60) the roots $m$ and $n$ are both negative quantities with the result that the exponential terms in (2.63) are transient currents which decay with time. When the transient currents have disappeared
+\begin{flalign*}
+    && i_2 & = 0 && \\
+    &&i_1 & = \dfrac{V}{L_1 \sigma} \dfrac{1}{\tau_2 m n} && \\
+    \text{but} && \dfrac{1}{m n} & = \sigma \tau_1 \tau_2 && \\
+    \text{thus} && i_1 & = \dfrac{V}{R_1} &&
+\end{flalign*}
+the steady-state primary current.
+
+\section{The iron-cored transformer} 
+Power transformers are designed for high efficiency, i.e., low loss, and for small on-load variations of secondary output voltage $\mathbf{V}_s$. To achieve these conditions low values are required for the primary and secondary winding resistance and leakage reactance. With the primary and secondary windings linked by a closed iron core of high permeability, the leakage reactances are small as there is little tendency for flux to follow leakage paths in air. Two common forms of iron-cored transformer construction are shown in Fig. 2.11. 
+With an iron-core the pulsating flux $\Phi_M$ gives rise to two types of iron-loss, known respectively as hysteresis and eddy-current loss. The hysteresis loss is associated with the hysteresis loop of the magnetic material and the work expended in cyclic magnetization of the core. Eddy current loss is the result of currents induced within the iron, flowing in closed paths, giving rise to $I^2 R$ losses. As the two losses can be shown to vary with $\Phi_{M(\max)}$ and therefore
+$\mathbf{V}_{Mp}$, the total iron loss can be represented in the transformer equivalent circuit as a resistance $R_{wp}$ connected in parallel with $X_{mp}$, see Fig. 2.12.
+
+Total iron loss
+\begin{equation}
+    P_w = \dfrac{V^2_{Mp}}{R_{wp}} = I_w^2 R_{wp}
+    \label{eq:Eq2.64}
+\end{equation}
+
+With respect to $\mathbf{V}_{Mp}$ the iron loss component of current $\mathbf{I}_w$ is in phase and the magnetizing component $\mathbf{I}_m$ is $90^\circ$ lagging.
+
+On no-load the primary current, known as the no-load current $\mathbf{I}_0$ is given by
+\begin{equation}
+    \mathbf{I}_0 = \mathbf{I}_w + \mathbf{I}_m
+    \label{eq:Eq2.65}
+\end{equation}
+On no-load
+\begin{equation}
+    \mathbf{V}_p = (R_p + jX_{lp}) \mathbf{I}_0 + \mathbf{V}_{Mp}
+    \label{eq:Eq2.66}
+\end{equation}
+
+As previously stated, $(R_p + jX_{lp})$ is small for a power transformer and to a sufficient degree of accuracy $V_p \bumpeq V_{Mp}$ on no-load. Thus
+\begin{equation}
+    \dfrac{\mathbf{V}_p}{\mathbf{V}_{Ms}} \bumpeq \dfrac{N_p}{N_s} \ \text{on no-load}
+    \label{eq:Eq2.67}
+\end{equation}
+
+The \textit{voltage transformation ratio} is defined as
+\begin{equation}
+    \dfrac{\mathbf{V}_{Ms}}{\mathbf{V}_p} = \dfrac{\mathbf{V}_s}{\mathbf{V}_p}
+    \label{eq:Eq2.68}
+\end{equation}
+with the transformer on no-load
+
+For a step-up transformer
+\begin{equation*}
+    \dfrac{\mathbf{V}_s}{\mathbf{V}_p} > 1
+\end{equation*}
+
+For a step-down transformer
+\begin{equation*}
+    \dfrac{\mathbf{V}_s}{\mathbf{V}_p} < 1
+\end{equation*}
+
+The shunt admittance of $R_{wp}$ and $jX_{mp}$ can be placed directly across the primary supply, see Fig.\ 2.13, without appreciable error. This leads to considerable simplification as the primary and referred secondary values of resistance and leakage reactance can be combined to give total effective values.
+\begin{equation}
+    \begin{aligned}
+        R_T & = R_p + R_s' = R_p + {\Big( \dfrac{N_1}{N_2}\Big)}^2 R_s \\
+        X_{lT} & = X_{lp} + X_{ls}' = X_{lp} + {\Big( \dfrac{N_1}{N_2}\Big)}^2 X_{ls} \\
+        \mathbf{Z}_T & = R_T + jX_{lT}
+    \end{aligned}
+    \label{eq:Eq2.69}
+\end{equation}
+and
+\begin{align}
+    \mathbf{I}_m & = j \dfrac{\mathbf{V}_p}{X_{mp}} \qquad \mathbf{I}_w = \dfrac{\mathbf{V}_p}{R_{wp}} \\
+    \mathbf{V}_p & = (R_T + j \omega X_{lT} + \mathbf{Z}_L')\mathbf{I}_s'
+    \label{eq:Eq2.71}
+\end{align}
+
+The phasor diagram satisfying (2.70) and (2.71) is shown in Fig.\ 2.14 for $\mathbf{I}_s$ lagging $\mathbf{V}_s'$ by an angle $\varphi$.
+
+\begingroup
+\fontsize{10pt}{12pt}\selectfont
+\begin{center}
+    P R O B L E M S
+\end{center}
+
+\begin{enumerate}[label={\thechapter.\arabic*},leftmargin=*]
+\item A coil A of resistance \SI{15}{\ohm} and self-inductance \SI{0.015}{\henry} is placed near to a short-circuited coil B of resistance \SI{30}{\ohm} and self-inductance \SI{0.03}{\henry} to give a mutual inductance of \SI{0.009}{\henry}.\\ \indent 
+Determine the effective resistance and reactance of coil A at an angular frequency of 1000 rad/s.[Ans.\ $10.9 + j9.1$]
+
+\item Plot to a base of log frequency the magnitude and phase-angle of the impedance of the circuit shown in Fig. Prob.\ 2.2.\\ 
+The coefficient of coupling is 0.1.
+
+\item Show that the turns ratio of a single-phase transformer is the square­root of the ratio of the winding self-inductance when the winding coupling factors are equal.\\
+A 50-c/s, single-phase transformer has a loss-free core and the following parameters,
+primary winding: resistance \SI{1}{\ohm}\\
+self-inductance \SI{8}{\henry}\\
+coupling factor 0.98\\
+secondary winding: 	resistance \SI{10}{\ohm}\\
+self-inductance \SI{128}{\henry} \\
+coupling factor 0.98
+
+Derive the equivalent circuit in terms of \\
+(a) resistance, self-and mutual inductance and \\
+(b) resistance, leakage reactance, and magnetizing reactance referred to the primary. 
+[Ans.\ (b) $R_2' = \SI{0.625}{\ohm}$; $X_2' = \SI{50.3}{\ohm}$; $X_{m1} = \SI{2460}{\ohm}$]
+
+\item Two coupled coils have the following parameters, 
+
+Core losses are negligible. \\
+Derive two forms of equivalent circuit. \\
+For an angular frequency of 1000 rad/s determine, \\
+(a) the equivalent impedance for coil 1 with a short-circuit on coil 2, \\
+(b) the open-circuit voltage of coil 2 with a voltage of \SI{10}{\volt} r.m.s.\ applied to coil 1. \\
+Use both equivalent circuits to calculate (a) and (b). 
+[Ans. (a) $25.9 + j 13.3$; (b) $4.47 + j1.12$]
+
+\item The primary of a two-winding transformer is energized by a 50-c/s supply. The voltage, current, power and power factor are measured with \\
+(a) the secondary open-circuit, i.e., \textit{open-circuit test}; and \\
+(b) the secondary short-circuited, i.e., \textit{short-circuit test}. \\
+Show that the values of the elements in the approximate equivalent circuit, referred to the primary winding, may be deduced from these tests. \\
+Explain why the transformer is energized at rated voltage for the open-circuit test and at reduced voltage for the short-circuit test.
+
+
+\item Tests on a 100-kVA, 3300/250-V, 50-c/s transformer gave the following results, 
+open-circuit test: 800 W, 0.5 power factor at normal voltage, 
+short-circuit test: (data on h.v.\ side) \SI{24}{\ampere}, \SI{300}{\volt}, 750 W. 
+Determine the constants of the approximate equivalent circuit. The transformer current at 0.8 p.f.\ lagging. For an output voltage of \SI{250}{\volt} calculate thee primary voltage an the transformer efficiency.
+[Ans. \SI{3590}{\volt}, 0.9756 p.u.]
+
+\item An iron ring, relative permeability $\mu_r = 1000$, has a mean diameter of \SI{0.2}{\meter} and a square cross-section of side \SI{0.05}{\meter}.
+Two coils are wound on the ring. Coil A has 1000 turns of resistance \SI{30}{\ohm}, coil B has 250 turns of resistance \SI{2}{\ohm} and the coefficient of coupling is unity. 
+Draw two equivalent circuits in terms of, 
+(a) resistance, self-and mutual reactance, and
+(b) resistance and reactance referred to winding A. 
+Assume an excitation frequency of 50 c/s. 
+The ring is now sprayed with copper paint of resistivity \SI{1}{\micro\ohm} to a thickness of \SI{0.1}{\milli\metre} and coil B is removed.
+(c) Derive the equivalent circuit referred to coil A for a frequency of 50 c/s.
+Assume the iron is lossless and all the flux is contained in the iron ring.
+[Ans. (a) $X_A = \SI{1570}{\ohm}$, $X_B = \SI{98}{\ohm}$, $X_M = \SI{392}{\ohm}$; (b) $R_B' = \SI{32}{\ohm}$, $X_{MA} = \SI{1570}{\ohm}$; (c) $(33 + jO.0057)\si{\ohm}$] 
+
+\item Show, from the approximate equivalent circuit for a single-phase transformer, that the losses at normal voltage comprise a fixed loss and a loss proportional to the square of the load current. 
+Hence, show the fixed loss (iron loss) and the variable loss (copper loss) are equal for maximum transformer efficiency.
+
+\item Derive the voltage equations for three mutually coupled coils which include coil resistance.
+Assuming mutual flux is common to all coils determine an equivalent circuit in terms of values referred to one coil. 
+Assume some mutual flux links only two coils. What effect has this on the equivalent circuit?
+\end{enumerate}
+\endgroup
+
 
 
 \chapter{Electro-mechanical energy conversion}
