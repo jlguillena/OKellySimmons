@@ -5,44 +5,51 @@
 
 \tikzset{%
     sec/.style={line width = 0.5pt},
+    seca/.style={line width = 0.5pt, -{Stealth[scale width=0.7]}},
     blo/.style={rectangle,fill=white, inner sep=1.5pt},
     pri/.style={line width = 1pt},
-    pra/.style={line width = 1pt, -{Stealth[scale width=0.7]}}
+    pra/.style={line width = 1pt, -{Stealth[scale width=0.7]}},
+    sdar/.style={line width=0.5pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
+    pdar/.style={line width = 1pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
 }
-
+\ctikzset{%
+    bipoles/americaninductor/coil height=0.12,
+    bipoles/capacitor/height=0.2,
+    bipoles/capacitor/width=0.1,
+}
 
 \begin{document}
 
-\begin{tikzpicture}[line width=1pt,-{Stealth[scale width=0.8]}]
+\begin{tikzpicture}
     \coordinate (A) at (58:2.6);
     \coordinate (O) at (0,0);
-    \draw [sec] (O) +(0:1)arc(0:58:1)node[blo,midway,rotate=29]{$\omega t + \alpha$};
-    \draw [line width = 0.5pt](0,0)ellipse[radius=2.6];
-    \draw [Stealth-Stealth](0,3.55)node [anchor = south]{$y$-axis}--(0,0)--(3.55,0)node[anchor = north]{$x$-axis};
+    \draw [seca] (O) +(0:1)arc(0:58:1)node[blo,midway,rotate=29]{$\omega t + \alpha$};
+    \draw [sec](0,0)ellipse[radius=2.6];
+    \draw [pri,Stealth-Stealth](0,3.55)node [anchor = south]{$y$-axis}--(0,0)--(3.55,0)node[anchor = north]{$x$-axis};
     \draw (0,0)--(A)node[anchor=south west]{$\mathbf{\hat I}$};
-    \draw [](O|-A)--(A)--(A|-O);
-    \draw (O)--(O|-A)node[anchor = east]{$i_y$};
-    \draw (O)--(A|-O)node[anchor = north]{$i_x$};
-    \draw [sec] (O)+(40:2)arc(40:70:1.8cm)node[anchor = south east]{$\omega$};
-    \draw [sec] (2.36,1.46)node[anchor = west]{magnitude $I_m$} -- (1,1.46);
+    \draw [pri](O|-A)--(A)--(A|-O);
+    \draw [pra](O)--(O|-A)node[anchor = east]{$i_y$};
+    \draw [pra](O)--(A|-O)node[anchor = north]{$i_x$};
+    \draw [seca] (O)+(40:2)arc(40:70:1.8cm)node[ above left =-3pt]{$\omega$};
+    \draw [seca] (2.36,1.46)node[anchor = west]{magnitude $I_m$} -- (1,1.46);
 \end{tikzpicture}
 
 %-----------------------------------
 %          Figura 1.2
 %-----------------------------------
 
-\begin{tikzpicture}[line width=1pt,-Stealth]
+\begin{tikzpicture}
     \coordinate (O) at (0,0);
-    \draw [Stealth-Stealth](0,3.55)node [anchor = south]{$y$-axis}--(O)--(3.55,0)node[anchor = west]{$x$-axis};
-    \draw [Stealth-Stealth,rotate=30](0,3.55)node [anchor = south]{$n$-axis}--(O)--(3.55,0)node[anchor = west]{$m$-axis};
-    \draw [sec] (O) +(0:1.21)arc(0:30:1.21)node[blo,pos=0.4,rotate=12]{$\omega t$};
-    \draw [sec] (O) +(30:1.21)arc(30:60:1.21)node[blo,pos=0.4,rotate=42]{$\alpha$};
-    \draw (O) -- (60:2.66)node[anchor = south west]{$\mathbf{\hat I}$};
-    \draw (O) -- (60:1.58);
-    \draw (O) +(25:2.62) arc (25:40:2.62) node[above left=-3pt]{$\omega$};
-    \draw (O) +(62:2.62) arc (62:77:2.62) node[left]{$\omega$};
-    \draw (O) +(115:2.62) arc (115:130:2.62) node[below left=-3pt]{$\omega$};
-    \draw [sec](-1,0.9)node[text width=2.35cm,align=center,left]{Phasor $\mathbf{I}$ \\ with respect to \\$m,n$ axes}--(0.59,1.15);
+    \draw [Stealth-Stealth,line width=1pt](0,3.55)node [anchor = south]{$y$-axis}--(O)--(3.55,0)node[anchor = west]{$x$-axis};
+    \draw [Stealth-Stealth,line width=1pt,rotate=30](0,3.55)node [anchor = south]{$n$-axis}--(O)--(3.55,0)node[anchor = west]{$m$-axis};
+    \draw [seca] (O) +(0:1.21)arc(0:30:1.21)node[blo,pos=0.4,rotate=12]{$\omega t$};
+    \draw [seca] (O) +(30:1.21)arc(30:60:1.21)node[blo,pos=0.4,rotate=42]{$\alpha$};
+    \draw [pra] (O) -- (60:2.66)node[above right=-3pt]{$\mathbf{\hat I}$};
+    \draw [pra] (O) -- (60:1.58);
+    \draw [pra] (O) +(25:2.62) arc (25:40:2.62) node[above left=-3pt]{$\omega$};
+    \draw [pra] (O) +(62:2.62) arc (62:77:2.62) node[left]{$\omega$};
+    \draw [pra] (O) +(115:2.62) arc (115:130:2.62) node[below left=-3pt]{$\omega$};
+    \draw [seca](-1,0.9)node[text width=2.35cm,align=center,left]{Phasor $\mathbf{I}$ \\ with respect to \\$m,n$ axes}--(0.59,1.15);
 \end{tikzpicture}
 
 %-----------------------------------
@@ -50,22 +57,41 @@
 %-----------------------------------
 \begin{tikzpicture} %TODO corregir capacitor
     \coordinate (O) at (0,0);
-    \ctikzset {bipoles/capacitor/height=0.2,bipoles/capacitor/width=0.1}
-    \draw (-2.33,4.28) to[R=$R$](-0.6,4.28) (0.9,4.28)to[L,l_=$jX_L$](-0.6,4.28) (0.9,4.28)to[C=$-jX_c$](2.24,4.28);
+    \draw (-2.33,4.28) to[R=$R$](-0.6,4.28) (0.9,4.28)to[L,l_=$jX_L$](-0.6,4.28) (0.9,4.28)to[C=$-jX_c$,thick](2.24,4.28);
     \draw [pri](-1.9,0)--(3.7,0) (0,2.5) -- (0,-2.5);
     \draw [pra](O)--(2.3,2.3)node[pos=0.8,above left]{$\mathbf{Z}$};
     \draw [pra](O)--(2.3,-2.3)node[pos=0.8,below left]{$\mathbf{Z}$};
     \draw [pra](O)--(2.3,0)node[pos=0.8,below]{$R$};
     \draw [pra](2.3,0)--(2.3,2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L>X_C$};
     \draw [pra](2.3,0)--(2.3,-2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L<X_C$};;
-    \draw [sec](O) +(0:1.1)arc(0:45:1.1)node[blo,pos=0.4]{$\varphi$};
+    \draw [seca](O) +(0:1.1)arc(0:45:1.1)node[blo,pos=0.4]{$\varphi$};
 \end{tikzpicture}
 
 %-----------------------------------
 %          Figura 1.4
 %-----------------------------------
 \begin{tikzpicture}
-
+    \coordinate (a) at (25:2.5);
+    \coordinate (b) at (60:3.05);
+    \coordinate (c) at (-10:3.05);
+    \draw [sec](-1,0) -- (4.1,0)node[right]{$m$-axis} (0,-2) -- (0,3.8)node[above]{$n$-axis};
+    \draw [pra] (0,0) -- (a)node[near end,sloped,above]{$\mathbf{I}R$};
+    \draw [pra] (0,0) -- (b)node[near end,sloped,above]{$\mathbf{V}=\mathbf{IZ}$};
+    \draw [pra] (0,0) -- (c)node[near end,sloped,below]{$\mathbf{V}=\mathbf{IZ}$};
+    \draw [pra] (0,0) -- (25:3.9)node[right=-3pt]{$\mathbf{I}$};
+    \draw [pdar,loosely dashed,line width=1pt,dash pattern=on 15pt off 5pt] (b) -- (c);
+    \draw [seca] (0,0) +(0:0.76) arc(0:25:0.76)node[midway, right]{$\alpha$};
+    \draw [seca] (0,0) +(25:0.96) arc(25:60:0.96)node[midway, right]{$\varphi$};
+    \draw (2,2.14) node[above right=-3pt]{$j\mathbf{I}(X_L-X_C) \quad X_L>X_C$};
+    \draw (2.71,0.4) node[above right=-3pt]{$j\mathbf{I}(X_L-X_C) \quad X_L<X_C$};
 \end{tikzpicture}
+
+%-----------------------------------
+%          Figura 1.5
+%-----------------------------------
+\begin{tikzpicture}
+    \draw [sdar](0,3.2)node[right]{$+$} -- (0,-3.2)node[right]{$-$};
+\end{tikzpicture}
+
 
 \end{document}
