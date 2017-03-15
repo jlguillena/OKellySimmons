@@ -1,16 +1,21 @@
 % vim:set number:
 \documentclass{book}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage[american]{circuitikz}
-\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{arrows.meta, intersections, patterns}
+
+\pgfplotsset{compat=1.13}
 
 \tikzset{%
     sec/.style={line width = 0.5pt},
     seca/.style={line width = 0.5pt, -{Stealth[scale width=0.7]}},
     blo/.style={rectangle,fill=white, inner sep=1.5pt},
     pri/.style={line width = 1pt},
-    pra/.style={line width = 1pt, -{Stealth[scale width=0.7]}},
-    sdar/.style={line width=0.5pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
-    pdar/.style={line width = 1pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
+    pria/.style={line width = 1pt, -{Stealth[scale width=0.7]}},
+    secda/.style={line width=0.5pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
+    prida/.style={line width = 1pt, {Stealth[scale width=0.7]}-{Stealth[scale width=0.7]}},
 }
 \ctikzset{%
     bipoles/americaninductor/coil height=0.12,
@@ -28,8 +33,8 @@
     \draw [pri,Stealth-Stealth](0,3.55)node [anchor = south]{$y$-axis}--(0,0)--(3.55,0)node[anchor = north]{$x$-axis};
     \draw (0,0)--(A)node[anchor=south west]{$\mathbf{\hat I}$};
     \draw [pri](O|-A)--(A)--(A|-O);
-    \draw [pra](O)--(O|-A)node[anchor = east]{$i_y$};
-    \draw [pra](O)--(A|-O)node[anchor = north]{$i_x$};
+    \draw [pria](O)--(O|-A)node[anchor = east]{$i_y$};
+    \draw [pria](O)--(A|-O)node[anchor = north]{$i_x$};
     \draw [seca] (O)+(40:2)arc(40:70:1.8cm)node[ above left =-3pt]{$\omega$};
     \draw [seca] (2.36,1.46)node[anchor = west]{magnitude $I_m$} -- (1,1.46);
 \end{tikzpicture}
@@ -44,11 +49,11 @@
     \draw [Stealth-Stealth,line width=1pt,rotate=30](0,3.55)node [anchor = south]{$n$-axis}--(O)--(3.55,0)node[anchor = west]{$m$-axis};
     \draw [seca] (O) +(0:1.21)arc(0:30:1.21)node[blo,pos=0.4,rotate=12]{$\omega t$};
     \draw [seca] (O) +(30:1.21)arc(30:60:1.21)node[blo,pos=0.4,rotate=42]{$\alpha$};
-    \draw [pra] (O) -- (60:2.66)node[above right=-3pt]{$\mathbf{\hat I}$};
-    \draw [pra] (O) -- (60:1.58);
-    \draw [pra] (O) +(25:2.62) arc (25:40:2.62) node[above left=-3pt]{$\omega$};
-    \draw [pra] (O) +(62:2.62) arc (62:77:2.62) node[left]{$\omega$};
-    \draw [pra] (O) +(115:2.62) arc (115:130:2.62) node[below left=-3pt]{$\omega$};
+    \draw [pria] (O) -- (60:2.66)node[above right=-3pt]{$\mathbf{\hat I}$};
+    \draw [pria] (O) -- (60:1.58);
+    \draw [pria] (O) +(25:2.62) arc (25:40:2.62) node[above left=-3pt]{$\omega$};
+    \draw [pria] (O) +(62:2.62) arc (62:77:2.62) node[left]{$\omega$};
+    \draw [pria] (O) +(115:2.62) arc (115:130:2.62) node[below left=-3pt]{$\omega$};
     \draw [seca](-1,0.9)node[text width=2.35cm,align=center,left]{Phasor $\mathbf{I}$ \\ with respect to \\$m,n$ axes}--(0.59,1.15);
 \end{tikzpicture}
 
@@ -59,11 +64,11 @@
     \coordinate (O) at (0,0);
     \draw (-2.33,4.28) to[R=$R$](-0.6,4.28) (0.9,4.28)to[L,l_=$jX_L$](-0.6,4.28) (0.9,4.28)to[C=$-jX_c$,thick](2.24,4.28);
     \draw [pri](-1.9,0)--(3.7,0) (0,2.5) -- (0,-2.5);
-    \draw [pra](O)--(2.3,2.3)node[pos=0.8,above left]{$\mathbf{Z}$};
-    \draw [pra](O)--(2.3,-2.3)node[pos=0.8,below left]{$\mathbf{Z}$};
-    \draw [pra](O)--(2.3,0)node[pos=0.8,below]{$R$};
-    \draw [pra](2.3,0)--(2.3,2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L>X_C$};
-    \draw [pra](2.3,0)--(2.3,-2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L<X_C$};;
+    \draw [pria](O)--(2.3,2.3)node[pos=0.8,above left]{$\mathbf{Z}$};
+    \draw [pria](O)--(2.3,-2.3)node[pos=0.8,below left]{$\mathbf{Z}$};
+    \draw [pria](O)--(2.3,0)node[pos=0.8,below]{$R$};
+    \draw [pria](2.3,0)--(2.3,2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L>X_C$};
+    \draw [pria](2.3,0)--(2.3,-2.3)node[pos=0.5,right,align=center]{$j(X_L-X_C)$\\$X_L<X_C$};;
     \draw [seca](O) +(0:1.1)arc(0:45:1.1)node[blo,pos=0.4]{$\varphi$};
 \end{tikzpicture}
 
@@ -75,11 +80,11 @@
     \coordinate (b) at (60:3.05);
     \coordinate (c) at (-10:3.05);
     \draw [sec](-1,0) -- (4.1,0)node[right]{$m$-axis} (0,-2) -- (0,3.8)node[above]{$n$-axis};
-    \draw [pra] (0,0) -- (a)node[near end,sloped,above]{$\mathbf{I}R$};
-    \draw [pra] (0,0) -- (b)node[near end,sloped,above]{$\mathbf{V}=\mathbf{IZ}$};
-    \draw [pra] (0,0) -- (c)node[near end,sloped,below]{$\mathbf{V}=\mathbf{IZ}$};
-    \draw [pra] (0,0) -- (25:3.9)node[right=-3pt]{$\mathbf{I}$};
-    \draw [pdar,loosely dashed,line width=1pt,dash pattern=on 15pt off 5pt] (b) -- (c);
+    \draw [pria] (0,0) -- (a)node[near end,sloped,above]{$\mathbf{I}R$};
+    \draw [pria] (0,0) -- (b)node[near end,sloped,above]{$\mathbf{V}=\mathbf{IZ}$};
+    \draw [pria] (0,0) -- (c)node[near end,sloped,below]{$\mathbf{V}=\mathbf{IZ}$};
+    \draw [pria] (0,0) -- (25:3.9)node[right=-3pt]{$\mathbf{I}$};
+    \draw [prida,loosely dashed,line width=1pt,dash pattern=on 15pt off 5pt] (b) -- (c);
     \draw [seca] (0,0) +(0:0.76) arc(0:25:0.76)node[midway, right]{$\alpha$};
     \draw [seca] (0,0) +(25:0.96) arc(25:60:0.96)node[midway, right]{$\varphi$};
     \draw (2,2.14) node[above right=-3pt]{$j\mathbf{I}(X_L-X_C) \quad X_L>X_C$};
@@ -90,8 +95,56 @@
 %          Figura 1.5
 %-----------------------------------
 \begin{tikzpicture}
-    \draw [sdar](0,3.2)node[right]{$+$} -- (0,-3.2)node[right]{$-$};
+    \coordinate (O) at (0,0);
+    \coordinate (a) at (50.42:3.08);
+    \coordinate (b) at (-50.42:3.08);
+    \draw [seca](O) +(0:0.96) arc(0:50.42:0.96)node[blo,pos=0.4]{$\varphi$};
+    \draw [secda](0,3.2)node[right]{$+$} -- (0,-3.2)node[right]{$-$};
+    \draw [seca](-1.26,0) -- (3.72,0)node[right]{$+$};
+    \draw [pria](O) -- (a)node[left=3pt]{$\mathbf{S}$};
+    \draw [pria](O) -- (b)node[left=3pt]{$\mathbf{S}$};
+    \draw [pria](O) -- (a |- O)node[midway,below]{$VI\cos\varphi$};
+    \draw [pria](1.96,0) -- (3.74,0)node[midway,below]{power $P$};
+    \draw [seca](-0.6,1.5)--(-0.6,3.2);
+    \node [blo,xshift=-0.6cm,rotate=90]{Reactive volt-amperes $Q$};
+    \draw [prida](a) -- (b);
+    \node at (2.57,2.37) [above right]{Lagging p.f.};
+    \node at (2.57,-2.37) [below right]{Leading p.f.};
 \end{tikzpicture}
 
+%-----------------------------------
+%          Figura 1.6
+%-----------------------------------
+\begin{tikzpicture}
+    \pgfdeclarelayer{background}
+    \pgfdeclarelayer{main}
+    \pgfsetlayers{background,main}
+    \draw [sec] (0,0) -- (5.66,0);
+    \draw [pri,name path = plot] (1.35,0.98)..controls (3.2,1.1) and (2.4,2.6)..(4.71,3.44)node[above]{$v-iR$};
+    \node [below](a) at (3.05,0){$t$};
+    \coordinate (b) at (3.3,0);
+    \path [name path = izq](a) -- (3.05,3);
+    \path [name path = der](b) -- (3.3,4);
+    \path [name path = arr](0,3.44) -- (4.71,3.44);
+    \draw [pri,name intersections={of=izq and plot}](a)--(intersection-1);
+    \draw [pri,name intersections={of=der and plot}](b)--(intersection-1);
+    \draw [seca](4.22,1.97) node[right]{area $\varDelta \varPsi$} -- (3.175,1.75);
+    \draw [seca] (2.53,0.71) -- (3.05,0.71);
+    \draw [seca] (3.82,0.71) node[right]{$\varDelta t$} -- (3.3,0.71);
+    \draw [seca] (5,-0.44) -- (5.6,-0.44) node[right]{time};
+    
+    \pgfonlayer{background}
+    \fill [pattern = north east lines] (3.05,0) rectangle (3.3,3);
+    \fill [white,intersection segments={of=arr and plot,sequence={L* -- R*[reverse]}}];
+    \endpgfonlayer
+\end{tikzpicture}
+
+%-----------------------------------
+%          Figura 1.7
+%-----------------------------------
+\begin{tikzpicture}
+    \draw [sec](0,0) to[short,*-*] (3.97,0);
+    \draw (1.)<++>
+\end{tikzpicture}
 
 \end{document}
