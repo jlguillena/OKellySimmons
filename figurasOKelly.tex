@@ -21,6 +21,8 @@
     bipoles/americaninductor/coil height=0.12,
     bipoles/capacitor/height=0.2,
     bipoles/capacitor/width=0.1,
+    bipoles/resistor/height=0.2,
+    bipoles/resistor/width=0.4,
 }
 
 \begin{document}
@@ -143,8 +145,14 @@
 %          Figura 1.7
 %-----------------------------------
 \begin{tikzpicture}
-    \draw [sec](0,0) to[short,*-*] (3.97,0);
-    \draw (1.)<++>
+    \draw [sec] (0,0) node [below]{2} to[short,*-*] (3.97,0);
+    \draw [sec] (0,1.9)node[above]{1} to[R,i>^=$i$,l_=$R$,*-](2.5,1.9) to [short,-*](3.97,1.9);
+    \draw [sec] (3.71,-0.28) rectangle (7.03,2.18)node[align=center,pos=0.5]{Energy\\device};
+    \draw [seca](0.93,2.65) -- (2.13,2.65) node[midway, above]{Power flow $P_e$};
+    \node at (3.5,1.9) [above] {3};
+    \node at (3.5,0) [below] {4};
+    \draw [seca] (0,0.2)--(0,1.7)node[pos=0.5,blo]{$v$};
+    \draw [seca] (2.72,0.1) -- (2.72,1.8)node[blo,pos=0.5]{$v-iR$};
 \end{tikzpicture}
 
 \end{document}
