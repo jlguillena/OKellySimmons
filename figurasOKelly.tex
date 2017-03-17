@@ -192,4 +192,31 @@
     \draw node at(0.76,0.5)[above left=2pt]{Terminals};
     \draw node at(5.23,0.4)[above right=2pt]{Shaft};
 \end{tikzpicture}
+
+%-----------------------------------
+%          Figura dot blank
+%-----------------------------------
+\begin{tikzpicture}[inner sep=0.7pt]
+    \draw node (a) at (0,0) {dot};
+    \draw node (b) at (0.7,0.5) {blank};
+    \draw node (c) at (1.4,0) {dot};
+    \draw node (d) at (0.7,-0.5) {blank};
+    \draw [seca] (a.125) to [out=90,in=200](b.175);
+    \draw [seca] (b.5) to[out=0,in=100] (c.55);
+    \draw [seca] (c.305) to [out=260,in=20] (d.350);
+    \draw [seca] (d.190) to [out=170,in=290] (a.235);
+\end{tikzpicture}
+
+\begin{tikzpicture}[inner sep=0.7pt]
+    \draw node (a) at (0,0) {dot};
+    \draw node (b) at (0.7,0.5) {dot};
+    \draw node (c) at (1.4,0) {blank};
+    \draw node (d) at (0.7,-0.5) {blank};
+    \draw [seca] (a.125) to [out=75,in=200](b.175);
+    \draw [seca] (b.5) to[out=0,in=100] (c.55);
+    \draw [seca] (c.305) to [out=260,in=20] (d.350);
+    \draw [seca] (d.190) to [out=170,in=290] (a.235);
+\end{tikzpicture}
+
+
 \end{document}
