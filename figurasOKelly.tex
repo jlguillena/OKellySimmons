@@ -4,7 +4,7 @@
 \usepackage[american]{circuitikz}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
-\usetikzlibrary{arrows.meta, intersections, patterns}
+\usetikzlibrary{arrows.meta, calc, intersections, patterns}
 
 \pgfplotsset{compat=1.13}
 
@@ -155,4 +155,41 @@
     \draw [seca] (2.72,0.1) -- (2.72,1.8)node[blo,pos=0.5]{$v-iR$};
 \end{tikzpicture}
 
+
+%-----------------------------------
+%          Figura 1.8
+%-----------------------------------
+\begin{tikzpicture}
+    \begin{scope}[rotate=30]
+        \draw [pri] (2.44,0) ellipse [x radius =0.288, y radius = 0.5];
+        \draw [pri] (2.44,-0.5) -- (3.92,-0.5) (2.44,0.5) -- (4.12,0.5);
+        \filldraw [pri, fill=white] (0,-0.2595) -- (2.44, -0.2595) arc[start angle = -90, end angle = 90 , x radius = 0.15, y radius = 0.2595] -- (90:0.2595);
+        \draw [pri, pattern = north east lines] (0,0) ellipse [x radius = 0.15, y radius = 0.2595];
+        \draw [sec] (0.4,0) -- (4.3,0);
+        \draw [seca](-1.085,0)node[left]{shaft} -- (-0.457,0);
+        \path [name path = elipse1](0.775,0) ellipse[x radius = 0.375, y radius = 0.65];
+        \path [name path = linea1](0.775,0)-- ++(120:0.7);
+        \path [name path = elipse2](1.65,0) ellipse[x radius = 0.375, y radius = 0.65];
+        \path [name path = linea2](1.65,0)-- ++(120:0.7); 
+        \draw [seca, name intersections={of=elipse1 and linea1}](intersection-1) arc[start angle = 135, end angle = -135, y radius = 0.65, x radius =0.375]node[pos=0.85,below right]{$\theta_m$ and $\omega_m$};
+        \draw [seca, name intersections={of=elipse2 and linea2}](intersection-1) arc[start angle = 135, end angle = -135, y radius = 0.65, x radius =0.375]node[pos=0.75, below right]{$T_m$};
+    \end{scope}
+\end{tikzpicture}
+
+%-----------------------------------
+%          Figura 1.9
+%-----------------------------------
+\begin{tikzpicture}
+    \draw [pri](0,0.5) rectangle (0.76,-0.5);
+    \draw [-{Circle[open,length=4pt,width=4pt]},pri](0.76,0.29) -- (0.13,0.29);
+    \draw [-{Circle[open,length=4pt,width=4pt]},pri](0.76,-0.29) -- (0.13,-0.29);
+    \draw [pri] (0.76,1.07) rectangle (5.23,-1.07) node[align=center,pos=0.5]{Machine};
+    \draw [pri] (5.23,0.4) -- (6.08,0.4) arc(135:225:0.282) arc (45:-45:0.282) -- (5.23,-0.4) (6.105,0.4)arc(45:-45:0.282);
+    \draw [seca](6.9,0)node[above]{$P_m$} -- (6.4,0);
+    \draw [seca] (6.3,-0.8)node[below right=-0.2,align=center]{Mechanical\\energy port} -- (5.6,-0.45);
+    \draw [seca](-0.5,-0.8)node[below,align=center]{Electrical\\energy port}-- (0.3,-0.55);
+    \draw [seca] (-1.35,0)node[above]{$P_e$}--(-0.38,0);
+    \draw node at(0.76,0.5)[above left=2pt]{Terminals};
+    \draw node at(5.23,0.4)[above right=2pt]{Shaft};
+\end{tikzpicture}
 \end{document}
