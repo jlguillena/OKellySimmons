@@ -2930,7 +2930,7 @@ Commencing with the general stator and rotor voltage equations (5.54) and (5.55)
     \item the stator self-inductance $L_s$ is a constant value for cylindrical rotor.
 \end{enumerate} 
 \begin{align}
-    v_s & = i_s R_s + L_s p i_s  M_{sr} p i_r \\
+    v_s & = i_s R_s + L_s p i_s + M_{sr} p i_r \\
     v_r & = i_r R_r + L_r p i_r + M_{sr} p i_s + \omega_r i_r \frac{\dif l_r}{\dif \theta_r} + \omega_r i _s \frac{\dif M_{sr}}{\dif \theta_r} &&
 \end{align}
 The incremental energy supplied to the two windings in time $\dif t$
@@ -2938,7 +2938,7 @@ The incremental energy supplied to the two windings in time $\dif t$
     \dif W_e = (v_s i_s + v_r i_r) \dif t
 \end{equation}
 \begin{equation}
-    \dif W_e = \underbrace{(i_s^2 R_s + i_r^2 R_r)}_
+    \dif W_e = \underbrace{(i_s^2 R_s + i_r^2 R_r)\dif t}_
     {\substack{\text{incremental}\\ 
     \text{energy loss in}\\ 
     \text{winding} \\
