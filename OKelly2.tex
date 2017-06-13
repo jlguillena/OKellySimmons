@@ -509,31 +509,31 @@ Flux-linkages
 
 Expressing the flux-linkage components of (2.4) In terms of magnetic permeance and exciting current.
 \begin{align}
-    \varPsi_{lk} & = N_k \Phi{lk} = \Lambda_{lk} N_k^2 i_k \\
-    \varPsi_{mk} & = N_k \Phi{mk} = \Lambda_{mk} N_k^2 i_k \\
-    \varPsi_{kj} & = N_k \Phi{kj} = \Lambda_{kj} N_k N_j i_j
+    \varPsi_{lk} & = N_k \Phi{lk} = \varLambda_{lk} N_k^2 i_k \\
+    \varPsi_{mk} & = N_k \Phi{mk} = \varLambda_{mk} N_k^2 i_k \\
+    \varPsi_{kj} & = N_k \Phi{kj} = \varLambda_{kj} N_k N_j i_j
     \label{eq_Eq2.7}
 \end{align}
 
 Defining inductances:
 \begin{align}
-    &\text{Leakage inductance}\ L_{lk} \Lambda_{lk} N_k^2 = \dfrac{N_k \Phi_{lk}}{i_k} \\
-    &\text{Magnetizing inductance}\ L_{mk} = \Lambda_{mk} N_k^2 = \dfrac{N_k \Phi_{mk}}{i_k} \\
-    &\text{Self-inductance}\ L_k = (\Lambda_{lk} + \Lambda_{mk}) N_k^2 = \dfrac{N_k \Phi_{kk}}{i_k}
+    &\text{Leakage inductance}\ L_{lk} \varLambda_{lk} N_k^2 = \dfrac{N_k \Phi_{lk}}{i_k} \\
+    &\text{Magnetizing inductance}\ L_{mk} = \varLambda_{mk} N_k^2 = \dfrac{N_k \Phi_{mk}}{i_k} \\
+    &\text{Self-inductance}\ L_k = (\varLambda_{lk} + \varLambda_{mk}) N_k^2 = \dfrac{N_k \Phi_{kk}}{i_k}
     \label{eq:Eq2.10}
 \end{align}
 Mutual inductance between the $k$th and $j$th coils
 \begin{equation}
-    M_{kj} = \Lambda_{kj} N_k N_j = \dfrac{N_k \Phi_{kj}}{i_j}
+    M_{kj} = \varLambda_{kj} N_k N_j = \dfrac{N_k \Phi_{kj}}{i_j}
     \label{eq:Eq2.11}
 \end{equation}
 and
 \begin{equation}
-    M_{jk} = \Lambda_{jk} N_j N_k = \dfrac{N_j \Phi_{jk}}{i_k}
+    M_{jk} = \varLambda_{jk} N_j N_k = \dfrac{N_j \Phi_{jk}}{i_k}
     \label{eq:Eq2.12}
 \end{equation}
 \begin{flalign*}
-    \text{but}\ && \Lambda_{kj} = \Lambda_{jk}&&
+    \text{but}\ && \varLambda_{kj} = \varLambda_{jk}&&
 \end{flalign*}
 \begin{flalign}
     \text{thus} && M_{kj} = M_{jk} &&
@@ -4705,8 +4705,8 @@ Comparing (7.6) and (7.8),
 
     Substituting (7.23) and (7.24)  in (7.20)
     \begin{align}
-        N_2[i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} [B] [i_{abc}] N_1 \nonumber \\
-        [i_{\alpha \beta \gamma}] & = \sqrt*{\dfrac{3}{2}} \dfrac{N_1}{N_2} [B] [i_{abc}]
+        N_2[i_{\alpha \beta \gamma}] & = \sqrt*{\Big( \dfrac{3}{2}\Big) } [B] [i_{abc}] N_1 \nonumber \\
+        [i_{\alpha \beta \gamma}] & = \sqrt*{\Big( \dfrac{3}{2} \Big) } \dfrac{N_1}{N_2} [B] [i_{abc}]
         \label{eq:Eq7.25}
     \end{align}
 
@@ -5286,7 +5286,8 @@ Comparing (7.6) and (7.8),
         \label{eq:Eq7.78}
     \end{equation}
 
-    The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs. 7.6(a) and 7.6(b).
+    The physical phase arrangement influences the form of $[C]$ and $[C_t]$ and therefore the transformation relationship between the $d q \gamma$ and $abc$ quantities. To demonstrate the interdependence of $[C]$ and physical phase layouts, the $[B]$ matrices are constructed for the two alternative phase winding arrangements shown in Figs.\ 7.6(a) and 7.6(b).
+    
     Fig.\ 7.6(a)
     \begin{equation}
         [\overset{+}{B}] = \sqrt*{\Big(\dfrac{2}{3} \Big)}
@@ -5325,8 +5326,8 @@ Comparing (7.6) and (7.8),
         [\overset{+}{C}] = [S] [\overset{+}{B}] \\
         = \sqrt*{\Big( \dfrac{2}{3} \Big)}
         \begin{bmatrix}
-            \cos \theta_r & \cos (\theta_r - 120^{\circ}) & \cos (\theta_r + 120^{\circ}) \\
-            - \sin \theta_r & - \sin (\theta_r - 120^{\circ}) & - \sin (\theta_r + 120^{\circ}) \\
+            \cos \omega_r t & \cos (\omega_r t - 120^{\circ}) & \cos (\omega_r t + 120^{\circ}) \\
+            - \sin \omega_r t & - \sin (\omega_r t - 120^{\circ}) & - \sin (\omega_r t + 120^{\circ}) \\
             \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
         \end{bmatrix}
         \label{eq:Eq7.82}
@@ -5337,8 +5338,8 @@ Comparing (7.6) and (7.8),
         [\overset{-}{C}] = [S] [\overset{-}{B}] \\
         = \sqrt*{\Big( \dfrac{2}{3} \Big)}
         \begin{bmatrix}
-            \cos \theta_r & \cos (\theta_r + 120^{\circ}) & \cos (\theta_r - 120^{\circ}) \\
-            - \sin \theta_r & - \sin (\theta_r + 120^{\circ}) & - \sin (\theta_r - 120^{\circ}) \\
+            \cos \omega_r t & \cos (\omega_r t + 120^{\circ}) & \cos (\omega_r t - 120^{\circ}) \\
+            - \sin \omega_r t & - \sin (\omega_r t + 120^{\circ}) & - \sin (\omega_r t - 120^{\circ}) \\
             \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}} & \dfrac{1}{\sqrt*{2}}
         \end{bmatrix}
         \label{eq:Eq7.83}
@@ -5369,9 +5370,9 @@ Comparing (7.6) and (7.8),
 
     It is seen from (7.87) that $F_d$ and $F_q$ are phase separated by $90^{\circ}$ in space and time.
 
-    In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point \textbf{P} at a general displacement angle measured from the $d$-axis taken as reference, see Fig.\ 7.7.
+    In combination the space distributed m.m.f.s $F_d$ and $F_q$ produce the space resultant three-phase m.m.f. The equation describing the resultant m.m.f.\ distribution can be found by resolving $F_d$ and $F_q$ on an axis through a point P at a general displacement angle measured from the $d$-axis taken as reference, see Fig.\ 7.7.
 
-    Contributions made by $F_d$ and $F_q$ at point \textbf{P}
+    Contributions made by $F_d$ and $F_q$ at point P
     \begin{equation}
         \begin{aligned}
             F_d' & = F_d \cos \sigma = \dfrac{3}{2} I_m N_1 \cos \{(\omega_r - \omega)t - K\} \cos \sigma \\
@@ -5380,15 +5381,15 @@ Comparing (7.6) and (7.8),
         \label{eq:Eq7.88}
     \end{equation}
 
-    The resultant at point \textbf{P}, being a function of time $t$ and displacement $\sigma$ is written $F(t,\sigma)$
+    The resultant at point P, being a function of time $t$ and displacement $\sigma$ is written $F(t,\sigma)$
     \begin{equation}
         F(t,\sigma) = F_d'+F_q' = \dfrac{3}{2} I_m N_1 \cos \{ (\omega_r - \omega)t - K - \sigma\}
         \label{eq_Eq7.89}
     \end{equation}
 
-    To give physical meaning to $F(t:\sigma)$ let two sets of variables $(\sigma, t)$ and $(\sigma + \Delta\sigma, t + \Delta t)$ be considered to give m.m.f.s of equal value.
+    To give physical meaning to $F(t, \sigma)$ let two sets of variables $(\sigma, t)$ and $(\sigma + \Delta\sigma, t + \Delta t)$ be considered to give m.m.f.s of equal value.
     \begin{equation}
-        F(t,\sigma)= F(t + \Delta t, \sigma + \Delta \sigma)
+        F(t, \sigma)= F(t + \Delta t, \sigma + \Delta \sigma)
         \label{eq:Eq7.90}
     \end{equation}
 
@@ -5401,11 +5402,11 @@ Comparing (7.6) and (7.8),
 
     Equation (7.91) states in effect that a point on the graph of the function $F(t,\sigma)$ is displaced by $\Delta \sigma$ in time $\Delta t$ with angular velocity,
     \begin{equation}
-        (\omega_r \omega) = \dfrac{\Delta \sigma}{\Delta t}
+        (\omega_r - \omega) = \dfrac{\Delta \sigma}{\Delta t}
         \label{eq:Eq7.92}
     \end{equation}
 
-    As the same is true for all point on the graph of the function $F(t,\sigma)$ it represents a travelling wave of constant crest value $\frac{3}{2} I_m N_1$ moving with uniform angularvelocity $(\omega_r - \omega)$.
+    As the same is true for all point on the graph of the function $F(t,\sigma)$ it represents a travelling wave of constant crest value $\frac{3}{2} I_m N_1$ moving with uniform angular velocity $(\omega_r - \omega)$.
 
     Three conditions of interest are illustrated in Fig.\ 7.8(a), (b) and (c),
     \begin{flalign*}
@@ -5428,7 +5429,7 @@ Comparing (7.6) and (7.8),
         \end{bmatrix}
         \label{eq:Eq7.93}
     \end{equation}
-    case ($a$) $\omega_r > \omega$, $(\omega_r - \omega) = \omega$
+    case ($a$) $\omega_r > \omega$, $(\omega_r - \omega) = \omega'$
     \begin{equation*}
         i_d = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \cos (\omega' t - K) \qquad i_q = \sqrt*{\Big( \dfrac{3}{2} \Big)} I_m \sin (\omega' t - K)
     \end{equation*}
@@ -5457,13 +5458,13 @@ Comparing (7.6) and (7.8),
         & = \dfrac{3}{2} I_m N_1 (\cos K + j \sin K) = \dfrac{3}{2} I_m N_1 e^{jK}
     \end{align*}
 
-    The resultant m.m.f.\ distribution is stationary with a constant crest value $frac{3}{2}$ times the maximum value of a phase m.m.f.
+    The resultant m.m.f.\ distribution is stationary with a constant crest value $\frac{3}{2}$ times the maximum value of a phase m.m.f.
     \chapter{Three-phase synchronous machine}
 
     A three-phase synchronous machine employs two main windings, a field winding supplied with direct current and a three-phase winding excited with impressed or derived alternating currents depending on the machine mode of action being motoring or generating. It is assumed that both winding m.m.f.s are space-fundamentals. With respect to the winding of origin, the field m.m.f.\ is stationary and the resultant three-phase m.m.f.\ moves as a travelling wave, see Section 4.2.3.
 
-    A constant phase displacement of m.m.f.s is achieved in practice using two alternative forms of machine construction. With the three-phase winding stationary the field winding rotates at $\omega_r = \omega$ electrical rad/s in synchronism with the travelling wave of stator m.m.f. Alternatively, with the field winding stationary the three-phase winding rotates at $\omega_r = \omega$ electrical rad/s in contradirection to its travelling wave of m.m.f. With either form of
-    construction the speed of mechanical rotation is a unique value $n_s = \omega / (2 \pi \text{pole-pairs})$ r.p.s.\ called the synchronous speed, from which the name of this type of machine is derived.
+    A constant phase displacement of m.m.f.s is achieved in practice using two alternative forms of machine construction. With the three-phase winding stationary the field winding rotates at $\omega_r = \omega$ electrical rad/s in synchronism with the travelling wave of stator m.m.f. Alternatively, with the field winding stationary the three-phase winding rotates at $\omega_r = \omega$ electrical rad/s in contradirection to its travelling wave of m.m.f. With either form of construction the speed
+    of mechanical rotation is a unique value $n_s = \omega / (2 \pi\ \text{pole-pairs})$ r.p.s.\ called the synchronous speed, from which the name of this type of machine is derived.
 
     A three-phase stator construction is employed for all but the smallest synchronous machines as the three-phase winding can be linked with rigid connections to external circuits and comparatively light-duty slip rings supply the field current. 
 
@@ -5503,35 +5504,35 @@ Comparing (7.6) and (7.8),
         \end{aligned}
         \label{eq:Eq8.1}
     \end{equation}
-    $F_{d\textup{a}}$ and $F_{q\textup{a}}$ are assumed to act respectively on main gap permeances $\Lambda d$ and $\Lambda q$.
+    $F_{d\textup{a}}$ and $F_{q\textup{a}}$ are assumed to act respectively on main gap permeances $\varLambda_d$ and $\varLambda_q$.
 
     Phase $a$, $d$-$q$ axis flux-linkages
     \begin{equation}
         \begin{aligned}
-            \varPsi_{d\textup{a}} & = N_1 \Lambda_d F_{d\textup{a}} = {(N_1)}^2 \Lambda_d i_{\textup{a}} \cos \theta_r \\
-            \varPsi_{q\textup{a}} & = N_1 \Lambda_q F_{q\textup{a}} = - {(N_1)}^2 \Lambda_q i_{\textup{a}} \sin \theta_r 
+            \varPsi_{d\textup{a}} & = N_1 \varLambda_d F_{d\textup{a}} = {(N_1)}^2 \varLambda_d i_{\textup{a}} \cos \theta_r \\
+            \varPsi_{q\textup{a}} & = N_1 \varLambda_q F_{q\textup{a}} = - {(N_1)}^2 \varLambda_q i_{\textup{a}} \sin \theta_r 
         \end{aligned}
         \label{eq:Eq8.2}
     \end{equation}
 
     The gap flux-linkage for phase $a$
     \begin{equation}
-        \varPsi_{q\textup{a}} = \varPsi_{d\textup{a}} \cos \theta_r - \varPsi_{q\textup{a}} \sin \theta_r
+        \varPsi_{g\textup{a}} = \varPsi_{d\textup{a}} \cos \theta_r - \varPsi_{q\textup{a}} \sin \theta_r
         \label{eq:Eq8.3}
     \end{equation}
 
     From (8.2) and (8.3)
     \begin{align}
-        \varPsi_{q\textup{a}} & = {(N_1)}^2(\Lambda_d \cos^2 \theta_r + \Lambda_q \sin^2 \theta_r) \nonumber \\
-        & = {(N_1)}^2 i_{\textup{a}} \Big[ \Big(\dfrac{\Lambda_d -\Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2} \Big) \cos 2\theta_r \Big]
+        \varPsi_{g\textup{a}} & = {(N_1)}^2(\varLambda_d \cos^2 \theta_r + \varLambda_q \sin^2 \theta_r) \nonumber \\
+        & = {(N_1)}^2 i_{\textup{a}} \Big[ \Big(\dfrac{\varLambda_d -\varLambda_q}{2}\Big) + \Big( \dfrac{\varLambda_d - \varLambda_q}{2} \Big) \cos 2\theta_r \Big]
         \label{eq:Eq8.4}
     \end{align}
 
-    The leakage flux of a rotor phase is little affected by the rotor position. Assuming a constant leakage permeance $\Lambda_l$,
+    The leakage flux of a rotor phase is little affected by the rotor position. Assuming a constant leakage permeance $\varLambda_l$,
 
     phase $a$, leakage flux-linkage
     \begin{equation}
-        \varPsi_{l\textup{a}} = N_1 \Lambda_l F_{\textup{a}} = {(N_1)}^2 \Lambda_l i_{\textup{a}} 
+        \varPsi_{l\textup{a}} = N_1 \varLambda_l F_{\textup{a}} = {(N_1)}^2 \varLambda_l i_{\textup{a}} 
         \label{eq:Eq8.5}
     \end{equation}
 
@@ -5543,16 +5544,16 @@ Comparing (7.6) and (7.8),
 
     From (8.4) and (8.5)
     \begin{equation}
-        \varPsi_{\textup{a}} = {(N_1)}^2 i_{\textup{a}} \Big[ \Lambda_l + \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos2\theta_r\Big]
+        \varPsi_{\textup{a}} = {(N_1)}^2 i_{\textup{a}} \Big[ \varLambda_l + \Big( \dfrac{\varLambda_d + \varLambda_q}{2}\Big) + \Big( \dfrac{\varLambda_d - \varLambda_q}{2}\Big) \cos2\theta_r\Big]
         \label{eq:Eq8.7}
     \end{equation}
 
     Defining inductances
     \begin{equation}
         \begin{aligned}
-            L_l & ={(N_1)}^2 \Lambda_l \\
-            L_1 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d + \Lambda_q}{2}\Big) \\
-            L_2 & = {(N_1)}^2 \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \\
+            L_l & ={(N_1)}^2 \varLambda_l \\
+            L_1 & = {(N_1)}^2 \Big( \dfrac{\varLambda_d + \varLambda_q}{2}\Big) \\
+            L_2 & = {(N_1)}^2 \Big( \dfrac{\varLambda_d - \varLambda_q}{2}\Big) \\
         \end{aligned}
         \label{eq:Eq8.8}
     \end{equation}
@@ -5587,8 +5588,8 @@ Comparing (7.6) and (7.8),
 
     Substituting (8.2) in (8.12)
     \begin{align}
-        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}}[\Lambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \Lambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
-        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}} \Big[ - \Big( \dfrac{\Lambda_d + \Lambda_q}{4} \Big) + \Big( \dfrac{\Lambda_d - \Lambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
+        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}}[\varLambda_q \sin(\theta_r -120^{\circ}) \sin \theta_r + \varLambda_d \cos(\theta_r -120^{\circ}) \cos \theta_r] \nonumber \\
+        \varPsi_{\textup{ba}} & = {(N_1)}^2 i_{\textup{a}} \Big[ - \Big( \dfrac{\varLambda_d + \varLambda_q}{4} \Big) + \Big( \dfrac{\varLambda_d - \varLambda_q}{2}\Big) \cos 2(\theta_r - 60^{\circ})\Big]
         \label{eq:Eq8.13}
     \end{align}
 
@@ -5730,7 +5731,7 @@ Comparing (7.6) and (7.8),
     \end{multline}
     Thus
     \begin{equation}
-        [\varPsi{\textup{abc}fst}] = 
+        [\varPsi_{\textup{abc}fst}] = 
         \begin{bmatrix}
             [\varPsi_{\textup{abc}}] \\
             [\varPsi_{fst}]
