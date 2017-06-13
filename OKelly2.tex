@@ -4639,7 +4639,7 @@ Comparing (7.6) and (7.8),
         [F_{abc}] & = [A^{-1}] [F_{\alpha \beta \gamma}]
         \label{eq:Eq7.16}
     \end{align}
-    Re-writing $[A]$ and $[A^{-1}]$ in the form shown with arbitrary constant $m = 1 \sqrt{2}$ converts the process of inversion to the simple one of transposition:
+    Re-writing $[A]$ and $[A^{-1}]$ in the form shown with arbitrary constant $m = 1/ \sqrt{2}$ converts the process of inversion to the simple one of transposition:
     \begin{align}
         [A] & = \sqrt*{\Big(\dfrac{3}{2}\Big)} \sqrt*{\Big(\dfrac{2}{3}\Big)}
         \begin{bmatrix}
@@ -4667,8 +4667,8 @@ Comparing (7.6) and (7.8),
     thus
     \begin{align}
         [F_{\alpha \beta \gamma}]  & = \sqrt*{\Big(\dfrac{3}{2}\Big)}  [B] [F_{abc}] \\
-        [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)} [F_{\alpha \beta \gamma}]
-        \label{eq:Eq7.21}:
+        [F_{abc}]  & =  \sqrt*{\Big(\dfrac{2}{3}\Big)}[B_t][F_{\alpha \beta \gamma}] %TODO error en parentesis
+        \label{eq:Eq7.21}
     \end{align}
 
     With the $\alpha$-axis located a fixed angle other than zero from the axis of phase $a$ the numerical coefficients for $[B]$ and $[B_t]$ would be different without invalidating (7.20) and (7.21).
@@ -4822,7 +4822,7 @@ Comparing (7.6) and (7.8),
     and
     \begin{align}
         [L_{abc}] & = [B_t][L_{\alpha \beta \gamma}][B] \\
-        [R_{\alpha \beta \gamma}] = [B][R_{abc}][B_t]
+        [R_{\alpha \beta \gamma}] & = [B][R_{abc}][B_t]
         \label{eq:Eq7.43}
     \end{align}
     and
@@ -5100,7 +5100,7 @@ Comparing (7.6) and (7.8),
 
     From (7.68)
     \begin{equation}
-        [\varPsi_{abc}] = p{[C_t] [\varPsi_{dq\gamma}]}
+        [v_{abc}] = p\{[C_t] [\varPsi_{dq\gamma}]\}
         \label{eq:Eq7.69}
     \end{equation}
     Matrix $[C_t]$ is seen by (7.65) to be time dependent as $\theta_r$ is a function of time. The expansion of (7.69) involves differentiation of a product
@@ -5136,7 +5136,7 @@ Comparing (7.6) and (7.8),
         \right\}
         \label{}
     \end{multline}
-    where $p_r^{\theta} = \omega_r$.
+    where $p\theta_r = \omega_r$.
 
     Expanding and rearranging (7.70)
     \begin{equation*}
